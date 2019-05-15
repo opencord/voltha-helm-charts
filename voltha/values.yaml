@@ -1,0 +1,99 @@
+---
+# Copyright 2019-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+registry: ''
+serviceaccount: voltha-serviceaccount
+private_etcd_cluster: true
+private_kafka_cluster: true
+
+# Configure the Kafka sub-chart (if it is used)
+kafka:
+  configurationOverrides:
+    "offsets.topic.replication.factor": 1
+    "log.retention.hours": 4
+    "log.message.timestamp.type": "LogAppendTime"
+  persistence:
+    enabled: false
+  zookeeper:
+    replicaCount: 1
+    persistence:
+      enabled: false
+  replicas: 1
+
+# Define connectivity to services on which VOLTHA depends
+services:
+  kafka:
+    adapter:
+      service: voltha-kafka.voltha.svc.cluster.local
+      port: 9092
+    cluster:
+      service: voltha-kafka.voltha.svc.cluster.local
+      port: 9092
+
+  # Define connectivity to etcd
+  etcd:
+    service: voltha-etcd-cluster-client.voltha.svc.cluster.local
+    port: 2379
+
+  # Define controller to which to connect
+  controller:
+    service: onos-openflow.default.svc.cluster.local
+    port: 6653
+
+# Define the recplica count for everything
+replicas:
+  # For R/W cores the templates translate the number of replicas
+  # into the number of RW core pairs with two pods per pair
+  rw_core: 1
+
+  # For everything else replicas are replicas
+  cli: 1
+  ofagent: 1
+  ro_core: 1
+  afrouter: 1
+  afrouterd: 1
+
+# Define Docker images to be used
+images:
+  cli:
+    repository: 'volthacore/voltha-cli'
+    tag: '{{ .Chart.AppVersion }}'
+    pullPolicy: 'Always'
+
+  ofagent:
+    repository: 'volthacore/voltha-ofagent'
+    tag: '{{ .Chart.AppVersion }}'
+    pullPolicy: 'Always'
+
+  ro_core:
+    repository: 'volthacore/voltha-ro-core'
+    tag: '{{ .Chart.AppVersion }}'
+    pullPolicy: 'Always'
+
+  rw_core:
+    repository: 'volthacore/voltha-rw-core'
+    tag: '{{ .Chart.AppVersion }}'
+    pullPolicy: 'Always'
+
+  afrouter:
+    repository: 'volthacore/voltha-afrouter'
+    tag: '{{ .Chart.AppVersion }}'
+    pullPolicy: 'Always'
+
+  afrouterd:
+    repository: 'volthacore/voltha-afrouterd'
+    tag: '{{ .Chart.AppVersion }}'
+    pullPolicy: 'Always'
+    restartPolicy: 'Always'

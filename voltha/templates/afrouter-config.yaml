@@ -1,0 +1,201 @@
+# Copyright 2019-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+---
+{{- $rw_count := mul .Values.replicas.rw_core 2 | int }}
+{{- $ro_count := .Values.replicas.ro_core | int }}
+apiVersion: v1
+data:
+  arouter.voltha.json: |
+      {
+        "servers": [
+          {
+            "name": "grpc_command",
+            "port": 55555,
+            "address": "",
+            "type": "grpc",
+            "routers": [
+              {
+                "_TODO": "Suport a router list, remove the package and service from the router",
+                "package": "voltha",
+                "service": "VolthaService",
+                "router": "vcore"
+              }
+            ]
+          }
+        ],
+        "routers": [
+          {
+            "name": "vcore",
+            "package": "voltha",
+            "service": "VolthaService",
+            "routes": [
+              {
+                "name": "dev_manager",
+                "proto_descriptor": "voltha.pb",
+                "type": "rpc_affinity_message",
+                "association": "round_robin",
+                "routing_field": "id",
+                "backend_cluster": "vcore",
+                "_COMMENT": "Methods here MUST be specified above, this overrides thier default beahvior",
+                "methods": [
+                  "CreateDevice",
+                  "GetCoreInstance",
+                  "EnableLogicalDevicePort",
+                  "DisableLogicalDevicePort",
+                  "EnableDevice",
+                  "DisableDevice",
+                  "RebootDevice",
+                  "DeleteDevice",
+                  "DownloadImage",
+                  "CancelImageDownload",
+                  "ActivateImageUpdate",
+                  "RevertImageUpdate",
+                  "UpdateDevicePmConfigs",
+                  "CreateAlarmFilter",
+                  "UpdateAlarmFilter",
+                  "DeleteAlarmFilter",
+                  "SelfTest"
+                ],
+                "nb_binding_methods": [
+                  "CreateDevice"
+                ],
+                "_TODO": "Overrides not implemented yet, config ignored",
+                "overrides": [ ]
+              },
+              {
+                "name": "read_only",
+                "type": "round_robin",
+                "association": "round_robin",
+                "backend_cluster": "ro_vcore",
+                "methods": [
+                  "ListDevicePorts",
+                  "ListDevicePmConfigs",
+                  "GetImages",
+                  "GetImageDownloadStatus",
+                  "GetImageDownload",
+                  "ListImageDownloads",
+                  "ListDeviceFlows",
+                  "ListDeviceFlowGroups",
+                  "ListLogicalDeviceFlows",
+                  "ListLogicalDeviceFlowGroups",
+                  "ListDevices",
+                  "GetDevice",
+                  "ListLogicalDevices",
+                  "GetLogicalDevices",
+                  "GetDeviceType",
+                  "GetDeviceGroup",
+                  "GetLogicalDevice",
+                  "GetAlarmFilter",
+                  "ListLogicalDevicePorts",
+                  "GetLogicalDevicePort",
+                  "ListAdapters",
+                  "GetVoltha"
+                ]
+              },
+              {
+                "name": "dev_manager_ofagent",
+                "type": "binding",
+                "_association": "round_robin",
+                "binding": {
+                  "type": "header",
+                  "field": "voltha_backend_name",
+                  "method": "Subscribe",
+                  "association": "round_robin"
+                },
+                "backend_cluster": "vcore",
+                "methods": [
+                  "StreamPacketsOut",
+                  "ReceivePacketsIn",
+                  "ReceiveChangeEvents",
+                  "Subscribe",
+                  "UpdateLogicalDeviceFlowTable",
+                  "UpdateLogicalDeviceFlowGroupTable",
+                  "GetLogicalDevice",
+                  "GetLogicalDevicePort",
+                  "EnableLogicalDevicePort",
+                  "DisableLogicalDevicePort",
+                  "ListLogicalDevices",
+                  "ListLogicalDeviceFlows",
+                  "ListLogicalDeviceFlowGroups",
+                  "ListLogicalDevicePorts"
+                ],
+                "_TODO": "Overrides not implemented yet, config ignored",
+                "overrides": [ ]
+              }
+            ]
+          }
+        ],
+        "backend_clusters": [
+          {
+            "name": "vcore",
+            "backends": [
+{{- range $i, $e := until $rw_count }}
+{{- $core_idx := add $i 1 }}
+              {
+                "name": "vcore{{ $core_idx }}",
+                "type": "active_active",
+                "association": {
+                  "strategy": "serial_number",
+                  "location": "header",
+                  "_TODO": "The key below needs to be implemented, currently hard coded",
+                  "key": "voltha_serial_number"
+                },
+                "connections": [
+                  {
+                    "name": "vcore{{ $core_idx }}1",
+                    "addr": "",
+                    "port": ""
+                  },
+                  {
+                    "name": "vcore{{ $core_idx }}2",
+                    "addr": "",
+                    "port": ""
+                  }
+                ]
+              }{{ if lt $core_idx $rw_count }},{{ end }}
+{{- end}}
+            ]
+          },
+          {
+            "name": "ro_vcore",
+            "backends": [
+{{- range $i, $e := until $ro_count }}
+{{- $core_idx := add $i 1 }}
+              {
+                "name": "ro_vcore{{ $core_idx }}",
+                "type": "server",
+                "connections": [
+                  {
+                    "name": "ro_vcore{{ $core_idx }}1",
+                    "addr": "",
+                    "port": ""
+                  }
+                ]
+              }{{ if lt $core_idx $ro_count }},{{ end }}
+{{- end}}
+            ]
+          }
+        ],
+        "api": {
+          "_comment": "If this isn't defined then no api is available for dynamic configuration and queries",
+          "address": "",
+          "port": 55554
+        }
+      }
+
+kind: ConfigMap
+metadata:
+  name: afrouter-config
+  serviceAccountName: {{ .Values.serviceaccount }}
