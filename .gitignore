@@ -4,5 +4,8 @@ chart_repo
 # lockfiles for requirements.yaml for dependent charts
 requirements.lock
 
-# sub charts directoies, created by helm dep ...
+# sub charts directories, created by helm dep ...
 charts
+
+# misc files
+.*.swp
