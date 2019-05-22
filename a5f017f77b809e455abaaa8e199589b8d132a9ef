@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f8d789a_63b4fe26",
+        "filename": "voltha-etcd-cluster/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-22T21:13:41Z",
+      "side": 1,
+      "message": "oh no, and trailing space. need to squash that.",
+      "revId": "a5f017f77b809e455abaaa8e199589b8d132a9ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65078e89_a1fb50c5",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-22T21:13:41Z",
+      "side": 1,
+      "message": "bad white space",
+      "revId": "a5f017f77b809e455abaaa8e199589b8d132a9ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81624150_976b85f5",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-22T21:13:41Z",
+      "side": 1,
+      "message": "and again",
+      "revId": "a5f017f77b809e455abaaa8e199589b8d132a9ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b54b6ce1_a3b5b7e6",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-22T21:13:41Z",
+      "side": 1,
+      "message": "and more",
+      "revId": "a5f017f77b809e455abaaa8e199589b8d132a9ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2061717_db29829f",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-22T21:13:41Z",
+      "side": 1,
+      "message": "and more",
+      "revId": "a5f017f77b809e455abaaa8e199589b8d132a9ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b9ee0e1_12a96ac9",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-22T21:13:41Z",
+      "side": 1,
+      "message": "and more ... oh the guilt ...",
+      "revId": "a5f017f77b809e455abaaa8e199589b8d132a9ef",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
