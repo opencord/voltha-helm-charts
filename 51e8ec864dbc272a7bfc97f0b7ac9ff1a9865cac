@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dc552dd9_206118d6",
+        "filename": "voltha/requirements.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2019-05-22T22:20:55Z",
+      "side": 1,
+      "message": "YAML hygiene ?  I can move this below the copyright splat.",
+      "parentUuid": "4adf03ba_b21e8547",
+      "revId": "51e8ec864dbc272a7bfc97f0b7ac9ff1a9865cac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "daae16e9_cbc2f421",
         "filename": "voltha/requirements.yaml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2019-05-22T22:00:30Z",
       "side": 1,
       "message": "why?",
+      "revId": "51e8ec864dbc272a7bfc97f0b7ac9ff1a9865cac",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8fae931_43802667",
+        "filename": "voltha/requirements.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2019-05-22T22:20:55Z",
+      "side": 1,
+      "message": "To pass the helm lint tests. The new URL is for the same repo, which has already added to the script that runs the testing job: https://gerrit.opencord.org/gitweb?p\u003dci-management.git;a\u003dblob;f\u003djjb/charts.yaml#l69",
+      "parentUuid": "daae16e9_cbc2f421",
       "revId": "51e8ec864dbc272a7bfc97f0b7ac9ff1a9865cac",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
