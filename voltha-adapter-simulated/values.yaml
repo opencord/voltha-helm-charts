@@ -39,16 +39,16 @@ replicas:
 
 images:
   adapter_simulated_olt:
-    repository: 'volthacore/voltha-adapter-simulated-olt'
+    repository: 'voltha/voltha-adapter-simulated-olt'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   adapter_simulated_onu:
-    repository: 'volthacore/voltha-adapter-simulated-onu'
+    repository: 'voltha/voltha-adapter-simulated-onu'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   ponsim:
-    repository: 'volthacore/voltha-ponsim'
+    repository: 'voltha/voltha-ponsim'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'

@@ -68,32 +68,32 @@ replicas:
 # Define Docker images to be used
 images:
   cli:
-    repository: 'volthacore/voltha-cli'
+    repository: 'voltha/voltha-cli'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   ofagent:
-    repository: 'volthacore/voltha-ofagent'
+    repository: 'voltha/voltha-ofagent'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   ro_core:
-    repository: 'volthacore/voltha-ro-core'
+    repository: 'voltha/voltha-ro-core'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   rw_core:
-    repository: 'volthacore/voltha-rw-core'
+    repository: 'voltha/voltha-rw-core'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   afrouter:
-    repository: 'volthacore/voltha-afrouter'
+    repository: 'voltha/voltha-afrouter'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
 
   afrouterd:
-    repository: 'volthacore/voltha-afrouterd'
+    repository: 'voltha/voltha-afrouterd'
     tag: '{{ .Chart.AppVersion }}'
     pullPolicy: 'Always'
     restartPolicy: 'Always'
