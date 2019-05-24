@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a460c1d2_db12334b",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-05-24T17:51:28Z",
+      "side": 1,
+      "message": "Would it make sense to use groups 1 and 2 instead of 0 and 1? (to match $core_idx)?",
+      "revId": "92b8428015f840426534d338fe3fc017275c160e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
