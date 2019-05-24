@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "072702b2_fbb545fe",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-05-24T18:16:52Z",
+      "side": 1,
+      "message": "Not sure if \u0027add1\u0027 should be \u0027add 1\u0027 (if this is valid, just ignore this comment)",
+      "revId": "53af8ba68bdf1624d17dad65c140093f69bd72ed",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
