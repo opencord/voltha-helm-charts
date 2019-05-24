@@ -184,6 +184,14 @@ that may specifically be observed, or at the very least were discovered, in
 this environment can be found in JIRA via a [JIRA Issue
 Search](https://jira.opencord.org/issues/?jql=status%20not%20in%20%28closed%2C%20Done%2CResolved%29%20and%20labels%20in%20%28helm%29%20and%20affectedVersion%20in%20%28%22VOLTHA%20v2.0%22%29).
 
+### Small Kubernetes Deployments
+Kubernetes affinity is used to ensure the distribution of read-write core pods
+across the Kubernetes nodes in support of optimum high availability. While
+this *seems* to work for production sized Kubernetes clusters (2n+1 nodes,
+where n >= 1) on smaller Kubernetes deployments it may mean that members
+of a r/w core pair are scheduled on the same node, which may mean that on a
+smaller Kubnernetes deployment *true* high availability is not achieved.
+
 ## Pre-patchset submission Checks
 
 On patchset submission, jobs are run in Jenkins that validate the correctness
