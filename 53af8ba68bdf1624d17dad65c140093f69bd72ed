@@ -16,6 +16,24 @@
       "revId": "53af8ba68bdf1624d17dad65c140093f69bd72ed",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0843310b_390bcc0f",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-24T18:21:05Z",
+      "side": 1,
+      "message": "add1 is actually a function: http://masterminds.github.io/sprig/math.html",
+      "parentUuid": "072702b2_fbb545fe",
+      "revId": "53af8ba68bdf1624d17dad65c140093f69bd72ed",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
