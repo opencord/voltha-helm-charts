@@ -16,6 +16,24 @@
       "revId": "92b8428015f840426534d338fe3fc017275c160e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b0557dd5_f760b2b4",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-05-24T17:53:54Z",
+      "side": 1,
+      "message": "We could remove numbers. Call one group \"one\" and the other \"two\" or even choose something like \"oil\" and \"water\"?",
+      "parentUuid": "a460c1d2_db12334b",
+      "revId": "92b8428015f840426534d338fe3fc017275c160e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
