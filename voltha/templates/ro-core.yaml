@@ -45,8 +45,8 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
         - name: voltha
-          image: {{ .Values.registry }}{{ .Values.images.ro_core.repository }}:{{ tpl .Values.images.ro_core.tag . }}
-          imagePullPolicy: {{ .Values.images.ro_core.pullPolicy }}
+          image: {{ tpl .Values.images.ro_core.registry . }}{{ tpl .Values.images.ro_core.repository . }}:{{ tpl .Values.images.ro_core.tag . }}
+          imagePullPolicy: {{ tpl .Values.images.ro_core.pullPolicy . }}
           env:
             - name: NAMESPACE
               value: {{ quote .Release.Namespace }}
@@ -54,15 +54,11 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
-            - name: ETCD_SERVICE
-              value: {{ quote .Values.services.etcd.service }}
-            - name: ETCD_SERVICE_PORT
-              value: {{ quote .Values.services.etcd.port }}
           args:
             - "/app/ro_core"
             - "-kv_store_type=etcd"
-            - "-kv_store_host=$(ETCD_SERVICE)"
-            - "-kv_store_port=$(ETCD_SERVICE_PORT)"
+            - "-kv_store_host={{ .Values.services.etcd.service }}"
+            - "-kv_store_port={{ .Values.services.etcd.port }}"
             - "-grpc_host=$(POD_IP)"
             - "-grpc_port=50057"
             - "-banner=true"

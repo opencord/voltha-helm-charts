@@ -13,9 +13,9 @@
 # limitations under the License.
 
 ---
-name: voltha
-description: A Helm chart for Voltha based on K8S resources in Voltha project
+name: voltha-adapter-openonu
+description: A Helm chart for Voltha OpenONU Adapter
 icon: https://guide.opencord.org/logos/cord.svg
 
-version: 2.0.2
+version: 2.0.0
 appVersion: 2.0.0
