@@ -43,34 +43,19 @@ spec:
     spec:
       containers:
         - name: adapter-simulated-olt
-          image: {{ .Values.registry }}{{ .Values.images.adapter_simulated_olt.repository }}:{{ tpl .Values.images.adapter_simulated_olt.tag . }}
-          imagePullPolicy: {{ .Values.images.adapter_simulated_olt.pullPolicy }}
-          env:
-            - name: NAMESPACE
-              value: {{ quote .Release.Namespace }}
-            - name: ETCD_SERVICE
-              value: "{{ .Values.services.etcd.service }}"
-            - name: ETCD_SERVICE_PORT
-              value: "{{ .Values.services.etcd.port }}"
-            - name: ADAPTER_KAFKA_SERVICE
-              value: "{{ .Values.services.kafka.adapter.service }}"
-            - name: ADAPTER_KAFKA_SERVICE_PORT
-              value: "{{ .Values.services.kafka.adapter.port }}"
-            - name: CLUSTER_KAFKA_SERVICE
-              value: "{{ .Values.services.kafka.cluster.service }}"
-            - name: CLUSTER_KAFKA_SERVICE_PORT
-              value: "{{ .Values.services.kafka.cluster.port }}"
+          image: {{ tpl .Values.images.adapter_simulated_olt.registry . }}{{ tpl .Values.images.adapter_simulated_olt.repository . }}:{{ tpl .Values.images.adapter_simulated_olt.tag . }}
+          imagePullPolicy: {{ tpl .Values.images.adapter_simulated_olt.pullPolicy . }}
           args:
             - "/app/simulated_olt"
-            - "-kafka_adapter_host=$(ADAPTER_KAFKA_SERVICE)"
-            - "-kafka_adapter_port=$(ADAPTER_KAFKA_SERVICE_PORT)"
-            - "-kafka_cluster_host=$(CLUSTER_KAFKA_SERVICE)"
-            - "-kafka_cluster_port=$(CLUSTER_KAFKA_SERVICE_PORT)"
+            - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
+            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
+            - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
+            - "-kv_store_host={{ .Values.services.etcd.service }}"
+            - "-kv_store_port={{ .Values.services.etcd.port }}"
             - "-core_topic=rwcore"
             - "-simulator_topic=simulated_olt"
-            - "-kv_store_host=$(ETCD_SERVICE)"
-            - "-kv_store_port=$(ETCD_SERVICE_PORT)"
-            - "-onu_number=100"
+            - "-onu_number=4"
 ---
 apiVersion: v1
 kind: Service
@@ -102,30 +87,15 @@ spec:
     spec:
       containers:
         - name: adapter-simulated-onu
-          image: {{ .Values.registry }}{{ .Values.images.adapter_simulated_onu.repository }}:{{ tpl .Values.images.adapter_simulated_onu.tag . }}
-          imagePullPolicy: {{ .Values.images.adapter_simulated_onu.pullPolicy }}
-          env:
-            - name: NAMESPACE
-              value: {{ quote .Release.Namespace }}
-            - name: ETCD_SERVICE
-              value: "{{ .Values.services.etcd.service }}"
-            - name: ETCD_SERVICE_PORT
-              value: "{{ .Values.services.etcd.port }}"
-            - name: ADAPTER_KAFKA_SERVICE
-              value: "{{ .Values.services.kafka.adapter.service }}"
-            - name: ADAPTER_KAFKA_SERVICE_PORT
-              value: "{{ .Values.services.kafka.adapter.port }}"
-            - name: CLUSTER_KAFKA_SERVICE
-              value: "{{ .Values.services.kafka.cluster.service }}"
-            - name: CLUSTER_KAFKA_SERVICE_PORT
-              value: "{{ .Values.services.kafka.cluster.port }}"
+          image: {{ tpl .Values.images.adapter_simulated_onu.registry . }}{{ tpl .Values.images.adapter_simulated_onu.repository . }}:{{ tpl .Values.images.adapter_simulated_onu.tag . }}
+          imagePullPolicy: {{ tpl .Values.images.adapter_simulated_onu.pullPolicy . }}
           args:
             - "/app/simulated_onu"
-            - "-kafka_adapter_host=$(ADAPTER_KAFKA_SERVICE)"
-            - "-kafka_adapter_port=$(ADAPTER_KAFKA_SERVICE_PORT)"
-            - "-kafka_cluster_host=$(CLUSTER_KAFKA_SERVICE)"
-            - "-kafka_cluster_port=$(CLUSTER_KAFKA_SERVICE_PORT)"
+            - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
+            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
+            - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
+            - "-kv_store_host={{ .Values.services.etcd.service }}"
+            - "-kv_store_port={{ .Values.services.etcd.port }}"
             - "-core_topic=rwcore"
-            - "-kv_store_host=$(ETCD_SERVICE)"
-            - "-kv_store_port=$(ETCD_SERVICE_PORT)"
             - "-simulator_topic=simulated_onu"

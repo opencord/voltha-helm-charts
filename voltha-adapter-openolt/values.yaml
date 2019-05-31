@@ -37,25 +37,11 @@ services:
 
 # Define the recplica count for everything
 replicas:
-  adapter_simulated_olt: 1
-  adapter_simulated_onu: 1
-  onu: 1
+  adapter_open_olt: 1
 
 images:
-  adapter_simulated_olt:
+  adapter_open_olt:
     registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-adapter-simulated-olt'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-openolt-adapter'
     tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
-
-  adapter_simulated_onu:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-adapter-simulated-onu'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
-
-  ponsim:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-ponsim'
-    tag: '{{ .Values.defaults.image_tag | default "voltha-1.7" }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
