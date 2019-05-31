@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ad0f9f9_745f3df7",
+        "filename": "voltha-adapter-simulated/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-31T21:10:17Z",
+      "side": 1,
+      "message": "The simulated olt/onu adapters does not use voltha-ponsim, only ponsim-adapter does.",
+      "revId": "23ead6c39c9134e56959f7aa7feaccf7ad22b62c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
