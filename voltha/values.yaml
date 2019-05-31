@@ -13,10 +13,18 @@
 # limitations under the License.
 
 ---
-registry: ''
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
+
+# Default overrides
+defaults:
+  image_registry:
+  image_tag:
+  image_org:
+  image_pullPolicy:
+  rw_core:
+    timeout:
 
 # Configure the Kafka sub-chart (if it is used)
 kafka:
@@ -65,35 +73,47 @@ replicas:
   afrouter: 1
   afrouterd: 1
 
+rw_core:
+  core_timeout: '{{ .Values.defaults.rw_core.timeout | default "8000" }}'
+  timeout_long_request: '{{ .Values.defaults.rw_core.timeout | default "8000" }}'
+  timeout_request: '{{ .Values.defaults.rw_core.timeout | default "8000" }}'
+
+
 # Define Docker images to be used
 images:
   cli:
-    repository: 'volthacore/voltha-cli'
-    tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    registry: '{{ .Values.defaults.image_registry | default "" }}'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-cli'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
 
   ofagent:
-    repository: 'volthacore/voltha-ofagent'
-    tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    registry: '{{ .Values.defaults.image_registry | default "" }}'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-ofagent'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
 
   ro_core:
-    repository: 'volthacore/voltha-ro-core'
-    tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    registry: '{{ .Values.defaults.image_registry | default "" }}'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-ro-core'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
 
   rw_core:
-    repository: 'volthacore/voltha-rw-core'
-    tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    registry: '{{ .Values.defaults.image_registry | default "" }}'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-rw-core'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
 
   afrouter:
-    repository: 'volthacore/voltha-afrouter'
-    tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    registry: '{{ .Values.defaults.image_registry | default "" }}'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-afrouter'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
 
   afrouterd:
-    repository: 'volthacore/voltha-afrouterd'
-    tag: '{{ .Chart.AppVersion }}'
-    pullPolicy: 'Always'
+    registry: '{{ .Values.defaults.image_registry | default "" }}'
+    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-afrouterd'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
     restartPolicy: 'Always'

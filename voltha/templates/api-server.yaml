@@ -45,8 +45,8 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
       - name: arouter
-        image: {{ .Values.registry }}{{ .Values.images.afrouter.repository }}:{{ tpl .Values.images.afrouter.tag . }}
-        imagePullPolicy: {{ .Values.images.afrouter.pullPolicy }}
+        image: {{ tpl .Values.images.afrouter.registry . }}{{ tpl .Values.images.afrouter.repository . }}:{{ tpl .Values.images.afrouter.tag . }}
+        imagePullPolicy: {{ tpl .Values.images.afrouter.pullPolicy . }}
         volumeMounts:
         - name: config-volume
           mountPath: /app/config
@@ -61,8 +61,8 @@ spec:
         env:
         - name: POD_NAMESPACE
           value: {{ .Release.Namespace }}
-        image: {{ .Values.registry }}{{ .Values.images.afrouterd.repository }}:{{ tpl .Values.images.afrouterd.tag . }}
-        imagePullPolicy: {{ .Values.images.afrouterd.pullPolicy }}
+        image: {{ tpl .Values.images.afrouterd.registry . }}{{ tpl .Values.images.afrouterd.repository . }}:{{ tpl .Values.images.afrouterd.tag . }}
+        imagePullPolicy: {{ tpl .Values.images.afrouterd.pullPolicy . }}
         command: ["/app/arouterd"]
       restartPolicy: Always
       volumes:

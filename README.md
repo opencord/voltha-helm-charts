@@ -42,6 +42,14 @@ step.
 Once helm is initialized deploy the [ONOS OpenFlow
 Controller](https://onosproject.org/) using the `make helm-onos` command.
 
+#### Prerequite Helm Chart Repositories
+To use the charts for VOLTHA the following two Helm repositories should be 
+added to your helm environment:
+```shell
+helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubatoritories
+helm repo add stable https://kubernetes-charts.storage.googleapis.com
+```
+
 #### Deploy VOLTHA
 
 Clone the [VOLTHA Helm Chart](https://github.com/ciena/voltha-helm-charts)
@@ -49,7 +57,7 @@ repository and build the chart dependencies as follows:
 
 ```shell
 git clone https://github.com/ciena/voltha-helm-charts
-cd volth-helm-charts
+cd voltha-helm-charts
 helm dependency build voltha
 ```
 
@@ -60,10 +68,25 @@ components:
 helm install --namespace voltha --name voltha voltha
 ```
 
-After that is complete the adapters for the simulated devices can be deployed:
+#### Deploying Adapters
+Deploying adapters is optional an you need only deploy those adapters which
+are required for a given deployment
 
+##### Adapters for Simulated OLT/ONU
+After that is complete the adapters for the simulated devices can be deployed.
+Deploying the adapters for the simulated olt/onu is optional as it deploying
+any adapter. But by deploying the simulated olt/onu adapters it is possible to
+create devices in VOLTHA and enable them without having access to hardware.
 ```shell
-helm install --namespace voltha --name voltha-adapters voltha-adapter-simulated
+helm install --namespace voltha --name voltha-adapters-simulated voltha-adapter-simulated
+```
+
+##### Adapters for OpenOLT and OpenONU
+The adapters for the OpenOLT and OpenONU are in separate helm charts to deploy
+the adapters use the following commands:
+```shell
+helm install --namespace voltha --name voltha-adapters-openolt voltha-adapters-openolt
+helm install --namespace voltha --name voltha-adapters-openonu voltha-adapters-openonu
 ```
 
 ### Kafka and Etcd

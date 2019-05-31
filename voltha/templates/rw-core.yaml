@@ -15,6 +15,12 @@
 {{- $root := . -}}
 {{- $count := mul .Values.replicas.rw_core 2 | int }}
 {{- $tag := tpl .Values.images.rw_core.tag . }}
+{{- $repository := tpl .Values.images.rw_core.repository . }}
+{{- $registry := tpl .Values.images.rw_core.registry . }}
+{{- $pullpolicy := tpl .Values.images.rw_core.pullPolicy . }}
+{{- $core_timeout := tpl $root.Values.rw_core.core_timeout . }}
+{{- $long_request_timeout := tpl $root.Values.rw_core.timeout_long_request . }}
+{{- $request_timeout := tpl $root.Values.rw_core.timeout_request . }}
 {{- range $i, $e := until $count }}
 {{- $core_idx := add $i 1 }}
 {{- $affinity_group := add1 (mod $i 2) }}
@@ -60,8 +66,8 @@ spec:
       serviceAccountName: {{ $root.Values.serviceaccount }}
       containers:
         - name: voltha
-          image: {{ $root.Values.registry }}{{ $root.Values.images.rw_core.repository }}:{{ $tag }}
-          imagePullPolicy: {{ $root.Values.images.rw_core.pullPolicy }}
+          image: {{ $registry }}{{ $repository }}:{{ $tag }}
+          imagePullPolicy: {{ $pullpolicy }}
           env:
             - name: NAMESPACE
               value: {{ quote $root.Release.Namespace }}
@@ -69,36 +75,25 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
-            - name: ETCD_SERVICE
-              value: {{ quote $root.Values.services.etcd.service }}
-            - name: ETCD_SERVICE_PORT
-              value: {{ quote $root.Values.services.etcd.port }}
-            - name: ADAPTER_KAFKA_SERVICE
-              value: {{ quote $root.Values.services.kafka.adapter.service }}
-            - name: ADAPTER_KAFKA_SERVICE_PORT
-              value: {{ quote $root.Values.services.kafka.adapter.port }}
-            - name: CLUSTER_KAFKA_SERVICE
-              value: {{ quote $root.Values.services.kafka.cluster.service }}
-            - name: CLUSTER_KAFKA_SERVICE_PORT
-              value: {{ quote $root.Values.services.kafka.cluster.port }}
           args:
             - "/app/rw_core"
             - "-kv_store_type=etcd"
-            - "-kv_store_host=$(ETCD_SERVICE)"
-            - "-kv_store_port=$(ETCD_SERVICE_PORT)"
+            - "-kv_store_host={{ $root.Values.services.etcd.service }}"
+            - "-kv_store_port={{ $root.Values.services.etcd.port }}"
             - "-grpc_host=$(POD_IP)"
             - "-grpc_port=50057"
             - "-banner=true"
-            - "-kafka_adapter_host=$(ADAPTER_KAFKA_SERVICE)"
-            - "-kafka_adapter_port=$(ADAPTER_KAFKA_SERVICE_PORT)"
-            - "-kafka_cluster_host=$(CLUSTER_KAFKA_SERVICE)"
-            - "-kafka_cluster_port=$(CLUSTER_KAFKA_SERVICE_PORT)"
+            - "-kafka_adapter_host={{ $root.Values.services.kafka.adapter.service }}"
+            - "-kafka_adapter_port={{ $root.Values.services.kafka.adapter.port }}"
+            - "-kafka_cluster_host={{ $root.Values.services.kafka.cluster.port }}"
+            - "-kafka_cluster_port={{ $root.Values.services.kafka.cluster.port }}"
             - "-rw_core_topic=rwcore"
             - "-kv_store_data_prefix=service/voltha"
             - "-in_competing_mode=true"
-            - "-timeout_long_request=8000"
-            - "-timeout_request=6000"
-            - "-log_level=4"
+            - "-core_timeout={{ $core_timeout }}"
+            - "-timeout_long_request={{ $long_request_timeout }}"
+            - "-timeout_request={{ $request_timeout }}"
+            - "-log_level=2"
           ports:
             - containerPort: 50057
               name: grpc-port
