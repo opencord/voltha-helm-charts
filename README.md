@@ -46,7 +46,7 @@ Controller](https://onosproject.org/) using the `make helm-onos` command.
 To use the charts for VOLTHA the following two Helm repositories should be 
 added to your helm environment:
 ```shell
-helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubatoritories
+helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
 ```
 
@@ -58,14 +58,14 @@ repository and build the chart dependencies as follows:
 ```shell
 git clone https://github.com/ciena/voltha-helm-charts
 cd voltha-helm-charts
-helm dependency build voltha
+helm dependency build ./voltha
 ```
 
 At this point the VOLTHA Helm charts can be used to deploy the VOLTHA core
 components:
 
 ```shell
-helm install --namespace voltha --name voltha voltha
+helm install --namespace voltha --name voltha ./voltha
 ```
 
 #### Deploying Adapters
