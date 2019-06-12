@@ -19,12 +19,12 @@ private_kafka_cluster: true
 
 # Default overrides
 defaults:
-  image_registry:
-  image_tag:
-  image_org:
-  image_pullPolicy:
+  image_registry: ""
+  image_tag: '{{ .Chart.AppVersion }}'
+  image_org: "voltha/"
+  image_pullPolicy: "Always"
   rw_core:
-    timeout:
+    timeout: "8000"
 
 # Configure the Kafka sub-chart (if it is used)
 kafka:
@@ -74,46 +74,46 @@ replicas:
   afrouterd: 1
 
 rw_core:
-  core_timeout: '{{ .Values.defaults.rw_core.timeout | default "8000" }}'
-  timeout_long_request: '{{ .Values.defaults.rw_core.timeout | default "8000" }}'
-  timeout_request: '{{ .Values.defaults.rw_core.timeout | default "8000" }}'
+  core_timeout: '{{ .Values.defaults.rw_core.timeout }}'
+  timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
+  timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
 
 
 # Define Docker images to be used
 images:
   cli:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-cli'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-cli'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ofagent:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-ofagent'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-ofagent'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ro_core:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-ro-core'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-ro-core'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-rw-core'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouter:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-afrouter'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-afrouter'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouterd:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-afrouterd'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-afrouterd'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
     restartPolicy: 'Always'
