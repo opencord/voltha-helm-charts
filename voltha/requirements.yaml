@@ -18,10 +18,6 @@ dependencies:
     repository: https://kubernetes-charts-incubator.storage.googleapis.com
     version: 0.15.3
     condition: private_kafka_cluster
-  - name: etcd-operator
-    repository: https://kubernetes-charts.storage.googleapis.com
-    version: 0.8.3
-    condition: private_etcd_cluster
   - name: voltha-etcd-cluster
     repository: file://../voltha-etcd-cluster
     version: 2.0.0
