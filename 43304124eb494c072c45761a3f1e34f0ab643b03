@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e6e56a1_824bb6df",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000582
+      },
+      "writtenOn": "2019-06-14T14:42:20Z",
+      "side": 1,
+      "message": "Typo: \"adapter\", not \"adapters\"",
+      "revId": "43304124eb494c072c45761a3f1e34f0ab643b03",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
