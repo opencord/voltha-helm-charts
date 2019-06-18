@@ -89,15 +89,20 @@ Deploying the adapters for the simulated olt/onu is optional as it deploying
 any adapter. But by deploying the simulated olt/onu adapters it is possible to
 create devices in VOLTHA and enable them without having access to hardware.
 ```shell
-helm install --namespace voltha --name voltha-adapters-simulated voltha-adapter-simulated
+helm install --namespace voltha --name voltha-adapter-simulated voltha-adapter-simulated
 ```
 
 ##### Adapters for OpenOLT and OpenONU
 The adapters for the OpenOLT and OpenONU are in separate helm charts to deploy
 the adapters use the following commands:
 ```shell
-helm install --namespace voltha --name voltha-adapters-openolt voltha-adapters-openolt
-helm install --namespace voltha --name voltha-adapters-openonu voltha-adapters-openonu
+# Python based OpenOLT adapter
+helm install --namespace voltha --name voltha-adapter-openolt voltha-adapter-openolt
+
+# GoLang based OpenOLT adapter
+helm install --namespace voltha --name voltha-adapter-openolt-go voltha-adapter-openolt-go
+
+helm install --namespace voltha --name voltha-adapter-openonu voltha-adapter-openonu
 ```
 
 ### Kafka and Etcd
@@ -157,7 +162,7 @@ To remove the VOLTHA and Simulated Adapter deployments standard Helm commands
 can be utilized:
 
 ```shell
-helm delete --purge voltha voltha-adapters voltha-etcd-operator
+helm delete --purge voltha voltha-adapter-simulatd voltha-etcd-operator
 ```
 
 ## Installing and Configuring `voltctl`
