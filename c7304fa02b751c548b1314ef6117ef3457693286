@@ -16,6 +16,24 @@
       "revId": "c7304fa02b751c548b1314ef6117ef3457693286",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "611cc64e_cab0aa9a",
+        "filename": "voltha-adapter-openolt-go/templates/adapters-openolt-go.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2019-06-18T14:41:41Z",
+      "side": 1,
+      "message": "master-go is the image version.\nvoltha/voltha-openolt-adapter is the image",
+      "parentUuid": "bb6df5b0_76628496",
+      "revId": "c7304fa02b751c548b1314ef6117ef3457693286",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
