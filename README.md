@@ -96,8 +96,8 @@ helm install --namespace voltha --name voltha-adapters-simulated voltha-adapter-
 The adapters for the OpenOLT and OpenONU are in separate helm charts to deploy
 the adapters use the following commands:
 ```shell
-helm install --namespace voltha --name voltha-adapters-openolt voltha-adapters-openolt
-helm install --namespace voltha --name voltha-adapters-openonu voltha-adapters-openonu
+helm install --namespace voltha --name voltha-adapters-openolt voltha-adapter-openolt
+helm install --namespace voltha --name voltha-adapters-openonu voltha-adapter-openonu
 ```
 
 ### Kafka and Etcd
