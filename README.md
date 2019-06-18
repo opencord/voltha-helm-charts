@@ -96,7 +96,12 @@ helm install --namespace voltha --name voltha-adapters-simulated voltha-adapter-
 The adapters for the OpenOLT and OpenONU are in separate helm charts to deploy
 the adapters use the following commands:
 ```shell
+# Python based OpenOLT adapter
 helm install --namespace voltha --name voltha-adapters-openolt voltha-adapters-openolt
+
+# GoLang based OpenOLT adapter
+helm install --namespace voltha --name voltha-adapters-openolt-go voltha-adapters-openolt-go
+
 helm install --namespace voltha --name voltha-adapters-openonu voltha-adapters-openonu
 ```
 
