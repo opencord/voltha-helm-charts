@@ -20,7 +20,7 @@ private_kafka_cluster: true
 # Default overrides
 defaults:
   image_registry: ""
-  image_tag: '{{ .Chart.AppVersion }}'
+  image_tag:
   image_org: "voltha/"
   image_pullPolicy: "Always"
   rw_core:
@@ -84,36 +84,36 @@ images:
   cli:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-cli'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ro_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ro-core'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouter:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-afrouter'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouterd:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-afrouterd'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
     restartPolicy: 'Always'
