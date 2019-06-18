@@ -31,9 +31,23 @@ spec:
     spec:
       containers:
         - name: adapter-open-olt
+          {{- if .Values.use_go }}
+          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl .Values.images.adapter_open_olt.tag_go . }}
+          {{- else }}
           image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl .Values.images.adapter_open_olt.tag . }}
+          {{- end }}
           imagePullPolicy: {{ tpl .Values.images.adapter_open_olt.pullPolicy . }}
           args:
+            {{- if .Values.use_go }}
+            - "/app/openolt"
+            - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
+            - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
+            - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
+            - "--core_topic=rwcore"
+            - "--kv_store_host={{ .Values.services.etcd.service }}"
+            - "--kv_store_port={{ .Values.services.etcd.port }}"
+            {{- else}}
             - "/voltha/adapters/openolt/main.py"
             - "--verbose"
             - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
@@ -41,3 +55,4 @@ spec:
             - "--core_topic=rwcore"
             - "--backend=etcd"
             - "--etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
+            {{- end}}
