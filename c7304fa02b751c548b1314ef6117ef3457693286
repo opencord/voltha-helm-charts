@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb6df5b0_76628496",
+        "filename": "voltha-adapter-openolt-go/templates/adapters-openolt-go.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2019-06-18T14:37:44Z",
+      "side": 1,
+      "message": "The comment says hardcoding of the image version, but can\u0027t see something like that below.",
+      "revId": "c7304fa02b751c548b1314ef6117ef3457693286",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
