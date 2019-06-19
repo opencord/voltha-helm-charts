@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a41af70f_87b09fa0",
+        "filename": "voltha-adapter-openolt/templates/adapters-openolt.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2019-06-19T02:35:56Z",
+      "side": 1,
+      "message": "was the image tag chosen properly for you. It didn\u0027t, and I had to temporarily hardcode it until I figured out the problem.",
+      "revId": "6a43d8d1c6c5ba1071cb7b938daebde9cf4cafbc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
