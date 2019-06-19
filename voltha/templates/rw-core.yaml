@@ -23,7 +23,7 @@
 {{- $request_timeout := tpl $root.Values.rw_core.timeout_request . }}
 {{- range $i, $e := until $count }}
 {{- $core_idx := add $i 1 }}
-{{- $affinity_group := add1 (mod $i 2) }}
+{{- $affinity_group := add1 (div $i 2) }}
 ---
 apiVersion: apps/v1
 kind: Deployment
