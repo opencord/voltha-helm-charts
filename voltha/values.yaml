@@ -78,6 +78,8 @@ rw_core:
   timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
   timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
 
+node_ports:
+  vcli_port: 30110
 
 # Define Docker images to be used
 images:

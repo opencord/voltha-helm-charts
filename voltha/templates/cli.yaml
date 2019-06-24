@@ -23,10 +23,12 @@ metadata:
     name: vcli
 spec:
   serviceAccountName: {{ .Values.serviceaccount }}
+  type: NodePort
   ports:
     - name: ssh
       port: 5022
       targetPort: 22
+      nodePort: {{ .Values.node_ports.vcli_port }}
   selector:
     app: vcli
 

@@ -62,15 +62,6 @@ cd voltha-helm-charts
 helm dependency build ./voltha
 ```
 
-##### Deploy ETCD Operator
-[ETCD Operator](https://github.com/coreos/etcd-operator) defines Kubernetes
-resources types that allow you define ETCD clusters using standard Kubernetes
-manifests. As the VOLTHA helm charts use these resources types the ETCD
-operator must be installed before the VOLTHA helm chart.
-```shell
-helm install --namespace voltha --name voltha-etcd-operator stable/etcd-operator
-```
-
 ##### Deploy VOLTHA Core Components
 At this point the VOLTHA Helm charts can be used to deploy the VOLTHA core
 components:
