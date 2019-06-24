@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7dc67e33_6c589e3c",
+        "filename": "voltha/templates/cli.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-06-24T14:16:11Z",
+      "side": 1,
+      "message": "node port is really not the best way to expose ports in a cluster. the k8s cluster should support an ingress capability.",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 16
+      },
+      "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
