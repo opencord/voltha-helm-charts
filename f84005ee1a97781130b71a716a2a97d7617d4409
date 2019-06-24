@@ -46,6 +46,30 @@
       "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bf22df0_ab1df36c",
+        "filename": "voltha/templates/cli.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-06-24T19:39:16Z",
+      "side": 1,
+      "message": "If you are already on a node in the cluster, you should see a cli service\n```\nkubectl -n voltha get svc | grep voltha-cli\nvoltha-cli                   ClusterIP   10.233.22.128   \u003cnone\u003e        5022/TCP                     107m\n```\n\nusing that IP address you should be able to\n\n$ ssh -p 5022 voltha@10.233.22.128\nvoltha@10.233.22.128\u0027s password:\nWelcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-150-generic x86_64)\n\n * Documentation:  https://help.ubuntu.com\n * Management:     https://landscape.canonical.com\n * Support:        https://ubuntu.com/advantage\n\nThe programs included with the Ubuntu system are free software;\nthe exact distribution terms for each program are described in the\nindividual files in /usr/share/doc/*/copyright.\n\nUbuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by\napplicable law.\n\n         _ _   _            ___ _    ___\n__ _____| | |_| |_  __ _   / __| |  |_ _|\n\\ V / _ \\ |  _| \u0027 \\/ _` | | (__| |__ | |\n \\_/\\___/_|\\__|_||_\\__,_|  \\___|____|___|\n(to exit type quit or hit Ctrl-D)\n(voltha)\n\nIf you want to access the cli from outside the cluster then you could add routes on the system to forward into the cluster or use an SSH tunnel. I am currently exploring ingress controllers as well to see how that might work.",
+      "parentUuid": "2dfc7f22_0dc87356",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 16
+      },
+      "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }

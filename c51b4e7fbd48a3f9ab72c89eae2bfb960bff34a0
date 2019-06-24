@@ -46,6 +46,30 @@
       "revId": "c51b4e7fbd48a3f9ab72c89eae2bfb960bff34a0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9a7184b_0fe9e93f",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-06-24T19:39:16Z",
+      "side": 0,
+      "message": "Something else it going on then. Are you attempting to deploy over an existing SEBA deployment? If etcd operator is not deployed then the EtcdCluster resource will not exist in k8s and the voltha charts will not deploy.\n\nIf you have the etcd CRDs (see below), then operator has been installed.\n\n```\n$ kubectl get --all-namespaces crd\nNAME                                    CREATED AT\netcdbackups.etcd.database.coreos.com    2019-06-21T23:26:13Z\netcdclusters.etcd.database.coreos.com   2019-06-21T23:26:13Z\netcdrestores.etcd.database.coreos.com   2019-06-21T23:26:20Z\n```\n\nmake sure you are using the latest checkout of the charts.",
+      "parentUuid": "978b9041_08dadc62",
+      "range": {
+        "startLine": 65,
+        "startChar": 13,
+        "endLine": 65,
+        "endChar": 17
+      },
+      "revId": "c51b4e7fbd48a3f9ab72c89eae2bfb960bff34a0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
