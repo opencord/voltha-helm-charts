@@ -40,6 +40,12 @@ spec:
       labels:
         app: rw-core
         affinity-group: affinity-group-{{ $affinity_group }}
+        app.kubernetes.io/name: "read-write-core"
+        app.kubernetes.io/version: {{ quote $root.Chart.AppVersion }}
+        app.kubernetes.io/component: "core"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote $root.Release.Service }}
+        helm.sh/chart: "{{ $root.Chart.Name }}-{{ $root.Chart.Version }}"
       annotations:
         cni: "calico"
     spec:

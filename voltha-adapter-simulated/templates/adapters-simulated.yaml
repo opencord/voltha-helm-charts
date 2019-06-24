@@ -27,6 +27,12 @@ spec:
     metadata:
       labels:
         app: adapter-simulated-olt
+        app.kubernetes.io/name: "adapter-simulated-olt"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "adapter"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       annotations:
         cni: "calico"
     spec:
@@ -60,6 +66,12 @@ spec:
     metadata:
       labels:
         app: adapter-simulated-onu
+        app.kubernetes.io/name: "adapter-simulated-onu"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "adapter"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       annotations:
         cni: "calico"
     spec:
