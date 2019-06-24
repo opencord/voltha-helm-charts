@@ -27,6 +27,12 @@ spec:
     metadata:
       labels:
         app: ro-core
+        app.kubernetes.io/name: "read-only-core"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "core"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       annotations:
         cni: "calico"
     spec:

@@ -42,6 +42,12 @@ spec:
     metadata:
       labels:
         app: vcli
+        app.kubernetes.io/name: "cli-server"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "cli"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       annotations:
         cni: "calico"
     spec:

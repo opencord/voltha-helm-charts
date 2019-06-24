@@ -24,6 +24,12 @@ spec:
     metadata:
       labels:
         app: ofagent
+        app.kubernetes.io/name: "open-flow-agent"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "integration"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       annotations:
         cni: "calico"
     spec:

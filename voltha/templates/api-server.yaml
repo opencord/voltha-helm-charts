@@ -39,6 +39,12 @@ spec:
     metadata:
       labels:
         app: voltha-api-server
+        app.kubernetes.io/name: "api-server"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "api"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       annotations:
         cni: "calico"
     spec:

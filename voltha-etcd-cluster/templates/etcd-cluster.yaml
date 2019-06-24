@@ -26,5 +26,14 @@ spec:
     - name: ETCD_AUTO_COMPACTION_RETENTION
       value: {{ quote .Values.autoCompactionRetention }}
     busyboxImage: {{ .Values.registry }}{{ .Values.images.busybox.repository }}:{{ tpl .Values.images.busybox.tag . }}
+    labels:
+      app.kubernetes.io/name: "etcd-cluster-member"
+      app.kubernetes.io/part-of: "voltha"
+      app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+      app.kubernetes.io/component: "storage"
+      app.kubernetes.io/part-of: "voltha"
+      app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+      helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+
   version: {{ tpl .Values.images.etcd.tag . }}
   repository: {{ .Values.registry }}{{ .Values.images.etcd.repository }}
