@@ -22,6 +22,30 @@
       "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dfc7f22_0dc87356",
+        "filename": "voltha/templates/cli.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2019-06-24T19:19:58Z",
+      "side": 1,
+      "message": "I did in this way because it\u0027s the voltha 1.6\u0027s way. How can I access the CLI without entering into a docker image? That was also a problem with volctl since it can\u0027t access to the grpc port from outside of the k8s.",
+      "parentUuid": "7dc67e33_6c589e3c",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 16
+      },
+      "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }

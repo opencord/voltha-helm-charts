@@ -22,6 +22,30 @@
       "revId": "c51b4e7fbd48a3f9ab72c89eae2bfb960bff34a0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "978b9041_08dadc62",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2019-06-24T19:19:58Z",
+      "side": 0,
+      "message": "I\u0027m able to deploy voltha charts without installing etcd operator. I am able to see etcd clusters and operators. If I first install operator I\u0027m not able to install voltha charts.",
+      "parentUuid": "23b6bae7_4517a363",
+      "range": {
+        "startLine": 65,
+        "startChar": 13,
+        "endLine": 65,
+        "endChar": 17
+      },
+      "revId": "c51b4e7fbd48a3f9ab72c89eae2bfb960bff34a0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
