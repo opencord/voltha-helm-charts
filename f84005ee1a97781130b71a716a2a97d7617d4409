@@ -70,6 +70,30 @@
       "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f3c2441_7749b06f",
+        "filename": "voltha/templates/cli.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2019-06-26T07:54:21Z",
+      "side": 1,
+      "message": "Not sure if this is a better way. We\u0027ll need ssh access to k8s nodes. Anyway, I think it\u0027s gonna be an operator decision. Having this way as default is fine with me. But for a development point of view, I do all of my work through the head node without accessing any single k8s nodes.",
+      "parentUuid": "4bf22df0_ab1df36c",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 26,
+        "endChar": 16
+      },
+      "revId": "f84005ee1a97781130b71a716a2a97d7617d4409",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
