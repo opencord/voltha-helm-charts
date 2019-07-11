@@ -45,5 +45,6 @@ spec:
             - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
             - "--core_topic=rwcore"
+            - "--name=brcm_openomci_onu"
             - "--backend=etcd"
             - "--etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
