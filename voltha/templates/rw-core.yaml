@@ -13,7 +13,6 @@
 # limitations under the License.
 
 {{- $root := . -}}
-{{- $count := mul .Values.replicas.rw_core 2 | int }}
 {{- $tag := tpl ( tpl .Values.images.rw_core.tag . ) . }}
 {{- $repository := tpl .Values.images.rw_core.repository . }}
 {{- $registry := tpl .Values.images.rw_core.registry . }}
@@ -38,25 +37,47 @@
 {{- else }}
 {{- $log_level = 3 }}
 {{- end }}
-{{- range $i, $e := until $count }}
-{{- $core_idx := add $i 1 }}
-{{- $affinity_group := add1 (div $i 2) }}
+{{- range $i, $e := until (int .Values.replicas.rw_core) }}
+{{- $cluster := add1 $i }}
+{{- range $i, $e := until 2 }}
+{{- $cluster_core_id := add1 $i }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: voltha-rw-core-{{ $cluster }}{{ $cluster_core_id }}
+  serviceAccountName: {{ $root.Values.serviceaccount }}
+spec:
+  serviceAccountName: {{ $root.Values.serviceaccount }}
+  clusterIP: None
+  ports:
+    - name: grpc
+      port: 50057
+      targetPort: 50057
+  selector:
+    app: rw-core
+    affinity-group: {{ quote $cluster }}
+    affinity-group-core-id: {{ quote $cluster_core_id }}
+
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rw-core{{ $core_idx }}
+  name: voltha-rw-core-{{ $cluster }}{{ $cluster_core_id }}
   serviceAccountName: {{ $root.Values.serviceaccount }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: rw-core
+      affinity-group: {{ quote $cluster }}
+      affinity-group-core-id: {{ quote $cluster_core_id }}
   template:
     metadata:
       labels:
         app: rw-core
-        affinity-group: affinity-group-{{ $affinity_group }}
+        affinity-group: {{ quote $cluster }}
+        affinity-group-core-id: {{ quote $cluster_core_id }}
         app.kubernetes.io/name: "read-write-core"
         app.kubernetes.io/version: {{ quote $root.Chart.AppVersion }}
         app.kubernetes.io/component: "core"
@@ -68,24 +89,18 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: "kubernetes.io/hostname"
               labelSelector:
                 matchExpressions:
                 - key: app
                   operator: In
                   values:
-                  - rw-core
-              topologyKey: "kubernetes.io/hostname"
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: affinity-group
-                operator: In
-                values:
-                - affinity-group-{{ $affinity_group }}
-            topologyKey: "kubernetes.io/hostname"
+                    - rw-core
+                - key: affinity-group
+                  operator: In
+                  values:
+                    - {{ quote $cluster }}
       serviceAccountName: {{ $root.Values.serviceaccount }}
       containers:
         - name: voltha
@@ -120,4 +135,5 @@ spec:
           ports:
             - containerPort: 50057
               name: grpc-port
+{{end}}
 {{end}}

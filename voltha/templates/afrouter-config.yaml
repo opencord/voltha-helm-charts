@@ -13,8 +13,7 @@
 # limitations under the License.
 
 ---
-{{- $rw_count := mul .Values.replicas.rw_core 2 | int }}
-{{- $ro_count := .Values.replicas.ro_core | int }}
+{{- $root := . }}
 apiVersion: v1
 data:
   arouter.voltha.json: |
@@ -141,10 +140,10 @@ data:
           {
             "name": "vcore",
             "backends": [
-{{- range $i, $e := until $rw_count }}
-{{- $core_idx := add $i 1 }}
+{{- range $i, $e := until (int .Values.replicas.rw_core) }}
+{{- $cluster := add1 $i }}
               {
-                "name": "vcore{{ $core_idx }}",
+                "name": "vcore{{ $cluster }}",
                 "type": "active_active",
                 "association": {
                   "strategy": "serial_number",
@@ -154,36 +153,35 @@ data:
                 },
                 "connections": [
                   {
-                    "name": "vcore{{ $core_idx }}1",
-                    "addr": "",
-                    "port": ""
+                    "name": "vcore{{ $cluster }}1",
+                    "addr": "voltha-rw-core-{{ $cluster }}1.{{ $root.Release.Namespace }}.svc.cluster.local",
+                    "port": "50057"
                   },
                   {
-                    "name": "vcore{{ $core_idx }}2",
-                    "addr": "",
-                    "port": ""
+                    "name": "vcore{{ $cluster }}2",
+                    "addr": "voltha-rw-core-{{ $cluster }}2.{{ $root.Release.Namespace }}.svc.cluster.local",
+                    "port": "50057"
                   }
                 ]
-              }{{ if lt $core_idx $rw_count }},{{ end }}
+              }{{ if lt $cluster (int $root.Values.replicas.rw_core) }},{{ end }}
 {{- end}}
             ]
           },
           {
             "name": "ro_vcore",
             "backends": [
-{{- range $i, $e := until $ro_count }}
-{{- $core_idx := add $i 1 }}
+{{- range $core_idx, $e := until (int .Values.replicas.rw_core) }}
               {
                 "name": "ro_vcore{{ $core_idx }}",
                 "type": "server",
                 "connections": [
                   {
                     "name": "ro_vcore{{ $core_idx }}1",
-                    "addr": "",
-                    "port": ""
+                    "addr": "voltha-ro-core-{{ $core_idx }}.voltha-ro-core.{{ $root.Release.Namespace }}.svc.cluster.local",
+                    "port": "50057"
                   }
                 ]
-              }{{ if lt $core_idx $ro_count }},{{ end }}
+              }{{ if lt (add1 $core_idx) (int $root.Values.replicas.rw_core) }},{{ end }}
 {{- end}}
             ]
           }
