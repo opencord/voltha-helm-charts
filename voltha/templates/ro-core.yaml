@@ -13,16 +13,31 @@
 # limitations under the License.
 
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: ro-core
+  name: voltha-ro-core
+spec:
+  ports:
+    - name: grpc
+      port: 50057
+  clusterIP: None
+  selector:
+    app: ro-core
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: voltha-ro-core
   serviceAccountName: {{ .Values.serviceaccount }}
 spec:
   replicas: {{ .Values.replicas.ro_core }}
   selector:
     matchLabels:
       app: ro-core
+  serviceName: voltha-ro-core
+  podManagementPolicy: Parallel
   template:
     metadata:
       labels:
@@ -38,16 +53,14 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: "kubernetes.io/hostname"
               labelSelector:
                 matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - ro-core
-              topologyKey: "kubernetes.io/hostname"
+                  - key: app
+                    operator: In
+                    values:
+                    - ro-core
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
         - name: voltha

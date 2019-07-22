@@ -67,10 +67,6 @@ spec:
         env:
         - name: POD_NAMESPACE
           value: {{ .Release.Namespace }}
-        - name: NUM_RW_PODS
-          value: {{ mul .Values.replicas.rw_core 2 | quote}}
-        - name: NUM_RO_PODS
-          value: {{ quote .Values.replicas.ro_core }}
         image: {{ tpl .Values.images.afrouterd.registry . }}{{ tpl .Values.images.afrouterd.repository . }}:{{ tpl .Values.images.afrouterd.tag . }}
         imagePullPolicy: {{ tpl .Values.images.afrouterd.pullPolicy . }}
         command: ["/app/arouterd"]
