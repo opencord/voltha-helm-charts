@@ -69,7 +69,7 @@ spec:
             - "-grpc_port=50057"
             - "-banner=true"
             - "-ro_core_topic=rocore"
-            - "-log_level=0"
+            - "-log_level={{ $root.Values.log_level }}"
           ports:
             - containerPort: 50057
               name: grpc-port
