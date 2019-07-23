@@ -99,7 +99,7 @@ spec:
             - "-core_timeout={{ $core_timeout }}"
             - "-timeout_long_request={{ $long_request_timeout }}"
             - "-timeout_request={{ $request_timeout }}"
-            - "-log_level=2"
+            - "-log_level={{ $root.Values.log_level }}"
           ports:
             - containerPort: 50057
               name: grpc-port
