@@ -16,6 +16,7 @@
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
+log_level: 2
 
 # Default overrides
 defaults:
