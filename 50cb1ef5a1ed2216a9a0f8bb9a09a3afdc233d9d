@@ -16,6 +16,24 @@
       "revId": "50cb1ef5a1ed2216a9a0f8bb9a09a3afdc233d9d",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c06f2afd_7f3dafbe",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-07-24T21:36:51Z",
+      "side": 1,
+      "message": "yes, that was intentional with the expectation that in a production environment you want to limit the logs as much as possible and most people simply ignore anything \u003c ERROR unless they are debugging.",
+      "parentUuid": "240d3abd_4ce205fd",
+      "revId": "50cb1ef5a1ed2216a9a0f8bb9a09a3afdc233d9d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
