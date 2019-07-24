@@ -37,7 +37,8 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
       - name: ofagent
-        image: {{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}
+        {{- $image_tag := tpl .Values.images.ofagent.tag . }}
+        image: {{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl $image_tag . }}
         imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
         env:
         - name: CONTROLLER_SERVICE
