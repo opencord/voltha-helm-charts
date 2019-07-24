@@ -16,6 +16,24 @@
       "revId": "f2ea25c66c4cb3e5e2709fa3d8ab788d743a5978",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "830d5ee9_f78077e8",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-07-24T21:19:23Z",
+      "side": 1,
+      "message": "yes, it would. i will open a JIRA for this, but i suspect it will be low priority. Additionally, in a production environment, we expect the log level to be read from the global config key in the K/V and i suspect that the config in K/V overrides any setting on the command line and thus the jira is even a lower priority.",
+      "parentUuid": "5fe45912_b9be138f",
+      "revId": "f2ea25c66c4cb3e5e2709fa3d8ab788d743a5978",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
