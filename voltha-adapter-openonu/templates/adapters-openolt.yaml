@@ -37,7 +37,8 @@ spec:
     spec:
       containers:
         - name: adapter-open-onu
-          image: {{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu.repository . }}:{{ tpl .Values.images.adapter_open_onu.tag . }}
+          {{- $image_tag := tpl .Values.images.adapter_open_onu.tag . }}
+          image: {{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu.repository . }}:{{ tpl $image_tag . }}
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu.pullPolicy . }}
           args:
             - "/voltha/adapters/brcm_openomci_onu/main.py"

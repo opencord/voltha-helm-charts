@@ -15,10 +15,10 @@
 ---
 # Default overrides
 defaults:
-  image_registry:
-  image_tag:
-  image_org:
-  image_pullPolicy:
+  image_registry: ""
+  image_tag: '{{ .Chart.AppVersion }}'
+  image_org: "voltha/"
+  image_pullPolicy: "Always"
 
 # Define connectivity to required services
 services:
@@ -41,7 +41,7 @@ replicas:
 
 images:
   adapter_open_onu:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-openonu-adapter'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-openonu-adapter'
+    tag: '{{ .Values.defaults.image_tag }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'

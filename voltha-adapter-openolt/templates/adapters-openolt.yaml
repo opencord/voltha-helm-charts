@@ -38,9 +38,17 @@ spec:
       containers:
         - name: adapter-open-olt
           {{- if .Values.use_go }}
-          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl .Values.images.adapter_open_olt.tag_go . }}
+          {{- $image_tag := tpl .Values.images.adapter_open_olt.tag_go . }}
+          {{- if eq "::DEFAULT::" $image_tag }}
+          {{- $image_tag = .Values.defaults.default_go_image_tag }}
+          {{- end }}
+          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl $image_tag . }}
           {{- else }}
-          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl .Values.images.adapter_open_olt.tag . }}
+          {{- $image_tag := tpl .Values.images.adapter_open_olt.tag . }}
+          {{- if eq "::DEFAULT::" $image_tag }}
+          {{- $image_tag = .Values.defaults.default_py_image_tag }}
+          {{- end }}
+          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl $image_tag . }}
           {{- end }}
           imagePullPolicy: {{ tpl .Values.images.adapter_open_olt.pullPolicy . }}
           args:
