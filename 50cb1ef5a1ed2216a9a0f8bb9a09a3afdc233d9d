@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "240d3abd_4ce205fd",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-07-24T21:35:22Z",
+      "side": 1,
+      "message": "ERROR as default log level?  Not WARN?",
+      "revId": "50cb1ef5a1ed2216a9a0f8bb9a09a3afdc233d9d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
