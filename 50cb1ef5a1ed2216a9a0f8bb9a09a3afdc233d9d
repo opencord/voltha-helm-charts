@@ -1,0 +1,8 @@
+Verified+1: Jenkins Jenkins <do-not-reply@opencord.org>
+Code-Review+1: Kent Hagerman <khagerma@ciena.com>
+Code-Review+2: Matteo Scandolo <teo@opennetworking.org>
+Submitted-by: David Bainbridge <dbainbri@ciena.com>
+Submitted-at: Wed, 24 Jul 2019 21:44:43 +0000
+Reviewed-on: https://gerrit.opencord.org/14777
+Project: voltha-helm-charts
+Branch: refs/heads/master
