@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fafac135_376be300",
+        "filename": "voltha-adapter-simulated/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-07-24T14:03:06Z",
+      "side": 1,
+      "message": "thanks, meant to delete that.",
+      "parentUuid": "0db6cea3_3d7fd286",
+      "revId": "c176cc9de941ef95c8a0b5be29d88123c06eaa5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "645eb4db_a0c83c77",
         "filename": "voltha/templates/api-server.yaml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-07-24T14:00:05Z",
       "side": 1,
       "message": "I\u0027m not totally convinced this is cleaner, what\u0027s the reasoning for splitting these into two lines?",
+      "revId": "c176cc9de941ef95c8a0b5be29d88123c06eaa5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "537b1b64_ab0bc830",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-07-24T14:03:06Z",
+      "side": 1,
+      "message": "i agree it is not cleaner and i hate that it has to be done, but the older way no longer passes `helm lint` with version 2.14.2 or helm.",
+      "parentUuid": "645eb4db_a0c83c77",
       "revId": "c176cc9de941ef95c8a0b5be29d88123c06eaa5a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
