@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0db6cea3_3d7fd286",
+        "filename": "voltha-adapter-simulated/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-07-24T14:00:05Z",
+      "side": 1,
+      "message": "?",
+      "revId": "c176cc9de941ef95c8a0b5be29d88123c06eaa5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "645eb4db_a0c83c77",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-07-24T14:00:05Z",
+      "side": 1,
+      "message": "I\u0027m not totally convinced this is cleaner, what\u0027s the reasoning for splitting these into two lines?",
+      "revId": "c176cc9de941ef95c8a0b5be29d88123c06eaa5a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
