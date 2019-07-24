@@ -14,7 +14,7 @@
 
 {{- $root := . -}}
 {{- $count := mul .Values.replicas.rw_core 2 | int }}
-{{- $tag := tpl .Values.images.rw_core.tag . }}
+{{- $tag := tpl ( tpl .Values.images.rw_core.tag . ) . }}
 {{- $repository := tpl .Values.images.rw_core.repository . }}
 {{- $registry := tpl .Values.images.rw_core.registry . }}
 {{- $pullpolicy := tpl .Values.images.rw_core.pullPolicy . }}

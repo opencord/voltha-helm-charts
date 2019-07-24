@@ -17,10 +17,12 @@ use_go: false
 
 # Default overrides
 defaults:
-  image_registry:
-  image_tag:
-  image_org:
-  image_pullPolicy:
+  image_registry: ""
+  image_tag: "::DEFAULT::"
+  image_org: "voltha/"
+  image_pullPolicy: "Always"
+  default_go_image_tag: "master-go"
+  default_py_image_tag: '{{ .Chart.AppVersion }}'
 
 # Define connectivity to required services
 services:
@@ -43,8 +45,8 @@ replicas:
 
 images:
   adapter_open_olt:
-    registry: '{{ .Values.defaults.image_registry | default "" }}'
-    repository: '{{ .Values.defaults.image_org | default "voltha/" }}voltha-openolt-adapter'
-    tag_go: '{{ .Values.defaults.image_tag | default "master-go" }}'
-    tag: '{{ .Values.defaults.image_tag | default .Chart.AppVersion }}'
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-openolt-adapter'
+    tag_go: '{{ .Values.defaults.image_tag }}'
+    tag: '{{ .Values.defaults.image_tag }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
