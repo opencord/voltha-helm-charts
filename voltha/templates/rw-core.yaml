@@ -126,6 +126,7 @@ spec:
             - "-kafka_cluster_host={{ $root.Values.services.kafka.cluster.port }}"
             - "-kafka_cluster_port={{ $root.Values.services.kafka.cluster.port }}"
             - "-rw_core_topic=rwcore"
+            - "-core_pair_topic=core-pair-{{ $cluster }}"
             - "-kv_store_data_prefix=service/voltha"
             - "-in_competing_mode=true"
             - "-core_timeout={{ $core_timeout }}"
