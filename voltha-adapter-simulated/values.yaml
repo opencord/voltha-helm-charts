@@ -39,7 +39,8 @@ services:
 replicas:
   adapter_simulated_olt: 1
   adapter_simulated_onu: 1
-  onu: 1
+
+onus_per_pon_port: 4
 
 images:
   adapter_simulated_olt:
