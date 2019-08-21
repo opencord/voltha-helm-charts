@@ -37,22 +37,9 @@ spec:
     spec:
       containers:
         - name: adapter-open-olt
-          {{- if .Values.use_go }}
-          {{- $image_tag := tpl .Values.images.adapter_open_olt.tag_go . }}
-          {{- if eq "::DEFAULT::" $image_tag }}
-          {{- $image_tag = .Values.defaults.default_go_image_tag }}
-          {{- end }}
-          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ $image_tag }}
-          {{- else }}
-          {{- $image_tag := tpl .Values.images.adapter_open_olt.tag . }}
-          {{- if eq "::DEFAULT::" $image_tag }}
-          {{- $image_tag = .Values.defaults.default_py_image_tag }}
-          {{- end }}
-          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ $image_tag }}
-          {{- end }}
+          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}
           imagePullPolicy: {{ tpl .Values.images.adapter_open_olt.pullPolicy . }}
           args:
-            {{- if .Values.use_go }}
             - "/app/openolt"
             - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
             - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
@@ -61,12 +48,3 @@ spec:
             - "--core_topic=rwcore"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
-            {{- else}}
-            - "/voltha/adapters/openolt/main.py"
-            - "--verbose"
-            - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
-            - "--kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic=rwcore"
-            - "--backend=etcd"
-            - "--etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
-            {{- end}}

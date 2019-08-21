@@ -16,7 +16,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: ofagent
+  name: voltha-ofagent
   serviceAccountName: {{ .Values.serviceaccount }}
 spec:
   replicas: {{ .Values.replicas.ofagent }}

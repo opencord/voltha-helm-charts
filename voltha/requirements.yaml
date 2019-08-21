@@ -20,5 +20,5 @@ dependencies:
     condition: private_kafka_cluster
   - name: voltha-etcd-cluster
     repository: file://../voltha-etcd-cluster
-    version: 2.0.2
+    version: 2.1.0
     condition: private_etcd_cluster
