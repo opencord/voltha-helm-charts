@@ -24,6 +24,9 @@ spec:
     - name: grpc
       port: 55555
       targetPort: 55555
+    - name: api-server-grpc
+      port: 55554
+      targetPort: 55554
   selector:
     app: voltha-api-server
 
