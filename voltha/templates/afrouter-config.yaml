@@ -30,6 +30,11 @@ data:
                 "package": "voltha",
                 "service": "VolthaService",
                 "router": "vcore"
+              },
+              {
+                "package": "afrouter",
+                "service": "Configuration",
+                "router": "local"
               }
             ]
           }
@@ -73,6 +78,17 @@ data:
                 ],
                 "_TODO": "Overrides not implemented yet, config ignored",
                 "overrides": [ ]
+              },
+              {
+                "name": "logger",
+                "proto_descriptor": "voltha.pb",
+                "type": "source",
+                "routing_field": "component_name",
+                "backend_cluster": "ro_vcore",
+                "methods": [
+                  "UpdateLogLevel",
+                  "GetLogLevels"
+                ]
               },
               {
                 "name": "read_only",
@@ -137,6 +153,25 @@ data:
                 "overrides": [ ]
               }
             ]
+          },
+          {
+            "name": "local",
+            "package": "afrouter",
+            "service": "Configuration",
+            "proto_descriptor": "voltha.pb",
+            "routes": [
+              {
+                "name": "logger-local",
+                "proto_descriptor": "voltha.pb",
+                "type": "source",
+                "routing_field": "component_name",
+                "backend_cluster": "api_server",
+                "methods": [
+                  "UpdateLogLevel",
+                  "GetLogLevels"
+                ]
+              }
+            ]
           }
         ],
         "backend_clusters": [
@@ -186,6 +221,23 @@ data:
                 ]
               }{{ if lt (add1 $core_idx) (int $root.Values.replicas.rw_core) }},{{ end }}
 {{- end}}
+            ]
+          },
+          {
+            "_COMMENT": "This allows api-server to route to its own configuration api endpoint",
+            "name": "api_server",
+            "backends": [
+              {
+                "name": "api_server0",
+                "type": "server",
+                "connections": [
+                  {
+                    "name": "api_server01",
+                    "addr": "localhost",
+                    "port": "55554"
+                  }
+                ]
+              }
             ]
           }
         ],
