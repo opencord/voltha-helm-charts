@@ -17,6 +17,19 @@ kind: Deployment
 metadata:
   name: adapter-open-olt
   namespace: {{ .Release.Namespace }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openolt_deployment_labels") }}
+  labels:
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+    {{- if hasKey .Values "openolt_deployment_labels" }}
+    {{- range $key, $val := .Values.openolt_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas.adapter_open_olt }}
   selector:
@@ -32,6 +45,16 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+        {{- if hasKey .Values "openolt_pod_labels" }}
+        {{- range $key, $val := .Values.openolt_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:
