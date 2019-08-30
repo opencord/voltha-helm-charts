@@ -18,6 +18,19 @@ kind: Deployment
 metadata:
   name: voltha-ofagent
   serviceAccountName: {{ .Values.serviceaccount }}
+  {{- if or .Values.extra_deployment_labels .Values.ofagent_deployment_labels }}
+  labels:
+    {{- if .Values.extra_deployment_labels }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+    {{- if .Values.ofagent_deployment_labels }}
+    {{- range $key, $val := .Values.ofagent_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas.ofagent }}
   template:
@@ -30,6 +43,16 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if .Values.extra_pod_labels }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+        {{- if .Values.ofagent_pod_labels }}
+        {{- range $key, $val := .Values.ofagent_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:
