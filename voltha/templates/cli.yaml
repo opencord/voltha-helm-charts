@@ -36,6 +36,19 @@ kind: Deployment
 metadata:
   name: voltha-cli-server
   serviceAccountName: {{ .Values.serviceaccount }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "cli_deployment_labels") }}
+  labels:
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+    {{- if hasKey .Values "cli_deployment_labels" }}
+    {{- range $key, $val := .Values.cli_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas.cli }}
   template:
@@ -48,6 +61,16 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+        {{- if hasKey .Values "cli_pod_labels" }}
+        {{- range $key, $val := .Values.cli_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:
