@@ -39,6 +39,7 @@ data:
             "name": "vcore",
             "package": "voltha",
             "service": "VolthaService",
+            "proto_descriptor": "voltha.pb",
             "routes": [
               {
                 "name": "dev_manager",
