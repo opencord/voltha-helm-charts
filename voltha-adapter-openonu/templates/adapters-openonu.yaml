@@ -17,6 +17,15 @@ kind: Deployment
 metadata:
   name: adapter-open-onu
   namespace: {{ .Release.Namespace }}
+  {{- if or .Values.extra_deployment_labels .Values.openonu_deployment_labels }}
+  labels:
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+    {{- range $key, $val := .Values.openonu_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas.adapter_open_onu }}
   selector:
@@ -32,6 +41,14 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if or .Values.extra_pod_labels .Values.openonu_pod_labels }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- range $key, $val := .Values.openonu_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:
