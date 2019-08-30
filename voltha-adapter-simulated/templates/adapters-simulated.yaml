@@ -18,6 +18,15 @@ kind: Deployment
 metadata:
   name: adapter-simulated-olt
   namespace: {{ .Release.Namespace }}
+  {{- if or .Values.extra_deployment_labels .Values.simolt_deployment_labels }}
+  labels:
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+    {{- range $key, $val := .Values.simolt_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas.adapter_simulated_olt }}
   selector:
@@ -33,6 +42,14 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if or .Values.extra_pod_labels .Values.simolt_pod_labels }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- range $key, $val := .Values.simolt_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:
@@ -57,6 +74,15 @@ kind: Deployment
 metadata:
   name: adapter-simulated-onu
   namespace: {{ .Release.Namespace }}
+  {{- if or .Values.extra_deployment_labels .Values.simonu_deployment_labels }}
+  labels:
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+    {{- range $key, $val := .Values.simonu_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas.adapter_simulated_onu }}
   selector:
@@ -72,6 +98,14 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if or .Values.extra_pod_labels .Values.simonu_pod_labels }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- range $key, $val := .Values.simonu_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:

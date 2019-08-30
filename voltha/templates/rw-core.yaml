@@ -65,6 +65,15 @@ kind: Deployment
 metadata:
   name: voltha-rw-core-{{ $cluster }}{{ $cluster_core_id }}
   serviceAccountName: {{ $root.Values.serviceaccount }}
+  {{- if or $root.Values.extra_deployment_labels $root.Values.rw_core_deployment_labels }}
+  labels:
+    {{- range $key, $val := $root.Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+    {{- range $key, $val := $root.Values.rw_core_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end}}
+  {{- end }}
 spec:
   replicas: 1
   selector:
@@ -84,6 +93,14 @@ spec:
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote $root.Release.Service }}
         helm.sh/chart: "{{ $root.Chart.Name }}-{{ $root.Chart.Version }}"
+        {{- if or $root.Values.extra_pod_labels $root.Values.rw_core_pod_labels }}
+        {{- range $key, $val := $root.Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- range $key, $val := $root.Values.rw_core_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end}}
+        {{- end }}
       annotations:
         cni: "calico"
     spec:
