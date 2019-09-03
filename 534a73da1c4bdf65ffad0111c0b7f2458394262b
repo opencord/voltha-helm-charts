@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "25a8fbbd_51f688c4",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-09-03T20:30:05Z",
+      "side": 1,
+      "message": "not sure it makes a difference. i actually stoll this bit of code from somewhere else google pointed.",
+      "parentUuid": "24b8c229_10f0e9d2",
+      "revId": "534a73da1c4bdf65ffad0111c0b7f2458394262b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d36708a9_1035f4e1",
         "filename": "voltha/templates/api-server.yaml",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2019-09-03T20:27:10Z",
       "side": 1,
       "message": "Does $key not need to be quoted?",
+      "revId": "534a73da1c4bdf65ffad0111c0b7f2458394262b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "082e2f1d_4d45c460",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-09-03T20:30:05Z",
+      "side": 1,
+      "message": "it is yaml, so you can\u0027t quote the key, i.e. \"foo\": \"bar\" isn\u0027t valid yaml.",
+      "parentUuid": "d36708a9_1035f4e1",
       "revId": "534a73da1c4bdf65ffad0111c0b7f2458394262b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
