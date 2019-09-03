@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24b8c229_10f0e9d2",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-09-03T20:27:10Z",
+      "side": 1,
+      "message": "Might be cleaner to use \u0027quote $val\u0027 instead of \u0027$val | quote\u0027",
+      "revId": "534a73da1c4bdf65ffad0111c0b7f2458394262b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d36708a9_1035f4e1",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-09-03T20:27:10Z",
+      "side": 1,
+      "message": "Does $key not need to be quoted?",
+      "revId": "534a73da1c4bdf65ffad0111c0b7f2458394262b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
