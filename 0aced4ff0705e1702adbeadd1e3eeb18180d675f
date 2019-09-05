@@ -16,6 +16,24 @@
       "revId": "0aced4ff0705e1702adbeadd1e3eeb18180d675f",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67be196f_cafd05b1",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000015
+      },
+      "writtenOn": "2019-09-05T21:13:49Z",
+      "side": 1,
+      "message": "Those look specific to arouterd and I don\u0027t see a value override in values.yaml for that. Also there are others like AFROUTER_ROUTER_NAME, API_ADDRESS, etc. etc. \nI can add env for topic and client type and set it to the defaults. \nOtherwise i am not sure about changing values.yaml specific to arouterd. David ?",
+      "parentUuid": "0b756386_5a6c445d",
+      "revId": "0aced4ff0705e1702adbeadd1e3eeb18180d675f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
