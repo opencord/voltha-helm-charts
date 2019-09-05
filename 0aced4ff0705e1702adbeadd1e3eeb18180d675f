@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b756386_5a6c445d",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-09-05T20:30:13Z",
+      "side": 1,
+      "message": "Possibly also set KAFKA_TOPIC, KAFKA_CLIENT_TYPE, and/or KAFKA_INSTANCE_ID ?",
+      "revId": "0aced4ff0705e1702adbeadd1e3eeb18180d675f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
