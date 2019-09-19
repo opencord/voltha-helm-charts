@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62dafdec_6433c6d4",
+        "filename": "voltha/templates/afrouter-config.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-09-19T18:06:54Z",
+      "side": 1,
+      "message": "seems a bit of a contradiction that UpdateLogLevel goes to a ro core",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 33
+      },
+      "revId": "752af5f46da699da6a79345b5b064a21b15ab633",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "37068f88_0cd51156",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-09-19T18:06:54Z",
+      "side": 1,
+      "message": "i thought we didn\u0027t seen this port exposed because we are using a local router?",
+      "revId": "752af5f46da699da6a79345b5b064a21b15ab633",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
