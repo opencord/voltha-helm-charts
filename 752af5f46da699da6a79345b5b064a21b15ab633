@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0586b5d7_0d66a74c",
+        "filename": "voltha/templates/afrouter-config.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-09-19T18:29:45Z",
+      "side": 1,
+      "message": "UpdateLogLevel() is handled by each core independently. Rocores perform logging, so they have to be able to update their loglevel. The `backend_cluster` itself doesn\u0027t mean much here, the SourceRouter will choose which cluster and core it wants to send the message to. However, current api-server architecture requires that every router must name a cluster (something we should fix, but out of scope)",
+      "parentUuid": "62dafdec_6433c6d4",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 33
+      },
+      "revId": "752af5f46da699da6a79345b5b064a21b15ab633",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "37068f88_0cd51156",
         "filename": "voltha/templates/api-server.yaml",
         "patchSetId": 7
@@ -36,6 +60,24 @@
       "writtenOn": "2019-09-19T18:06:54Z",
       "side": 1,
       "message": "i thought we didn\u0027t seen this port exposed because we are using a local router?",
+      "revId": "752af5f46da699da6a79345b5b064a21b15ab633",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3dcafa6_6df978ce",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-09-19T18:29:45Z",
+      "side": 1,
+      "message": "Intended to remove this, will fix.",
+      "parentUuid": "37068f88_0cd51156",
       "revId": "752af5f46da699da6a79345b5b064a21b15ab633",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
