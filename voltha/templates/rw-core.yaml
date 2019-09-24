@@ -156,8 +156,21 @@ spec:
             - "-timeout_long_request={{ $long_request_timeout }}"
             - "-timeout_request={{ $request_timeout }}"
             - "-log_level={{ $log_level }}"
+            - "-probe_port=8080"
           ports:
             - containerPort: 50057
               name: grpc-port
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /readz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
 {{end}}
 {{end}}
