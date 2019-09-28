@@ -23,6 +23,8 @@ spec:
       limits:
         memory: {{ .Values.memoryLimit }}
     etcdEnv:
+    - name: ETCD_AUTO_COMPACTION_MODE
+      value: {{ quote .Values.autoCompactionMode }}
     - name: ETCD_AUTO_COMPACTION_RETENTION
       value: {{ quote .Values.autoCompactionRetention }}
     busyboxImage: {{ .Values.registry }}{{ .Values.images.busybox.repository }}:{{ tpl .Values.images.busybox.tag . }}
