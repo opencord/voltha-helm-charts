@@ -20,7 +20,10 @@ registry: ""
 clusterName: "voltha-etcd-cluster"
 clusterSize: 3
 memoryLimit: 1024Mi
-autoCompactionRetention: "12"
+# use revision based compaction.  runs every 5 minutes within etcd and keeps
+# autoCompactionRetention number of revisions
+autoCompactionMode: "revision"
+autoCompactionRetention: "10"
 
 # expose the etcd-cluster as a nodePort
 # etcdNodePort: 32379
@@ -29,7 +32,7 @@ etcdNodePort: ""
 images:
   etcd:
     repository: "quay.io/coreos/etcd"
-    tag: "v3.2.18"
+    tag: "v3.4.1"
   busybox:
     repository: "busybox"
     tag: "1.28.1-glibc"
