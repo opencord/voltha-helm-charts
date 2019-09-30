@@ -123,6 +123,19 @@ spec:
             - "-banner=true"
             - "-ro_core_topic=rocore"
             - "-log_level={{ $log_level }}"
+            - "-probe_port=8080"
           ports:
             - containerPort: 50057
               name: grpc-port
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+              initialDelaySeconds: 2
+              periodSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /readz
+              port: 8080
+              initialDelaySeconds: 2
+              periodSeconds: 2
