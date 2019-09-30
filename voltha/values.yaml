@@ -83,6 +83,8 @@ rw_core:
   timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
   timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
 
+api_server:
+  kafka_topic: 'affinityRouter'
 
 # Define Docker images to be used
 images:
