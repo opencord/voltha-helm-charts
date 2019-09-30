@@ -94,8 +94,8 @@ spec:
           value: {{ .Values.services.kafka.cluster.service }}
         - name: KAFKA_PORT
           value: {{ quote .Values.services.kafka.cluster.port }}
-        - name: KAFKA_TOPIC
-          value: "affinityRouter"
+        - name: KAFKA_CLIENT_TYPE
+          value: " 
         image: {{ tpl .Values.images.afrouterd.registry . }}{{ tpl .Values.images.afrouterd.repository . }}:{{ tpl ( tpl .Values.images.afrouterd.tag . ) . }}
         imagePullPolicy: {{ tpl .Values.images.afrouterd.pullPolicy . }}
         command: ["/app/arouterd"]
