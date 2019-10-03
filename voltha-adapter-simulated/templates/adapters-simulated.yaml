@@ -74,6 +74,20 @@ spec:
             - "-core_topic=rwcore"
             - "-simulator_topic=simulated_olt"
             - "-onu_number={{ .Values.onus_per_pon_port }}"
+            - "-probe_port=8080"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /readz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -135,3 +149,17 @@ spec:
             - "-kv_store_port={{ .Values.services.etcd.port }}"
             - "-core_topic=rwcore"
             - "-simulator_topic=simulated_onu"
+            - "-probe_port=8080"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /readz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+
