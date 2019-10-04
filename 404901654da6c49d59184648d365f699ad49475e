@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2c627a6_f22bc96c",
+        "filename": "voltha/templates/ro-core.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-10-04T02:05:14Z",
+      "side": 1,
+      "message": "probably should set these as \ninitial \u003d 10\nperiod \u003d 5\n\nfor both probes",
+      "range": {
+        "startLine": 134,
+        "startChar": 14,
+        "endLine": 135,
+        "endChar": 30
+      },
+      "revId": "404901654da6c49d59184648d365f699ad49475e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
