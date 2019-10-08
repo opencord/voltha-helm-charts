@@ -21,7 +21,6 @@ private_kafka_cluster: true
 defaults:
   log_level: "ERROR"
   image_registry: ''
-  image_tag: '{{ .Chart.AppVersion }}'
   image_org: "voltha/"
   image_pullPolicy: "Always"
   rw_core:
@@ -91,36 +90,36 @@ images:
   cli:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-cli'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '2.1.3'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '2.1.3'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ro_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ro-core'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '2.1.3'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '2.1.3'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouter:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-afrouter'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '2.2.0'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouterd:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-afrouterd'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '2.2.0'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
     restartPolicy: 'Always'
