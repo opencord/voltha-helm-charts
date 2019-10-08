@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45483e40_0a4a3cee",
+        "filename": "voltha-adapter-simulated/templates/adapters-simulated.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-10-08T06:16:42Z",
+      "side": 1,
+      "message": "initialDelaySeconds we have been setting to 10 and periodSeconds to 5",
+      "range": {
+        "startLine": 82,
+        "startChar": 33,
+        "endLine": 82,
+        "endChar": 34
+      },
+      "revId": "1d1955c2537b0fe50e471f84229df722bea5be66",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54128d49_7b69acd9",
+        "filename": "voltha-adapter-simulated/templates/adapters-simulated.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-10-08T06:16:42Z",
+      "side": 1,
+      "message": "same as aboce",
+      "revId": "1d1955c2537b0fe50e471f84229df722bea5be66",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
