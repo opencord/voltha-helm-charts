@@ -129,6 +129,9 @@ spec:
         - name: voltha
           image: {{ $registry }}{{ $repository }}:{{ $tag }}
           imagePullPolicy: {{ $pullpolicy }}
+          volumeMounts:
+          - name: config-volume
+            mountPath: /app/config
           env:
             - name: NAMESPACE
               value: {{ quote $root.Release.Namespace }}
@@ -157,6 +160,7 @@ spec:
             - "-timeout_request={{ $request_timeout }}"
             - "-log_level={{ $log_level }}"
             - "-probe_port=8080"
+            - "-logconfig_file=/app/config/rwcorelogconfig.voltha.json"
           ports:
             - containerPort: 50057
               name: grpc-port
@@ -172,5 +176,12 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
+          ports:
+            - containerPort: 50057
+              name: grpc-port
+      volumes:
+        - name: config-volume
+          configMap:
+            name: log-config
 {{end}}
 {{end}}
