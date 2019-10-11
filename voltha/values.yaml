@@ -17,11 +17,19 @@ serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
 
-# Default overrides
+# Default Values
+# The following are the default values used for every container in the
+# template.
 defaults:
   log_level: "ERROR"
   image_registry: ''
   image_org: "voltha/"
+
+  # Each container in this chart may use a different default image tag. If the
+  # `image_tag` default is set to null (~) each container will use its [possibly]
+  # unique image tag. You can override and set the image tag by overriding the
+  # null (~) to another value and all containers will use the image tag.
+  image_tag: ~
   image_pullPolicy: "Always"
   rw_core:
     timeout: "8000"
@@ -90,36 +98,36 @@ images:
   cli:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-cli'
-    tag: '2.1.3'
+    tag: '{{ if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{ else }}2.1.3{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent'
-    tag: '2.1.3'
+    tag: '{{ if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{ else }}2.1.3{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ro_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ro-core'
-    tag: '2.1.3'
+    tag: '{{ if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{ else }}2.1.3{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '2.1.3'
+    tag: '{{ if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{ else }}2.1.3{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouter:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-afrouter'
-    tag: '2.2.0'
+    tag: '{{ if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{ else }}2.2.0{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   afrouterd:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-afrouterd'
-    tag: '2.2.0'
+    tag: '{{ if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{ else }}2.2.0{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
     restartPolicy: 'Always'
