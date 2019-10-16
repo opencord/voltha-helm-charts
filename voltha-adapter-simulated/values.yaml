@@ -18,6 +18,7 @@ defaults:
   image_registry: ""
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  image_tag: ~
 
 # Define connectivity to required services
 services:
@@ -45,11 +46,11 @@ images:
   adapter_simulated_olt:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-adapter-simulated-olt'
-    tag: '2.2.0'
+    tag: '{{ if hasKey .Values.defaults "image_tag" }}{{ .Values.defaults.image_tag }}{{ else }}2.2.0{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   adapter_simulated_onu:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-adapter-simulated-onu'
-    tag: '2.2.0'
+    tag: '{{ if hasKey .Values.defaults "image_tag" }}{{ .Values.defaults.image_tag }}{{ else }}2.2.0{{ end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
