@@ -178,7 +178,15 @@ data:
           {
             "name": "vcore",
             "backends": [
-{{- range $i, $e := until (int .Values.replicas.rw_core) }}
+{{- /*
+    The conversion of the the recplicas.rw_core (number) to a string
+    and then back to an int is a work-a-round required for helm
+    v.2.15. It is currently considered a regression bug in helm
+    (https://github.com/helm/helm/issues/6708). The need for this
+    work-a-round should be re-checked against helm occationally and 
+    removed if no longer needed.
+*/ -}}
+{{- range $i, $e := until (int (toString .Values.replicas.rw_core)) }}
 {{- $cluster := add1 $i }}
               {
                 "name": "vcore{{ $cluster }}",
@@ -201,14 +209,30 @@ data:
                     "port": "50057"
                   }
                 ]
-              }{{ if lt $cluster (int $root.Values.replicas.rw_core) }},{{ end }}
+{{- /*
+    The conversion of the the recplicas.rw_core (number) to a string
+    and then back to an int is a work-a-round required for helm
+    v.2.15. It is currently considered a regression bug in helm
+    (https://github.com/helm/helm/issues/6708). The need for this
+    work-a-round should be re-checked against helm occationally and 
+    removed if no longer needed.
+*/ -}}
+              }{{ if lt $cluster (int (toString $root.Values.replicas.rw_core)) }},{{ end }}
 {{- end}}
             ]
           },
           {
             "name": "ro_vcore",
             "backends": [
-{{- range $core_idx, $e := until (int .Values.replicas.rw_core) }}
+{{- /*
+    The conversion of the the recplicas.rw_core (number) to a string
+    and then back to an int is a work-a-round required for helm
+    v.2.15. It is currently considered a regression bug in helm
+    (https://github.com/helm/helm/issues/6708). The need for this
+    work-a-round should be re-checked against helm occationally and 
+    removed if no longer needed.
+*/ -}}
+{{- range $core_idx, $e := until (int (toString .Values.replicas.rw_core)) }}
               {
                 "name": "ro_vcore{{ $core_idx }}",
                 "type": "server",
@@ -219,7 +243,15 @@ data:
                     "port": "50057"
                   }
                 ]
-              }{{ if lt (add1 $core_idx) (int $root.Values.replicas.rw_core) }},{{ end }}
+{{- /*
+    The conversion of the the recplicas.rw_core (number) to a string
+    and then back to an int is a work-a-round required for helm
+    v.2.15. It is currently considered a regression bug in helm
+    (https://github.com/helm/helm/issues/6708). The need for this
+    work-a-round should be re-checked against helm occationally and 
+    removed if no longer needed.
+*/ -}}
+              }{{ if lt (add1 $core_idx) (int (toString $root.Values.replicas.rw_core)) }},{{ end }}
 {{- end}}
             ]
           },

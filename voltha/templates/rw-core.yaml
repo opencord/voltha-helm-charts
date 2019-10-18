@@ -13,7 +13,7 @@
 # limitations under the License.
 
 {{- $root := . -}}
-{{- $tag := tpl ( tpl .Values.images.rw_core.tag . ) . }}
+{{- $tag := tpl .Values.images.rw_core.tag . }}
 {{- $repository := tpl .Values.images.rw_core.repository . }}
 {{- $registry := tpl .Values.images.rw_core.registry . }}
 {{- $pullpolicy := tpl .Values.images.rw_core.pullPolicy . }}
@@ -37,7 +37,15 @@
 {{- else }}
 {{- $log_level = 3 }}
 {{- end }}
-{{- range $i, $e := until (int .Values.replicas.rw_core) }}
+{{- /*
+    The conversion of the the recplicas.rw_core (number) to a string
+    and then back to an int is a work-a-round required for helm
+    v.2.15. It is currently considered a regression bug in helm
+    (https://github.com/helm/helm/issues/6708). The need for this
+    work-a-round should be re-checked against helm occationally and 
+    removed if no longer needed.
+*/ -}}
+{{- range $i, $e := until (int (toString .Values.replicas.rw_core)) }}
 {{- $cluster := add1 $i }}
 {{- range $i, $e := until 2 }}
 {{- $cluster_core_id := add1 $i }}
@@ -127,7 +135,7 @@ spec:
       serviceAccountName: {{ $root.Values.serviceaccount }}
       containers:
         - name: voltha
-          image: {{ $registry }}{{ $repository }}:{{ $tag }}
+          image: '{{ $registry }}{{ $repository }}:{{ $tag }}'
           imagePullPolicy: {{ $pullpolicy }}
           env:
             - name: NAMESPACE
