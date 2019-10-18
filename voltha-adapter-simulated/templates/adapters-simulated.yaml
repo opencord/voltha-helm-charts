@@ -61,7 +61,7 @@ spec:
     spec:
       containers:
         - name: adapter-simulated-olt
-          image: {{ tpl .Values.images.adapter_simulated_olt.registry . }}{{ tpl .Values.images.adapter_simulated_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_simulated_olt.tag . ) . }}
+          image: '{{ tpl .Values.images.adapter_simulated_olt.registry . }}{{ tpl .Values.images.adapter_simulated_olt.repository . }}:{{ tpl .Values.images.adapter_simulated_olt.tag . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_simulated_olt.pullPolicy . }}
           args:
             - "/app/simulated_olt"
@@ -137,7 +137,7 @@ spec:
     spec:
       containers:
         - name: adapter-simulated-onu
-          image: {{ tpl .Values.images.adapter_simulated_onu.registry . }}{{ tpl .Values.images.adapter_simulated_onu.repository . }}:{{ tpl ( tpl .Values.images.adapter_simulated_onu.tag . ) . }}
+          image: '{{ tpl .Values.images.adapter_simulated_onu.registry . }}{{ tpl .Values.images.adapter_simulated_onu.repository . }}:{{ tpl .Values.images.adapter_simulated_onu.tag . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_simulated_onu.pullPolicy . }}
           args:
             - "/app/simulated_onu"
