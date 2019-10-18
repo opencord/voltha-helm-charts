@@ -60,7 +60,7 @@ spec:
     spec:
       containers:
         - name: adapter-open-olt
-          image: {{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}
+          image: '{{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_open_olt.pullPolicy . }}
           args:
             - "/app/openolt"
