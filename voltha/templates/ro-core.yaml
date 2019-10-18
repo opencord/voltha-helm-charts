@@ -104,7 +104,7 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
         - name: voltha
-          image: {{ tpl .Values.images.ro_core.registry . }}{{ tpl .Values.images.ro_core.repository . }}:{{ tpl ( tpl .Values.images.ro_core.tag . ) . }}
+          image: '{{ tpl .Values.images.ro_core.registry . }}{{ tpl .Values.images.ro_core.repository . }}:{{ tpl .Values.images.ro_core.tag . }}'
           imagePullPolicy: {{ tpl .Values.images.ro_core.pullPolicy . }}
           env:
             - name: NAMESPACE
