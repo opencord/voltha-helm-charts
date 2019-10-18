@@ -77,7 +77,7 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
         - name: vcli
-          image: {{ tpl .Values.images.cli.registry . }}{{ tpl .Values.images.cli.repository . }}:{{ tpl ( tpl .Values.images.cli.tag . ) . }}
+          image: {{ tpl .Values.images.cli.registry . }}{{ tpl .Values.images.cli.repository . }}:{{ tpl .Values.images.cli.tag . }}
           imagePullPolicy: {{ tpl .Values.images.cli.pullPolicy . }}
           env:
             - name: POD_IP

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 {{- $root := . -}}
-{{- $tag := tpl ( tpl .Values.images.rw_core.tag . ) . }}
+{{- $tag := tpl .Values.images.rw_core.tag . }}
 {{- $repository := tpl .Values.images.rw_core.repository . }}
 {{- $registry := tpl .Values.images.rw_core.registry . }}
 {{- $pullpolicy := tpl .Values.images.rw_core.pullPolicy . }}
