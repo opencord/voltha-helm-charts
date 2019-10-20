@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d541e01_294c826e",
+        "filename": "voltha/templates/ro-core.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2019-10-20T05:45:20Z",
+      "side": 1,
+      "message": "Isn\u0027t a \u0027:\u0027 missing before \u0027\u003d\u0027. If fix this then voltha deploys fine.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 21
+      },
+      "revId": "03706e6924e0aa1f131ddfe784f6173b558c73fd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b08f4d6_e5e8de78",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2019-10-20T05:45:20Z",
+      "side": 1,
+      "message": "isn\u0027t a \u0027:\u0027 missing before \u0027\u003d\u0027. If I fix this along with the changes mentioned in ro-core.yaml, then voltha helm charts deploy fine.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 21
+      },
+      "revId": "03706e6924e0aa1f131ddfe784f6173b558c73fd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
