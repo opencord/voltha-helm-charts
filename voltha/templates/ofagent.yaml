@@ -70,3 +70,16 @@ spec:
         - "-v"
         - "--controller=$(CONTROLLER_SERVICE)"
         - "--grpc-endpoint=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
+        - "--probe=:8080"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
