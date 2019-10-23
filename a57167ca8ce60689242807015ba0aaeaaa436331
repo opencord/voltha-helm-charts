@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "139a158d_d4c3564f",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-10-23T04:44:06Z",
+      "side": 1,
+      "message": "this needs to be incremented with each change, so 2.1.4",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 14
+      },
+      "revId": "a57167ca8ce60689242807015ba0aaeaaa436331",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
