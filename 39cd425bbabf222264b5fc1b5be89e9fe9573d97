@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4d58313_b70ddf64",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2019-11-04T19:19:58Z",
+      "side": 1,
+      "message": "I wonder why the minor version is not bumped to 2 for Voltha. Like 2.2.x",
+      "range": {
+        "startLine": 20,
+        "startChar": 11,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "39cd425bbabf222264b5fc1b5be89e9fe9573d97",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
