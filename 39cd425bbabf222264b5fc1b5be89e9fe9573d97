@@ -22,6 +22,30 @@
       "revId": "39cd425bbabf222264b5fc1b5be89e9fe9573d97",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a72a8035_3e16e602",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-11-04T19:42:49Z",
+      "side": 1,
+      "message": "The chart version don\u0027t necessarily track the component versions, but let me think about this, and ask in voltha-stabilization channel.",
+      "parentUuid": "f4d58313_b70ddf64",
+      "range": {
+        "startLine": 20,
+        "startChar": 11,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "39cd425bbabf222264b5fc1b5be89e9fe9573d97",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
