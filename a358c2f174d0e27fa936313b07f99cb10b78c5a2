@@ -16,6 +16,24 @@
       "revId": "a358c2f174d0e27fa936313b07f99cb10b78c5a2",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c982e99_d17da24d",
+        "filename": "VERSION",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-11-04T21:44:14Z",
+      "side": 1,
+      "message": "-dev0 is what it had before.\nI\u0027m not opposed to just plain ordinary -dev.\nWill conduct a survey over on the slack.",
+      "parentUuid": "d1a74895_56b3be51",
+      "revId": "a358c2f174d0e27fa936313b07f99cb10b78c5a2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
