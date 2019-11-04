@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d1a74895_56b3be51",
+        "filename": "VERSION",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-11-04T21:30:02Z",
+      "side": 1,
+      "message": "-dev0, not just -dev?",
+      "revId": "a358c2f174d0e27fa936313b07f99cb10b78c5a2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
