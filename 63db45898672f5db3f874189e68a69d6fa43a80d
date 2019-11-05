@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e5a264ee_b27d8b6d",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-11-05T16:52:04Z",
+      "side": 1,
+      "message": "I recall us deciding to set AppVersion to `2`, but I think that was only in the case of multi-image charts. Single-image charts does seem more convenient to leave it set to AppVersion.",
+      "parentUuid": "bb98372b_f9bb3e1c",
+      "range": {
+        "startLine": 46,
+        "startChar": 181,
+        "endLine": 46,
+        "endChar": 198
+      },
+      "revId": "63db45898672f5db3f874189e68a69d6fa43a80d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "064c719a_3835eedb",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 1
