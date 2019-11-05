@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb98372b_f9bb3e1c",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-11-05T16:46:51Z",
+      "side": 1,
+      "message": "Sort of wish this wasn\u0027t tied to the .Chart.AppVersion and to a defined version, but not a big deal when there is only a single container.",
+      "range": {
+        "startLine": 46,
+        "startChar": 181,
+        "endLine": 46,
+        "endChar": 198
+      },
+      "revId": "63db45898672f5db3f874189e68a69d6fa43a80d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "064c719a_3835eedb",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-11-05T16:46:51Z",
+      "side": 1,
+      "message": "Sort of wish this wasn\u0027t tied to the .Chart.AppVersion and to a defined version, but not a big deal when there is only a single container.",
+      "range": {
+        "startLine": 46,
+        "startChar": 181,
+        "endLine": 46,
+        "endChar": 198
+      },
+      "revId": "63db45898672f5db3f874189e68a69d6fa43a80d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
