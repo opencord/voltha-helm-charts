@@ -16,7 +16,7 @@
 # Default overrides
 defaults:
   image_registry: ""
-  image_tag: '{{ .Chart.AppVersion }}'
+  image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
 
@@ -43,5 +43,5 @@ images:
   adapter_open_olt:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-openolt-adapter'
-    tag: '{{ .Values.defaults.image_tag }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
