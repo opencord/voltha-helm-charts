@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+{{- if not .Values.therecanbeonlyone }}
 {{- $root := . -}}
 {{- $tag := tpl .Values.images.rw_core.tag . }}
 {{- $repository := tpl .Values.images.rw_core.repository . }}
@@ -180,5 +180,6 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
-{{end}}
-{{end}}
+{{- end }}
+{{- end }}
+{{- end }}
