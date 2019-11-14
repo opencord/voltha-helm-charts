@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+{{- if not .Values.therecanbeonlyone }}
 ---
 {{- $root := . }}
 apiVersion: v1
@@ -284,3 +285,4 @@ kind: ConfigMap
 metadata:
   name: afrouter-config
   serviceAccountName: {{ .Values.serviceaccount }}
+{{- end}}

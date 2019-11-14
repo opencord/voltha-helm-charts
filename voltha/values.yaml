@@ -16,6 +16,7 @@
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
+therecanbeonlyone: false
 
 # Default Values
 # The following are the default values used for every container in the
