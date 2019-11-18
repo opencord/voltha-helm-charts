@@ -277,7 +277,9 @@ data:
         "api": {
           "_comment": "If this isn't defined then no api is available for dynamic configuration and queries",
           "address": "",
-          "port": 55554
+          "port": 55554,
+          "probeHost": "",
+          "probePort": 8080
         }
       }
 

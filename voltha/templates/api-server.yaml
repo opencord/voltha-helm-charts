@@ -85,6 +85,18 @@ spec:
         - name: POD_NAMESPACE
           value: {{ .Release.Namespace }}
         command: ["/app/afrouter"]
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readz
+            port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
         args: ["-config", "/app/config/arouter.voltha.json"]
       - name: arouterd
         env:
@@ -96,9 +108,25 @@ spec:
           value: {{ quote .Values.services.kafka.cluster.port }}
         - name: KAFKA_TOPIC
           value: {{ quote .Values.api_server.kafka_topic }}
+        - name: PROBE_HOST
+          value: {{ quote .Values.probe_host }}
+        - name: PROBE_PORT
+          value: {{ quote .Values.probe_port }}
         image: '{{ tpl .Values.images.afrouterd.registry . }}{{ tpl .Values.images.afrouterd.repository . }}:{{ tpl .Values.images.afrouterd.tag . }}'
         imagePullPolicy: {{ tpl .Values.images.afrouterd.pullPolicy . }}
         command: ["/app/arouterd"]
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+            initialDelaySeconds: 10
+            periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readz
+            port: 8081
+            initialDelaySeconds: 10
+            periodSeconds: 5
       restartPolicy: Always
       volumes:
         - name: config-volume
