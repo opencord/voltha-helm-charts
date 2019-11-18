@@ -17,6 +17,8 @@ serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
 therecanbeonlyone: false
+probe_host: "localhost"
+probe_port: 8081
 
 # Default Values
 # The following are the default values used for every container in the
