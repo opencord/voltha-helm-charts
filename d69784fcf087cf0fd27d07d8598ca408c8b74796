@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c634208f_97b629b8",
+        "filename": "voltha/templates/afrouter-config.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-11-21T05:37:42Z",
+      "side": 1,
+      "message": "is this really needed as i don\u0027t think the api-server is routing any of these calls.",
+      "range": {
+        "startLine": 281,
+        "startChar": 10,
+        "endLine": 282,
+        "endChar": 27
+      },
+      "revId": "d69784fcf087cf0fd27d07d8598ca408c8b74796",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6a2803f_652a0249",
+        "filename": "voltha/templates/api-server.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-11-21T05:37:42Z",
+      "side": 1,
+      "message": "just use application defaults or hard code values, don\u0027t use values.yaml parameters.",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 1
+      },
+      "revId": "d69784fcf087cf0fd27d07d8598ca408c8b74796",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7ad7540_c1d6ea8f",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-11-21T05:37:42Z",
+      "side": 1,
+      "message": "Instead of making this parameters and have values in the value.yaml file. I would just set the defaults in the application and use those. Or at the very least hardcode the values in the helm chart as opposed to make them a values.yaml parameter.\n\npart of the problem is many of the component have probe ports and if we put them in the values.yaml file\n1. we have to differentiate them by component, i.e. api-server.probe_port vs rw_core.probe_port\n2. noone ever changes these anyway, so just the defaults should be fine.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 16
+      },
+      "revId": "d69784fcf087cf0fd27d07d8598ca408c8b74796",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
