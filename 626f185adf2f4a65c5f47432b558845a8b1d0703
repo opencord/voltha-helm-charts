@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "acc79bf0_e66800f4",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-11-21T16:11:07Z",
+      "side": 1,
+      "message": "Is the container expected to take a full 10 seconds to start?",
+      "revId": "626f185adf2f4a65c5f47432b558845a8b1d0703",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
