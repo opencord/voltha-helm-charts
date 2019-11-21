@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "40e3948f_57dc7977",
+        "filename": "voltha/templates/afrouter-config.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2019-11-21T06:22:55Z",
+      "side": 1,
+      "message": "Yes it is required as there is no default values setting in the application inside arouter.",
+      "parentUuid": "c634208f_97b629b8",
+      "range": {
+        "startLine": 281,
+        "startChar": 10,
+        "endLine": 282,
+        "endChar": 27
+      },
+      "revId": "d69784fcf087cf0fd27d07d8598ca408c8b74796",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6a2803f_652a0249",
         "filename": "voltha/templates/api-server.yaml",
         "patchSetId": 7
