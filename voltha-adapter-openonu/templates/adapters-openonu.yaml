@@ -71,3 +71,16 @@ spec:
             - "--name=brcm_openomci_onu"
             - "--backend=etcd"
             - "--etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
+            - "--probe=:8080"
+          readinessProbe:
+            httpGet:
+              path: /readz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
