@@ -16,6 +16,24 @@
       "revId": "626f185adf2f4a65c5f47432b558845a8b1d0703",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff6d1045_3e7655b3",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-11-21T16:33:42Z",
+      "side": 1,
+      "message": "Surveying the initial delay in some of our other charts:\nopenolt: 10s\nsimolt: 10s\nsimonu: 10s\nofagent: 10s\nro-core: 10s\nrw-core: 3s\nI can see why Rohan picked the same initial startup as most of the others, but perhaps we need a review on these probes across the board.",
+      "parentUuid": "acc79bf0_e66800f4",
+      "revId": "626f185adf2f4a65c5f47432b558845a8b1d0703",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
