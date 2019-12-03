@@ -29,7 +29,7 @@ services:
     cluster:
       service: voltha-kafka.voltha.svc.cluster.local
       port: 9092
-  
+
   # Define connectivity to etcd
   etcd:
     service: voltha-etcd-cluster-client.voltha.svc.cluster.local
@@ -38,6 +38,9 @@ services:
 # Define the recplica count for everything
 replicas:
   adapter_open_onu: 1
+
+log_level: INFO
+
 
 images:
   adapter_open_onu:

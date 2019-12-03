@@ -64,7 +64,12 @@ spec:
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu.pullPolicy . }}
           args:
             - "/voltha/adapters/brcm_openomci_onu/main.py"
+            {{- if eq .Values.log_level "DEBUG" }}
             - "--verbose"
+            {{- end }}
+            {{- if eq .Values.log_level "WARN" }}
+            - "--quiet"
+            {{- end }}
             - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
             - "--core_topic=rwcore"
