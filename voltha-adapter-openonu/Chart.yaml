@@ -17,5 +17,5 @@ name: voltha-adapter-openonu
 description: A Helm chart for Voltha OpenONU Adapter
 icon: https://guide.opencord.org/logos/cord.svg
 
-version: 2.1.8
+version: 2.1.9
 appVersion: 2.2.3
