@@ -22,6 +22,30 @@
       "revId": "e33ed157d79df4d84cda7882a79787b64c56ae96",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7dd5858e_43101df5",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-12-05T00:07:57Z",
+      "side": 1,
+      "message": "as things are now in the code the levels we have are:\n- DEBUG\n- INFO\n- WARN\n- ERROR\nand DEBUG is very verbose in the openonu adapter (it prints more that 100MB of logs in 2 minutes when activating 16 ONUs) that\u0027s why it matches verbose.\n\nINFO has enough information to reconstruct the actions taken a device without seeing the packet logs and developer level messages. That\u0027s why it\u0027s proposed as default.\n\nWARN and ERROR are what will most likely used in production to only report failures. \n\nI\u0027d be fine with using different levels, but that will mean go trough the entire openonu and pyvoltha code to change the statement level. Not sure it\u0027s worthy at this point.",
+      "parentUuid": "c79b80e0_a6ecf890",
+      "range": {
+        "startLine": 67,
+        "startChar": 58,
+        "endLine": 67,
+        "endChar": 63
+      },
+      "revId": "e33ed157d79df4d84cda7882a79787b64c56ae96",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
