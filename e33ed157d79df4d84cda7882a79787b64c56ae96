@@ -46,6 +46,30 @@
       "revId": "e33ed157d79df4d84cda7882a79787b64c56ae96",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f9f0297_2d22c731",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2019-12-05T01:13:41Z",
+      "side": 1,
+      "message": "It\u0027s not worthy for sure. Thanks for the info.",
+      "parentUuid": "7dd5858e_43101df5",
+      "range": {
+        "startLine": 67,
+        "startChar": 58,
+        "endLine": 67,
+        "endChar": 63
+      },
+      "revId": "e33ed157d79df4d84cda7882a79787b64c56ae96",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
