@@ -22,7 +22,7 @@ therecanbeonlyone: false
 # The following are the default values used for every container in the
 # template.
 defaults:
-  log_level: "ERROR"
+  log_level: "WARN"
   image_registry: ''
   image_org: "voltha/"
   image_tag: ~
