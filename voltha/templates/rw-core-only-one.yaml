@@ -12,6 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 {{- if .Values.therecanbeonlyone }}
+{{- $log_level := 3 }}
+{{- if eq $set_log_level "DEBUG" }}
+{{- $log_level = 0 }}
+{{- else if eq $set_log_level "INFO" }}
+{{- $log_level = 1 }}
+{{- else if eq $set_log_level "WARN" }}
+{{- $log_level = 2 }}
+{{- else if eq $set_log_level "ERROR" }}
+{{- $log_level = 3 }}
+{{- else if eq $set_log_level "PANIC" }}
+{{- $log_level = 4 }}
+{{- else if eq $set_log_level "FATAL" }}
+{{- $log_level = 5 }}
+{{- else }}
+{{- $log_level = 3 }}
+{{- end }}
 ---
 apiVersion: v1
 kind: Service
@@ -116,6 +132,7 @@ spec:
             - "-core_timeout=9999"
             - "-timeout_long_request=9999"
             - "-timeout_request=9999"
+            - "-log_level={{ $log_level }}"
             - "-probe_port=8080"
           ports:
             - containerPort: 50057
