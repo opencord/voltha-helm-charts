@@ -17,7 +17,7 @@ name: voltha
 description: A Helm chart for Voltha based on K8S resources in Voltha project
 icon: https://guide.opencord.org/logos/cord.svg
 
-version: 2.1.16
+version: 2.1.17
 
 # appVersion is 2 because this chart contains multiple 2.x images that may have
 # different individual image versions.
