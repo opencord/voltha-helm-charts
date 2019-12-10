@@ -15,6 +15,7 @@
 ---
 # Default overrides
 defaults:
+  log_level: "WARN"
   image_registry: ""
   image_tag: ~
   image_org: "voltha/"
@@ -29,7 +30,7 @@ services:
     cluster:
       service: voltha-kafka.voltha.svc.cluster.local
       port: 9092
-  
+
   # Define connectivity to etcd
   etcd:
     service: voltha-etcd-cluster-client.voltha.svc.cluster.local
@@ -38,6 +39,9 @@ services:
 # Define the recplica count for everything
 replicas:
   adapter_open_olt: 1
+
+adapter_open_olt:
+  log_level: '{{ .Values.defaults.log_level }}'
 
 images:
   adapter_open_olt:
