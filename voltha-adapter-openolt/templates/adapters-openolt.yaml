@@ -88,7 +88,7 @@ spec:
             - "--core_topic=rwcore"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
-            - "-log_level={{ $log_level }}"
+            - "--log_level={{ $log_level }}"
             - "--probe_port=8080"
           livenessProbe:
             httpGet:
