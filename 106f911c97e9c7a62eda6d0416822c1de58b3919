@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ce0078e_a7081097",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000436
+      },
+      "writtenOn": "2019-12-17T19:58:47Z",
+      "side": 1,
+      "message": "did we want these to match the marketing version?  i.e whats in VERSION ?",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 15
+      },
+      "revId": "106f911c97e9c7a62eda6d0416822c1de58b3919",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
