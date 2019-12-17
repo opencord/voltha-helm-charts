@@ -11,15 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- if not .Values.therecanbeonlyone }}
-{{- $root := . -}}
-{{- $tag := tpl .Values.images.rw_core.tag . }}
-{{- $repository := tpl .Values.images.rw_core.repository . }}
-{{- $registry := tpl .Values.images.rw_core.registry . }}
-{{- $pullpolicy := tpl .Values.images.rw_core.pullPolicy . }}
-{{- $core_timeout := tpl $root.Values.rw_core.core_timeout . }}
-{{- $long_request_timeout := tpl $root.Values.rw_core.timeout_long_request . }}
-{{- $request_timeout := tpl $root.Values.rw_core.timeout_request . }}
 {{- $set_log_level := tpl .Values.rw_core.log_level . | upper }}
 {{- $log_level := 3 }}
 {{- if eq $set_log_level "DEBUG" }}
@@ -37,26 +28,28 @@
 {{- else }}
 {{- $log_level = 3 }}
 {{- end }}
-{{- /*
-    The conversion of the the recplicas.rw_core (number) to a string
-    and then back to an int is a work-a-round required for helm
-    v.2.15. It is currently considered a regression bug in helm
-    (https://github.com/helm/helm/issues/6708). The need for this
-    work-a-round should be re-checked against helm occationally and 
-    removed if no longer needed.
-*/ -}}
-{{- range $i, $e := until (int (toString .Values.replicas.rw_core)) }}
-{{- $cluster := add1 $i }}
-{{- range $i, $e := until 2 }}
-{{- $cluster_core_id := add1 $i }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: voltha-rw-core-{{ $cluster }}{{ $cluster_core_id }}
-  serviceAccountName: {{ $root.Values.serviceaccount }}
+  name: voltha-api
+  serviceAccountName: {{ .Values.serviceaccount }}
 spec:
-  serviceAccountName: {{ $root.Values.serviceaccount }}
+  serviceAccountName: {{ .Values.serviceaccount }}
+  ports:
+    - name: grpc
+      port: 55555
+      targetPort: 50057
+  selector:
+    app: rw-core
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: voltha-rw-core
+  serviceAccountName: {{ .Values.serviceaccount }}
+spec:
+  serviceAccountName: {{ .Values.serviceaccount }}
   clusterIP: None
   ports:
     - name: grpc
@@ -64,82 +57,58 @@ spec:
       targetPort: 50057
   selector:
     app: rw-core
-    affinity-group: {{ quote $cluster }}
-    affinity-group-core-id: {{ quote $cluster_core_id }}
-
 ---
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: voltha-rw-core-{{ $cluster }}{{ $cluster_core_id }}
-  serviceAccountName: {{ $root.Values.serviceaccount }}
-  {{- if or (hasKey $root.Values "extra_deployment_labels") (hasKey $root.Values "rw_core_deployment_labels") }}
+  name: voltha-rw-core
+  serviceAccountName: {{ .Values.serviceaccount }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "rw_core_deployment_labels") }}
   labels:
-    {{- if hasKey $root.Values "extra_deployment_labels" }}
-    {{- range $key, $val := $root.Values.extra_deployment_labels }}
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
-    {{- if hasKey $root.Values "rw_core_deployment_labels" }}
-    {{- range $key, $val := $root.Values.rw_core_deployment_labels }}
+    {{- if hasKey .Values "rw_core_deployment_labels" }}
+    {{- range $key, $val := .Values.rw_core_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
   {{- end }}
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: rw-core
-      affinity-group: {{ quote $cluster }}
-      affinity-group-core-id: {{ quote $cluster_core_id }}
   template:
     metadata:
       labels:
         app: rw-core
-        affinity-group: {{ quote $cluster }}
-        affinity-group-core-id: {{ quote $cluster_core_id }}
         app.kubernetes.io/name: "read-write-core"
-        app.kubernetes.io/version: {{ quote $root.Chart.AppVersion }}
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "core"
         app.kubernetes.io/part-of: "voltha"
-        app.kubernetes.io/managed-by: {{ quote $root.Release.Service }}
-        helm.sh/chart: "{{ $root.Chart.Name }}-{{ $root.Chart.Version }}"
-        {{- if hasKey $root.Values "extra_pod_labels" }}
-        {{- range $key, $val := $root.Values.extra_pod_labels }}
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-        {{- if hasKey $root.Values "rw_core_pod_labels" }}
-        {{- range $key, $val := $root.Values.rw_core_pod_labels }}
+        {{- if hasKey .Values "rw_core_pod_labels" }}
+        {{- range $key, $val := .Values.rw_core_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
       annotations:
         cni: "calico"
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - topologyKey: "kubernetes.io/hostname"
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                    - rw-core
-                - key: affinity-group
-                  operator: In
-                  values:
-                    - {{ quote $cluster }}
-      serviceAccountName: {{ $root.Values.serviceaccount }}
+      serviceAccountName: {{ .Values.serviceaccount }}
       containers:
         - name: voltha
-          image: '{{ $registry }}{{ $repository }}:{{ $tag }}'
-          imagePullPolicy: {{ $pullpolicy }}
+          image: '{{ tpl .Values.images.rw_core.registry . }}{{ tpl .Values.images.rw_core.repository . }}:{{ tpl .Values.images.rw_core.tag . }}'
+          imagePullPolicy: {{ tpl .Values.images.rw_core.pullPolicy . }}
           env:
             - name: NAMESPACE
-              value: {{ quote $root.Release.Namespace }}
+              value: voltha
             - name: POD_IP
               valueFrom:
                 fieldRef:
@@ -147,27 +116,27 @@ spec:
           args:
             - "/app/rw_core"
             - "-kv_store_type=etcd"
-            - "-kv_store_host={{ $root.Values.services.etcd.service }}"
-            - "-kv_store_port={{ $root.Values.services.etcd.port }}"
-            - "-grpc_host=$(POD_IP)"
+            - "-kv_store_host={{ .Values.services.etcd.service }}"
+            - "-kv_store_port={{ .Values.services.etcd.port }}"
+            - "-grpc_host=0.0.0.0"
             - "-grpc_port=50057"
             - "-banner=true"
-            - "-kafka_adapter_host={{ $root.Values.services.kafka.adapter.service }}"
-            - "-kafka_adapter_port={{ $root.Values.services.kafka.adapter.port }}"
-            - "-kafka_cluster_host={{ $root.Values.services.kafka.cluster.port }}"
-            - "-kafka_cluster_port={{ $root.Values.services.kafka.cluster.port }}"
+            - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
+            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.port }}"
+            - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
             - "-rw_core_topic=rwcore"
-            - "-core_pair_topic=core-pair-{{ $cluster }}"
+            - "-core_pair_topic=core-pair-1"
             - "-kv_store_data_prefix=service/voltha"
-            - "-in_competing_mode=true"
-            - "-core_timeout={{ $core_timeout }}"
-            - "-timeout_long_request={{ $long_request_timeout }}"
-            - "-timeout_request={{ $request_timeout }}"
+            - "-in_competing_mode=false"
+            - "-core_timeout=9999"
+            - "-timeout_long_request=9999"
+            - "-timeout_request=9999"
             - "-log_level={{ $log_level }}"
             - "-probe_port=8080"
           ports:
             - containerPort: 50057
-              name: grpc-port
+              name: grpc
           livenessProbe:
             httpGet:
               path: /healthz
@@ -180,6 +149,4 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
-{{- end }}
-{{- end }}
-{{- end }}
+

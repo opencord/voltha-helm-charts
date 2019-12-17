@@ -21,4 +21,4 @@ version: 2.2.2
 
 # appVersion is 2 because this chart contains multiple 2.x images that may have
 # different individual image versions.
-appVersion: 2
+appVersion: 2.2
