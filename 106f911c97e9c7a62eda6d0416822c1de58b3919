@@ -46,6 +46,30 @@
       "revId": "106f911c97e9c7a62eda6d0416822c1de58b3919",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "58232e0f_754bf844",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000436
+      },
+      "writtenOn": "2019-12-17T20:08:49Z",
+      "side": 1,
+      "message": "well, if it can be reasonably set (see below).  What im getting at is when we say install voltha 2.2 the first thing folks may do is helm search:\n\n$ helm search voltha\nNAME                        \tCHART VERSION\tAPP VERSION\tDESCRIPTION                             \nonf/voltha                  \t2.1.17       \t2          \tA Helm chart for Voltha based on K8S resources in Voltha ...\nonf/voltha-adapter-openolt  \t2.1.10       \t2.2.3      \tA Helm chart for Voltha OpenOLT Adapter                     \nonf/voltha-adapter-openonu  \t2.1.11       \t2.2.5      \tA Helm chart for Voltha OpenONU Adapter                     \nonf/voltha-adapter-simulated\t2.2.2        \t2          \tA Helm chart for Voltha Simulated Adaptyer based on K8S r...\nonf/voltha-etcd-cluster     \t2.1.1        \t0.9.2      \tCreate an etcd-cluster using etcd-operator provided CRD     \nonf/voltha-kafka-dump       \t1.0.1        \t6.1.2      \tA Helm chart for voltha-kafka-dump   \n\n\nthen run helm install --version 2.2.0, but cannot because its actually 2.1.18.  seems very misleading.   Also i dont think we can specify app-version on the command line.\n\nFWIW simulated is using 2.2.2.. so it seems like it was considered.",
+      "parentUuid": "a1fd7d89_dc910c22",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 15
+      },
+      "revId": "106f911c97e9c7a62eda6d0416822c1de58b3919",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
