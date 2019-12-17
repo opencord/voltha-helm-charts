@@ -16,7 +16,6 @@
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
-therecanbeonlyone: false
 
 # Default Values
 # The following are the default values used for every container in the
@@ -71,14 +70,8 @@ replicas:
   rw_core: 1
 
   # For everything else replicas are replicas
-  cli: 1
   ofagent: 1
-  ro_core: 1
-  afrouter: 1
-  afrouterd: 1
 
-ro_core:
-  log_level: '{{ .Values.defaults.log_level }}'
 
 rw_core:
   log_level: '{{ .Values.defaults.log_level }}'
@@ -86,44 +79,18 @@ rw_core:
   timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
   timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
 
-api_server:
-  kafka_topic: 'affinityRouter'
 
 # Define Docker images to be used
 images:
-  cli:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-cli'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.2{{- end }}{{- else }}2.2.2{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
-
   ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.2{{- end }}{{- else }}2.2.2{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
-
-  ro_core:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-ro-core'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.2{{- end }}{{- else }}2.2.2{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.3{{- end }}{{- else }}2.2.3{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.2{{- end }}{{- else }}2.2.2{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.3{{- end }}{{- else }}2.2.3{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
-  afrouter:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-afrouter'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.2{{- end }}{{- else }}2.2.2{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
-
-  afrouterd:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-afrouterd'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.2{{- end }}{{- else }}2.2.2{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
-    restartPolicy: 'Always'
