@@ -22,6 +22,30 @@
       "revId": "106f911c97e9c7a62eda6d0416822c1de58b3919",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1fd7d89_dc910c22",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2019-12-17T20:02:02Z",
+      "side": 1,
+      "message": "I believe that\u0027s what the appVersion is for.",
+      "parentUuid": "2ce0078e_a7081097",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 15
+      },
+      "revId": "106f911c97e9c7a62eda6d0416822c1de58b3919",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
