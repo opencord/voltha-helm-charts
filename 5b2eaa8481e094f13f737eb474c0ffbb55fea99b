@@ -22,6 +22,30 @@
       "revId": "5b2eaa8481e094f13f737eb474c0ffbb55fea99b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1b62b75_00df7fc0",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-12-18T01:31:37Z",
+      "side": 1,
+      "message": "this came from the only-one chart, so I think it maintains the assumption there is only one rw-core. If we want multiple cores, will have to revisit (along with other changes).",
+      "parentUuid": "5564e372_c40812e3",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 17
+      },
+      "revId": "5b2eaa8481e094f13f737eb474c0ffbb55fea99b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
