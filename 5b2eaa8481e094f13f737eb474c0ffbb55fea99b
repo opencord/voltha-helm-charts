@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5564e372_c40812e3",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2019-12-18T01:28:47Z",
+      "side": 1,
+      "message": "are we ok with this being hardcoded?",
+      "range": {
+        "startLine": 41,
+        "startChar": 12,
+        "endLine": 41,
+        "endChar": 17
+      },
+      "revId": "5b2eaa8481e094f13f737eb474c0ffbb55fea99b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
