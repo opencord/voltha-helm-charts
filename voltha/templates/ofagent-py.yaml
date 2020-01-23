@@ -1,0 +1,87 @@
+{{- if not (and (hasKey .Values "use_ofagent_go") .Values.use_ofagent_go) }}
+# Copyright 2019-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: voltha-ofagent
+  serviceAccountName: {{ .Values.serviceaccount }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "ofagent_deployment_labels") }}
+  labels:
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+    {{- if hasKey .Values "ofagent_deployment_labels" }}
+    {{- range $key, $val := .Values.ofagent_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.replicas.ofagent }}
+  template:
+    metadata:
+      labels:
+        app: ofagent
+        app.kubernetes.io/name: "open-flow-agent"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "integration"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+        {{- if hasKey .Values "ofagent_pod_labels" }}
+        {{- range $key, $val := .Values.ofagent_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+      annotations:
+        cni: "calico"
+    spec:
+      terminationGracePeriodSeconds: 10
+      serviceAccountName: {{ .Values.serviceaccount }}
+      containers:
+      - name: ofagent
+        image: '{{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}'
+        imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
+        env:
+        - name: CONTROLLER_SERVICE
+          value: "{{ .Values.services.controller.service }}:{{ .Values.services.controller.port }}"
+        args:
+        - "/ofagent/ofagent/main.py"
+        - "-v"
+        - "--controller=$(CONTROLLER_SERVICE)"
+        - "--grpc-endpoint=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
+        - "--probe=:8080"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+{{- end }}

@@ -16,6 +16,7 @@
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
+use_ofagent_go: false
 
 # Default Values
 # The following are the default values used for every container in the
@@ -78,6 +79,9 @@ rw_core:
   core_timeout: '{{ .Values.defaults.rw_core.timeout }}'
   timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
   timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
+
+ofagent:
+  log_level: '{{ .Values.default.log_level }}'
 
 
 # Define Docker images to be used
