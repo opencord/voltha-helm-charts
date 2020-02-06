@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63bf5c3f_31f6e5d9",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2020-02-06T18:54:48Z",
+      "side": 1,
+      "message": "may need to update the appversion after component is released",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "4d4401bd5e799e3160c08f292554a65a64f90a54",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
