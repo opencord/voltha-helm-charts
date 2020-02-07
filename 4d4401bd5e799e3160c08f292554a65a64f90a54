@@ -22,6 +22,30 @@
       "revId": "4d4401bd5e799e3160c08f292554a65a64f90a54",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62f5bc91_b0d693d4",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000514
+      },
+      "writtenOn": "2020-02-07T14:34:26Z",
+      "side": 1,
+      "message": "The Jenkins job: verify_voltha-helm-charts_sanity-test/44 is failing with the error: \n***\noltha/adapter-open-olt-67c7c8b5c5-mrmfg[adapter-open-olt]: invalid value \"DEBUG\" for flag -log_level: parse error\n***\nI think we need to release the voltha-openolt-adapter version (from 2.3.1-dev to) 2.3.1 and then update here as well to make it pass.\nSince, the voltha-openolt-adapter changes are already merged we see some logging related issues like VOL-2565",
+      "parentUuid": "63bf5c3f_31f6e5d9",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "4d4401bd5e799e3160c08f292554a65a64f90a54",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
