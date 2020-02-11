@@ -81,7 +81,7 @@ rw_core:
   timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
 
 ofagent:
-  log_level: '{{ .Values.default.log_level }}'
+  log_level: '{{ .Values.defaults.log_level }}'
 
 
 # Define Docker images to be used
