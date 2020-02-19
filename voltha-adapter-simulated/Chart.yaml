@@ -17,8 +17,8 @@ name: voltha-adapter-simulated
 description: A Helm chart for Voltha Simulated Adaptyer based on K8S resources in Voltha project
 icon: https://guide.opencord.org/logos/cord.svg
 
-version: 2.2.3
+version: 2.3.0-rc1
 
-# appVersion is 2 because this chart contains multiple 2.x images that may have
-# different individual image versions.
-appVersion: 2.2
+# appVersion refers to multiple components with potentially different
+# container image versions.
+appVersion: 2.3
