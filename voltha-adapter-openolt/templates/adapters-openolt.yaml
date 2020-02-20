@@ -63,6 +63,11 @@ spec:
         - name: adapter-open-olt
           image: '{{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_open_olt.pullPolicy . }}
+          env:
+            - name: COMPONENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['app.kubernetes.io/name']
           args:
             - "/app/openolt"
             - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
