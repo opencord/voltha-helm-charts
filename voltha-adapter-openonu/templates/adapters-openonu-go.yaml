@@ -1,4 +1,4 @@
-{{- if not (and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go) }}
+{{- if and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go }}
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,32 +61,25 @@ spec:
     spec:
       containers:
         - name: adapter-open-onu
-          image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu.tag . ) . }}'
-          imagePullPolicy: {{ tpl .Values.images.adapter_open_onu.pullPolicy . }}
+          image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
+          imagePullPolicy: {{ tpl .Values.images.adapter_open_onu_go.pullPolicy . }}
           args:
-            - "/voltha/adapters/brcm_openomci_onu/main.py"
-            {{- if eq (tpl .Values.adapter_open_onu.log_level .) "DEBUG" }}
-            - "--verbose"
-            {{- end }}
-            {{- if eq (tpl .Values.adapter_open_onu.log_level .) "WARN" }}
-            - "--quiet"
-            {{- end }}
-            - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
-            - "--kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic=rwcore"
-            - "--name=brcm_openomci_onu"
-            - "--backend=etcd"
-            - "--etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
-            - "--probe=:8080"
-          readinessProbe:
-            httpGet:
-              path: /readz
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            - "/app/openonugo"
+            - "--banner=true"
+            - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
+            - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
+            - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
+            - "--probe_port=8080"
           livenessProbe:
             httpGet:
               path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /readz
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
