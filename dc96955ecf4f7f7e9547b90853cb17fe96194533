@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f53a24b_791d75c7",
+        "filename": "voltha-adapter-openolt/templates/adapters-openolt.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-02-28T16:23:37Z",
+      "side": 1,
+      "message": "Is this env var used/required by something in the container?",
+      "revId": "dc96955ecf4f7f7e9547b90853cb17fe96194533",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
