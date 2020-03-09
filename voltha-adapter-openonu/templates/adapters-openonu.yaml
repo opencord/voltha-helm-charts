@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+{{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -65,12 +67,6 @@ spec:
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu.pullPolicy . }}
           args:
             - "/voltha/adapters/brcm_openomci_onu/main.py"
-            {{- if eq (tpl .Values.adapter_open_onu.log_level .) "DEBUG" }}
-            - "--verbose"
-            {{- end }}
-            {{- if eq (tpl .Values.adapter_open_onu.log_level .) "WARN" }}
-            - "--quiet"
-            {{- end }}
             - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
             - "--core_topic=rwcore"
@@ -78,6 +74,7 @@ spec:
             - "--backend=etcd"
             - "--etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
             - "--probe=:8080"
+            - "--log_level={{ $log_level }}"
           readinessProbe:
             httpGet:
               path: /readz
