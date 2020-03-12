@@ -12,6 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+{{- $log_level := tpl .Values.ofagent.log_level . | upper }}
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -65,11 +66,20 @@ spec:
         env:
         - name: CONTROLLER_SERVICE
           value: "{{ .Values.services.controller.service }}:{{ .Values.services.controller.port }}"
+        - name: COMPONENT_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app.kubernetes.io/name']
         args:
         - "/app/ofagent"
         - "--loglevel={{- tpl .Values.ofagent.log_level . | upper }}"
         - "--controller=$(CONTROLLER_SERVICE)"
         - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
+        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
+        - "--kv_store_port=2379"
+        - "--kv_store_type=etcd"
+        - "--kv_store_request_timeout=60"
+        - "--log_level={{ $log_level }}"
         - "--probe=:8080"
         livenessProbe:
           httpGet:
