@@ -63,13 +63,13 @@ spec:
       - name: ofagent
         image: '{{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}'
         imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
-        env:
-        - name: CONTROLLER_SERVICE
-          value: "{{ .Values.services.controller.service }}:{{ .Values.services.controller.port }}"
         args:
         - "/ofagent/ofagent/main.py"
         - "-v"
-        - "--controller=$(CONTROLLER_SERVICE)"
+        - "--controller"
+        {{- range .Values.services.controller }}
+        - "{{ .service }}:{{ .port }}"
+        {{- end }}
         - "--grpc-endpoint=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
         - "--probe=:8080"
         livenessProbe:
