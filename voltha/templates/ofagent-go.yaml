@@ -64,15 +64,16 @@ spec:
         image: '{{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}'
         imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
         env:
-        - name: CONTROLLER_SERVICE
-          value: "{{ .Values.services.controller.service }}:{{ .Values.services.controller.port }}"
         - name: COMPONENT_NAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.labels['app.kubernetes.io/name']
         args:
         - "/app/ofagent"
-        - "--controller=$(CONTROLLER_SERVICE)"
+        {{- range .Values.services.controller }}
+        - "--controller"
+        - "{{ .service }}:{{ .port }}"
+        {{- end }}
         - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
         - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
         - "--kv_store_port=2379"
