@@ -16,7 +16,7 @@
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
-use_ofagent_go: false
+use_ofagent_go: false 
 
 # Default Values
 # The following are the default values used for every container in the
