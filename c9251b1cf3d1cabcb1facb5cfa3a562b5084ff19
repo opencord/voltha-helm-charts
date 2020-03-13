@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "586d9bc2_21e29962",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-03-13T18:00:43Z",
+      "side": 1,
+      "message": "use the same \"{{ .Values.defaults.image_pullPolicy }}\"",
+      "range": {
+        "startLine": 57,
+        "startChar": 17,
+        "endLine": 57,
+        "endChar": 29
+      },
+      "revId": "c9251b1cf3d1cabcb1facb5cfa3a562b5084ff19",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
