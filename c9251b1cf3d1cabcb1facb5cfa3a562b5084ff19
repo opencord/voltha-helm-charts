@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "072b7125_dc98f02e",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-03-16T08:32:40Z",
+      "side": 1,
+      "message": "change the value here to IfNotPresent",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 27
+      },
+      "revId": "c9251b1cf3d1cabcb1facb5cfa3a562b5084ff19",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "586d9bc2_21e29962",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 3
@@ -18,6 +41,53 @@
         "startChar": 17,
         "endLine": 57,
         "endChar": 29
+      },
+      "revId": "c9251b1cf3d1cabcb1facb5cfa3a562b5084ff19",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20d5919e_3bc9e12f",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-03-16T08:32:40Z",
+      "side": 1,
+      "message": "please change the value to what Matteo suggested and change the defaults value at line 24.",
+      "parentUuid": "586d9bc2_21e29962",
+      "range": {
+        "startLine": 57,
+        "startChar": 17,
+        "endLine": 57,
+        "endChar": 29
+      },
+      "revId": "c9251b1cf3d1cabcb1facb5cfa3a562b5084ff19",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0bf026d_aa2929af",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-03-16T08:32:40Z",
+      "side": 1,
+      "message": "remove useless tab",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 4
       },
       "revId": "c9251b1cf3d1cabcb1facb5cfa3a562b5084ff19",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
