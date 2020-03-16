@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66a89996_9beb7db0",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-03-16T16:50:11Z",
+      "side": 1,
+      "message": "This file does not seem to have changed. (after the trailing white space is removed)",
+      "revId": "d63b57ba3bfdfdc16f01ccc35464762bf598874f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
