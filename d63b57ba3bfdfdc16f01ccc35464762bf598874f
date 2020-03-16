@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e7c46ab4_6a3994ca",
+        "filename": "voltha/templates/ofagent-go.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-03-16T16:51:11Z",
+      "side": 1,
+      "message": "what is this for?",
+      "range": {
+        "startLine": 14,
+        "startChar": 32,
+        "endLine": 15,
+        "endChar": 60
+      },
+      "revId": "d63b57ba3bfdfdc16f01ccc35464762bf598874f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "66a89996_9beb7db0",
         "filename": "voltha/values.yaml",
         "patchSetId": 4
