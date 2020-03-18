@@ -61,8 +61,8 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
       - name: ofagent
-        image: '{{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}'
-        imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
+        image: '{{ tpl .Values.images.ofagent_py.registry . }}{{ tpl .Values.images.ofagent_py.repository . }}:{{ tpl .Values.images.ofagent_py.tag . }}'
+        imagePullPolicy: {{ tpl .Values.images.ofagent_py.pullPolicy . }}
         env:
         - name: CONTROLLER_SERVICE
           value: "{{ .Values.services.controller.service }}:{{ .Values.services.controller.port }}"
