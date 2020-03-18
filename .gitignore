@@ -9,3 +9,5 @@ charts
 
 # misc files
 .*.swp
+.remote-sync.json
+.DS_store

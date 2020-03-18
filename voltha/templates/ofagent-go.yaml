@@ -1,4 +1,4 @@
-{{- if and (hasKey .Values "use_ofagent_go") .Values.use_ofagent_go }}
+{{- if not (and (hasKey .Values "use_ofagent_py") .Values.use_ofagent_py) }}
 # Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,8 +61,8 @@ spec:
       serviceAccountName: {{ .Values.serviceaccount }}
       containers:
       - name: ofagent
-        image: '{{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}'
-        imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
+        image: '{{ tpl .Values.images.ofagent_go.registry . }}{{ tpl .Values.images.ofagent_go.repository . }}:{{ tpl .Values.images.ofagent_go.tag . }}'
+        imagePullPolicy: {{ tpl .Values.images.ofagent_go.pullPolicy . }}
         env:
         - name: CONTROLLER_SERVICE
           value: "{{ .Values.services.controller.service }}:{{ .Values.services.controller.port }}"

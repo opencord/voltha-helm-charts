@@ -16,7 +16,7 @@
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
-use_ofagent_go: false
+use_ofagent_py: false
 
 # Default Values
 # The following are the default values used for every container in the
@@ -88,7 +88,13 @@ ofagent:
 
 # Define Docker images to be used
 images:
-  ofagent:
+  ofagent_go:
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}ofagent-go'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.1.2{{- end }}{{- else }}1.1.2{{- end }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
+
+  ofagent_py:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent'
     tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.4{{- end }}{{- else }}2.2.4{{- end }}'
@@ -99,4 +105,3 @@ images:
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
     tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.3.2{{- end }}{{- else }}2.3.2{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
-
