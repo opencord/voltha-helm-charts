@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "378877d5_78aa3e65",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-03-18T22:35:13Z",
+      "side": 1,
+      "message": "Good to put this in global ~/.gitignore rather than every repo.  Also the S is uppercase, but HFS and APFS are case insensitive.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 9
+      },
+      "revId": "c7a4de3bf03ea8494d8c3ae2d2f0a8fa7c219cba",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
