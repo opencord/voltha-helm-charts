@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "523809b1_ca3c8731",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-03-23T18:59:07Z",
+      "side": 1,
+      "message": "1.1.5 per: https://hub.docker.com/repository/docker/voltha/voltha-ofagent-go/tags?page\u003d1",
+      "range": {
+        "startLine": 94,
+        "startChar": 134,
+        "endLine": 94,
+        "endChar": 139
+      },
+      "revId": "83891c77f5bc93c15fd214adeeda0f2d81ac450f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7a80e17_2937aaca",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-03-23T18:59:07Z",
+      "side": 1,
+      "message": "2.2.7 per: https://hub.docker.com/repository/docker/voltha/voltha-ofagent-py/tags?page\u003d1",
+      "range": {
+        "startLine": 100,
+        "startChar": 134,
+        "endLine": 100,
+        "endChar": 135
+      },
+      "revId": "83891c77f5bc93c15fd214adeeda0f2d81ac450f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
