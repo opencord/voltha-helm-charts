@@ -65,6 +65,11 @@ spec:
         - name: adapter-open-onu
           image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu.tag . ) . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu.pullPolicy . }}
+          env:
+            - name: COMPONENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['app.kubernetes.io/name']
           args:
             - "/voltha/adapters/brcm_openomci_onu/main.py"
             - "--kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
