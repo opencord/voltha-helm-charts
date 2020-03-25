@@ -65,7 +65,7 @@ spec:
           image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu_go.pullPolicy . }}
           args:
-            - "/app/openonugo"
+            - "/app/openonu"
             - "--banner=true"
             - "--kafka_reconnect_retries=-1"
             - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
