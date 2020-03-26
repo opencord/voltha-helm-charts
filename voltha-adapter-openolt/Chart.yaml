@@ -1,3 +1,4 @@
+---
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,10 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
 name: voltha-adapter-openolt
 description: A Helm chart for Voltha OpenOLT Adapter
 icon: https://guide.opencord.org/logos/cord.svg
 
-version: 2.2.5
-appVersion: 2.3.9
+version: 2.3.0
+appVersion: 2.3.21

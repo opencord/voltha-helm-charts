@@ -1,3 +1,4 @@
+---
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
----
 serviceaccount: voltha-serviceaccount
 private_etcd_cluster: true
 private_kafka_cluster: true
@@ -91,7 +91,7 @@ images:
   ofagent_go:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.1.5{{- end }}{{- else }}1.1.5{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.1.6{{- end }}{{- else }}1.1.6{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ofagent_py:
@@ -103,5 +103,5 @@ images:
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.3.2{{- end }}{{- else }}2.3.2{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.3.5{{- end }}{{- else }}2.3.5{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
