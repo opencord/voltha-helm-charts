@@ -49,7 +49,7 @@ images:
   adapter_open_onu:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-openonu-adapter'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.3.6{{- end }}{{- else }}2.3.6{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.4.0{{- end }}{{- else }}2.4.0{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
   adapter_open_onu_go:
     repository: '{{ .Values.defaults.image_org }}voltha-openonu-adapter-go'
