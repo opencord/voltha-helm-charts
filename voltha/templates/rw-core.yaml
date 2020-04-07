@@ -111,7 +111,7 @@ spec:
             - "-banner=true"
             - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
             - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
-            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.port }}"
+            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
             - "-rw_core_topic=rwcore"
             - "-core_pair_topic=core-pair-1"
