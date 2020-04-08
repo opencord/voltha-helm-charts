@@ -117,9 +117,9 @@ spec:
             - "-core_pair_topic=core-pair-1"
             - "-kv_store_data_prefix=service/voltha"
             - "-in_competing_mode=false"
-            - "-core_timeout=9999"
-            - "-timeout_long_request=9999"
-            - "-timeout_request=9999"
+            - "-core_timeout=10s"
+            - "-timeout_long_request=10s"
+            - "-timeout_request=10s"
             - "-log_level={{ $log_level }}"
             - "-probe_port=8080"
           ports:
