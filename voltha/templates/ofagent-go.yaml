@@ -77,7 +77,7 @@ spec:
         - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
         - "--kv_store_port=2379"
         - "--kv_store_type=etcd"
-        - "--kv_store_request_timeout=60"
+        - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
         - "--probe=:8080"
         livenessProbe:
