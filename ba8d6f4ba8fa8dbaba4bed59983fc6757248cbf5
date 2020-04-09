@@ -1,0 +1,7 @@
+Verified+1: Jenkins Jenkins <do-not-reply@opencord.org>
+Code-Review+2: Scott Baker <scottb@opennetworking.org>
+Submitted-by: Girish Gowdra <girish@opennetworking.org>
+Submitted-at: Thu, 09 Apr 2020 00:41:46 +0000
+Reviewed-on: https://gerrit.opencord.org/18488
+Project: voltha-helm-charts
+Branch: refs/heads/voltha-2.3
