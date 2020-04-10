@@ -91,7 +91,7 @@ images:
   ofagent_go:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.1.6{{- end }}{{- else }}1.1.6{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.1.7{{- end }}{{- else }}1.1.7{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   ofagent_py:
