@@ -61,10 +61,10 @@ services:
     service: voltha-etcd-cluster-client.voltha.svc.cluster.local
     port: 2379
 
-  # Define controller to which to connect
+  # Define the list of controllers to connect to
   controller:
-    service: onos-openflow.default.svc.cluster.local
-    port: 6653
+    - service: onos-openflow.default.svc.cluster.local
+      port: 6653
 
 # Define the recplica count for everything
 replicas:
