@@ -11,39 +11,30 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- $root := . -}}
+
 {{- if not (and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go) }}
-{{- $tag := tpl ( tpl .Values.images.adapter_open_onu.tag . ) . }}
-{{- $repository := tpl .Values.images.adapter_open_onu.repository . }}
-{{- $registry := tpl .Values.images.adapter_open_onu.registry . }}
-{{- $pullpolicy := tpl .Values.images.adapter_open_onu.pullPolicy . }}
-{{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
-{{- $replica_id := 0 }}
-{{- range $i, $e := until (int .Values.replicas.adapter_open_onu) }}
-{{- $replica_id := add1 $i }}
-
 ---
-
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: adapter-open-onu-{{ $replica_id }}
-  namespace: {{ $root.Release.Namespace }}
-  {{- if or (hasKey $root.Values "extra_deployment_labels") (hasKey $root.Values "openonu_deployment_labels") }}
+  name: adapter-open-onu
+  namespace: {{ .Release.Namespace }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openonu_deployment_labels") }}
   labels:
-    {{- if hasKey $root.Values "extra_deployment_labels" }}
-    {{- range $key, $val := $root.Values.extra_deployment_labels }}
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
-    {{- if hasKey $root.Values "openonu_deployment_labels" }}
-    {{- range $key, $val := $root.Values.openonu_deployment_labels }}
+    {{- if hasKey .Values "openonu_deployment_labels" }}
+    {{- range $key, $val := .Values.openonu_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
   {{- end }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas.adapter_open_onu }}
+  serviceName: "openonu"
   selector:
     matchLabels:
       app: adapter-open-onu
@@ -52,18 +43,18 @@ spec:
       labels:
         app: adapter-open-onu
         app.kubernetes.io/name: "adapter-open-onu"
-        app.kubernetes.io/version: {{ quote $root.Chart.AppVersion }}
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
         app.kubernetes.io/part-of: "voltha"
-        app.kubernetes.io/managed-by: {{ quote $root.Release.Service }}
-        helm.sh/chart: "{{ $root.Chart.Name }}-{{ $root.Chart.Version }}"
-        {{- if hasKey $root.Values "extra_pod_labels" }}
-        {{- range $key, $val := $root.Values.extra_pod_labels }}
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-        {{- if hasKey $root.Values "openonu_pod_labels" }}
-        {{- range $key, $val := $root.Values.openonu_pod_labels }}
+        {{- if hasKey .Values "openonu_pod_labels" }}
+        {{- range $key, $val := .Values.openonu_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
@@ -71,39 +62,41 @@ spec:
         cni: "calico"
     spec:
       containers:
-        - name: adapter-open-onu
-          image: '{{ $registry }}{{ $repository }}:{{ $tag }}'
-          imagePullPolicy: {{ $pullpolicy }}
-          env:
-            - name: COMPONENT_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['app.kubernetes.io/name']
-          image: '{{ $registry }}{{ $repository }}:{{ $tag }}'
-          args:
-            - "/voltha/adapters/brcm_openomci_onu/main.py"
-            - "--kafka_adapter={{ $root.Values.services.kafka.adapter.service }}:{{ $root.Values.services.kafka.adapter.port }}"
-            - "--kafka_cluster={{ $root.Values.services.kafka.cluster.service }}:{{ $root.Values.services.kafka.cluster.port }}"
-            - "--core_topic=rwcore"
-            - "--name=brcm_openomci_onu"
-            - "--backend=etcd"
-            - "--etcd={{ $root.Values.services.etcd.service }}:{{ $root.Values.services.etcd.port }}"
-            - "--probe=:8080"
-            - "--log_level={{ $log_level }}"
-            - "--totalReplicas={{ $root.Values.replicas.adapter_open_onu }}"
-            - "--currentReplica={{ $replica_id }}"
-          readinessProbe:
-            httpGet:
-              path: /readz
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
-
+      - name: adapter-open-onu
+        image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu.tag . ) . }}'
+        imagePullPolicy: {{ tpl .Values.images.adapter_open_onu.pullPolicy . }}
+        command: [ "sh", "-c"]
+        args:
+          - "REPLICA_ID=$(echo $VOLTHA_POD_NAME | grep -o '.$') && REPLICA_ID=$((REPLICA_ID + 1)) && echo $REPLICA_ID && python /voltha/adapters/brcm_openomci_onu/main.py
+              --kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}
+              --kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}
+              --core_topic=rwcore
+              --name=brcm_openomci_onu
+              --backend=etcd
+              --etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}
+              --probe=:8080
+              --log_level={{ tpl .Values.adapter_open_onu.log_level . | upper }}
+              --totalReplicas={{ .Values.replicas.adapter_open_onu }}
+              --currentReplica=$REPLICA_ID"
+        readinessProbe:
+          httpGet:
+            path: /readz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        env:
+        - name: VOLTHA_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: COMPONENT_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app.kubernetes.io/name']
 {{- end }}
-{{- end }} # end if use_openonu_adapter_go
