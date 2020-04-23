@@ -65,6 +65,8 @@ services:
   controller:
     - service: onos-openflow.default.svc.cluster.local
       port: 6653
+    - service: onos2-openflow.default.svc.cluster.local
+      port: 6653
 
 # Define the recplica count for everything
 replicas:
