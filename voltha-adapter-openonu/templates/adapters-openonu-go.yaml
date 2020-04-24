@@ -64,6 +64,11 @@ spec:
         - name: adapter-open-onu
           image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu_go.pullPolicy . }}
+          env:
+            - name: COMPONENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['app.kubernetes.io/name']
           args:
             - "/app/openonu"
             - "--banner=true"
