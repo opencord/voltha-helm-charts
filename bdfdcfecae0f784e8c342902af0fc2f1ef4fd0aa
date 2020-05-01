@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0eb3165_bbd9b2ec",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-05-01T18:08:24Z",
+      "side": 1,
+      "message": "Should probably add `podManagermentPolicy: Parallel`\n\nhttps://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#pod-management-policies",
+      "revId": "bdfdcfecae0f784e8c342902af0fc2f1ef4fd0aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21dbce42_893c9f66",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-05-01T18:08:24Z",
+      "side": 1,
+      "message": "why not just start at zero?",
+      "range": {
+        "startLine": 70,
+        "startChar": 67,
+        "endLine": 70,
+        "endChar": 97
+      },
+      "revId": "bdfdcfecae0f784e8c342902af0fc2f1ef4fd0aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
