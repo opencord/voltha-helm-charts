@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bd6a7840_2167fc24",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-05-01T18:27:56Z",
+      "side": 1,
+      "message": "Good point, patch coming",
+      "parentUuid": "d0eb3165_bbd9b2ec",
+      "revId": "bdfdcfecae0f784e8c342902af0fc2f1ef4fd0aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21dbce42_893c9f66",
         "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2020-05-01T18:08:24Z",
       "side": 1,
       "message": "why not just start at zero?",
+      "range": {
+        "startLine": 70,
+        "startChar": 67,
+        "endLine": 70,
+        "endChar": 97
+      },
+      "revId": "bdfdcfecae0f784e8c342902af0fc2f1ef4fd0aa",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1e7d2e6_35caf4c5",
+        "filename": "voltha-adapter-openonu/templates/adapters-openonu.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-05-01T18:27:56Z",
+      "side": 1,
+      "message": "the replicaID is sent to the core via gRPC, and if it\u0027s 0 we don\u0027t know wether it\u0027s not set or really 0.",
+      "parentUuid": "21dbce42_893c9f66",
       "range": {
         "startLine": 70,
         "startChar": 67,
