@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5211eac1_14a138a3",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-05-04T20:59:19Z",
+      "side": 1,
+      "message": "Just \u002710s\u0027?",
+      "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
