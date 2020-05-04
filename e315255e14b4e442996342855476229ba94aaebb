@@ -22,6 +22,30 @@
       "revId": "e315255e14b4e442996342855476229ba94aaebb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7160cde7_d79ec898",
+        "filename": "voltha/templates/ofagent-go.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-05-04T18:18:25Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "dd06a1f5_d9393248",
+      "range": {
+        "startLine": 80,
+        "startChar": 11,
+        "endLine": 80,
+        "endChar": 42
+      },
+      "revId": "e315255e14b4e442996342855476229ba94aaebb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
