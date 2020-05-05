@@ -16,6 +16,24 @@
       "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47cec5c8_1815353c",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000675
+      },
+      "writtenOn": "2020-05-05T10:38:18Z",
+      "side": 1,
+      "message": "Hi Kent,\nDoes this mean that here the \u0027timeout_long_request\" should have more value? \nBut their default values as mentioned in the rw_core config are also less.",
+      "parentUuid": "5211eac1_14a138a3",
+      "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
