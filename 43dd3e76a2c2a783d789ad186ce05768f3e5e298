@@ -52,6 +52,24 @@
       "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0de50837_350e2848",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000675
+      },
+      "writtenOn": "2020-05-05T16:56:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac823e0_480dc588",
+      "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
