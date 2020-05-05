@@ -34,6 +34,24 @@
       "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac823e0_480dc588",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-05-05T16:17:12Z",
+      "side": 1,
+      "message": "Suggestion is to just use 10 seconds instead of 9999 milliseconds.",
+      "parentUuid": "47cec5c8_1815353c",
+      "revId": "43dd3e76a2c2a783d789ad186ce05768f3e5e298",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
