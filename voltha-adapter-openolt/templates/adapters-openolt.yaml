@@ -13,6 +13,22 @@
 # limitations under the License.
 {{- $log_level := tpl .Values.adapter_open_olt.log_level . | upper }}
 
+{{- if .Values.profiler.enabled }}
+kind: Service
+metadata:
+  name: adapter-open-olt-profiler
+  serviceAccountName: {{ .Values.serviceaccount }}
+spec:
+  serviceAccountName: {{ .Values.serviceaccount }}
+  clusterIP: None
+  ports:
+    - name: profiler
+      port: 6060
+      targetPort: 6060
+  selector:
+    app: adapter-open-olt
+---
+{{- end }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:

@@ -42,6 +42,22 @@ spec:
   selector:
     app: rw-core
 ---
+{{- if .Values.profiler.enabled }}
+kind: Service
+metadata:
+  name: voltha-rw-core-profiler
+  serviceAccountName: {{ .Values.serviceaccount }}
+spec:
+  serviceAccountName: {{ .Values.serviceaccount }}
+  clusterIP: None
+  ports:
+    - name: profiler
+      port: 6060
+      targetPort: 6060
+  selector:
+    app: rw-core
+---
+{{- end }}
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -137,4 +153,3 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
-
