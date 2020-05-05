@@ -66,6 +66,10 @@ services:
     - service: onos-openflow.default.svc.cluster.local
       port: 6653
 
+# Expose the golang pprof webserver, if enabled
+profiler:
+  enabled: false
+
 # Define the recplica count for everything
 replicas:
   # For R/W cores the templates translate the number of replicas

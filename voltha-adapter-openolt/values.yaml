@@ -36,6 +36,10 @@ services:
     service: voltha-etcd-cluster-client.voltha.svc.cluster.local
     port: 2379
 
+# Expose the golang pprof webserver, if enabled
+profiler:
+  enabled: false
+
 # Define the recplica count for everything
 replicas:
   adapter_open_olt: 1
