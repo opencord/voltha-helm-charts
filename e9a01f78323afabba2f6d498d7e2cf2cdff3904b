@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a591a592_e42c507c",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-05-06T01:04:42Z",
+      "side": 1,
+      "message": "why not expose the port on the voltha-api service as opposed to its own service? if the service is going to map to the same set of pods no need for the second service endpoint.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 10
+      },
+      "revId": "e9a01f78323afabba2f6d498d7e2cf2cdff3904b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
