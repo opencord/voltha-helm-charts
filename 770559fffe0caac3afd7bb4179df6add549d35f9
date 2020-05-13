@@ -22,6 +22,30 @@
       "revId": "770559fffe0caac3afd7bb4179df6add549d35f9",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e43ab812_349d3e63",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-05-13T18:56:45Z",
+      "side": 1,
+      "message": "You mean \"{{- if .Values.profiler.enabled }}\"?\n\nIf so it\u0027s on line 45",
+      "parentUuid": "b1ebe5f9_1d9fb517",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 16
+      },
+      "revId": "770559fffe0caac3afd7bb4179df6add549d35f9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
