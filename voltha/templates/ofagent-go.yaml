@@ -13,6 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 {{- $log_level := tpl .Values.ofagent.log_level . | upper }}
+{{- if .Values.profiler.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: voltha-of-agent-profiler
+  serviceAccountName: {{ .Values.serviceaccount }}
+spec:
+  serviceAccountName: {{ .Values.serviceaccount }}
+  clusterIP: None
+  ports:
+    - name: ofagent-profiler
+      port: 6060
+      targetPort: 6060
+  selector:
+    app: ofagent
+{{- end }}
 ---
 apiVersion: apps/v1beta1
 kind: Deployment

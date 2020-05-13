@@ -52,7 +52,7 @@ spec:
   serviceAccountName: {{ .Values.serviceaccount }}
   clusterIP: None
   ports:
-    - name: profiler
+    - name: rw-core-profiler
       port: 6060
       targetPort: 6060
   selector:
