@@ -91,7 +91,7 @@ spec:
             - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic=rwcore"
+            - "--core_topic={{ .Values.defaults.core_topic }}"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--log_level={{ $log_level }}"

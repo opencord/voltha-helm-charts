@@ -22,6 +22,7 @@ defaults:
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  core_topic: "rwcore"
 
 # Define connectivity to required services
 services:
