@@ -29,6 +29,13 @@ defaults:
   image_pullPolicy: "Always"
   rw_core:
     timeout: "8000"
+  topics:
+    core_topic: "rwcore"
+    
+  # Define prefix path for etcd
+  # If you're running multiple voltha stacks the this value 
+  # should be unique across the stacks.
+  kv_store_data_prefix: "service/voltha"
 
 # Configure the Kafka sub-chart (if it is used)
 kafka:

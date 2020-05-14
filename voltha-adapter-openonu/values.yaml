@@ -22,6 +22,10 @@ defaults:
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  topics:
+    core_topic: "rwcore"
+    adapter_open_onu_topic: "brcm_openomci_onu"
+    adapter_open_olt_topic: "openolt"
 
 # Define connectivity to required services
 services:

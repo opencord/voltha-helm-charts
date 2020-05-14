@@ -118,6 +118,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.labels['app.kubernetes.io/name']
+            - name: KV_STORE_DATAPATH_PREFIX
+              value: {{ .Values.defaults.kv_store_data_prefix }}
           args:
             - "/app/rw_core"
             - "-kv_store_type=etcd"
@@ -130,9 +132,7 @@ spec:
             - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
             - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "-rw_core_topic=rwcore"
-            - "-core_pair_topic=core-pair-1"
-            - "-kv_store_data_prefix=service/voltha"
+            - "-rw_core_topic={{ .Values.defaults.topics.core_topic }}"
             - "-in_competing_mode=false"
             - "-core_timeout=10s"
             - "-timeout_long_request=10s"
