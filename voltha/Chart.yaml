@@ -14,7 +14,7 @@
 # limitations under the License.
 apiVersion: "v1"
 name: "voltha"
-version: "2.4.10"
+version: "2.4.11"
 description: "A Helm chart for Voltha based on K8S resources in Voltha project"
 keywords:
   - "onf"

@@ -79,22 +79,18 @@ spec:
           args:
             - "/app/rw_core"
             - "-kv_store_type=etcd"
-            - "-kv_store_host={{ .Values.services.etcd.service }}"
-            - "-kv_store_port={{ .Values.services.etcd.port }}"
-            - "-grpc_host=0.0.0.0"
-            - "-grpc_port=50057"
+            - "-kv_store_address={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
+            - "-grpc_address=0.0.0.0:50057"
             - "-banner=true"
-            - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
-            - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
-            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
-            - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
+            - "-kafka_adapter_address={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
+            - "-kafka_cluster_address={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
             - "-rw_core_topic={{ .Values.defaults.topics.core_topic }}"
             - "-in_competing_mode=false"
             - "-core_timeout={{ tpl .Values.rw_core.core_timeout . }}"
             - "-timeout_long_request={{ tpl .Values.rw_core.timeout_long_request . }}"
             - "-timeout_request={{ tpl .Values.rw_core.timeout_request . }}"
             - "-log_level={{ $log_level }}"
-            - "-probe_port=8080"
+            - "-probe_address=:8080"
           ports:
             - containerPort: 50057
               name: grpc
