@@ -22,6 +22,30 @@
       "revId": "6140577c2fb019fbac57e285bf91a01bede05a19",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dc3a3b1_3ca65adc",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2020-05-14T17:09:07Z",
+      "side": 1,
+      "message": "no, we don\u0027t need it. I tested without this line and did not break anything. Also need to remove it from the voltha-go in another patch.",
+      "parentUuid": "396547d2_c406b868",
+      "range": {
+        "startLine": 134,
+        "startChar": 32,
+        "endLine": 134,
+        "endChar": 43
+      },
+      "revId": "6140577c2fb019fbac57e285bf91a01bede05a19",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
