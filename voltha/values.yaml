@@ -78,11 +78,11 @@ images:
   ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.2.0{{- end }}{{- else }}1.2.0{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.2.1{{- end }}{{- else }}1.2.1{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.4.1{{- end }}{{- else }}2.4.1{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.4.2{{- end }}{{- else }}2.4.2{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'

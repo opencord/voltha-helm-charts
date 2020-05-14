@@ -17,5 +17,5 @@ name: voltha-adapter-openolt
 description: A Helm chart for Voltha OpenOLT Adapter
 icon: https://guide.opencord.org/logos/cord.svg
 
-version: 2.4.2
-appVersion: 2.4.1
+version: 2.4.3
+appVersion: 2.4.8
