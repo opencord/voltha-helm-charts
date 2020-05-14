@@ -20,6 +20,14 @@ defaults:
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  topics:
+    core_topic: "rwcore"
+    adapter_open_olt_topic: "openolt"
+  
+  # Define prefix path for etcd
+  # If you're running multiple voltha stacks the this value 
+  # should be unique across the stacks.
+  kv_store_data_prefix: "service/voltha"
 
 # Define connectivity to required services
 services:
@@ -42,7 +50,8 @@ profiler:
 
 # Define the recplica count for everything
 replicas:
-  adapter_open_olt: 1
+  current_replica: 1
+  total_replica: 1
 
 adapter_open_olt:
   log_level: '{{ .Values.defaults.log_level }}'
