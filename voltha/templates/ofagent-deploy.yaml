@@ -78,8 +78,7 @@ spec:
         - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
         - "--voltha={{ template "fullname" . }}-api.{{ .Release.Namespace }}.svc:55555"
-        - "--kv_store_host=etcd.{{ .Release.Namespace }}.svc"
-        - "--kv_store_port=2379"
+        - "--kv_store_address=etcd.{{ .Release.Namespace }}.svc:{{ .Values.services.etcd.port }}"
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
