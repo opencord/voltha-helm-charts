@@ -91,8 +91,7 @@ spec:
         - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
         - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
-        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
-        - "--kv_store_port=2379"
+        - "--kv_store_address=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local:2379"
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
