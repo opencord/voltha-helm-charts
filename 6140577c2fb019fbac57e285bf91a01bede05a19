@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "396547d2_c406b868",
+        "filename": "voltha/templates/rw-core.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-05-14T14:17:51Z",
+      "side": 1,
+      "message": "Most likely unrelated to this patch, but is this still used? do we still need it?",
+      "range": {
+        "startLine": 134,
+        "startChar": 32,
+        "endLine": 134,
+        "endChar": 43
+      },
+      "revId": "6140577c2fb019fbac57e285bf91a01bede05a19",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
