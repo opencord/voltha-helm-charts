@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4b68071_521eb039",
+        "filename": "voltha-adapter-openolt/templates/adapters-openolt.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2020-05-18T17:30:52Z",
+      "side": 1,
+      "message": "Would it make sense (perhaps as part of a future patch) to restructure the values.yaml to use addresses instead of host+port? Such a change would be disruptive due to the number of people (QA, etc) using the values files.",
+      "range": {
+        "startLine": 90,
+        "startChar": 42,
+        "endLine": 90,
+        "endChar": 122
+      },
+      "revId": "535c7a3b5a48dc3947953cebab90042b601f87db",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
