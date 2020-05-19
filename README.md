@@ -48,6 +48,8 @@ added to your helm environment:
 ```shell
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm repo add elastic  https://helm.elastic.co
+helm repo add kiwigrid https://kiwigrid.github.io
 helm repo update
 ```
 
@@ -155,6 +157,11 @@ services:
     service: onos-openflow.default.svc.cluster.local
     port: 6653
 ```
+
+#### Deploying Voltha-logging 
+
+Deploying voltha-logging is optional.The separate helm-charts are provided to install voltha-logging.
+Please find the installation documentation in voltha-logging repo.
 
 #### Configuring the number of Read-Only and Read-Write VOLTAH cores
 

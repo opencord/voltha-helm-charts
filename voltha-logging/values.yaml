@@ -1,0 +1,154 @@
+---
+# Copyright 2020-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Values file for voltha log aggregation infra
+# NOTE: must start this chart with the name "logging":
+# helm install -n logging voltha-logging
+---
+nameOverride: ~
+fullNameOverride: ~
+
+# Default security context under which the containers run
+securityContext:
+  enabled: true
+  fsGroup: 1001
+  runAsUser: 1001
+  runAsGroup: 1001
+
+# elasticstack config
+# ref: https://github.com/elastic/helm-charts/tree/7.7.0/elasticsearch
+elasticsearch:
+    replicas: 1
+    minimumMasterNodes: 1
+    # set cpu and memory configuration 
+    resources:
+      requests:
+        cpu: "400m"
+        memory: "1Gi"
+      limits:
+        cpu: "1000m"
+        memory: "2Gi"
+    # setup persistence volume.By default persistence volumeclaim is disabled
+    volumeClaimTemplate:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 5Gi
+    persistence:
+      enabled: false
+    # Enable rbac support for elasticsearch
+    rbac:
+      create: true
+      serviceAccountName: ""
+   # setup kubernetes secrets created for username and password as environment variables
+    extraEnvs:
+      - name: ELASTIC_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: elastic-credentials
+            key: password
+      - name: ELASTIC_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: elastic-credentials
+            key: username
+      - name: ELASTIC_ADMIN_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: elastic-config-credentials
+            key: password
+      - name: ELASTIC_ADMIN_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: elastic-config-credentials
+            key: username
+      # setup template related envirorment variables which can be used to create templates
+      - name: TEMPLATE_NAME
+        value: "my_template"
+      - name: INDEX_PATTERN
+        value: "logstash-*"
+      - name: ES_URL
+        value: "http://localhost:9200"
+      - name: SHARD_COUNT
+        value: "5"
+      - name: REPLICA_COUNT
+        value: "0"
+    # Enable X-pack plugin for elasticsearch
+    esConfig:
+      elasticsearch.yml: |
+        xpack.security.enabled: true
+        path.data: /usr/share/elasticsearch/data
+    # setup cluster health status as yellow
+    clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+    lifecycle:
+      postStart:
+        exec:
+          command:
+            - bash
+            - -c
+            - |
+              #!/bin/bash
+              # Add a template to adjust number of shards/replicas
+              while [[ "$(curl -u $ELASTIC_USERNAME:$ELASTIC_PASSWORD  -s -o /dev/null -w '%{http_code}\n' $ES_URL)" != "200" ]]; do sleep 1; done
+              curl -XPUT -u $ELASTIC_USERNAME:$ELASTIC_PASSWORD "$ES_URL/_template/$TEMPLATE_NAME" -H 'Content-Type: application/json' -d'{"index_patterns":['\""$INDEX_PATTERN"\"'],"settings":{"number_of_shards":'$SHARD_COUNT',"number_of_replicas":'$REPLICA_COUNT'}}'
+    	      # create admin user for elasticsearch which can be used by kibana and fluentd to login
+              curl -X POST -u $ELASTIC_USERNAME:$ELASTIC_PASSWORD "$ES_URL/_security/user/$ELASTIC_ADMIN_USERNAME?pretty" -H 'Content-Type: application/json' -d'{"password":'\""$ELASTIC_ADMIN_PASSWORD"\"',"roles":["superuser"],"metadata":{"intelligence":7}}'
+# kibana config
+# ref: https://github.com/elastic/helm-charts/tree/7.7.0/kibana
+kibana:
+  elasticsearchHosts: "http://elasticsearch-master:9200"
+  # Elasticsearch has authentication setup, Kibana can’t connect to Elasticsearch with default configuration.
+  # Lets provide Kibana the authentication information.So setup username and password
+  # setup kubernetes secrets to login to elasticsearch 
+  extraEnvs:
+     - name: 'ELASTICSEARCH_USERNAME'
+       valueFrom:
+         secretKeyRef:
+           name: elastic-config-credentials
+           key: username
+     - name: 'ELASTICSEARCH_PASSWORD'
+       valueFrom:
+         secretKeyRef:
+           name: elastic-config-credentials
+           key: password
+     - name: 'KIBANA_ENCRYPTION_KEY'
+       valueFrom:
+         secretKeyRef:
+           name: kibana
+           key: encryptionkey
+  kibanaConfig:
+    kibana.yml: |
+      xpack.security.encryptionKey: ${KIBANA_ENCRYPTION_KEY}
+# fluentd-elasticsearch config
+# ref: https://github.com/kiwigrid/helm-charts/tree/master/charts/fluentd-elasticsearch
+fluentd-elasticsearch:
+  # Elasticsearch has authentication setup, fluentd can’t connect to Elasticsearch with default configuration.
+  # Lets provide fluentd the authentication information.So setup username and password
+  # setup kubernetes secrets to login to elasticsearch 
+  secret:
+    - name: OUTPUT_PASSWORD
+      secret_name: elastic-config-credentials
+      secret_key: password
+    - name: OUTPUT_USER
+      secret_name: elastic-config-credentials
+      secret_key: username
+  elasticsearch:
+    # set elasticsearch host 
+    hosts: ["elasticsearch-master:9200"]
+    sslVerify: false
+    auth:
+      enabled: true
+      user: ""
+      password: ""
