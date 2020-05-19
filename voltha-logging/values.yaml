@@ -1,0 +1,86 @@
+---
+# Copyright 2018--present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Values file for voltha log aggregation infra
+# NOTE: must start this chart with the name "logging":
+#   helm install -n logging voltha-logging
+# ortherwise the elasticsearch hostname won't work properly in the other containers
+
+# elasticstack config
+# ref: https://github.com/helm/charts/tree/master/stable/elasticsearch
+elasticsearch:
+  image:
+    repository: "docker.elastic.co/elasticsearch/elasticsearch"
+    tag: "6.8.6"
+    pullPolicy: "IfNotPresent"
+  client:
+    replicas: 1
+    serviceType: "NodePort"
+    resources:
+      limits:
+        cpu: "400m"
+      requests:
+        cpu: "25m"
+        memory: "512Mi"
+  master:
+    replicas: 2
+    resources:
+      limits:
+        cpu: "400m"
+      requests:
+        cpu: "25m"
+        memory: "512Mi"
+    persistence:
+      enabled: true 
+      accessMode: ReadWriteOnce
+      name: data
+      size: "2Gi"
+    env:
+       MINIMUM_MASTER_NODES: 1
+  data:
+    replicas: 1
+    resources:
+      limits:
+        cpu: "400m"
+      requests:
+        cpu: "25m"
+        memory: "512Mi"
+    persistence:
+      enabled: true 
+      accessMode: ReadWriteOnce
+      name: data
+      size: "2Gi"
+
+# kibana config
+# ref: https://github.com/helm/charts/tree/master/stable/kibana
+kibana:
+  image:
+    repository: "docker.elastic.co/kibana/kibana"
+    tag: "6.8.6"
+    pullPolicy: "IfNotPresent"
+  service:
+    type: "NodePort"
+    externalPort: 5601
+  env:
+     ELASTICSEARCH_HOSTS: "http://logging-elasticsearch-client:9200"
+
+
+# fluentd-elasticsearch config
+# ref: https://github.com/kiwigrid/helm-charts/tree/master/charts/fluentd-elasticsearch
+# forwards k8s logs from nodes to elasticsearch
+fluentd-elasticsearch:
+  elasticsearch:
+    hosts: ["logging-elasticsearch-client:9200"]
+    sslVerify: false
