@@ -1,0 +1,8 @@
+** Log aggregation for VOLTHA **
+
+This chart runs the following services:
+
+- Elasticsearch
+- Kibana
+- fluentd-elasticsearch (container logs from k8s)
+
