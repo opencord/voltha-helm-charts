@@ -18,10 +18,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: voltha-of-agent-profiler
-  serviceAccountName: {{ .Values.serviceaccount }}
+  name: {{ .Release.Name }}-voltha-of-agent-profiler
+  release: {{ .Release.Name }}
 spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
   clusterIP: None
   ports:
     - name: ofagent-profiler
@@ -29,13 +28,14 @@ spec:
       targetPort: 6060
   selector:
     app: ofagent
+    release: {{ .Release.Name }}
 {{- end }}
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: voltha-ofagent
-  serviceAccountName: {{ .Values.serviceaccount }}
+  name: {{ .Release.Name }}-voltha-ofagent
+  release: {{ .Release.Name }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "ofagent_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -55,6 +55,7 @@ spec:
     metadata:
       labels:
         app: ofagent
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "open-flow-agent"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "integration"
@@ -71,11 +72,8 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
       terminationGracePeriodSeconds: 10
-      serviceAccountName: {{ .Values.serviceaccount }}
       containers:
       - name: ofagent
         image: '{{ tpl .Values.images.ofagent_go.registry . }}{{ tpl .Values.images.ofagent_go.repository . }}:{{ tpl .Values.images.ofagent_go.tag . }}'
@@ -90,8 +88,8 @@ spec:
         {{- range .Values.services.controller }}
         - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
-        - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
-        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
+        - "--voltha={{ .Release.Name }}-voltha-api.{{ .Release.Namespace }}:55555"
+        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}"
         - "--kv_store_port=2379"
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"

@@ -17,7 +17,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: adapter-open-onu
+  name: {{ .Release.Name }}-adapter-open-onu
+  release: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openonu_deployment_labels") }}
   labels:
@@ -39,10 +40,12 @@ spec:
   selector:
     matchLabels:
       app: adapter-open-onu
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: adapter-open-onu
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "adapter-open-onu"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"

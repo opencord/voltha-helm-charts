@@ -17,10 +17,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: adapter-open-olt-profiler
-  serviceAccountName: {{ .Values.serviceaccount }}
+  name: {{ .Release.Name }}-adapter-open-olt-profiler
+  release: {{ .Release.Name }}
 spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
   clusterIP: None
   ports:
     - name: profiler
@@ -28,12 +27,14 @@ spec:
       targetPort: 6060
   selector:
     app: adapter-open-olt
+    release: {{ .Release.Name }}
 ---
 {{- end }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-olt
+  name: {{ .Release.Name }}-adapter-open-olt
+  release: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openolt_deployment_labels") }}
   labels:
@@ -53,10 +54,12 @@ spec:
   selector:
     matchLabels:
       app: adapter-open-olt
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: adapter-open-olt
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "adapter-open-olt"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
