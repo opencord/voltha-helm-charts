@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a3e7724_3cb99afc",
+        "filename": "voltha-logging/templates/NOTES.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-05-27T15:47:40Z",
+      "side": 1,
+      "message": "Duplicate with the lowercase Notes.txt ?",
+      "range": {
+        "startLine": 1,
+        "startChar": 32,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "365c9f7206e4b1467ee6377aec56976bb7f25678",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd1582ea_3ed0db50",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2020-05-27T15:47:40Z",
+      "side": 1,
+      "message": "unnecessary whitespace",
+      "range": {
+        "startLine": 39,
+        "startChar": 20,
+        "endLine": 40,
+        "endChar": 3
+      },
+      "revId": "365c9f7206e4b1467ee6377aec56976bb7f25678",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
