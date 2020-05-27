@@ -71,8 +71,8 @@ spec:
           - "REPLICA_ID=$(echo $VOLTHA_POD_NAME | grep -o '.$') && REPLICA_ID=$((REPLICA_ID + 1)) && echo $REPLICA_ID && python /voltha/adapters/brcm_openomci_onu/main.py
               --kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}
               --kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}
-              --core_topic=rwcore
-              --name=brcm_openomci_onu
+              --core_topic={{ .Values.defaults.topics.core_topic }}
+              --name={{ .Values.defaults.topics.adapter_open_onu_topic }}
               --backend=etcd
               --etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}
               --probe=:8080
