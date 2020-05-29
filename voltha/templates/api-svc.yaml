@@ -1,6 +1,4 @@
-{{- if .Values.etcdNodePort -}}
----
-# Copyright 2017-present Open Networking Foundation
+# Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,18 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.clusterName }}-external
+  name: voltha-api
 spec:
-  type: NodePort
   ports:
-    - port: 2379
-      targetPort: 2379
-      nodePort: {{ .Values.etcdNodePort }}
-      protocol: TCP
+    - name: grpc
+      port: 55555
+      targetPort: 50057
   selector:
-    app: "etcd"
-{{- end -}}
+    app: rw-core

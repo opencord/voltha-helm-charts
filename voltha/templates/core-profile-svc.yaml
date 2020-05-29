@@ -11,14 +11,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+{{- if .Values.profiler.enabled }}
 ---
-dependencies:
-  - name: kafka
-    repository: https://kubernetes-charts-incubator.storage.googleapis.com
-    version: 0.15.3
-    condition: private_kafka_cluster
-  - name: voltha-etcd-cluster
-    repository: file://../voltha-etcd-cluster
-    version: 2.2.0
-    condition: private_etcd_cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: voltha-rw-core-profiler
+spec:
+  clusterIP: None
+  ports:
+    - name: rw-core-profiler
+      port: 6060
+      targetPort: 6060
+  selector:
+    app: rw-core
+{{- end }}

@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-serviceaccount: voltha-serviceaccount
-private_etcd_cluster: true
-private_kafka_cluster: true
 use_ofagent_go: true
 
 # Default Values
@@ -30,40 +27,30 @@ defaults:
   rw_core:
     timeout: "8000"
 
-# Configure the Kafka sub-chart (if it is used)
-kafka:
-  configurationOverrides:
-    # Increase replication factor along with Replicas for HA
-    "default.replication.factor": 1
-    "offsets.topic.replication.factor": 1
-    "log.retention.hours": 4
-    "log.message.timestamp.type": "LogAppendTime"
-  persistence:
-    enabled: false
-  zookeeper:
-    replicaCount: 1
-    persistence:
-      enabled: false
-  replicas: 1
+securityContext:
+  enabled: true
+  fsGroup: 1001
+  runAsUser: 1001
+  runAsGroup: 1001
 
 # Define connectivity to services on which VOLTHA depends
 services:
   kafka:
     adapter:
-      service: voltha-kafka.voltha.svc.cluster.local
+      service: kafka
       port: 9092
     cluster:
-      service: voltha-kafka.voltha.svc.cluster.local
+      service: kafka
       port: 9092
 
   # Define connectivity to etcd
   etcd:
-    service: voltha-etcd-cluster-client.voltha.svc.cluster.local
+    service: etcd
     port: 2379
 
   # Define the list of controllers to connect to
   controller:
-    - service: onos-openflow.default.svc.cluster.local
+    - service: onos-openflow
       port: 6653
 
 # Expose the golang pprof webserver, if enabled
@@ -78,7 +65,6 @@ replicas:
 
   # For everything else replicas are replicas
   ofagent: 1
-
 
 rw_core:
   log_level: '{{ .Values.defaults.log_level }}'

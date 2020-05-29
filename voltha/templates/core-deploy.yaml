@@ -13,57 +13,10 @@
 # limitations under the License.
 {{- $log_level := tpl .Values.rw_core.log_level . | upper }}
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: voltha-api
-  serviceAccountName: {{ .Values.serviceaccount }}
-spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
-  ports:
-    - name: grpc
-      port: 55555
-      targetPort: 50057
-  selector:
-    app: rw-core
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: voltha-rw-core
-  serviceAccountName: {{ .Values.serviceaccount }}
-spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
-  clusterIP: None
-  ports:
-    - name: grpc
-      port: 50057
-      targetPort: 50057
-  selector:
-    app: rw-core
----
-{{- if .Values.profiler.enabled }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: voltha-rw-core-profiler
-  serviceAccountName: {{ .Values.serviceaccount }}
-spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
-  clusterIP: None
-  ports:
-    - name: rw-core-profiler
-      port: 6060
-      targetPort: 6060
-  selector:
-    app: rw-core
----
-{{- end }}
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: voltha-rw-core
-  serviceAccountName: {{ .Values.serviceaccount }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "rw_core_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -99,10 +52,13 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
-      serviceAccountName: {{ .Values.serviceaccount }}
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
         - name: voltha
           image: '{{ tpl .Values.images.rw_core.registry . }}{{ tpl .Values.images.rw_core.repository . }}:{{ tpl .Values.images.rw_core.tag . }}'
@@ -142,6 +98,10 @@ spec:
           ports:
             - containerPort: 50057
               name: grpc
+          {{- if .Values.securityContext.enabled }}
+          securityContext:
+            allowPrivilegeEscalation: false
+          {{- end }}
           livenessProbe:
             httpGet:
               path: /healthz

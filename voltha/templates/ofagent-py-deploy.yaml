@@ -1,5 +1,4 @@
-{{- if and (hasKey .Values "use_ofagent_go") .Values.use_ofagent_go }}
-# Copyright 2020-present Open Networking Foundation
+# Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,30 +11,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- $log_level := tpl .Values.ofagent.log_level . | upper }}
-{{- if .Values.profiler.enabled }}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: voltha-of-agent-profiler
-  serviceAccountName: {{ .Values.serviceaccount }}
-spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
-  clusterIP: None
-  ports:
-    - name: ofagent-profiler
-      port: 6060
-      targetPort: 6060
-  selector:
-    app: ofagent
-{{- end }}
+{{- if not .Values.use_ofagent_go }}
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: voltha-ofagent
-  serviceAccountName: {{ .Values.serviceaccount }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "ofagent_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -71,32 +52,31 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       terminationGracePeriodSeconds: 10
-      serviceAccountName: {{ .Values.serviceaccount }}
       containers:
       - name: ofagent
-        image: '{{ tpl .Values.images.ofagent_go.registry . }}{{ tpl .Values.images.ofagent_go.repository . }}:{{ tpl .Values.images.ofagent_go.tag . }}'
-        imagePullPolicy: {{ tpl .Values.images.ofagent_go.pullPolicy . }}
-        env:
-        - name: COMPONENT_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.labels['app.kubernetes.io/name']
+        image: '{{ tpl .Values.images.ofagent_py.registry . }}{{ tpl .Values.images.ofagent_py.repository . }}:{{ tpl .Values.images.ofagent_py.tag . }}'
+        imagePullPolicy: {{ tpl .Values.images.ofagent_py.pullPolicy . }}
         args:
-        - "/app/ofagent"
+        - "/ofagent/ofagent/main.py"
+        - "-v"
+        - "--controller"
         {{- range .Values.services.controller }}
-        - "--controller={{ .service }}:{{ .port }}"
+        - "{{ .service }}:{{ .port }}"
         {{- end }}
-        - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
-        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
-        - "--kv_store_port=2379"
-        - "--kv_store_type=etcd"
-        - "--kv_store_request_timeout=60s"
-        - "--log_level={{ $log_level }}"
+        - "--grpc-endpoint=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
         - "--probe=:8080"
+        {{- if .Values.securityContext.enabled }}
+        securityContext:
+          allowPrivilegeEscalation: false
+        {{- end }}
         livenessProbe:
           httpGet:
             path: /healthz

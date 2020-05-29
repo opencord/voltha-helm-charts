@@ -12,13 +12,24 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-name: voltha
-description: A Helm chart for Voltha based on K8S resources in Voltha project
-icon: https://guide.opencord.org/logos/cord.svg
-
-version: 2.4.6
+apiVersion: "v1"
+name: "voltha"
+version: "2.4.7"
+description: "A Helm chart for Voltha based on K8S resources in Voltha project"
+keywords:
+  - "onf"
+  - "voltha"
+home: "https://www.opennetworking.org/voltha"
+icon: "https://guide.opencord.org/logos/cord.svg"
+sources:
+  - "https://github.com/opencord/voltha-go"
+  - "https://github.com/opencord/ofagent-go"
+  - "https://gerrit.opencord.org/#/admin/projects/ofagent-py"
+maintainers:
+  - name: "Open Networking Foundation"
+    email: "info@opennetworking.org"
+    url: "https://www.opennetworking.org"
 
 # app version applies to multiple components with potentially different
 # container image versions
-appVersion: 2.4
+appVersion: "2.4"
