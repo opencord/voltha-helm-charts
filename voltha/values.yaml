@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-use_ofagent_go: true
-
 # Default Values
 # The following are the default values used for every container in the
 # template.
@@ -75,19 +73,12 @@ rw_core:
 ofagent:
   log_level: '{{ .Values.defaults.log_level }}'
 
-
 # Define Docker images to be used
 images:
-  ofagent_go:
+  ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
     tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.2.0{{- end }}{{- else }}1.2.0{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
-
-  ofagent_py:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-ofagent-py'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.2.7{{- end }}{{- else }}2.2.7{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:

@@ -1,4 +1,4 @@
-# Copyright 2019-present Open Networking Foundation
+# Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- if not .Values.use_ofagent_go }}
+{{- $log_level := tpl .Values.ofagent.log_level . | upper }}
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -53,25 +53,33 @@ spec:
         {{- end }}
         {{- end }}
     spec:
+      terminationGracePeriodSeconds: 10
       {{- if .Values.securityContext.enabled }}
       securityContext:
         runAsUser: {{ .Values.securityContext.runAsUser }}
         runAsGroup: {{ .Values.securityContext.runAsGroup }}
         fsGroup: {{ .Values.securityContext.fsGroup }}
       {{- end }}
-      terminationGracePeriodSeconds: 10
       containers:
       - name: ofagent
-        image: '{{ tpl .Values.images.ofagent_py.registry . }}{{ tpl .Values.images.ofagent_py.repository . }}:{{ tpl .Values.images.ofagent_py.tag . }}'
-        imagePullPolicy: {{ tpl .Values.images.ofagent_py.pullPolicy . }}
+        image: '{{ tpl .Values.images.ofagent.registry . }}{{ tpl .Values.images.ofagent.repository . }}:{{ tpl .Values.images.ofagent.tag . }}'
+        imagePullPolicy: {{ tpl .Values.images.ofagent.pullPolicy . }}
+        env:
+        - name: COMPONENT_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app.kubernetes.io/name']
         args:
-        - "/ofagent/ofagent/main.py"
-        - "-v"
-        - "--controller"
+        - "/app/ofagent"
         {{- range .Values.services.controller }}
-        - "{{ .service }}:{{ .port }}"
+        - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
-        - "--grpc-endpoint=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
+        - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
+        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
+        - "--kv_store_port=2379"
+        - "--kv_store_type=etcd"
+        - "--kv_store_request_timeout=60s"
+        - "--log_level={{ $log_level }}"
         - "--probe=:8080"
         {{- if .Values.securityContext.enabled }}
         securityContext:
@@ -89,4 +97,3 @@ spec:
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5
-{{- end }}

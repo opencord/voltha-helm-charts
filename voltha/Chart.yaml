@@ -14,7 +14,7 @@
 # limitations under the License.
 apiVersion: "v1"
 name: "voltha"
-version: "2.4.7"
+version: "2.4.8"
 description: "A Helm chart for Voltha based on K8S resources in Voltha project"
 keywords:
   - "onf"
@@ -24,7 +24,6 @@ icon: "https://guide.opencord.org/logos/cord.svg"
 sources:
   - "https://github.com/opencord/voltha-go"
   - "https://github.com/opencord/ofagent-go"
-  - "https://gerrit.opencord.org/#/admin/projects/ofagent-py"
 maintainers:
   - name: "Open Networking Foundation"
     email: "info@opennetworking.org"
