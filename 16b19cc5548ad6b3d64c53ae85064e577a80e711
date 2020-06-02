@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76ba6fa5_3f58d808",
+        "filename": "voltha/templates/core-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-06-02T18:14:30Z",
+      "side": 1,
+      "message": "Could just leave api-service here v ?",
+      "revId": "16b19cc5548ad6b3d64c53ae85064e577a80e711",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
