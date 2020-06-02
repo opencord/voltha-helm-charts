@@ -16,6 +16,24 @@
       "revId": "16b19cc5548ad6b3d64c53ae85064e577a80e711",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce397a66_faf6a053",
+        "filename": "voltha/templates/core-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-02T18:39:44Z",
+      "side": 1,
+      "message": "I was reading up on some best practices around Helm and basically the best practice was a resource per file. given that I separated each resource into a separate file. At some level, I agree having a service and its implementing deployment in the same file has advantages, but looking at chart examples it does seem that practice is to separate them as stated in some of the best practices posted on the Helm site.",
+      "parentUuid": "76ba6fa5_3f58d808",
+      "revId": "16b19cc5548ad6b3d64c53ae85064e577a80e711",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
