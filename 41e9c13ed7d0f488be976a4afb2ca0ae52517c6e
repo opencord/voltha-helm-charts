@@ -22,6 +22,30 @@
       "revId": "41e9c13ed7d0f488be976a4afb2ca0ae52517c6e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f68fb4f_aafcea07",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-06-04T22:57:37Z",
+      "side": 1,
+      "message": "The default is a single one, but you can override them individually, can\u0027t you?",
+      "parentUuid": "d6fed2a2_ce6d7e49",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 18
+      },
+      "revId": "41e9c13ed7d0f488be976a4afb2ca0ae52517c6e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
