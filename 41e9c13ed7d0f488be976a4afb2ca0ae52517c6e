@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6fed2a2_ce6d7e49",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-04T22:52:58Z",
+      "side": 1,
+      "message": "given this is set on 3 different parameters, shouldn\u0027t there be 3 different values as opposed to use the same one for each timeout?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 18
+      },
+      "revId": "41e9c13ed7d0f488be976a4afb2ca0ae52517c6e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
