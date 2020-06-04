@@ -1,4 +1,3 @@
-{{- if and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go }}
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,13 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+{{- if and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go }}
 {{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
-
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-onu
+  name: {{ .Release.Name }}-adapter-open-onu
   namespace: {{ .Release.Namespace }}
+  release: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openonu_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -37,10 +38,12 @@ spec:
   selector:
     matchLabels:
       app: adapter-open-onu
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: adapter-open-onu
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "adapter-open-onu"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
@@ -57,9 +60,13 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
         - name: adapter-open-onu
           image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'

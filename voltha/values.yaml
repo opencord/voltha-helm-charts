@@ -1,4 +1,3 @@
----
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+---
 
 # Default Values
 # The following are the default values used for every container in the
@@ -26,12 +26,13 @@ defaults:
     timeout: "8000"
   topics:
     core_topic: "rwcore"
-    
+
   # Define prefix path for etcd
-  # If you're running multiple voltha stacks the this value 
+  # If you're running multiple voltha stacks the this value
   # should be unique across the stacks.
   kv_store_data_prefix: "service/voltha"
 
+# Default security context under which the containers run
 securityContext:
   enabled: true
   fsGroup: 1001

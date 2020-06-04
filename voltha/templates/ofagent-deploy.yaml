@@ -16,7 +16,8 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: voltha-ofagent
+  name: {{ .Release.Name }}-voltha-ofagent
+  release: {{ .Release.Name }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "ofagent_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -36,6 +37,7 @@ spec:
     metadata:
       labels:
         app: ofagent
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "open-flow-agent"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "integration"
@@ -74,8 +76,8 @@ spec:
         {{- range .Values.services.controller }}
         - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
-        - "--voltha=voltha-api.{{ .Release.Namespace }}.svc.cluster.local:55555"
-        - "--kv_store_host=voltha-etcd-cluster-client.{{ .Release.Namespace }}.svc.cluster.local"
+        - "--voltha={{ .Release.Name }}-voltha-api.{{ .Release.Namespace }}.svc:55555"
+        - "--kv_store_host=etcd.{{ .Release.Namespace }}.svc"
         - "--kv_store_port=2379"
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"
