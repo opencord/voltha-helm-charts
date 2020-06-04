@@ -1,4 +1,4 @@
-# Copyright 2020-present Open Networking Foundation
+# Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 {{- if .Values.profiler.enabled }}
+{{- $log_level := tpl .Values.adapter_open_olt.log_level . | upper }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-voltha-of-agent-profiler
+  name: "{{ .Release.Name }}-adapter-open-olt-profiler"
   release: {{ .Release.Name }}
 spec:
   clusterIP: None
   ports:
-    - name: ofagent-profiler
+    - name: profiler
       port: 6060
       targetPort: 6060
   selector:
-    app: ofagent
+    app: adapter-open-olt
     release: {{ .Release.Name }}
 {{- end }}
