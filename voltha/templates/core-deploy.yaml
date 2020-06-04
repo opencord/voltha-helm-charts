@@ -16,7 +16,8 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: voltha-rw-core
+  name: {{ .Release.Name }}-voltha-rw-core
+  release: {{ .Release.Name }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "rw_core_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -36,6 +37,7 @@ spec:
     metadata:
       labels:
         app: rw-core
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "read-write-core"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "core"

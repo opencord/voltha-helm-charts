@@ -43,7 +43,7 @@ Once helm is initialized deploy the [ONOS OpenFlow
 Controller](https://onosproject.org/) using the `make helm-onos` command.
 
 #### Prerequite Helm Chart Repositories
-To use the charts for VOLTHA the following two Helm repositories should be 
+To use the charts for VOLTHA the following two Helm repositories should be
 added to your helm environment:
 ```shell
 helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
@@ -93,7 +93,7 @@ helm install --namespace voltha --name voltha-adapter-simulated ./voltha-adapter
 ```
 
 ##### Adapters for OpenOLT and OpenONU
-The adapters for the OpenOLT and OpenONU are in separate helm charts. There are currently 
+The adapters for the OpenOLT and OpenONU are in separate helm charts. There are currently
 two versions of the OpenOLT adapter, one implemented in **Python** and one
 implemented in **Go**. The same chart is used to deploy either the Python or Go
 implementation and which one is used is determined by a value setting.
