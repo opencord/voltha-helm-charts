@@ -1,4 +1,3 @@
----
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+---
 use_openonu_adapter_go: false
 
 # Default overrides
@@ -26,6 +25,13 @@ defaults:
     core_topic: "rwcore"
     adapter_open_onu_topic: "brcm_openomci_onu"
     adapter_open_olt_topic: "openolt"
+
+# Default security context under which the containers run
+securityContext:
+  enabled: true
+  fsGroup: 1001
+  runAsUser: 1001
+  runAsGroup: 1001
 
 # Define connectivity to required services
 services:

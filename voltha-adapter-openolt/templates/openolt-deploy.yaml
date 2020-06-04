@@ -12,29 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 {{- $log_level := tpl .Values.adapter_open_olt.log_level . | upper }}
-
-{{- if .Values.profiler.enabled }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: adapter-open-olt-profiler
-  serviceAccountName: {{ .Values.serviceaccount }}
-spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
-  clusterIP: None
-  ports:
-    - name: profiler
-      port: 6060
-      targetPort: 6060
-  selector:
-    app: adapter-open-olt
 ---
-{{- end }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-olt
+  name: {{ .Release.Name }}-adapter-open-olt
   namespace: {{ .Release.Namespace }}
+  release: {{ .Release.Name }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openolt_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
@@ -52,10 +36,12 @@ spec:
   selector:
     matchLabels:
       app: adapter-open-olt
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: adapter-open-olt
+        release: {{ .Release.Name }}
         app.kubernetes.io/name: "adapter-open-olt"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
@@ -72,9 +58,13 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
         - name: adapter-open-olt
           image: '{{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}'

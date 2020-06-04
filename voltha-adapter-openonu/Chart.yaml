@@ -1,4 +1,3 @@
----
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,9 +11,26 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+---
+apiVersion: "v1"
+name: "voltha-adapter-openonu"
+version: 2.3.8
+description: "A Helm chart for Voltha OpenONU Adapter"
+keywords:
+  - "onf"
+  - "voltha"
+  - "adapter"
+  - "onu"
+  - "open"
+home: "https://www.opennetworking.org/voltha"
+icon: "https://guide.opencord.org/logos/voltha.svg"
+sources:
+  - "https://github.com/opencord/voltha-openonu-adapter"
+maintainers:
+  - name: "Open Networking Foundation"
+    email: "info@opennetworking.org"
+    url: "https://www.opennetworking.org"
 
-name: voltha-adapter-openonu
-description: A Helm chart for Voltha OpenONU Adapter
-icon: https://guide.opencord.org/logos/cord.svg
-
-version: 2.3.7
+# appVersion refers to multiple components with potentially different
+# container image versions.
+appVersion: 2.4
