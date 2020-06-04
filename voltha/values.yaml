@@ -23,12 +23,12 @@ defaults:
   image_tag: ~
   image_pullPolicy: "Always"
   rw_core:
-    timeout: "8000"
+    timeout: "10s"
   topics:
     core_topic: "rwcore"
-    
+
   # Define prefix path for etcd
-  # If you're running multiple voltha stacks the this value 
+  # If you're running multiple voltha stacks the this value
   # should be unique across the stacks.
   kv_store_data_prefix: "service/voltha"
 

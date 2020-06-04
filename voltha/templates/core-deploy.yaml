@@ -90,9 +90,9 @@ spec:
             - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
             - "-rw_core_topic={{ .Values.defaults.topics.core_topic }}"
             - "-in_competing_mode=false"
-            - "-core_timeout=10s"
-            - "-timeout_long_request=10s"
-            - "-timeout_request=10s"
+            - "-core_timeout={{ tpl .Values.rw_core.core_timeout . }}"
+            - "-timeout_long_request={{ tpl .Values.rw_core.timeout_long_request . }}"
+            - "-timeout_request={{ tpl .Values.rw_core.timeout_request . }}"
             - "-log_level={{ $log_level }}"
             - "-probe_port=8080"
           ports:
