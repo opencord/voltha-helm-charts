@@ -11,36 +11,37 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- $log_level := tpl .Values.rw_core.log_level . | upper }}
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-voltha-rw-core
-  release: {{ .Release.Name }}
-  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "rw_core_deployment_labels") }}
+  name: adapter-simulated-onu
+  namespace: {{ .Release.Namespace }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "simonu_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
     {{- range $key, $val := .Values.extra_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
-    {{- if hasKey .Values "rw_core_deployment_labels" }}
-    {{- range $key, $val := .Values.rw_core_deployment_labels }}
+    {{- if hasKey .Values "simonu_deployment_labels" }}
+    {{- range $key, $val := .Values.simonu_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
   {{- end }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas.adapter_simulated_onu }}
+  selector:
+    matchLabels:
+      app: adapter-simulated-onu
   template:
     metadata:
       labels:
-        app: rw-core
-        release: {{ .Release.Name }}
-        app.kubernetes.io/name: "read-write-core"
+        app: adapter-simulated-onu
+        app.kubernetes.io/name: "adapter-simulated-onu"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
-        app.kubernetes.io/component: "core"
+        app.kubernetes.io/component: "adapter"
         app.kubernetes.io/part-of: "voltha"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
@@ -49,8 +50,8 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-        {{- if hasKey .Values "rw_core_pod_labels" }}
-        {{- range $key, $val := .Values.rw_core_pod_labels }}
+        {{- if hasKey .Values "simonu_pod_labels" }}
+        {{- range $key, $val := .Values.simonu_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
@@ -62,57 +63,29 @@ spec:
         fsGroup: {{ .Values.securityContext.fsGroup }}
       {{- end }}
       containers:
-        - name: voltha
-          image: '{{ tpl .Values.images.rw_core.registry . }}{{ tpl .Values.images.rw_core.repository . }}:{{ tpl .Values.images.rw_core.tag . }}'
-          imagePullPolicy: {{ tpl .Values.images.rw_core.pullPolicy . }}
-          env:
-            - name: NAMESPACE
-              value: voltha
-            - name: POD_IP
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.podIP
-            - name: COMPONENT_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['app.kubernetes.io/name']
-            - name: KV_STORE_DATAPATH_PREFIX
-              value: {{ .Values.defaults.kv_store_data_prefix }}
+        - name: adapter-simulated-onu
+          image: '{{ tpl .Values.images.adapter_simulated_onu.registry . }}{{ tpl .Values.images.adapter_simulated_onu.repository . }}:{{ tpl .Values.images.adapter_simulated_onu.tag . }}'
+          imagePullPolicy: {{ tpl .Values.images.adapter_simulated_onu.pullPolicy . }}
           args:
-            - "/app/rw_core"
-            - "-kv_store_type=etcd"
-            - "-kv_store_host={{ .Values.services.etcd.service }}"
-            - "-kv_store_port={{ .Values.services.etcd.port }}"
-            - "-grpc_host=0.0.0.0"
-            - "-grpc_port=50057"
-            - "-banner=true"
+            - "/app/simulated_onu"
             - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
             - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
             - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "-rw_core_topic={{ .Values.defaults.topics.core_topic }}"
-            - "-in_competing_mode=false"
-            - "-core_timeout=10s"
-            - "-timeout_long_request=10s"
-            - "-timeout_request=10s"
-            - "-log_level={{ $log_level }}"
+            - "-kv_store_host={{ .Values.services.etcd.service }}"
+            - "-kv_store_port={{ .Values.services.etcd.port }}"
+            - "-core_topic=rwcore"
+            - "-simulator_topic=simulated_onu"
             - "-probe_port=8080"
-          ports:
-            - containerPort: 50057
-              name: grpc
-          {{- if .Values.securityContext.enabled }}
-          securityContext:
-            allowPrivilegeEscalation: false
-          {{- end }}
           livenessProbe:
             httpGet:
               path: /healthz
               port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
+            initialDelaySeconds: 10
+            periodSeconds: 5
           readinessProbe:
             httpGet:
               path: /readz
               port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
+            initialDelaySeconds: 10
+            periodSeconds: 5
