@@ -11,17 +11,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+{{- if .Values.profiler.enabled }}
+{{- $log_level := tpl .Values.adapter_open_olt.log_level . | upper }}
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: voltha-api
-  namespace: "{{ .Release.Namespace }}"
+  name: adapter-open-olt-profiler
+  namespace: {{ .Release.Namespace }}
 spec:
+  clusterIP: None
   ports:
-    - name: grpc
-      port: 55555
-      targetPort: 50057
+    - name: profiler
+      port: 6060
+      targetPort: 6060
   selector:
-    app: rw-core
-    release: "{{ .Release.Name }}"
+    app: adapter-open-olt
+    release: {{ .Release.Name }}
+{{- end }}
