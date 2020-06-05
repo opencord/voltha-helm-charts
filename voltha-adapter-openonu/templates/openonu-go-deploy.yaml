@@ -11,52 +11,40 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- $log_level := tpl .Values.adapter_open_olt.log_level . | upper }}
-
-{{- if .Values.profiler.enabled }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: adapter-open-olt-profiler
-  serviceAccountName: {{ .Values.serviceaccount }}
-spec:
-  serviceAccountName: {{ .Values.serviceaccount }}
-  clusterIP: None
-  ports:
-    - name: profiler
-      port: 6060
-      targetPort: 6060
-  selector:
-    app: adapter-open-olt
+{{- if and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go }}
+{{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
 ---
-{{- end }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-olt
+  name: adapter-open-onu
   namespace: {{ .Release.Namespace }}
-  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openolt_deployment_labels") }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openonu_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
     {{- range $key, $val := .Values.extra_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
-    {{- if hasKey .Values "openolt_deployment_labels" }}
-    {{- range $key, $val := .Values.openolt_deployment_labels }}
+    {{- if hasKey .Values "openonu_deployment_labels" }}
+    {{- range $key, $val := .Values.openonu_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
   {{- end }}
 spec:
+  replicas: {{ .Values.replicas.adapter_open_onu }}
   selector:
     matchLabels:
-      app: adapter-open-olt
+      app: adapter-open-onu
+      release: {{ .Release.Name }}
   template:
     metadata:
+      namespace: {{ .Release.Namespace }}
       labels:
-        app: adapter-open-olt
-        app.kubernetes.io/name: "adapter-open-olt"
+        app: adapter-open-onu
+        release: {{ .Release.Name }}
+        app.kubernetes.io/name: "adapter-open-onu"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
         app.kubernetes.io/part-of: "voltha"
@@ -67,38 +55,40 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-        {{- if hasKey .Values "openolt_pod_labels" }}
-        {{- range $key, $val := .Values.openolt_pod_labels }}
+        {{- if hasKey .Values "openonu_pod_labels" }}
+        {{- range $key, $val := .Values.openonu_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
-        - name: adapter-open-olt
-          image: '{{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}'
-          imagePullPolicy: {{ tpl .Values.images.adapter_open_olt.pullPolicy . }}
-          env: 
+        - name: adapter-open-onu
+          image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
+          imagePullPolicy: {{ tpl .Values.images.adapter_open_onu_go.pullPolicy . }}
+          env:
             - name: COMPONENT_NAME
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.labels['app.kubernetes.io/name']
-            - name: KV_STORE_DATAPATH_PREFIX
-              value: {{ .Values.defaults.kv_store_data_prefix }}
           args:
-            - "/app/openolt"
+            - "/app/openonu"
+            - "--banner=true"
+            - "--kafka_reconnect_retries=-1"
             - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
             - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic={{ .Values.defaults.topics.core_topic }}"
-            - "--adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}"
+            - "--core_topic=rwcore"
+            - "--adapter_topic=brcm_openomci_onu"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--log_level={{ $log_level }}"
-            - "--current_replica={{ .Values.replicas.current_replica }}"
-            - "--total_replica={{ .Values.replicas.total_replica }}"
             - "--probe_port=8080"
           livenessProbe:
             httpGet:
@@ -112,3 +102,4 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+{{- end }}

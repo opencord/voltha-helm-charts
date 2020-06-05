@@ -1,4 +1,3 @@
-{{- if and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go }}
 # Copyright 2019-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,36 +11,38 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
-
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-onu
+  name: adapter-simulated-olt
   namespace: {{ .Release.Namespace }}
-  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openonu_deployment_labels") }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "simolt_deployment_labels") }}
   labels:
     {{- if hasKey .Values "extra_deployment_labels" }}
     {{- range $key, $val := .Values.extra_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
-    {{- if hasKey .Values "openonu_deployment_labels" }}
-    {{- range $key, $val := .Values.openonu_deployment_labels }}
+    {{- if hasKey .Values "simolt_deployment_labels" }}
+    {{- range $key, $val := .Values.simolt_deployment_labels }}
     {{ $key }}: {{ $val | quote }}
     {{- end }}
     {{- end }}
   {{- end }}
 spec:
-  replicas: {{ .Values.replicas.adapter_open_onu }}
+  replicas: {{ .Values.replicas.adapter_simulated_olt }}
   selector:
     matchLabels:
-      app: adapter-open-onu
+      app: adapter-simulated-olt
+      release: {{ .Release.Name }}
   template:
     metadata:
+      namespace: {{ .Release.Namespace }}
       labels:
-        app: adapter-open-onu
-        app.kubernetes.io/name: "adapter-open-onu"
+        app: adapter-simulated-olt
+        release: {{ .Release.Name }}
+        app.kubernetes.io/name: "adapter-simulated-olt"
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
         app.kubernetes.io/part-of: "voltha"
@@ -52,37 +53,34 @@ spec:
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-        {{- if hasKey .Values "openonu_pod_labels" }}
-        {{- range $key, $val := .Values.openonu_pod_labels }}
+        {{- if hasKey .Values "simolt_pod_labels" }}
+        {{- range $key, $val := .Values.simolt_pod_labels }}
         {{ $key }}: {{ $val | quote }}
         {{- end }}
         {{- end }}
-      annotations:
-        cni: "calico"
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
-        - name: adapter-open-onu
-          image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
-          imagePullPolicy: {{ tpl .Values.images.adapter_open_onu_go.pullPolicy . }}
-          env:
-            - name: COMPONENT_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['app.kubernetes.io/name']
+        - name: adapter-simulated-olt
+          image: '{{ tpl .Values.images.adapter_simulated_olt.registry . }}{{ tpl .Values.images.adapter_simulated_olt.repository . }}:{{ tpl .Values.images.adapter_simulated_olt.tag . }}'
+          imagePullPolicy: {{ tpl .Values.images.adapter_simulated_olt.pullPolicy . }}
           args:
-            - "/app/openonu"
-            - "--banner=true"
-            - "--kafka_reconnect_retries=-1"
-            - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
-            - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
-            - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
-            - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic=rwcore"
-            - "--adapter_topic=brcm_openomci_onu"
-            - "--kv_store_host={{ .Values.services.etcd.service }}"
-            - "--kv_store_port={{ .Values.services.etcd.port }}"
-            - "--log_level={{ $log_level }}"
-            - "--probe_port=8080"
+            - "/app/simulated_olt"
+            - "-kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "-kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
+            - "-kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
+            - "-kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
+            - "-kv_store_host={{ .Values.services.etcd.service }}"
+            - "-kv_store_port={{ .Values.services.etcd.port }}"
+            - "-core_topic=rwcore"
+            - "-simulator_topic=simulated_olt"
+            - "-onu_number={{ .Values.onus_per_pon_port }}"
+            - "-probe_port=8080"
           livenessProbe:
             httpGet:
               path: /healthz
@@ -95,4 +93,3 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
-{{- end }}

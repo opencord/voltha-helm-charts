@@ -16,10 +16,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: voltha-api
+  namespace: "{{ .Release.Namespace }}"
 spec:
   ports:
-    - name: grpc
+    - name: "grpc"
       port: 55555
       targetPort: 50057
   selector:
-    app: rw-core
+    app: "rw-core"
+    release: "{{ .Release.Name }}"
