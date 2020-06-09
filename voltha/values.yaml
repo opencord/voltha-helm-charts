@@ -53,6 +53,10 @@ services:
   etcd:
     address: etcd:2379
 
+  # Define Tracing Agent connection details
+  tracing_agent:
+    address: jaeger-agent:6831
+
   # Define the list of controllers to connect to
   controller:
     - address: onos-openflow:6653
@@ -61,7 +65,15 @@ services:
 profiler:
   enabled: false
 
-# Define the recplica count for everything
+# Configure Log Correlation
+log_correlation:
+  enabled: true
+
+# Configure Tracing
+tracing:
+  enabled: false
+
+# Define the replica count for everything
 replicas:
   # For R/W cores the templates translate the number of replicas
   # into the number of RW core pairs with two pods per pair
@@ -84,11 +96,11 @@ images:
   ofagent:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.2.1{{- end }}{{- else }}1.2.1{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.3.0{{- end }}{{- else }}1.3.0{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.4.2{{- end }}{{- else }}2.4.2{{- end }}'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.5.1{{- end }}{{- else }}2.5.1{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'

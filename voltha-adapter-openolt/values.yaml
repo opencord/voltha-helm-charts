@@ -56,9 +56,21 @@ services:
   etcd:
     address: etcd:2379
 
+  # Define Tracing Agent connection details
+  tracing_agent:
+    address: jaeger-agent:6831
+
 # Expose the golang pprof webserver, if enabled
 profiler:
   enabled: false
+
+# Configure Log Correlation
+log_correlation:
+  enabled: true
+
+# Configure Tracing
+tracing:
+  enabled: true
 
 # Define the recplica count for everything
 replicas:
