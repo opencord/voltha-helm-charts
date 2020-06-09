@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eedc3db3_3fe53aad",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:19:52Z",
+      "side": 1,
+      "message": "is the appVersion really changing or just the chart version.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "cc552592797765d1ce5cb34fea5f23eb29669838",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6e18aa_6af77987",
+        "filename": "voltha-adapter-openolt/templates/adapters-openolt.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:19:52Z",
+      "side": 1,
+      "message": "probe_address? or probe_endpoint? it isn\u0027t really a port any more. it was changed to probe address in the other chart in this patch.",
+      "range": {
+        "startLine": 99,
+        "startChar": 15,
+        "endLine": 99,
+        "endChar": 34
+      },
+      "revId": "cc552592797765d1ce5cb34fea5f23eb29669838",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb571555_a10e84d9",
+        "filename": "voltha/templates/core-deploy.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:19:52Z",
+      "side": 1,
+      "message": "Thinking on this. Should .Values.services.kafka.adapter.service now be a single host:port value as opposed to separate values?",
+      "range": {
+        "startLine": 85,
+        "startChar": 42,
+        "endLine": 85,
+        "endChar": 121
+      },
+      "revId": "cc552592797765d1ce5cb34fea5f23eb29669838",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14a85ecf_22ab518e",
+        "filename": "voltha/templates/ofagent-deploy.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:19:52Z",
+      "side": 1,
+      "message": "need a new JIRA as this shouldn\u0027t be hard coded",
+      "range": {
+        "startLine": 78,
+        "startChar": 100,
+        "endLine": 78,
+        "endChar": 104
+      },
+      "revId": "cc552592797765d1ce5cb34fea5f23eb29669838",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
