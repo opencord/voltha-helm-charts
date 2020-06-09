@@ -1,4 +1,4 @@
-# Copyright 2019-present Open Networking Foundation
+# Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,25 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-apiVersion: "v1"
-name: "voltha-adapter-openolt"
-version: 2.4.7
-description: "A Helm chart for Voltha OpenOLT Adapter"
-keywords:
-  - "onf"
-  - "voltha"
-  - "adapter"
-  - "olt"
-  - "open"
+apiVersion: v1
+appVersion: "2.4.1"
+description: "A Helm chart for deploying Jaeger all-in-one container for Trace data collection and analysis"
+name: voltha-tracing
+version: "1.18"
+
 home: "https://www.opennetworking.org/voltha"
-icon: "https://guide.opencord.org/logos/voltha.svg"
-sources:
-  - "https://github.com/opencord/voltha-openolt-adapter"
+icon: "https://guide.opencord.org/logos/cord.svg"
+
 maintainers:
   - name: "Open Networking Foundation"
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
-
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: 2.4.8

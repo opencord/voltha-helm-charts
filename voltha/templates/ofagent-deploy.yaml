@@ -78,11 +78,13 @@ spec:
         - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
         - "--voltha={{ template "fullname" . }}-api.{{ .Release.Namespace }}.svc:55555"
-        - "--kv_store_address=etcd.{{ .Release.Namespace }}.svc:{{ .Values.services.etcd.port }}"
+        - "--kv_store_address={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}"
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
         - "--probe=:8080"
+        - "--trace_enabled={{ .Values.tracing.enabled }}"
+        - "--trace_agent_address={{ .Values.tracing.agent.service }}:{{ .Values.tracing.agent.port }}"
         {{- if .Values.securityContext.enabled }}
         securityContext:
           allowPrivilegeEscalation: false
