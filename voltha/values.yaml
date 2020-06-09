@@ -65,6 +65,43 @@ services:
 profiler:
   enabled: false
 
+# Configure Tracing and Agent connection details
+tracing:
+  enabled: true
+  agent:
+    service: jaeger-agent
+    port: 6831
+
+# Define the recplica count for everything
+replicas:
+  # For R/W cores the templates translate the number of replicas
+  # into the number of RW core pairs with two pods per pair
+  rw_core: 1
+
+  # For everything else replicas are replicas
+  ofagent: 1
+
+rw_core:
+  log_level: '{{ .Values.defaults.log_level }}'
+  core_timeout: '{{ .Values.defaults.rw_core.timeout }}'
+  timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
+  timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
+
+ofagent:
+  log_level: '{{ .Values.defaults.log_level }}'
+
+# Define Docker images to be used
+images:
+  ofagent:
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.2.0{{- end }}{{- else }}1.2.0{{- end }}'
+    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
+
+  rw_core:
+    registry: '{{ .Values.defaults.image_registry }}'
+    repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
+    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.4.1{{- end }}{{- else }}2.4.1{{- end }}'
 # Define the recplica count for everything
 replicas:
   # For R/W cores the templates translate the number of replicas
