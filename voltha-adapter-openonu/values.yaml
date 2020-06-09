@@ -52,6 +52,13 @@ services:
     service: etcd
     port: 2379
 
+# Configure Tracing and Agent connection details
+tracing:
+  enabled: true
+  agent:
+    service: jaeger-agent
+    port: 6831
+
 # Define the recplica count for everything
 replicas:
   adapter_open_onu: 1

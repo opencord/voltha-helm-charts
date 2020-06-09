@@ -86,7 +86,9 @@ spec:
               --log_level={{ tpl .Values.adapter_open_onu.log_level . | upper }}
               --totalReplicas={{ .Values.replicas.adapter_open_onu }}
               --currentReplica=$REPLICA_ID
-              --accept_incremental_evto_update={{ tpl .Values.adapter_open_onu.incremental_evto_update . }}"
+              --accept_incremental_evto_update={{ tpl .Values.adapter_open_onu.incremental_evto_update . }}
+              --trace_enabled={{ .Values.tracing.enabled }}
+              --trace_agent_address={{ .Values.tracing.agent.service }}:{{ .Values.tracing.agent.port }}"
         {{- if .Values.securityContext.enabled }}
         securityContext:
           allowPrivilegeEscalation: false
