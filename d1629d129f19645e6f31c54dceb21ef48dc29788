@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ccd3922b_1fe16af9",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:42:33Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "6c0efcba_437d0105",
+      "range": {
+        "startLine": 40,
+        "startChar": 15,
+        "endLine": 40,
+        "endChar": 52
+      },
+      "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "399fd1b7_a2608946",
         "filename": "voltha/templates/api-svc.yaml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "66a03e71_caa547e4",
+        "filename": "voltha/templates/api-svc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:42:33Z",
+      "side": 1,
+      "message": "i go back and forth on quotes in yaml. best practices say to use quotes everywhere so it is clear to the parser what is a string v an int; but it seems redundant in a lot of cases (and ugly). i will remove here as fewer changes in code the better",
+      "parentUuid": "399fd1b7_a2608946",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d9bf82b_0b7e144a",
         "filename": "voltha/templates/ofagent-deploy.yaml",
         "patchSetId": 1
@@ -59,6 +107,24 @@
       "writtenOn": "2020-06-09T17:39:02Z",
       "side": 1,
       "message": "Why is .cluster.local being removed everywhere?  Seen this in a few patches now.",
+      "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7150a44f_b79c7433",
+        "filename": "voltha/templates/ofagent-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-09T17:42:33Z",
+      "side": 1,
+      "message": "redundant and not required is really the answer, i.e. cluster.local is the default so if left out everything still works and is implies the yaml (less clutter).",
+      "parentUuid": "7d9bf82b_0b7e144a",
       "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
