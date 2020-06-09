@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c0efcba_437d0105",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-06-09T17:39:02Z",
+      "side": 1,
+      "message": "adapter-open-olt uses just \"kafka\", should these be the same?",
+      "range": {
+        "startLine": 40,
+        "startChar": 15,
+        "endLine": 40,
+        "endChar": 52
+      },
+      "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "399fd1b7_a2608946",
+        "filename": "voltha/templates/api-svc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-06-09T17:39:02Z",
+      "side": 1,
+      "message": "Should\u0027t _need_ to use quotes for strings, but I suppose it\u0027s fine.",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d9bf82b_0b7e144a",
+        "filename": "voltha/templates/ofagent-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000107
+      },
+      "writtenOn": "2020-06-09T17:39:02Z",
+      "side": 1,
+      "message": "Why is .cluster.local being removed everywhere?  Seen this in a few patches now.",
+      "revId": "d1629d129f19645e6f31c54dceb21ef48dc29788",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
