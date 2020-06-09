@@ -83,6 +83,9 @@ spec:
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
         - "--probe=:8080"
+        - "--trace_enabled={{ .Values.tracing.enabled }}"
+        - "--trace_agent_address={{ .Values.tracing.agent.service }}:{{ .Values.tracing.agent.port }}"
+        - "--log_correlation_enabled={{ .Values.log_correlation.enabled }}"
         {{- if .Values.securityContext.enabled }}
         securityContext:
           allowPrivilegeEscalation: false
