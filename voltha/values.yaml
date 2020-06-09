@@ -65,6 +65,13 @@ services:
 profiler:
   enabled: false
 
+# Configure Tracing and Agent connection details
+tracing:
+  enabled: true
+  agent:
+    service: jaeger-agent
+    port: 6831
+
 # Define the recplica count for everything
 replicas:
   # For R/W cores the templates translate the number of replicas
