@@ -16,7 +16,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-olt
+  name: "{{ template "fullname" . }}"
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openolt_deployment_labels") }}
   labels:
@@ -90,6 +90,10 @@ spec:
             - "--current_replica={{ .Values.replicas.current_replica }}"
             - "--total_replica={{ .Values.replicas.total_replica }}"
             - "--probe_port=8080"
+          {{- if .Values.securityContext.enabled }}
+          securityContext:
+            allowPrivilegeEscalation: false
+          {{- end }}
           livenessProbe:
             httpGet:
               path: /healthz

@@ -16,7 +16,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: voltha-rw-core
+  name: "{{ template "fullname" . }}-rw-core"
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "rw_core_deployment_labels") }}
   labels:

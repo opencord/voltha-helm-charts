@@ -17,7 +17,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-open-onu
+  name: "{{ template "fullname" . }}"
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openonu_deployment_labels") }}
   labels:
@@ -90,6 +90,10 @@ spec:
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--log_level={{ $log_level }}"
             - "--probe_port=8080"
+          {{- if .Values.securityContext.enabled }}
+          securityContext:
+            allowPrivilegeEscalation: false
+          {{- end }}
           livenessProbe:
             httpGet:
               path: /healthz

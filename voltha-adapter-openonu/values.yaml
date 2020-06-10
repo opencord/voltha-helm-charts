@@ -14,6 +14,9 @@
 ---
 use_openonu_adapter_go: false
 
+nameOverride: ~
+fullNameOverride: ~
+
 # Default overrides
 defaults:
   log_level: "WARN"

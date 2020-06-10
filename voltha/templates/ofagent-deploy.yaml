@@ -16,7 +16,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: voltha-ofagent
+  name: "{{ template "fullname" . }}-ofagent"
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "ofagent_deployment_labels") }}
   labels:
@@ -77,7 +77,7 @@ spec:
         {{- range .Values.services.controller }}
         - "--controller={{ .service }}:{{ .port }}"
         {{- end }}
-        - "--voltha=voltha-api.{{ .Release.Namespace }}.svc:55555"
+        - "--voltha={{ template "fullname" . }}-api.{{ .Release.Namespace }}.svc:55555"
         - "--kv_store_host=etcd.{{ .Release.Namespace }}.svc"
         - "--kv_store_port=2379"
         - "--kv_store_type=etcd"

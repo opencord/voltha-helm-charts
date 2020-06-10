@@ -15,7 +15,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adapter-simulated-olt
+  name: "{{ template "fullname" . }}-olt"
   namespace: {{ .Release.Namespace }}
   {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "simolt_deployment_labels") }}
   labels:
