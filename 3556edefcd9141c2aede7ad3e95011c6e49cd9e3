@@ -114,6 +114,99 @@
       "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "174b47d7_71cc61ec",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:51:51Z",
+      "side": 1,
+      "message": "really dislike NodePort. we really need to come up with a \"solution\" such as ingress and stick with it.",
+      "parentUuid": "907947c3_1a4a5f8e",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 17
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f59c2b5_ac3516d7",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:51:51Z",
+      "side": 1,
+      "message": "release label and helper naming please",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 9
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48598b6e_748df54a",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:51:51Z",
+      "side": 1,
+      "message": "we need to be consistent across charts. i we going to use \"app\" and \"release\" for selection or the k8s labels.",
+      "range": {
+        "startLine": 54,
+        "startChar": 22,
+        "endLine": 54,
+        "endChar": 26
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4370a97_82784bdf",
+        "filename": "voltha-tracing/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:51:51Z",
+      "side": 1,
+      "message": "please add security context information",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
