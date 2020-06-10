@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "907947c3_1a4a5f8e",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-06-10T17:39:47Z",
+      "side": 1,
+      "message": "how about optionally exposing a NodePort so we don\u0027t have to use another port-forward to access it?",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 17
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
