@@ -1,4 +1,4 @@
-# Copyright 2019-present Open Networking Foundation
+# Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,20 +11,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- if .Values.profiler.enabled }}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: "{{ template "fullname" . }}-rw-core-profiler"
-  namespace: {{ .Release.Namespace }}
-spec:
-  clusterIP: None
-  ports:
-    - name: rw-core-profiler
-      port: 6060
-      targetPort: 6060
-  selector:
-    app: rw-core
-    release: {{ .Release.Name }}
-{{- end }}
+{{/* Expand the name of the chart. */}}
+{{- define "name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{/* Create a default fully qualified app name. We truncate at 63 chars because . . . */}}
+{{- define "fullname" -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- $fullname := default (printf "%s-%s" .Release.Name $name) .Values.fullNameOverride -}}
+{{- $fullname | trunc 63 | trimSuffix "-" -}}
+{{- end -}}

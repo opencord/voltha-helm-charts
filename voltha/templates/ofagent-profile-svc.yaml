@@ -16,7 +16,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: voltha-of-agent-profiler
+  name: "{{ template "fullname" .  }}-of-agent-profiler"
   namespace: {{ .Release.Namespace }}
 spec:
   clusterIP: None
