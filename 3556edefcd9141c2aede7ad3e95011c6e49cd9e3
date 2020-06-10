@@ -2,6 +2,98 @@
   "comments": [
     {
       "key": {
+        "uuid": "523fab98_c72779e7",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:49:03Z",
+      "side": 1,
+      "message": "should the app version be 2.4, as this is the \"voltha\" app version?",
+      "range": {
+        "startLine": 16,
+        "startChar": 13,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f8176c5_d7e81261",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:49:03Z",
+      "side": 1,
+      "message": "please add label `release: \u0027{{ Release.Name }}\u0027 also see the existing helm charts how they are using a _helper.tpl for naming\n\nalso need the other recommend helm labels",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 15
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3e17ee6_884f6795",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:49:03Z",
+      "side": 1,
+      "message": "release and helm labels please",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5fdf392_3425ce6d",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-10T17:49:03Z",
+      "side": 1,
+      "message": "please add a security context",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 18
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "907947c3_1a4a5f8e",
         "filename": "voltha-tracing/templates/services.yaml",
         "patchSetId": 2
