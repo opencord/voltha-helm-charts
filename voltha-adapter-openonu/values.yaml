@@ -57,6 +57,7 @@ replicas:
 
 adapter_open_onu:
   log_level: '{{ .Values.defaults.log_level }}'
+  incremental_evto_update: False
 
 images:
   adapter_open_onu:
