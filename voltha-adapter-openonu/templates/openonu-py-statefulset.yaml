@@ -85,7 +85,8 @@ spec:
               --probe=:8080
               --log_level={{ tpl .Values.adapter_open_onu.log_level . | upper }}
               --totalReplicas={{ .Values.replicas.adapter_open_onu }}
-              --currentReplica=$REPLICA_ID"
+              --currentReplica=$REPLICA_ID
+              --accept_incremental_evto_update={{ .Values.adapter_open_onu.incremental_evto_update }}"
         {{- if .Values.securityContext.enabled }}
         securityContext:
           allowPrivilegeEscalation: false

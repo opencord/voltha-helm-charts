@@ -24,6 +24,7 @@ defaults:
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  incremental_evto_update: False
   topics:
     core_topic: "rwcore"
     adapter_open_onu_topic: "brcm_openomci_onu"
@@ -57,6 +58,7 @@ replicas:
 
 adapter_open_onu:
   log_level: '{{ .Values.defaults.log_level }}'
+  incremental_evto_update: '{{ .Values.defaults.incremental_evto_update }}'
 
 images:
   adapter_open_onu:
