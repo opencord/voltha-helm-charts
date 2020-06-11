@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "82f73213_35a62b16",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-11T15:37:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b592e6a1_32a051c3",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "cc552592797765d1ce5cb34fea5f23eb29669838",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6e18aa_6af77987",
         "filename": "voltha-adapter-openolt/templates/adapters-openolt.yaml",
         "patchSetId": 6
