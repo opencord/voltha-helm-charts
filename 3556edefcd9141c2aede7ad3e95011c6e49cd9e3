@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "913c52ee_07882d43",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "Alright. Changed to 2.4.1.",
+      "parentUuid": "523fab98_c72779e7",
+      "range": {
+        "startLine": 16,
+        "startChar": 13,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8f8176c5_d7e81261",
         "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-06-10T17:49:03Z",
       "side": 1,
       "message": "please add label `release: \u0027{{ Release.Name }}\u0027 also see the existing helm charts how they are using a _helper.tpl for naming\n\nalso need the other recommend helm labels",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 15
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c27f6c9_2525dfce",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "I missed to notice this k8s Object naming prefix using Release and Chart. Incorporated the changes needed. Also added _helper.tpl into this chart",
+      "parentUuid": "8f8176c5_d7e81261",
       "range": {
         "startLine": 20,
         "startChar": 4,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "caac35fb_27a6d3b1",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "f3e17ee6_884f6795",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e5fdf392_3425ce6d",
         "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2020-06-10T17:49:03Z",
       "side": 1,
       "message": "please add a security context",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 18
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd3aaf62_5e4ff057",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "e5fdf392_3425ce6d",
       "range": {
         "startLine": 36,
         "startChar": 8,
@@ -141,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "e45a5b2e_39c23505",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "I guess NodePort will also not work because we are deploying in KIND setup",
+      "parentUuid": "174b47d7_71cc61ec",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 17
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f59c2b5_ac3516d7",
         "filename": "voltha-tracing/templates/services.yaml",
         "patchSetId": 2
@@ -152,6 +272,30 @@
       "writtenOn": "2020-06-10T17:51:51Z",
       "side": 1,
       "message": "release label and helper naming please",
+      "range": {
+        "startLine": 39,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 9
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f14f4769_06bd6b75",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "6f59c2b5_ac3516d7",
       "range": {
         "startLine": 39,
         "startChar": 8,
@@ -187,6 +331,30 @@
     },
     {
       "key": {
+        "uuid": "22d025a9_cf946c2c",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "Right. Changed to use app and release only",
+      "parentUuid": "48598b6e_748df54a",
+      "range": {
+        "startLine": 54,
+        "startChar": 22,
+        "endLine": 54,
+        "endChar": 26
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b4370a97_82784bdf",
         "filename": "voltha-tracing/values.yaml",
         "patchSetId": 2
@@ -198,6 +366,30 @@
       "writtenOn": "2020-06-10T17:51:51Z",
       "side": 1,
       "message": "please add security context information",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "3556edefcd9141c2aede7ad3e95011c6e49cd9e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3f9f3bd_a26df750",
+        "filename": "voltha-tracing/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-11T12:35:48Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "b4370a97_82784bdf",
       "range": {
         "startLine": 16,
         "startChar": 0,
