@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1d7f668_898b646e",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2020-06-12T05:28:16Z",
+      "side": 1,
+      "message": "I feel this value should not be under defaults since it\u0027s a specific value for the openonu-adapter.",
+      "revId": "88f58623709e6bcd6a7386cfa0e05089e7cea11d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
