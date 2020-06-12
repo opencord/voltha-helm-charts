@@ -1,0 +1,349 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1b419f3_0c572c90",
+        "filename": "voltha-curator/Chart.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "this file needs to be filled out more. please see the chart.yaml files in voltha chart",
+      "range": {
+        "startLine": 1,
+        "startChar": 1,
+        "endLine": 1,
+        "endChar": 2
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e12ac71_eb5e1da7",
+        "filename": "voltha-curator/requirements.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "if there are not requirements i think we can just delete this file",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 3
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97021fec_42219eeb",
+        "filename": "voltha-curator/templates/curator.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "2020",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce8409fd_9ae11485",
+        "filename": "voltha-curator/templates/curator.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "please add name helpers (see other voltha charts) and well as security context",
+      "range": {
+        "startLine": 3,
+        "startChar": 2,
+        "endLine": 3,
+        "endChar": 10
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9d739d2_6a443aa4",
+        "filename": "voltha-curator/templates/curator.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "there isn\u0027t a pre-build image with curl already?",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 174
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df3e144c_87c22976",
+        "filename": "voltha-curator/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "2020",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d72e438_ab9eda7f",
+        "filename": "voltha-logging/Chart.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "2020",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53e4dfa2_8ec8eb37",
+        "filename": "voltha-logging/Chart.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "please see voltha/Chart.yaml and flesh this out.",
+      "range": {
+        "startLine": 4,
+        "startChar": 2,
+        "endLine": 4,
+        "endChar": 10
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdcb1f7e_5ae10e4d",
+        "filename": "voltha-logging/Chart.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "surprised there isn\u0027t already a pre-built chart to deploy a ELK stack",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c0b578a_78ab38b1",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "2020",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2053530e_67f0a911",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "please add security context and name helpers",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39f4e61c_03ab740e",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "if not used then delete",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 35
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ac0b48d_3b1e8b52",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "these should be set as env vars on the container and not in a bash script like this. also passwords should be done via secrets not clear text.",
+      "range": {
+        "startLine": 65,
+        "startChar": 14,
+        "endLine": 71,
+        "endChar": 33
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "714e57b8_60b42fe0",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "delete if not used",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 92,
+        "endChar": 0
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9454463e_ee3269f2",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-12T03:42:15Z",
+      "side": 1,
+      "message": "should not be clear text",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 26
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
