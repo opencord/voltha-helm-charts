@@ -117,6 +117,30 @@
     },
     {
       "key": {
+        "uuid": "5f2a9835_7abe34cc",
+        "filename": "voltha-curator/templates/curator.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2020-06-15T11:33:01Z",
+      "side": 1,
+      "message": "couldn\u0027t find any image so using like this",
+      "parentUuid": "e9d739d2_6a443aa4",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 174
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "df3e144c_87c22976",
         "filename": "voltha-curator/values.yaml",
         "patchSetId": 11
@@ -232,6 +256,30 @@
     },
     {
       "key": {
+        "uuid": "d3a77a65_36b844c3",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2020-06-15T11:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c0b578a_78ab38b1",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2053530e_67f0a911",
         "filename": "voltha-logging/values.yaml",
         "patchSetId": 11
@@ -278,6 +326,30 @@
     },
     {
       "key": {
+        "uuid": "332a3fe4_76d37e6d",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2020-06-15T11:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39f4e61c_03ab740e",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 35
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ac0b48d_3b1e8b52",
         "filename": "voltha-logging/values.yaml",
         "patchSetId": 11
@@ -289,6 +361,30 @@
       "writtenOn": "2020-06-12T03:42:15Z",
       "side": 1,
       "message": "these should be set as env vars on the container and not in a bash script like this. also passwords should be done via secrets not clear text.",
+      "range": {
+        "startLine": 65,
+        "startChar": 14,
+        "endLine": 71,
+        "endChar": 33
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd8d37d8_ac625ec4",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2020-06-15T11:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac0b48d_3b1e8b52",
       "range": {
         "startLine": 65,
         "startChar": 14,
@@ -324,6 +420,30 @@
     },
     {
       "key": {
+        "uuid": "4b95b110_2c91280d",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2020-06-15T11:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "714e57b8_60b42fe0",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 92,
+        "endChar": 0
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9454463e_ee3269f2",
         "filename": "voltha-logging/values.yaml",
         "patchSetId": 11
@@ -335,6 +455,30 @@
       "writtenOn": "2020-06-12T03:42:15Z",
       "side": 1,
       "message": "should not be clear text",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 26
+      },
+      "revId": "b7e5083f24028159d58ad7ca4893cc6244644caf",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4949dc4f_20705d42",
+        "filename": "voltha-logging/values.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000627
+      },
+      "writtenOn": "2020-06-15T11:33:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9454463e_ee3269f2",
       "range": {
         "startLine": 104,
         "startChar": 0,
