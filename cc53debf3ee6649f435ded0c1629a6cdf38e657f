@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd5c73a8_c7921f58",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-18T16:35:35Z",
+      "side": 1,
+      "message": "why keep service and port separate, why not just\n```\ntracing:\n  agent: jaeger-agent:68311\n```",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 65,
+        "endChar": 14
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "55b2bcc2_832c8338",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-18T16:35:35Z",
+      "side": 1,
+      "message": "keywords?\nit might be nice to have some order consistency in the values with the other charts.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 3
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f566b3d_f0d2ebe8",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-18T16:35:35Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6734fd5c_118bfe81",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-18T16:35:35Z",
+      "side": 1,
+      "message": "as per helm best practice, each resource should be in its own template file",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 3
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8320ea17_8ad40d38",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-18T16:35:35Z",
+      "side": 1,
+      "message": "default to false?",
+      "range": {
+        "startLine": 70,
+        "startChar": 11,
+        "endLine": 70,
+        "endChar": 15
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
