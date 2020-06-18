@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a460439_e85dee95",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-18T18:19:10Z",
+      "side": 1,
+      "message": "I just followed how it has been done other infra services of etcd and kafka. Also, as we are overriding these in kind-voltha script using INTERNAL_EXTRA_HELM_INSTALL_ARGS, keeping service and port separate is much cleaner.",
+      "parentUuid": "cd5c73a8_c7921f58",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 65,
+        "endChar": 14
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "55b2bcc2_832c8338",
         "filename": "voltha-tracing/Chart.yaml",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2020-06-18T16:35:35Z",
       "side": 1,
       "message": "keywords?\nit might be nice to have some order consistency in the values with the other charts.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 3
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc746b55_84d336f2",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-18T18:19:10Z",
+      "side": 1,
+      "message": "Updated in line with voltha chart",
+      "parentUuid": "55b2bcc2_832c8338",
       "range": {
         "startLine": 14,
         "startChar": 0,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "edc49876_4986fa05",
+        "filename": "voltha-tracing/templates/jaeger-deploy.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-18T18:19:10Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "3f566b3d_f0d2ebe8",
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6734fd5c_118bfe81",
         "filename": "voltha-tracing/templates/services.yaml",
         "patchSetId": 8
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "0d3c7e6b_0b906246",
+        "filename": "voltha-tracing/templates/services.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-18T18:19:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6734fd5c_118bfe81",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 3
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8320ea17_8ad40d38",
         "filename": "voltha/values.yaml",
         "patchSetId": 8
@@ -99,6 +189,30 @@
       "writtenOn": "2020-06-18T16:35:35Z",
       "side": 1,
       "message": "default to false?",
+      "range": {
+        "startLine": 70,
+        "startChar": 11,
+        "endLine": 70,
+        "endChar": 15
+      },
+      "revId": "cc53debf3ee6649f435ded0c1629a6cdf38e657f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c161355_51638476",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-06-18T18:19:10Z",
+      "side": 1,
+      "message": "Changed.\n\nAlso checked the voltha script in kind-voltha. It is already setting this to true when WITH_TRACING is yes; so we are fine there",
+      "parentUuid": "8320ea17_8ad40d38",
       "range": {
         "startLine": 70,
         "startChar": 11,
