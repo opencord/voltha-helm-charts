@@ -92,7 +92,6 @@ spec:
             - "-kafka_adapter_address={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}"
             - "-kafka_cluster_address={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}"
             - "-rw_core_topic={{ .Values.defaults.topics.core_topic }}"
-            - "-in_competing_mode=false"
             - "-core_timeout={{ tpl .Values.rw_core.core_timeout . }}"
             - "-timeout_long_request={{ tpl .Values.rw_core.timeout_long_request . }}"
             - "-timeout_request={{ tpl .Values.rw_core.timeout_request . }}"
