@@ -13,7 +13,7 @@
 # limitations under the License.
 {{- $log_level := tpl .Values.ofagent.log_level . | upper }}
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "{{ template "fullname" . }}-ofagent"
@@ -33,6 +33,10 @@ metadata:
   {{- end }}
 spec:
   replicas: {{ .Values.replicas.ofagent }}
+  selector:
+    matchLabels:
+      app: ofagent
+      release: {{ .Release.Name }}
   template:
     metadata:
       namespace: {{ .Release.Namespace }}
