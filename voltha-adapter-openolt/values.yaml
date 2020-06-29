@@ -31,12 +31,24 @@ defaults:
   # should be unique across the stacks.
   kv_store_data_prefix: "service/voltha"
 
+  # Default affinity configuration
+  affinityConfig:
+    enabled: false
+    node_label_key: "in-band"
+    node_label_value: "yes"
+
 # Default security context under which the containers run
 securityContext:
   enabled: true
   fsGroup: 1001
   runAsUser: 1001
   runAsGroup: 1001
+
+# POD Affinity Configuration
+affinityConfig:
+  enabled: '{{ .Values.defaults.affinityConfig.enabled }}'
+  node_label_key: '{{ .Values.defaults.affinityConfig.node_label_key }}'
+  node_label_value: '{{ .Values.defaults.affinityConfig.node_label_value }}'
 
 # Define connectivity to required services
 services:
