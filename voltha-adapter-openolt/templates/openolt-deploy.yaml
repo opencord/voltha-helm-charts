@@ -65,6 +65,18 @@ spec:
         runAsGroup: {{ .Values.securityContext.runAsGroup }}
         fsGroup: {{ .Values.securityContext.fsGroup }}
       {{- end }}
+      {{- if .Values.affinityConfig.enabled }}
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: '{{ tpl .Values.affinityConfig.node_label_key . }}'
+                operator: In
+                values:
+                - '{{ tpl .Values.affinityConfig.node_label_value . }}'
+            topologyKey: topology.kubernetes.io/zone
+      {{- end }}
       containers:
         - name: adapter-open-olt
           image: '{{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}'
