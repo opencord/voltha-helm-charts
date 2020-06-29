@@ -38,6 +38,12 @@ securityContext:
   runAsUser: 1001
   runAsGroup: 1001
 
+# Node Affinity Configuration
+nodeAffinityConfig:
+  enabled: true
+  node_label_key: "in-band"
+  node_label_value: "yes"
+
 # Define connectivity to required services
 services:
   kafka:
