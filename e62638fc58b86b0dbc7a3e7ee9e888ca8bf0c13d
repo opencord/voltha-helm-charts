@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0894983_ce01fd0b",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "quoted",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 17,
+        "endChar": 14
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30e236bd_1e523301",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "quoted",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 15
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62477e4b_eac63c42",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "quoted",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 17,
+        "endChar": 14
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44adf781_42099fce",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "should be quoted to make sure yaml interprets as a string",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 15
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "098b1693_6bba2ee9",
+        "filename": "voltha-adapter-simulated/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "should be quoted",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 17,
+        "endChar": 14
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2380436_975b5ba7",
+        "filename": "voltha-adapter-simulated/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "should be quote to make sure yaml interprets as a string",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 15
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdcb5933_d119a677",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-06-30T23:30:28Z",
+      "side": 1,
+      "message": "should be quoted else yaml may interpret as a number",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 15
+      },
+      "revId": "e62638fc58b86b0dbc7a3e7ee9e888ca8bf0c13d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
