@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-openolt"
-version: "2.5.0"
+version: "2.5.1"
 description: "A Helm chart for Voltha OpenOLT Adapter"
 keywords:
   - "onf"
@@ -31,6 +31,5 @@ maintainers:
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
 
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: "2.4"
+# appVersion selects the image tag to run
+appVersion: "2.4.9"
