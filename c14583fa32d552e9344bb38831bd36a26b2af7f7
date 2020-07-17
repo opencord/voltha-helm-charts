@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "597d73a1_39a5f7dd",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-07-17T07:40:29Z",
+      "side": 1,
+      "message": "minor nit: is there a way to fetch this from the version ?",
+      "revId": "c14583fa32d552e9344bb38831bd36a26b2af7f7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
