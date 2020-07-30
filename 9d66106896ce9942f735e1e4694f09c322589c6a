@@ -22,6 +22,30 @@
       "revId": "9d66106896ce9942f735e1e4694f09c322589c6a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5002ce7c_cc5d12f3",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-07-30T18:27:21Z",
+      "side": 1,
+      "message": "Done. Also, updated kind-voltha patch to set address",
+      "parentUuid": "77fc4867_1cdb8387",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 0
+      },
+      "revId": "9d66106896ce9942f735e1e4694f09c322589c6a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
