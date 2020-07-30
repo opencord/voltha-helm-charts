@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77fc4867_1cdb8387",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-07-30T17:46:34Z",
+      "side": 1,
+      "message": "Would it make sense to move this under \"services\"? we should merge service/port into a single \"address\" like was done for other services.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 0
+      },
+      "revId": "9d66106896ce9942f735e1e4694f09c322589c6a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
