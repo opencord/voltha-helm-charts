@@ -98,6 +98,9 @@ spec:
             - "--current_replica={{ .Values.replicas.current_replica }}"
             - "--total_replica={{ .Values.replicas.total_replica }}"
             - "--probe_address=:8080"
+            - "--trace_enabled={{ .Values.tracing.enabled }}"
+            - "--trace_agent_address={{ .Values.services.tracing_agent.address }}"
+            - "--log_correlation_enabled={{ .Values.log_correlation.enabled }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
