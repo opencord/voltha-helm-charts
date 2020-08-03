@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "087f6469_8b51fac4",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-03T16:12:21Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "e0c421a0_38873a6a",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 17,
+        "endChar": 15
+      },
+      "revId": "b14c5ba4228d20806201bc078cb130a78eacb333",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0fb2e2c3_5f51c6a7",
         "filename": "voltha-tracing/Chart.yaml",
         "patchSetId": 15
@@ -45,6 +69,30 @@
       "revId": "b14c5ba4228d20806201bc078cb130a78eacb333",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02c6388c_bec0b15e",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-03T16:12:21Z",
+      "side": 1,
+      "message": "Added source code reference. But kept doc reference as well because there is no markdown present on github link of all-in-one chart source.",
+      "parentUuid": "0fb2e2c3_5f51c6a7",
+      "range": {
+        "startLine": 27,
+        "startChar": 5,
+        "endLine": 27,
+        "endChar": 72
+      },
+      "revId": "b14c5ba4228d20806201bc078cb130a78eacb333",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
