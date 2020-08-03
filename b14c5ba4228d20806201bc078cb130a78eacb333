@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0c421a0_38873a6a",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-08-03T05:45:29Z",
+      "side": 1,
+      "message": "Given this is a new chart, should the version be 1.0.0?",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 17,
+        "endChar": 15
+      },
+      "revId": "b14c5ba4228d20806201bc078cb130a78eacb333",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fb2e2c3_5f51c6a7",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-08-03T05:45:29Z",
+      "side": 1,
+      "message": "should this be the source code reference or a doc reference?",
+      "range": {
+        "startLine": 27,
+        "startChar": 5,
+        "endLine": 27,
+        "endChar": 72
+      },
+      "revId": "b14c5ba4228d20806201bc078cb130a78eacb333",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
