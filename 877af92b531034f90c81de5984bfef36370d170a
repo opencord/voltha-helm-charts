@@ -1,0 +1,10 @@
+Verified+1: Jenkins Jenkins <do-not-reply@opencord.org>
+Code-Review+1: Scott Baker <scottb@opennetworking.org>
+Code-Review+1: Matteo Scandolo <teo@opennetworking.org>
+Code-Review+1: David Bainbridge <dbainbri@ciena.com>
+Code-Review+2: Andrea Campanella <andrea@opennetworking.org>
+Submitted-by: Andrea Campanella <andrea@opennetworking.org>
+Submitted-at: Mon, 03 Aug 2020 08:37:30 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/19968
+Project: voltha-helm-charts
+Branch: refs/heads/master
