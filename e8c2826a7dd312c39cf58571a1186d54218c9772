@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f409056_c3f113e2",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2020-08-18T00:19:20Z",
+      "side": 1,
+      "message": "I noticed that we skipped a minor version in openolt adapter, and that is why you will see here that we are jumping from 2.4.14 to 2.4.16",
+      "range": {
+        "startLine": 35,
+        "startChar": 13,
+        "endLine": 35,
+        "endChar": 19
+      },
+      "revId": "e8c2826a7dd312c39cf58571a1186d54218c9772",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
