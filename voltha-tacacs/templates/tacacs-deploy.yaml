@@ -1,0 +1,63 @@
+# Copyright 2020-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ template "fullname" . }}-tacacs"
+  namespace: "{{ .Release.Namespace }}"
+  labels:
+    app: tacacs
+    release: "{{ .Release.Name }}"
+    app.kubernetes.io/name: voltha-tacacs
+    app.kubernetes.io/component: tacacs
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: tacacs
+      release: "{{ .Release.Name }}"
+  template:
+    metadata:
+      namespace: "{{ .Release.Namespace }}"
+      labels:
+        app: tacacs
+        release: "{{ .Release.Name }}"
+        app.kubernetes.io/name: voltha-tacacs
+        app.kubernetes.io/version: {{quote .Chart.Version}}
+        app.kubernetes.io/component: tacacs
+    spec:
+      containers:
+        - name: tacacs
+          image: '{{ .Values.image.tacacs.repository }}:{{ .Values.image.tacacs.tag }}'
+          imagePullPolicy: '{{ .Values.image.tacacs.pullPolicy }}'
+          env:
+            - name: CONF_FILE
+              value: "/etc/tacacs+/tac_plus.cfg"
+          ports:
+            - containerPort: 49
+              protocol: TCP
+          volumeMounts:
+            - name: tacacs-config
+              mountPath: /etc/tacacs+/tac_user.cfg
+              subPath: tac_user.cfg
+            - name: tacacs-config
+              mountPath: /etc/tacacs+/tac_plus.cfg
+              subPath: tac_plus.cfg
+      volumes:
+        - name: tacacs-config
+          configMap:
+            name: tacacs-config
