@@ -1,0 +1,115 @@
+# Copyright 2020-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+
+nameOverride: ~
+fullNameOverride: ~
+
+serviceaccount: ""
+
+tacacs:
+  image:
+    repository: "dchidell/docker-tacacs"
+    tag: "latest"
+    pullPolicy: "Always"
+
+configurations:
+  tac_user.cfg: |
+    host = world {
+    address = 0.0.0.0/0 # Which devices can use this server
+    key = tacacs # Modify this value to change TACACS key to device.
+    enable = clear voltha # Added this to support ASAs which require enable secrets
+    }
+
+    group = sysadmin {
+        service = shell {
+            default command = permit
+        }
+    }
+
+    group = admin {
+        service = shell {
+            cmd = flowadd
+            cmd = flowremove
+            cmd = collectstatistics
+            cmd = getextvalue
+            cmd = omcimsgout
+            cmd = onupacketout
+            cmd = getdeviceinfo
+        }
+    }
+
+    group = operator {
+        service = shell {
+            cmd = collectstatistics
+            cmd = getextvalue
+            cmd = omcimsgout
+            cmd = onupacketout
+            cmd = getdeviceinfo
+        }
+    }
+
+    user = user1 {
+        password = clear voltha
+        member = sysadmin
+    }
+
+    user = user2 {
+        password = clear voltha
+        member = admin
+    }
+
+    user = user3 {
+        password = clear voltha
+        member = operator
+    }
+
+  tac_plus.cfg : |
+    id = spawnd {
+    listen = { port = 49 }
+    spawn = {
+        instances min = 1
+        instances max = 10
+    }
+    background = no
+    }
+    id = tac_plus {
+        debug = AUTHOR AUTHEN
+
+        log = stdout {
+            destination = /proc/1/fd/1
+        }
+
+        log = stderr {
+            destination = /dev/stderr
+        }
+
+        log = file {
+            destination = /var/log/tac_plus.log
+        }
+        # Seems to have problems with STDOUT, so we'll log to STDERR as well (this works fine!)
+        authentication log = stderr
+        authorization log = stderr
+        accounting log = stderr
+
+        authentication log = file
+        authorization log = file
+        accounting log = file
+
+        user = $enable$ {
+            pap = clear enable
+        }
+
+        include = /etc/tacacs/tac_user.cfg
+    }
