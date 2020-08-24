@@ -1,4 +1,4 @@
-# Copyright 2019-present Open Networking Foundation
+# Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,24 +13,19 @@
 # limitations under the License.
 ---
 apiVersion: "v1"
-name: "voltha-adapter-openolt"
-version: "2.6.3"
-description: "A Helm chart for Voltha OpenOLT Adapter"
+name: "voltha-tacacs-server"
+version: "1.0.0"
+description: "A Helm chart for deploying Tacacs_plus for Authentication, Authorization and Accounting"
 keywords:
   - "onf"
   - "voltha"
-  - "adapter"
-  - "olt"
-  - "open"
+  - "tacacs"
 home: "https://www.opennetworking.org/voltha"
-icon: "https://guide.opencord.org/logos/voltha.svg"
-sources:
-  - "https://github.com/opencord/voltha-openolt-adapter"
+icon: "https://guide.opencord.org/logos/cord.svg"
 maintainers:
   - name: "Open Networking Foundation"
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
 
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: "2.5.5"
+# App Version here refers to Tacacs container image version used by default in this chart
+appVersion: "latest"
