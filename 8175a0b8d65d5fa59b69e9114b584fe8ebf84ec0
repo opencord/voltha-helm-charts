@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f825e57_b5638be1",
+        "filename": "voltha-tacacs/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Only the \"latest\" tag is available as of now. https://hub.docker.com/r/dchidell/docker-tacacs/tags",
+      "parentUuid": "ffc83098_c659f531",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52fe9ad7_0ed719eb",
         "filename": "voltha-tacacs/templates/tacacs-config.yaml",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67e86ebc_763464ab",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "52fe9ad7_0ed719eb",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "05d85f34_3911d5bb",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Done. Thanks.",
+      "parentUuid": "bfa092d4_a3472540",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0045663d_5f5d8b77",
         "filename": "voltha-tacacs/templates/tacacs-config.yaml",
         "patchSetId": 4
@@ -67,6 +121,24 @@
       "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ec52b1a_96352862",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0045663d_5f5d8b77",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "4a8dea11_7d6e5892",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8457c42b_0d8f5806",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfe38e0e_4b2d5bf2",
         "filename": "voltha-tacacs/values.yaml",
         "patchSetId": 4
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "e48b78b2_5d8f8173",
+        "filename": "voltha-tacacs/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfe38e0e_4b2d5bf2",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef641fd9_331cac58",
         "filename": "voltha-tacacs/values.yaml",
         "patchSetId": 4
@@ -118,6 +226,24 @@
       "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c254d90b_ba75f2eb",
+        "filename": "voltha-tacacs/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-25T14:41:35Z",
+      "side": 1,
+      "message": "Chart.AppVersion also using the \"latest\" as tag. Left it as it is.",
+      "parentUuid": "ef641fd9_331cac58",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
