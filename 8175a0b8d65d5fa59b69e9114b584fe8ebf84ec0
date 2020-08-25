@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffc83098_c659f531",
+        "filename": "voltha-tacacs/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "Put specific release version of tacacs server image available as of today",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52fe9ad7_0ed719eb",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "Privilege level is usually used in Session based authorization mechanism; not in command-based. Please check. Remove it if not used; else will cause confusion",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfa092d4_a3472540",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "Also, add a new config map entry tac_custom.conf with value as {{ .Values.tacacs.customConfig }} and also add it as a additional volume mount. Include it also in tac_plus.cfg \n\nDefine a attribute as following in values.yaml for this custom configuration as\n\ntacacs:\n  customConfig: |\n    // Placeholder to extend with Custom configuraton\n\n\n\nWe can then override this Value in kind-voltha minimal_values.yaml to supply custom configuration to TACACS server",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0045663d_5f5d8b77",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "Remove this config and from line 94 to 96 if stdout logs are not working fine",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8457c42b_0d8f5806",
+        "filename": "voltha-tacacs/templates/tacacs-config.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "Remove + sign from folder path; source of issues",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfe38e0e_4b2d5bf2",
+        "filename": "voltha-tacacs/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "reverse the order. put tacacs as the top key and image as the next level",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef641fd9_331cac58",
+        "filename": "voltha-tacacs/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000526
+      },
+      "writtenOn": "2020-08-25T07:18:42Z",
+      "side": 1,
+      "message": "Use chart.AppVersion value here",
+      "revId": "8175a0b8d65d5fa59b69e9114b584fe8ebf84ec0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
