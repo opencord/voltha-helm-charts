@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23ce2573_6d00e892",
+        "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-08-26T09:31:46Z",
+      "side": 1,
+      "message": "is this a sample config or can it actually be used in a deployment ? I wonder bevoace things like 0.0.0.0/0 are not really something I was expecting.",
+      "revId": "e79c91dc569af74b61eefff5dc3cd7984ca0b92a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b40c413d_b4072be9",
+        "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-08-26T09:31:46Z",
+      "side": 1,
+      "message": "can these be values attributes expanded here?",
+      "revId": "e79c91dc569af74b61eefff5dc3cd7984ca0b92a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caf15fab_9defc18f",
+        "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-08-26T09:31:46Z",
+      "side": 1,
+      "message": "this port has to be identical to the tacacs-deploy.yaml port, it\u0027s suggest to bring it in the values.yaml file.",
+      "revId": "e79c91dc569af74b61eefff5dc3cd7984ca0b92a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
