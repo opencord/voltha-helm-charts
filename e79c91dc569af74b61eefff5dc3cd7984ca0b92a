@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "aad6ce79_783fbc7f",
+        "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-08-26T12:06:03Z",
+      "side": 1,
+      "message": "then I woudl leave just tags (e.g. \ndata:\n  tac_user.cfg: |)\nhere and move the example configuration in the values.yaml file. this shows that you need to change the cfg in there. It\u0027s expected that the values.yaml changes, while template files do not.",
+      "parentUuid": "e0513a47_c16e2968",
+      "revId": "e79c91dc569af74b61eefff5dc3cd7984ca0b92a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b40c413d_b4072be9",
         "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
         "patchSetId": 8
