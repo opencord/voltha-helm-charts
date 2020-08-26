@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e0513a47_c16e2968",
+        "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-26T11:37:55Z",
+      "side": 1,
+      "message": "Yes, this is just a sample configuration as of now. Will be modified accordingly when POC will be done using this helm charts.",
+      "parentUuid": "23ce2573_6d00e892",
+      "revId": "e79c91dc569af74b61eefff5dc3cd7984ca0b92a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b40c413d_b4072be9",
         "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
         "patchSetId": 8
