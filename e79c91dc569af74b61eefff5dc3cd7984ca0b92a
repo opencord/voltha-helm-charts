@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "6fc14bf2_e6bb3ef6",
+        "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000612
+      },
+      "writtenOn": "2020-08-28T13:08:32Z",
+      "side": 1,
+      "message": "Done. Moved the sample configurations to values.yaml.",
+      "parentUuid": "aad6ce79_783fbc7f",
+      "revId": "e79c91dc569af74b61eefff5dc3cd7984ca0b92a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b40c413d_b4072be9",
         "filename": "voltha-tacacs-server/templates/tacacs-config.yaml",
         "patchSetId": 8
