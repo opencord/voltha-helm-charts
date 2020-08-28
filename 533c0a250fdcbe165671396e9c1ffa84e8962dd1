@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c8d330b7_20828f53",
+        "filename": "voltha-tacacs-server/values.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-08-28T14:53:48Z",
+      "side": 1,
+      "message": "I would say maybe a better name here is configurations or cfgs for short, I tend to avoid naming elements with \"reserved\" helm/k8s names.",
+      "revId": "533c0a250fdcbe165671396e9c1ffa84e8962dd1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
