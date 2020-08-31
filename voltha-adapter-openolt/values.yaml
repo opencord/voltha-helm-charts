@@ -30,6 +30,8 @@ defaults:
   # If you're running multiple voltha stacks the this value
   # should be unique across the stacks.
   kv_store_data_prefix: "service/voltha"
+  #enable OMCC encryption
+  omcc_encryption: true
 
 # Default security context under which the containers run
 securityContext:
