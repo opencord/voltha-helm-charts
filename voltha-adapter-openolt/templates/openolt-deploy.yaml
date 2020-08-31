@@ -101,6 +101,7 @@ spec:
             - "--trace_enabled={{ .Values.tracing.enabled }}"
             - "--trace_agent_address={{ .Values.services.tracing_agent.address }}"
             - "--log_correlation_enabled={{ .Values.log_correlation.enabled }}"
+            - "--omcc_encryption={{ .Values.defaults.omcc_encryption }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
