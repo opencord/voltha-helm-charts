@@ -38,6 +38,12 @@ securityContext:
   runAsUser: 1001
   runAsGroup: 1001
 
+# Credentials for accessing openolt agent GRPC API
+# Should be base64 encoded values
+olt_credentials:
+  username: YWRtaW4= # admin
+  password: dm9sdGhh # voltha
+
 # Node Affinity Configuration
 nodeAffinityConfig:
   enabled: false
