@@ -16,6 +16,24 @@
       "revId": "b91caa6771c083d1fc42b009b3ded78d6d3e2c88",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c295e5a5_da2f672c",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000635
+      },
+      "writtenOn": "2020-09-07T05:11:17Z",
+      "side": 1,
+      "message": "Addressed",
+      "parentUuid": "f75fdb83_291ada43",
+      "revId": "b91caa6771c083d1fc42b009b3ded78d6d3e2c88",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
