@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31e1f7f8_889ca35e",
+        "filename": "VERSION",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2020-09-08T19:42:49Z",
+      "side": 1,
+      "message": "Bump to 2.5.0 or keep the same dev version.\nIn this case you have skipped from one dev version to another.",
+      "revId": "71741d97ff80dafac7af12f92f5632e28d41292a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
