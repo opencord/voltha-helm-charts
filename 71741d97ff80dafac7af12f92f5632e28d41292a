@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "55a0c0cd_c58a794b",
+        "filename": "VERSION",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000635
+      },
+      "writtenOn": "2020-09-09T10:40:45Z",
+      "side": 1,
+      "message": "Addressed",
+      "parentUuid": "31e1f7f8_889ca35e",
+      "revId": "71741d97ff80dafac7af12f92f5632e28d41292a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0b0d01a2_9d7fca92",
         "filename": "voltha-adapter-openolt/Chart.yaml",
         "patchSetId": 5
@@ -30,6 +48,30 @@
       "writtenOn": "2020-09-08T19:53:30Z",
       "side": 1,
       "message": "Are you sure this is correct?\nShouldn\u0027t this be 2.5.4 which refers to the openolt adapter container version that contains your changes for configuring omcc_encryption",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 16
+      },
+      "revId": "71741d97ff80dafac7af12f92f5632e28d41292a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ee98e96_8c1dd0b3",
+        "filename": "voltha-adapter-openolt/Chart.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000635
+      },
+      "writtenOn": "2020-09-09T10:40:45Z",
+      "side": 1,
+      "message": "changed the version to 2.5.4",
+      "parentUuid": "0b0d01a2_9d7fca92",
       "range": {
         "startLine": 36,
         "startChar": 12,
