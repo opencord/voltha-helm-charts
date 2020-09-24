@@ -1,0 +1,7 @@
+Code-Review+2: Matteo Scandolo <teo@opennetworking.org>
+Verified+1: Matteo Scandolo <teo@opennetworking.org>
+Submitted-by: Matteo Scandolo <teo@opennetworking.org>
+Submitted-at: Thu, 24 Sep 2020 02:59:35 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/20668
+Project: voltha-helm-charts
+Branch: refs/heads/voltha-2.5
