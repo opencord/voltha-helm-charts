@@ -90,6 +90,7 @@ spec:
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--log_level={{ $log_level }}"
             - "--probe_port=8080"
+            - "--max_timeout_interadapter_comm={{ tpl .Values.adapter_open_onu.max_timeout_interadapter_comm . }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
