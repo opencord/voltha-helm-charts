@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0a559448_a466c2b1",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000726
+      },
+      "writtenOn": "2020-09-28T09:09:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5fa91a97_3c39a1ce",
+      "revId": "939a4c100ae6c7de820c5b4cdcb62110d0638ad6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f54b1eab_31f45623",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 1
@@ -54,6 +72,30 @@
       "side": 1,
       "message": "correct, should be 10",
       "parentUuid": "f54b1eab_31f45623",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "939a4c100ae6c7de820c5b4cdcb62110d0638ad6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54c5829f_ffe8e7bd",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000726
+      },
+      "writtenOn": "2020-09-28T09:09:48Z",
+      "side": 1,
+      "message": "Since I was directly parsing the value using flag.DurationVar, so it was expecting 10s not 10, would change that",
+      "parentUuid": "866480b2_4020c1e9",
       "range": {
         "startLine": 28,
         "startChar": 2,
