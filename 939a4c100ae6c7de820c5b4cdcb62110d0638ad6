@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5fa91a97_3c39a1ce",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-09-28T08:02:49Z",
+      "side": 1,
+      "message": "remove as per comment on the other patch",
+      "revId": "939a4c100ae6c7de820c5b4cdcb62110d0638ad6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f54b1eab_31f45623",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 1
@@ -13,6 +30,30 @@
       "writtenOn": "2020-09-28T07:52:05Z",
       "side": 1,
       "message": "Is value \"10s\" correct - shouldn\u0027t it be simply \"10\"?",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "939a4c100ae6c7de820c5b4cdcb62110d0638ad6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "866480b2_4020c1e9",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-09-28T08:02:49Z",
+      "side": 1,
+      "message": "correct, should be 10",
+      "parentUuid": "f54b1eab_31f45623",
       "range": {
         "startLine": 28,
         "startChar": 2,
