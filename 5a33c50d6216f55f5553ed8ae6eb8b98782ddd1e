@@ -46,6 +46,30 @@
       "revId": "5a33c50d6216f55f5553ed8ae6eb8b98782ddd1e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "981d1358_9e08e0cc",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-09-30T11:55:53Z",
+      "side": 1,
+      "message": "no, this should be actually left to 2.6.0-dev, I don\u0027t think it\u0027s worth releasing the chart for this, please leave as 2.6.0-dev",
+      "parentUuid": "c3acba70_f326e9b7",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "5a33c50d6216f55f5553ed8ae6eb8b98782ddd1e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
