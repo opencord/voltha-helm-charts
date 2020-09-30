@@ -22,6 +22,30 @@
       "revId": "5a33c50d6216f55f5553ed8ae6eb8b98782ddd1e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3acba70_f326e9b7",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2020-09-30T11:47:59Z",
+      "side": 1,
+      "message": "... or \"2.7.0-dev\" ?",
+      "parentUuid": "39889650_b2a8afdf",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "5a33c50d6216f55f5553ed8ae6eb8b98782ddd1e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
