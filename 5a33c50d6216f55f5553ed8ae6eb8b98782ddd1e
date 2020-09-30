@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39889650_b2a8afdf",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2020-09-30T11:46:27Z",
+      "side": 1,
+      "message": "@andrea: Shouldn\u0027t version be set to \"2.6.1-dev\"?",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 9
+      },
+      "revId": "5a33c50d6216f55f5553ed8ae6eb8b98782ddd1e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
