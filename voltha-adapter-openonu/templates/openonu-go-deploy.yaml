@@ -86,6 +86,7 @@ spec:
             - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
             - "--core_topic=rwcore"
             - "--adapter_topic=brcm_openomci_onu"
+            - "--olt_adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--log_level={{ $log_level }}"
