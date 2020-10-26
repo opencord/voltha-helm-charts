@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ed0c257_ad5076e9",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T13:48:33Z",
+      "side": 1,
+      "message": "lots of spaces at end",
+      "range": {
+        "startLine": 6,
+        "startChar": 111,
+        "endLine": 6,
+        "endChar": 113
+      },
+      "revId": "b13db21374becd4bcdad698422f4595e5718a44e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
