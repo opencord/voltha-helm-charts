@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7d5f5575_80a9cc48",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T14:40:38Z",
+      "side": 1,
+      "message": "shouldn\u0027t have to clone the repository to install voltha charts",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 0
+      },
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0c10f5a_f0906555",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T14:40:38Z",
+      "side": 1,
+      "message": "should we just eliminate this. only a developer would really do this.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 3
+      },
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20921c11_a201fc88",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T14:40:38Z",
+      "side": 1,
+      "message": "etcd operator is no longer used. incubator/etcd is used",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef5802d1_9197916c",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T14:40:38Z",
+      "side": 1,
+      "message": "+ helm install -f /var/folders/p1/2fs3yr8542vf_5lw2nxxf_xmr49v4g/T/tmp.NRZP0zpq --create-namespace --set therecanbeonlyone\u003dtrue --set services.etcd.service\u003detcd.default.svc --set services.etcd.port\u003d2379 --set services.etcd.address\u003detcd.default.svc:2379 --set kafka_broker\u003dkafka.default.svc:9092 --set services.kafka.adapter.service\u003dkafka.default.svc --set services.kafka.adapter.port\u003d9092 --set services.kafka.cluster.service\u003dkafka.default.svc --set services.kafka.cluster.port\u003d9092 --set services.kafka.adapter.address\u003dkafka.default.svc:9092 --set services.kafka.cluster.address\u003dkafka.default.svc:9092 --set \u0027services.controller[0].service\u003donos-onos-classic-0.onos-onos-classic-hs.default.svc\u0027 --set \u0027services.controller[0].port\u003d6653\u0027 --set \u0027services.controller[0].address\u003donos-onos-classic-0.onos-onos-classic-hs.default.svc:6653\u0027 --set defaults.log_level\u003dWARN --namespace voltha voltha onf/voltha\n\nthat is the actual helm install command used for installing voltha from a kind-voltha log",
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b26dee2c_829c4a12",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T14:40:38Z",
+      "side": 1,
+      "message": "+ helm install -f /var/folders/p1/2fs3yr8542vf_5lw2nxxf_xmr49v4g/T/tmp.maXVTEu2 --create-namespace --set services.etcd.service\u003detcd.default.svc --set services.etcd.port\u003d2379 --set services.etcd.address\u003detcd.default.svc:2379 --set kafka_broker\u003dkafka.default.svc:9092 --set services.kafka.adapter.service\u003dkafka.default.svc --set services.kafka.adapter.port\u003d9092 --set services.kafka.cluster.service\u003dkafka.default.svc --set services.kafka.cluster.port\u003d9092 --set services.kafka.adapter.address\u003dkafka.default.svc:9092 --set services.kafka.cluster.address\u003dkafka.default.svc:9092 --set defaults.log_level\u003dWARN --namespace voltha open-olt onf/voltha-adapter-openolt\n\nthis is really just to say, the the connecting up of bits is a bit more complicated, not sure the default helm commands work (maybe they do) without some customization of the values files.",
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}

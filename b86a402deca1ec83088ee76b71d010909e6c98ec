@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f4f8112_693c6fc5",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T14:40:38Z",
+      "side": 0,
+      "message": "should the install of voltctl be included? without it you can\u0027t do much with voltha from an operator perspective.",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 39
+      },
+      "revId": "b86a402deca1ec83088ee76b71d010909e6c98ec",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
