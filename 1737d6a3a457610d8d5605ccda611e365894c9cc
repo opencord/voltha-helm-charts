@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a7ded13_71d4ca83",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T15:44:21Z",
+      "side": 1,
+      "message": "delete, both kafka and etcd are required separate installs now.",
+      "range": {
+        "startLine": 114,
+        "startChar": 75,
+        "endLine": 119,
+        "endChar": 18
+      },
+      "revId": "1737d6a3a457610d8d5605ccda611e365894c9cc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b300932b_452b8710",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-10-26T15:44:21Z",
+      "side": 1,
+      "message": "These values are not used anymore as it is no longer possible to have voltha create its own etcd instance, it must be done externally.",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 0
+      },
+      "revId": "1737d6a3a457610d8d5605ccda611e365894c9cc",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
