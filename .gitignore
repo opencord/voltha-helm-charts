@@ -11,3 +11,5 @@ charts
 .*.swp
 .remote-sync.json
 .DS_Store
+#Idea
+.idea/
