@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "01285901_885e796d",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-27T09:53:19Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "7d5f5575_80a9cc48",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 0
+      },
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f0c10f5a_f0906555",
         "filename": "README.md",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-10-26T14:40:38Z",
       "side": 1,
       "message": "should we just eliminate this. only a developer would really do this.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 3
+      },
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26a20fb2_7fac9f45",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-27T09:53:19Z",
+      "side": 1,
+      "message": "updated but left",
+      "parentUuid": "f0c10f5a_f0906555",
       "range": {
         "startLine": 62,
         "startChar": 0,
@@ -68,6 +116,30 @@
       "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11b86e29_451c4e57",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-10-27T09:53:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20921c11_a201fc88",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "4b8263cd2a1f4b96694f394c86bb6d864a90ab65",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
