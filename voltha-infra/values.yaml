@@ -1,0 +1,83 @@
+# Default values for voltha-infra.
+# This is a YAML-formatted file.
+
+# components config
+onos-classic:
+  enabled: true
+  replicas: 1
+  atomix:
+    replicas: 0
+  image:
+    pullPolicy: Always
+    repository: voltha/voltha-onos
+    tag: master
+
+bbsim-sadis-server:
+  enabled: true
+  replicas: 1
+
+etcd:
+  enabled: true
+  auth:
+    rbac:
+      enabled: false
+  persistence:
+    enabled: false
+  statefulset:
+    replicaCount: 1
+
+kafka:
+  enabled: true
+  replicaCount: 1
+  persistence:
+    enabled: false
+  zookeeper:
+    replicaCount: 1
+    persistence:
+      enabled: false
+
+# onos configuration
+# used in the job "onos-config-loader"
+onos:
+  netcfg: >
+    {
+      "apps" : {
+        "org.opencord.dhcpl2relay" : {
+          "dhcpl2relay" : {
+            "useOltUplinkForServerPktInOut" : true
+          }
+        },
+        "org.opencord.sadis": {
+          "sadis": {
+              "integration": {
+                  "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:50074/v2/subscribers/%s",
+                  "cache": {
+                      "enabled": true,
+                      "maxsize": 50,
+                      "ttl": "PT1m"
+                  }
+              }
+          },
+          "bandwidthprofile": {
+              "integration": {
+                  "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:50074/v2/bandwidthprofiles/%s",
+                  "cache": {
+                      "enabled": true,
+                      "maxsize": 50,
+                      "ttl": "PT1m"
+                  }
+              }
+          }
+        }
+      }
+    }
+  componentConfig:
+    "org.opencord.olt.impl.OltFlowService": >
+      {
+        "enableDhcpOnNni": "true",
+        "defaultTechProfileId": "64",
+        "enableIgmpOnNni": "false",
+        "enableEapol": "true",
+        "enableDhcpV6": "false",
+        "enableDhcpV4": "true"
+      }
