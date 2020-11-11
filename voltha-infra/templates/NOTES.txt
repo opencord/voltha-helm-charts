@@ -1,0 +1,7 @@
+Congratulations!
+
+You successfully installed the infrastructure required to run VOLTHA.
+
+# TODO add service endpoints
+
+ONOS Service: {{ template "fullname" . }}-hs

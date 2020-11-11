@@ -77,7 +77,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.labels['app.kubernetes.io/name']
             - name: KV_STORE_DATAPATH_PREFIX
-              value: {{ .Values.defaults.kv_store_data_prefix }}
+              value: {{ tpl .Values.adapter_open_onu.kv_store_data_prefix . }}
           args:
             - "/app/openonu"
             - "--banner=true"
@@ -86,9 +86,9 @@ spec:
             - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic={{ .Values.defaults.topics.core_topic }}"
-            - "--adapter_topic={{ .Values.defaults.topics.adapter_open_onu_topic }}"
-            - "--olt_adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}"
+            - "--core_topic={{ tpl .Values.adapter_open_onu.topics.core_topic . }}"
+            - "--adapter_topic={{ tpl .Values.adapter_open_onu.topics.adapter_open_onu_topic . }}"
+            - "--olt_adapter_topic={{ tpl .Values.adapter_open_onu.topics.adapter_open_olt_topic . }}"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--kv_store_request_timeout={{ tpl .Values.adapter_open_onu.kv_store_timeout . }}"

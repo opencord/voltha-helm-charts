@@ -18,7 +18,7 @@ fullNameOverride: ~
 # Default Values
 # The following are the default values used for every container in the
 # template.
-defaults:
+global:
   log_level: "WARN"
   image_registry: ''
   image_org: "voltha/"
@@ -26,13 +26,7 @@ defaults:
   image_pullPolicy: "Always"
   rw_core:
     timeout: "10s"
-  topics:
-    core_topic: "rwcore"
-
-  # Define prefix path for etcd
-  # If you're running multiple voltha stacks the this value
-  # should be unique across the stacks.
-  kv_store_data_prefix: "service/voltha"
+  stack_name: voltha
 
 # Default security context under which the containers run
 securityContext:
@@ -83,24 +77,27 @@ replicas:
   ofagent: 1
 
 rw_core:
-  log_level: '{{ .Values.defaults.log_level }}'
-  core_timeout: '{{ .Values.defaults.rw_core.timeout }}'
-  timeout_long_request: '{{ .Values.defaults.rw_core.timeout }}'
-  timeout_request: '{{ .Values.defaults.rw_core.timeout }}'
+  log_level: '{{ .Values.global.log_level }}'
+  core_timeout: '{{ .Values.global.rw_core.timeout }}'
+  timeout_long_request: '{{ .Values.global.rw_core.timeout }}'
+  timeout_request: '{{ .Values.global.rw_core.timeout }}'
+  kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
+  topics:
+    core_topic: "{{ .Values.global.stack_name }}_rwcore"
 
 ofagent:
-  log_level: '{{ .Values.defaults.log_level }}'
+  log_level: '{{ .Values.global.log_level }}'
 
 # Define Docker images to be used
 images:
   ofagent:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}1.4.2{{- end }}{{- else }}1.4.2{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}voltha-ofagent-go'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.4.2{{- end }}{{- else }}1.4.2{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
   rw_core:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.6.3{{- end }}{{- else }}2.6.3{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}voltha-rw-core'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.6.3{{- end }}{{- else }}2.6.3{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy }}'

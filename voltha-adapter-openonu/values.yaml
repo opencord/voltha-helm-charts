@@ -18,7 +18,7 @@ nameOverride: ~
 fullNameOverride: ~
 
 # Default overrides
-defaults:
+global:
   log_level: "WARN"
   image_registry: ""
   image_tag: ~
@@ -31,15 +31,7 @@ defaults:
   # kv store timeout
   adapter_open_onu:
     timeout: "5s"
-  topics:
-    core_topic: "rwcore"
-    adapter_open_onu_topic: "brcm_openomci_onu"
-    adapter_open_olt_topic: "openolt"
-
-  # Define prefix path for etcd
-  # If you're running multiple voltha stacks the this value
-  # should be unique across the stacks.
-  kv_store_data_prefix: "service/voltha"
+  stack_name: voltha
 
 # Default security context under which the containers run
 securityContext:
@@ -68,19 +60,24 @@ replicas:
   adapter_open_onu: 1
 
 adapter_open_onu:
-  log_level: '{{ .Values.defaults.log_level }}'
-  incremental_evto_update: '{{ .Values.defaults.incremental_evto_update }}'
-  max_timeout_interadapter_comm: '{{ .Values.defaults.max_timeout_interadapter_comm }}'
-  kv_store_timeout: '{{ .Values.defaults.adapter_open_onu.timeout }}'
+  log_level: '{{ .Values.global.log_level }}'
+  incremental_evto_update: '{{ .Values.global.incremental_evto_update }}'
+  max_timeout_interadapter_comm: '{{ .Values.global.max_timeout_interadapter_comm }}'
+  kv_store_timeout: '{{ .Values.global.adapter_open_onu.timeout }}'
+  kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
+  topics:
+    core_topic: "{{ .Values.global.stack_name }}_rwcore"
+    adapter_open_onu_topic: "{{ .Values.global.stack_name }}_brcm_openomci_onu"
+    adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
 
 images:
   adapter_open_onu:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-openonu-adapter'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.5.0{{- end }}{{- else }}2.5.0{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}voltha-openonu-adapter'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.5.0{{- end }}{{- else }}2.5.0{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy }}'
   adapter_open_onu_go:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-openonu-adapter-go'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}0.1.15{{- end }}{{- else }}0.1.15{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}voltha-openonu-adapter-go'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}0.1.15{{- end }}{{- else }}0.1.15{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy }}'
