@@ -16,7 +16,8 @@ nameOverride: ~
 fullNameOverride: ~
 
 # Default overrides
-defaults:
+global:
+  stack_name: voltha
   log_level: "WARN"
   image_registry: ""
   image_tag: ~
@@ -24,16 +25,17 @@ defaults:
   image_pullPolicy: "Always"
   adapter_open_olt:
     timeout: "5s"
-  topics:
-    core_topic: "rwcore"
-    adapter_open_olt_topic: "openolt"
 
-  # Define prefix path for etcd
-  # If you're running multiple voltha stacks the this value
-  # should be unique across the stacks.
-  kv_store_data_prefix: "service/voltha"
   #enable OMCC encryption
   omcc_encryption: false
+
+  # Configure Log Correlation
+  log_correlation:
+    enabled: true
+
+  # Configure Tracing
+  tracing:
+    enabled: true
 
 # Default security context under which the containers run
 securityContext:
@@ -68,26 +70,22 @@ services:
 profiler:
   enabled: false
 
-# Configure Log Correlation
-log_correlation:
-  enabled: true
-
-# Configure Tracing
-tracing:
-  enabled: true
-
 # Define the recplica count for everything
 replicas:
   current_replica: 1
   total_replica: 1
 
 adapter_open_olt:
-  log_level: '{{ .Values.defaults.log_level }}'
-  kv_store_timeout: '{{ .Values.defaults.adapter_open_olt.timeout }}'
+  log_level: '{{ .Values.global.log_level }}'
+  kv_store_timeout: '{{ .Values.global.adapter_open_olt.timeout }}'
+  kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
+  topics:
+    core_topic: "{{ .Values.global.stack_name }}_rwcore"
+    adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
 
 images:
   adapter_open_olt:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}voltha-openolt-adapter'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}voltha-openolt-adapter'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy | default "Always" }}'
