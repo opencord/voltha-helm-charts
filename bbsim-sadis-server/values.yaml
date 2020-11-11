@@ -13,7 +13,7 @@
 # limitations under the License.
 ---
 # Default overrides
-defaults:
+global:
   log_level: "WARN"
   log_format: "json"
   image_registry: ""
