@@ -75,13 +75,13 @@ spec:
         command: [ "sh", "-c"]
         args:
           - "REPLICA_ID=$(echo $VOLTHA_POD_NAME | grep -o '.$') && REPLICA_ID=$((REPLICA_ID + 1)) && echo $REPLICA_ID && python /voltha/adapters/brcm_openomci_onu/main.py
-              --kafka_adapter={{ .Values.services.kafka.adapter.service }}:{{ .Values.services.kafka.adapter.port }}
-              --kafka_cluster={{ .Values.services.kafka.cluster.service }}:{{ .Values.services.kafka.cluster.port }}
-              --core_topic={{ .Values.defaults.topics.core_topic }}
-              --adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}
-              --name={{ .Values.defaults.topics.adapter_open_onu_topic }}
+              --kafka_adapter={{ tpl .Values.services.kafka.adapter.service . }}:{{ .Values.services.kafka.adapter.port }}
+              --kafka_cluster={{ tpl .Values.services.kafka.cluster.service . }}:{{ .Values.services.kafka.cluster.port }}
+              --core_topic={{ tpl .Values.adapter_open_onu.topics.core_topic . }}
+              --adapter_topic={{ tpl .Values.adapter_open_onu.topics.adapter_open_olt_topic . }}
+              --name={{ tpl .Values.adapter_open_onu.topics.adapter_open_onu_topic . }}
               --backend=etcd
-              --etcd={{ .Values.services.etcd.service }}:{{ .Values.services.etcd.port }}
+              --etcd={{ tpl .Values.services.etcd.service . }}:{{ .Values.services.etcd.port }}
               --probe=:8080
               --log_level={{ tpl .Values.adapter_open_onu.log_level . | upper }}
               --totalReplicas={{ .Values.replicas.adapter_open_onu }}
@@ -113,5 +113,5 @@ spec:
             fieldRef:
               fieldPath: metadata.labels['app.kubernetes.io/name']
         - name: KV_STORE_DATAPATH_PREFIX
-          value: {{ .Values.defaults.kv_store_data_prefix }}
+          value: {{ tpl .Values.adapter_open_onu.kv_store_data_prefix . }}
 {{- end }}

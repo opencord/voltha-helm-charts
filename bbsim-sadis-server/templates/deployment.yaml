@@ -43,8 +43,8 @@ spec:
           imagePullPolicy: {{ tpl .Values.images.bbsim_sadis_server.pullPolicy . | quote }}
           command: [ "/app/bbsim-sadis-server" ]
           args:
-            - "-log_level={{.Values.defaults.log_level}}"
-            - "-log_format={{.Values.defaults.log_format}}"
+            - "-log_level={{.Values.global.log_level}}"
+            - "-log_format={{.Values.global.log_format}}"
             - "-bbsim_sadis_port={{.Values.bbsim_sadis_port}}"
           volumeMounts:
             - name: kube-config-volume
