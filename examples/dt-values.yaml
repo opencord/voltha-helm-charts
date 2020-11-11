@@ -1,3 +1,5 @@
+---
+
 # Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,25 +13,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
----
-apiVersion: "v1"
-name: "bbsim-sadis-server"
-version: "0.1.1"
-description: "A Helm chart for Voltha BBSIM sadis server"
-keywords:
-  - "onf"
-  - "voltha"
-  - "sadis"
-  - "bbsim"
-home: "https://www.opennetworking.org/voltha"
-icon: "https://guide.opencord.org/logos/voltha.svg"
-sources:
-  - "https://github.com/opencord/bbsim-sadis-server"
-maintainers:
-  - name: "Open Networking Foundation"
-    email: "info@opennetworking.org"
-    url: "https://www.opennetworking.org"
 
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: "0.1.4"
+# override ONOS config
+onos:
+  componentConfig:
+    "org.opencord.olt.impl.OltFlowService": >
+      {
+        "enableDhcpOnNni": "false",
+        "defaultTechProfileId": "64",
+        "enableIgmpOnNni": "false",
+        "enableEapol": "false",
+        "enableDhcpV6": "false",
+        "enableDhcpV4": "false"
+      }
+
+# override BBSim config
+servicesConfig:
+  workflow: dt
+  services:
+    - name: hsia
+      uni_tag_match: 4096
+      c_tag: 4096
+      c_tag_allocation: shared
+      s_tag: 900
+      s_tag_allocation: unique
+      tp_id: 64
