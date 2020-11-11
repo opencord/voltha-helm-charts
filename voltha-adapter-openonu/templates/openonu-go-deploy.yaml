@@ -48,6 +48,7 @@ spec:
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
         app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/stack: "{{ .Values.global.stack_name }}"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         {{- if hasKey .Values "extra_pod_labels" }}
@@ -77,24 +78,26 @@ spec:
                 fieldRef:
                   fieldPath: metadata.labels['app.kubernetes.io/name']
             - name: KV_STORE_DATAPATH_PREFIX
-              value: {{ .Values.defaults.kv_store_data_prefix }}
+              value: {{ tpl .Values.adapter_open_onu.kv_store_data_prefix . }}
           args:
             - "/app/openonu"
             - "--banner=true"
             - "--kafka_reconnect_retries=-1"
-            - "--kafka_adapter_host={{ .Values.services.kafka.adapter.service }}"
+            - "--kafka_adapter_host={{ tpl .Values.services.kafka.adapter.service . }}"
             - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
-            - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
+            - "--kafka_cluster_host={{ tpl .Values.services.kafka.cluster.service . }}"
             - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic={{ .Values.defaults.topics.core_topic }}"
-            - "--adapter_topic={{ .Values.defaults.topics.adapter_open_onu_topic }}"
-            - "--kv_store_host={{ .Values.services.etcd.service }}"
+            - "--core_topic={{ tpl .Values.adapter_open_onu.topics.core_topic . }}"
+            - "--adapter_topic={{ tpl .Values.adapter_open_onu.topics.adapter_open_onu_topic . }}"
+            - "--kv_store_host={{ tpl .Values.services.etcd.service . }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
             - "--kv_store_request_timeout={{ tpl .Values.adapter_open_onu.kv_store_timeout . }}"
             - "--log_level={{ $log_level }}"
             - "--probe_port=8080"
             - "--accept_incr_evto={{ tpl .Values.adapter_open_onu.incremental_evto_update . }}"
             - "--max_timeout_interadapter_comm={{ tpl .Values.adapter_open_onu.max_timeout_interadapter_comm . }}"
+            - "--trace_enabled={{ .Values.global.tracing.enabled }}"
+            - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false

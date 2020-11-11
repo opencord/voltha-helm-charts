@@ -12,24 +12,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-apiVersion: "v1"
-name: "bbsim-sadis-server"
-version: "0.1.1"
-description: "A Helm chart for Voltha BBSIM sadis server"
+apiVersion: v2
+description: A Helm chart to install a VOLTHA stack on existing infrastructure
 keywords:
   - "onf"
   - "voltha"
-  - "sadis"
-  - "bbsim"
+  - "openolt-adapters"
+  - "openonu-adapters"
 home: "https://www.opennetworking.org/voltha"
 icon: "https://guide.opencord.org/logos/voltha.svg"
-sources:
-  - "https://github.com/opencord/bbsim-sadis-server"
 maintainers:
   - name: "Open Networking Foundation"
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
+name: voltha-stack
 
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: "0.1.4"
+appVersion: "1.0"
+version: 0.1.0
+
+dependencies:
+  - name: voltha
+    # repository: https://charts.opencord.org
+    version: 2.8.1
+    repository: "file://../voltha"
+    condition: voltha.enabled
+  - name: voltha-adapter-openonu
+    # repository: https://charts.opencord.org
+    version: 2.7.1
+    repository: "file://../voltha-adapter-openonu"
+    condition: voltha-adapter-openonu.enabled
+  - name: voltha-adapter-openolt
+    # repository: https://charts.opencord.org
+    version: 2.8.1
+    repository: "file://../voltha-adapter-openolt"
+    condition: voltha-adapter-openolt.enabled

@@ -46,6 +46,7 @@ spec:
         app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
         app.kubernetes.io/component: "adapter"
         app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/stack: "{{ .Values.global.stack_name }}"
         app.kubernetes.io/managed-by: {{ quote .Release.Service }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         {{- if hasKey .Values "extra_pod_labels" }}
