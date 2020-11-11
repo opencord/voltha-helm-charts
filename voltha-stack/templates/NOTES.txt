@@ -1,0 +1,7 @@
+Thanks for installing VOLTHA!
+
+You installed a stack with name: {{ .Release.Name }}.
+
+In order to use "voltctl" to connect to this stack you need to expose the VOLTHA API service:
+
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ .Release.Name }}-voltha-api 55555
