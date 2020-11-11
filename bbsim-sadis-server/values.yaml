@@ -13,7 +13,7 @@
 # limitations under the License.
 ---
 # Default overrides
-defaults:
+global:
   log_level: "WARN"
   log_format: "json"
   image_registry: ""
@@ -29,7 +29,7 @@ serviceAccountName: ~
 
 images:
   bbsim_sadis_server:
-    registry: '{{ .Values.defaults.image_registry }}'
-    repository: '{{ .Values.defaults.image_org }}bbsim-sadis-server'
-    tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
-    pullPolicy: '{{ .Values.defaults.image_pullPolicy | default "Always" }}'
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}bbsim-sadis-server'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy | default "Always" }}'

@@ -11,25 +11,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
----
-apiVersion: "v1"
-name: "bbsim-sadis-server"
-version: "0.1.1"
-description: "A Helm chart for Voltha BBSIM sadis server"
-keywords:
-  - "onf"
-  - "voltha"
-  - "sadis"
-  - "bbsim"
-home: "https://www.opennetworking.org/voltha"
-icon: "https://guide.opencord.org/logos/voltha.svg"
-sources:
-  - "https://github.com/opencord/bbsim-sadis-server"
-maintainers:
-  - name: "Open Networking Foundation"
-    email: "info@opennetworking.org"
-    url: "https://www.opennetworking.org"
-
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: "0.1.4"
+{{/* Expand the name of the chart. */}}
+{{- define "name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{/* Create a default fully qualified app name. We truncate at 63 chars because . . . */}}
+{{- define "fullname" -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- $fullname := default (printf "%s-%s" .Release.Name $name) .Values.fullNameOverride -}}
+{{- $fullname | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
