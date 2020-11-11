@@ -1,0 +1,162 @@
+# Copyright 2020-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Default values for voltha-infra.
+# This is a YAML-formatted file.
+
+# components config
+onos-classic:
+  enabled: true
+  replicas: 1
+  atomix:
+    replicas: 0
+  image:
+    pullPolicy: Always
+    repository: voltha/voltha-onos
+    tag: master
+
+bbsim-sadis-server:
+  enabled: true
+  replicas: 1
+
+radius:
+  enabled: true
+
+etcd:
+  enabled: true
+  auth:
+    rbac:
+      enabled: false
+  persistence:
+    enabled: false
+  statefulset:
+    replicaCount: 1
+  port: 2379
+
+kafka:
+  enabled: true
+  replicaCount: 1
+  persistence:
+    enabled: false
+  zookeeper:
+    replicaCount: 1
+    persistence:
+      enabled: false
+
+voltha-tracing:
+  enabled: false
+  tracing:
+    maxTraces: 500000
+
+efk:
+  enabled: false
+
+# onos configuration
+# used in the job "onos-config-loader"
+onos:
+  # NOTE that these values won't change the configuration in the ONOS container, they are only used in the script that loads the config
+  username: karaf
+  password: karaf
+  netcfg: >
+    {
+      "apps" : {
+        "org.opencord.dhcpl2relay" : {
+          "dhcpl2relay" : {
+            "useOltUplinkForServerPktInOut" : true
+          }
+        },
+        "org.opencord.aaa" : {
+          "AAA": {
+            "radiusConnectionType" : "socket",
+            "radiusHost": "{{ .Release.Name }}-freeradius.{{ .Release.Namespace }}.svc",
+            "radiusServerPort": "1812",
+            "radiusSecret": "SECRET"
+          }
+        },
+        "org.opencord.sadis": {
+          "sadis": {
+              "integration": {
+                  "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/subscribers/%s",
+                  "cache": {
+                      "enabled": true,
+                      "maxsize": 50,
+                      "ttl": "PT1m"
+                  }
+              }
+          },
+          "bandwidthprofile": {
+              "integration": {
+                  "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/profiles/%s",
+                  "cache": {
+                      "enabled": true,
+                      "maxsize": 50,
+                      "ttl": "PT1m"
+                  }
+              }
+          }
+        }
+      }
+    }
+  componentConfig:
+    "org.opencord.olt.impl.OltFlowService": >
+      {
+        "enableDhcpOnNni": "true",
+        "defaultTechProfileId": "64",
+        "enableIgmpOnNni": "false",
+        "enableEapol": "true",
+        "enableDhcpV6": "false",
+        "enableDhcpV4": "true"
+      }
+    "org.onosproject.provider.lldp.impl.LldpLinkProvider": >
+      {
+        "enabled": "false"
+      }
+
+# START EFK Setup to push voltha logs
+# elasticstack config
+# ref: https://github.com/elastic/helm-charts/tree/7.7.0/elasticsearch
+elasticsearch:
+  replicas: 1
+  minimumMasterNodes: 1
+  # set cpu and memory configuration
+  resources:
+    requests:
+      cpu: "400m"
+      memory: "1Gi"
+    limits:
+      cpu: "1000m"
+      memory: "2Gi"
+  # setup persistence volume.By default persistence volumeclaim is disabled
+  volumeClaimTemplate:
+    accessModes: ["ReadWriteOnce"]
+    resources:
+      requests:
+        storage: 5Gi
+  persistence:
+    enabled: false
+  # setup cluster health status as yellow
+  clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+
+# kibana config
+# ref: https://github.com/elastic/helm-charts/tree/7.7.0/kibana
+kibana:
+  elasticsearchHosts: "http://elasticsearch-master:9200"
+
+# fluentd-elasticsearch config
+# ref: https://github.com/kiwigrid/helm-charts/tree/master/charts/fluentd-elasticsearch
+fluentd-elasticsearch:
+  elasticsearch:
+    # set elasticsearch host
+    hosts: ["elasticsearch-master:9200"]
+    sslVerify: false
