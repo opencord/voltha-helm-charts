@@ -71,6 +71,7 @@ images:
     tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}2.5.0{{- end }}{{- else }}2.5.0{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'
   adapter_open_onu_go:
+    registry: '{{ .Values.defaults.image_registry }}'
     repository: '{{ .Values.defaults.image_org }}voltha-openonu-adapter-go'
     tag: '{{- if hasKey .Values.defaults "image_tag" }}{{- if .Values.defaults.image_tag }}{{ .Values.defaults.image_tag }}{{- else }}master{{- end }}{{- else }}master{{- end }}'
     pullPolicy: '{{ .Values.defaults.image_pullPolicy }}'

@@ -69,7 +69,7 @@ spec:
       {{- end }}
       containers:
         - name: adapter-open-onu
-          image: '{{ tpl .Values.images.adapter_open_onu.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
+          image: '{{ tpl .Values.images.adapter_open_onu_go.registry . }}{{ tpl .Values.images.adapter_open_onu_go.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_onu_go.tag . ) . }}'
           imagePullPolicy: {{ tpl .Values.images.adapter_open_onu_go.pullPolicy . }}
           env:
             - name: COMPONENT_NAME
@@ -84,8 +84,8 @@ spec:
             - "--kafka_adapter_port={{ .Values.services.kafka.adapter.port }}"
             - "--kafka_cluster_host={{ .Values.services.kafka.cluster.service }}"
             - "--kafka_cluster_port={{ .Values.services.kafka.cluster.port }}"
-            - "--core_topic=rwcore"
-            - "--adapter_topic=brcm_openomci_onu"
+            - "--core_topic={{ .Values.defaults.topics.core_topic }}"
+            - "--adapter_topic={{ .Values.defaults.topics.adapter_open_onu_topic }}"
             - "--olt_adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
