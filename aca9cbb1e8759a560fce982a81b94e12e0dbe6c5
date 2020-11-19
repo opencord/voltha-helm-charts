@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2752908c_6015768d",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2020-11-19T14:56:06Z",
+      "side": 0,
+      "message": "Should it be 2.6.1?",
+      "revId": "aca9cbb1e8759a560fce982a81b94e12e0dbe6c5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
