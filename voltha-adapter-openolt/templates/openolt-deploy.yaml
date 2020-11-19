@@ -94,6 +94,7 @@ spec:
             - "--core_topic={{ .Values.defaults.topics.core_topic }}"
             - "--adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}"
             - "--kv_store_address={{ .Values.services.etcd.address }}"
+            - "--kv_store_request_timeout={{ .Values.adapter_open_olt.kv_store_timeout }}"
             - "--log_level={{ $log_level }}"
             - "--current_replica={{ .Values.replicas.current_replica }}"
             - "--total_replica={{ .Values.replicas.total_replica }}"
