@@ -89,6 +89,7 @@ spec:
             - "--olt_adapter_topic={{ .Values.defaults.topics.adapter_open_olt_topic }}"
             - "--kv_store_host={{ .Values.services.etcd.service }}"
             - "--kv_store_port={{ .Values.services.etcd.port }}"
+            - "--kv_store_request_timeout={{ tpl .Values.adapter_open_onu.kv_store_timeout . }}"
             - "--log_level={{ $log_level }}"
             - "--probe_port=8080"
             - "--accept_incr_evto={{ tpl .Values.adapter_open_onu.incremental_evto_update . }}"
