@@ -76,6 +76,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.labels['app.kubernetes.io/name']
+            - name: KV_STORE_DATAPATH_PREFIX
+              value: {{ .Values.defaults.kv_store_data_prefix }}
           args:
             - "/app/openonu"
             - "--banner=true"
