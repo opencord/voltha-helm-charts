@@ -22,6 +22,8 @@ defaults:
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  adapter_open_olt:
+    timeout: "5s"
   topics:
     core_topic: "rwcore"
     adapter_open_olt_topic: "openolt"
@@ -81,6 +83,7 @@ replicas:
 
 adapter_open_olt:
   log_level: '{{ .Values.defaults.log_level }}'
+  kv_store_timeout: '{{ .Values.defaults.adapter_open_olt.timeout }}'
 
 images:
   adapter_open_olt:
