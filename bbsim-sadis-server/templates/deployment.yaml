@@ -1,0 +1,56 @@
+# Copyright 2020 Ciena Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "bbsim-sadis-server"
+  namespace: {{ .Release.Namespace | quote }}
+spec:
+  replicas: {{ .Values.replicas | int }}
+  selector:
+    matchLabels:
+      app: "bbsim-sadis-server"
+      release: {{ .Release.Name | quote }}
+  template:
+    metadata:
+      namespace: {{ .Release.Namespace | quote }}
+      labels:
+        app: "bbsim-sadis-server"
+        release: {{ .Release.Name | quote }}
+        app.kubernetes.io/name: "bbsim-sadis-server"
+        app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+        app.kubernetes.io/component: "sadis-server"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    spec:
+      serviceAccountName: {{ default (printf "%s-%s" .Release.Name "service-account") .Values.serviceAccountName | quote }}
+      containers:
+        - name: "sadis"
+          image: "{{ tpl .Values.images.bbsim_sadis_server.registry . }}{{ tpl .Values.images.bbsim_sadis_server.repository . }}:{{ tpl ( tpl .Values.images.bbsim_sadis_server.tag . ) . }}"
+          imagePullPolicy: {{ tpl .Values.images.bbsim_sadis_server.pullPolicy . | quote }}
+          command: [ "/app/bbsim-sadis-server" ]
+          args:
+            - "-log_level={{.Values.defaults.log_level}}"
+            - "-log_format={{.Values.defaults.log_format}}"
+          volumeMounts:
+            - name: kube-config-volume
+              mountPath: /etc/kube
+      volumes:
+        - name: kube-config-volume
+          configMap:
+            # Provide the name of the ConfigMap containing the files you want
+            # to add to the container
+            name: kube-config
