@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ea2dee7_bd485535",
+        "filename": "bbsim-sadis-server/templates/service.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-12-03T17:50:24Z",
+      "side": 1,
+      "message": "possibly move them to values.yaml.\nminor",
+      "revId": "3053240b8dea4aa481aa1cf778675db6875c3f34",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
