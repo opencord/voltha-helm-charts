@@ -16,6 +16,24 @@
       "revId": "3053240b8dea4aa481aa1cf778675db6875c3f34",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dc3306d_9d4a9510",
+        "filename": "bbsim-sadis-server/templates/service.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2020-12-03T19:54:50Z",
+      "side": 1,
+      "message": "It\u0027s a cluserIp type of service, the port doesn\u0027t really matter, you can have multiple of them so there\u0027s no need to change it.",
+      "parentUuid": "7ea2dee7_bd485535",
+      "revId": "3053240b8dea4aa481aa1cf778675db6875c3f34",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
