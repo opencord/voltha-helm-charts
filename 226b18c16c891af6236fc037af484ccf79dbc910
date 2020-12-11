@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b870ccf_315f77e9",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-12-11T09:46:24Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be 0.1.15 ?",
+      "revId": "226b18c16c891af6236fc037af484ccf79dbc910",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95181935_c9650f42",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2020-12-11T09:46:24Z",
+      "side": 1,
+      "message": "move here to 2.6.0",
+      "revId": "226b18c16c891af6236fc037af484ccf79dbc910",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
