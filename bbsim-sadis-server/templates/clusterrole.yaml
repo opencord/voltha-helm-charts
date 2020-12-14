@@ -20,4 +20,4 @@ metadata:
 rules:
   - apiGroups: [""]
     resources: ["pods", "services"]
-    verbs: ["get", "list"]
+    verbs: ["get", "list", "watch"]
