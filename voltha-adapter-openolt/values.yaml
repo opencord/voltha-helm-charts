@@ -28,6 +28,10 @@ global:
 
   #enable OMCC encryption
   omcc_encryption: false
+  #enable ONU stats
+  enable_onu_stats: false
+  #enable GEM stats
+  enable_gem_stats: false
 
   # Configure Log Correlation
   log_correlation:
