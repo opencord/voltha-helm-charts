@@ -34,6 +34,10 @@ defaults:
   kv_store_data_prefix: "service/voltha"
   #enable OMCC encryption
   omcc_encryption: false
+  #enable ONU stats
+  enable_onu_stats: false
+  #enable GEM stats
+  enable_gem_stats: false
 
 # Default security context under which the containers run
 securityContext:
