@@ -103,6 +103,8 @@ spec:
             - "--trace_agent_address={{ .Values.services.tracing_agent.address }}"
             - "--log_correlation_enabled={{ .Values.log_correlation.enabled }}"
             - "--omcc_encryption={{ .Values.defaults.omcc_encryption }}"
+            - "--enable_onu_stats={{ .Values.defaults.enable_onu_stats }}"
+            - "--enable_gem_stats={{ .Values.defaults.enable_gem_stats }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
