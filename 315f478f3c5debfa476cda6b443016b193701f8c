@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39510698_632fdf2c",
+        "filename": "voltha-infra/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-05T10:32:20Z",
+      "side": 1,
+      "message": "why is the onos replicas number needed here ?",
+      "revId": "315f478f3c5debfa476cda6b443016b193701f8c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2791df0_3e73e596",
+        "filename": "voltha-infra/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-05T10:32:20Z",
+      "side": 1,
+      "message": "is there a way we can pass a file in here ?",
+      "revId": "315f478f3c5debfa476cda6b443016b193701f8c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
