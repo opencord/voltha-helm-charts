@@ -21,13 +21,27 @@ data:
   loader.sh: >
     set -euo pipefail
 
+    echo -e "Activating apps in ONOS\n";
+    {{- range $val := .Values.onos.appsToActivate }}
+    curl -v --fail -sSL --user {{ $.Values.onos.username }}:{{ $.Values.onos.password }} -X POST "http://{{ $.Release.Name }}-onos-classic-hs:8181/onos/v1/applications/{{ $val | quote }}/active";
+    {{- end }}
+
+    # NOTE if the apps are already installed then the curl returns 409 and fails the job
+    echo -e "Loading apps in ONOS\n";
+    {{- range $val := .Values.onos.appsToInstall }}
+    curl -v --fail -sSL --user {{ $.Values.onos.username }}:{{ $.Values.onos.password }} -X POST "http://{{ $.Release.Name }}-onos-classic-hs:8181/onos/v1/applications" \
+      -H Content-type:application/json -d '{"activate": "true", "url": {{ $val | quote }}}';
+    {{- end }}
+
     echo -e "Loading netcfg into ONOS\n";
-    curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/" -H Content-type:application/json -d @/opt/configs/netcfg.json;
+    curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/" \
+      -H Content-type:application/json -d @/opt/configs/netcfg.json;
 
     echo -e "Loading component configs into ONOS\n";
     CFGS=$(ls /opt/configs | grep -v netcfg.json);
     for CFG in ${CFGS};
     do
       echo -e "Loading $CFG config"
-      curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG" -H Content-type:application/json -d @/opt/configs/$CFG;
+      curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG" \
+        -H Content-type:application/json -d @/opt/configs/$CFG;
     done

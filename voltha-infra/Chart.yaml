@@ -59,15 +59,15 @@ dependencies:
   - name: elasticsearch
     repository: https://helm.elastic.co
     version: 7.10.1
-    confition: efk.enabled
+    condition: efk.enabled
   - name: kibana
     repository: https://helm.elastic.co
     version: 7.10.1
-    confition: efk.enabled
+    condition: efk.enabled
   - name: fluentd-elasticsearch
     repository: https://kiwigrid.github.io
     version: 9.6.2
     # TODO kiwigrid is deprecated, use: https://github.com/kokuwaio/helm-charts/tree/main/charts/fluentd-elasticsearch
     # repository: https://kokuwaio.github.io/helm-charts
     # version: 11.7.1
-    confition: efk.enabled
+    condition: efk.enabled
