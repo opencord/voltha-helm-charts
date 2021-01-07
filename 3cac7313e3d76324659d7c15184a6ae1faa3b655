@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "824e5dca_6f27812f",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "I\u0027d add at the end of this \"(optional)\"",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c76310d_c597e4a8",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "minor: to the helm command to deploy the infra: \n\nthen I\u0027d add an example below before \"once\"",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e217203b_688e5a3f",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "openflow agent",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcc464a4_cc3f0e1d",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "provide and example. something like:\n\"for example if you want to deploy a second voltha stack please do:\n```shell\nhelm upgrade --install --create-namespace \\\n  -n voltha2 voltha2 voltha-stack \\\n  --set global.stack_name\u003dvoltha2 \\\n  --set voltha_infra_name\u003dvoltha-infra \\\n  --set voltha_infra_namespace\u003dinfra\n```",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8ded461_d6b70433",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "Please add \"to enable tracing in the VOLTHA components please add the following to the helm command\" and then provide an example (as pointed out before)",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e37016f9_0f665422",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "same comment as tracing",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b70386a1_10649284",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "bbsim must be deployed in the same namespace as the stack it\u0027s controlled by ? if so pleas add",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec9d4477_68bfbd29",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "kubectl get pods --all-namespaces",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c1af127_ea5351b0",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "should we depend on the readiness of ONOS before sending out the cfg ? thus no restart will be required",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd7445f0_84e17ac2",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "this needs to be done for each stack, should we specify it ?",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2745d5f_09d6a6ea",
+        "filename": "voltha-infra/templates/onos-config-loader-script.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "we are hardcoding usr:pwd of onos here, might not work for the operators, can we pass these in via values.yaml file ?",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2977e374_6780d847",
+        "filename": "voltha-infra/templates/onos-config-loader.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "minor, I never like the plural. I\u0027d rather use config",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b165df57_06278979",
+        "filename": "voltha-infra/templates/onos-config-loader.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-07T12:57:58Z",
+      "side": 1,
+      "message": "same",
+      "revId": "3cac7313e3d76324659d7c15184a6ae1faa3b655",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
