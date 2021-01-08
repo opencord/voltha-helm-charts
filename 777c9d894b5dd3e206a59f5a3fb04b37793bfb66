@@ -22,6 +22,30 @@
       "revId": "777c9d894b5dd3e206a59f5a3fb04b37793bfb66",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b93461c5_a472ffb4",
+        "filename": "voltha-infra/templates/onos-config-loader-script.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-08T20:58:59Z",
+      "side": 1,
+      "message": "The issue is not with the \"netcfg\" but with the \"componentConfig\" (handled in the next section).\nI remember that issue, that\u0027s why we are installing the apps before pushing the config. It seems to be working in my testing.",
+      "parentUuid": "82f4acc1_d4155d0c",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 68
+      },
+      "revId": "777c9d894b5dd3e206a59f5a3fb04b37793bfb66",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
