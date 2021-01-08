@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82f4acc1_d4155d0c",
+        "filename": "voltha-infra/templates/onos-config-loader-script.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-08T20:03:45Z",
+      "side": 1,
+      "message": "A note here, one reason that the original voltha script went to so much trouble to assure that applications were up and active before pushing config is that I was, during testing, if the config was pushed before all apps were up there were inconsistencies in what config was actually accepted / applied.",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 68
+      },
+      "revId": "777c9d894b5dd3e206a59f5a3fb04b37793bfb66",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
