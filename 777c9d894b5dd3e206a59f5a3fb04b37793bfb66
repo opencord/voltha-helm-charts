@@ -46,6 +46,23 @@
       "revId": "777c9d894b5dd3e206a59f5a3fb04b37793bfb66",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cd7200c_fe30dfe0",
+        "filename": "voltha-infra/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-11T09:34:52Z",
+      "side": 1,
+      "message": "in the ONOS chart there is:\nhttps://github.com/onosproject/onos-helm-charts/blob/master/onos-classic/values.yaml#L13\nwhich is a lit of apps that need to be active for onos to be considered ready, we override that in VOLTHA with https://github.com/opencord/kind-voltha/blob/master/values.yaml#L150, is there a way we can use that instead of having to re-specify the apps here. I know you are passing the full link, but maybe there are ways around it. thoughts ?",
+      "revId": "777c9d894b5dd3e206a59f5a3fb04b37793bfb66",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
