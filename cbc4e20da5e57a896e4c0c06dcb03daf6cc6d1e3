@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1250354e_81646763",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-14T12:09:58Z",
+      "side": 1,
+      "message": "we ought to reference this file in the VOLTHA docs",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "247817ff_7a73e9cf",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-14T12:09:58Z",
+      "side": 1,
+      "message": "is there any specific reason why the olt_id is 10 here ?",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0b57f81_775ffb81",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-14T12:09:58Z",
+      "side": 1,
+      "message": "I would make a separate section talking about port-forwarding , especially since you have to say somewhere that whenever one component gets re-started you need to re-start the port-forward",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46da79ec_3e0d2a75",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-14T12:09:58Z",
+      "side": 1,
+      "message": "this assumes that you have dowloaded and are in the voltha-system-tests folder, please add them as steps",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79bdbfcd_887a1395",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-14T12:09:58Z",
+      "side": 1,
+      "message": "please add a subsequent section with example helm commands on how to replace single components",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
