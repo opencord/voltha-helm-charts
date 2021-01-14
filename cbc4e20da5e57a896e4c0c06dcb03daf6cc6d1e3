@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "c821bfad_d1e6ddc4",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-14T19:57:53Z",
+      "side": 1,
+      "message": "it\u0027s just an example, the name is not required to be anything specific,\nwith the only catch that \"bbsim0\" is used in the tests: https://github.com/opencord/voltha-system-tests/blob/044a1979875308284ce74934ccbcdec533030e05/tests/data/bbsim-kind.yaml#L32",
+      "parentUuid": "247817ff_7a73e9cf",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a0b57f81_775ffb81",
         "filename": "README.md",
         "patchSetId": 17
@@ -50,6 +68,24 @@
       "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10d4ef9e_a068faf5",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-14T19:57:53Z",
+      "side": 1,
+      "message": "I would avoid putting too much effort into describing any kubernetes command/behavior, that\u0027s not the purpose of this guide. Also if you don\u0027t restart the \"port-forward\" the output is pretty self-explanatory.",
+      "parentUuid": "a0b57f81_775ffb81",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "8f2634cb_b1cae775",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-14T19:57:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46da79ec_3e0d2a75",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79bdbfcd_887a1395",
         "filename": "README.md",
         "patchSetId": 17
@@ -84,6 +138,24 @@
       "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43064994_da44943c",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-14T19:57:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79bdbfcd_887a1395",
+      "revId": "cbc4e20da5e57a896e4c0c06dcb03daf6cc6d1e3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
