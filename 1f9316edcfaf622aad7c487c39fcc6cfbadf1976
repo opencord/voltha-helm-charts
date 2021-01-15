@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "edf37d21_59495be8",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-15T10:09:59Z",
+      "side": 1,
+      "message": "maybe it\u0027s a dumb question, but is there a way until we release to depend on \"latest\" fo the chart ?",
+      "revId": "1f9316edcfaf622aad7c487c39fcc6cfbadf1976",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
