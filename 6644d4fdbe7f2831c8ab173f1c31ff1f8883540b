@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c55bff1c_742132f0",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2021-01-18T05:45:10Z",
+      "side": 1,
+      "message": "Single hyphen `-` before $HOSTOS not double.",
+      "range": {
+        "startLine": 218,
+        "startChar": 84,
+        "endLine": 218,
+        "endChar": 86
+      },
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88dc47e2_1062284c",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2021-01-18T05:45:10Z",
+      "side": 1,
+      "message": "Can be updated to use the latest voltctl version.",
+      "range": {
+        "startLine": 218,
+        "startChar": 64,
+        "endLine": 218,
+        "endChar": 70
+      },
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
