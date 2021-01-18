@@ -62,6 +62,24 @@
       "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08a12871_e4ca35c1",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-18T10:58:06Z",
+      "side": 1,
+      "message": "this is what I usually do helm ls -n voltha --short | xargs -L1 helm delete -n voltha",
+      "parentUuid": "b8e6daa4_4f37f10d",
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
