@@ -34,7 +34,6 @@ defaults:
   topics:
     core_topic: "rwcore"
     adapter_open_onu_topic: "brcm_openomci_onu"
-    adapter_open_olt_topic: "openolt"
 
   # Define prefix path for etcd
   # If you're running multiple voltha stacks the this value
