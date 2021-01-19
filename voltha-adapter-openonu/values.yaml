@@ -65,6 +65,25 @@ services:
   tracing_agent:
     address: jaeger-agent:6831
 
+allowed_onu_vendors:
+  - OPEN
+  - ALCL
+  - BRCM
+  - TWSH
+  - ALPH
+  - ISKT
+  - SFAA
+  - BBSM
+  - SCOM
+  - ARPX
+  - DACM
+  - ERSN
+  - HWTC
+  - CIGG
+  - ADTN
+  - ARCA
+  - AVMG
+
 # Define the recplica count for everything
 replicas:
   adapter_open_onu: 1
