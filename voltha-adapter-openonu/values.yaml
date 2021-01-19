@@ -65,6 +65,25 @@ services:
   tracing_agent:
     address: jaeger-agent:6831
 
+allowed_onu_vendors:
+  - OPEN
+  - ALCL
+  - BRCM
+  - TWSH
+  - ALPH
+  - ISKT
+  - SFAA
+  - BBSM
+  - SCOM
+  - ARPX
+  - DACM
+  - ERSN
+  - HWTC
+  - CIGG
+  - ADTN
+  - ARCA
+  - AVMG
+
 # Define the recplica count for everything
 replicas:
   adapter_open_onu: 1
@@ -83,10 +102,10 @@ images:
   adapter_open_onu:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-openonu-adapter'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.5.0{{- end }}{{- else }}2.5.0{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.7.0{{- end }}{{- else }}2.7.0{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
   adapter_open_onu_go:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-openonu-adapter-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}0.1.15{{- end }}{{- else }}0.1.15{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.1.0{{- end }}{{- else }}1.1.0{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
