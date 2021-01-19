@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "16da2471_3bd10058",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-19T19:57:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c55bff1c_742132f0",
+      "range": {
+        "startLine": 218,
+        "startChar": 84,
+        "endLine": 218,
+        "endChar": 86
+      },
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "758e956f_dc3b9cef",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-19T19:57:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88dc47e2_1062284c",
+      "range": {
+        "startLine": 218,
+        "startChar": 64,
+        "endLine": 218,
+        "endChar": 70
+      },
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "531822d7_9a8f54bb",
         "filename": "README.md",
         "patchSetId": 20
@@ -59,6 +107,24 @@
       "writtenOn": "2021-01-19T10:34:18Z",
       "side": 1,
       "message": "also add a section for using a custom/dev chart for one of the components.",
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85d72b62_54ef36c2",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-19T19:57:01Z",
+      "side": 1,
+      "message": "This is an interesting point, I don\u0027t know of any way to do this without changing the Chart.yaml and pointing it to your local chart, is there a better way? Is this something we should document or if you\u0027re working on a single chart you should install that component independently?",
+      "parentUuid": "531822d7_9a8f54bb",
       "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
@@ -115,6 +181,24 @@
       "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "617e7052_70d36bea",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-19T19:57:01Z",
+      "side": 1,
+      "message": "isn\u0027t this basic helm usage? https://helm.sh/docs/intro/using_helm/#helm-uninstall-uninstalling-a-release",
+      "parentUuid": "e591a66d_e2fc0726",
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
