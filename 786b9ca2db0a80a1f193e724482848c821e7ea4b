@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e09123d_5dd30d4a",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-01-20T15:46:43Z",
+      "side": 1,
+      "message": "In order to support multiple replicas we need to:\n- pass total_replica and current_replica parameters to the adapter",
+      "range": {
+        "startLine": 81,
+        "startChar": 10,
+        "endLine": 97,
+        "endChar": 114
+      },
+      "revId": "786b9ca2db0a80a1f193e724482848c821e7ea4b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
