@@ -114,6 +114,29 @@
       "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d2d5fe3_bb1fd1e0",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-20T19:37:31Z",
+      "side": 1,
+      "message": "As this is a \"path\", I thank `service/voltha/{{ .Values.global.stack_name }}` would be a better choice.",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 72
+      },
+      "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
