@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c8e9072_3b3c14e1",
+        "filename": "voltha-adapter-openolt/templates/openolt-deploy.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-20T19:24:36Z",
+      "side": 1,
+      "message": "We should add a label to identify the stack to which this component is associated.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 43
+      },
+      "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a07f10b_6a883935",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-20T19:24:36Z",
+      "side": 1,
+      "message": "We should add a label to identify the stack to which this component is associated.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 43
+      },
+      "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c5d950d_ce37d608",
+        "filename": "voltha-adapter-openonu/templates/openonu-py-statefulset.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-20T19:24:36Z",
+      "side": 1,
+      "message": "We should add a label to identify the stack to which this component is associated.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 43
+      },
+      "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71269b72_09c3c53a",
+        "filename": "voltha/templates/core-deploy.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-20T19:24:36Z",
+      "side": 1,
+      "message": "We should add a label to identify the stack to which this component is associated.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 43
+      },
+      "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29af6eff_0d9f0f40",
+        "filename": "voltha/templates/ofagent-deploy.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-01-20T19:24:36Z",
+      "side": 1,
+      "message": "We should add a label to identify the stack to which this component is associated.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 43
+      },
+      "revId": "92028de5774a16418f76de1f142ecb6fdff2b8e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
