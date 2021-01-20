@@ -154,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "99642922_55b2dfba",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-20T09:46:04Z",
+      "side": 1,
+      "message": "you are correct on the need to change Chart.yaml if you just want to use 1 command. I was suggesting to have an example command for a single component with a local chart (maybe the openonu to keep continuity)",
+      "parentUuid": "85d72b62_54ef36c2",
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b8e6daa4_4f37f10d",
         "filename": "README.md",
         "patchSetId": 20
@@ -219,6 +237,24 @@
       "side": 1,
       "message": "isn\u0027t this basic helm usage? https://helm.sh/docs/intro/using_helm/#helm-uninstall-uninstalling-a-release",
       "parentUuid": "e591a66d_e2fc0726",
+      "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "654b4d64_4dbad5b7",
+        "filename": "README.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-01-20T09:46:04Z",
+      "side": 1,
+      "message": "yeah, it was more for convenience of users to have all useful commands in one place.",
+      "parentUuid": "617e7052_70d36bea",
       "revId": "6644d4fdbe7f2831c8ab173f1c31ff1f8883540b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
