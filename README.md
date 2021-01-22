@@ -25,19 +25,10 @@ The following describes how to deploy VOLTHA.
 ### Prerequisites
 To use the charts for VOLTHA the following Helm repositories should be
 added to your helm environment:
+
 ```shell
 helm repo add onf https://charts.opencord.org
 helm repo update
-```
-
-#### Temporary steps before the patch is merged
-
-These are a set of steps required to bring up the environment before this patch is merged and the charts are published
-```
-helm repo add kokuwa https://kokuwaio.github.io/helm-charts
-helm repo add elastic https://helm.elastic.co
-helm dep update voltha-infra
-helm dep update voltha-stack
 ```
 
 #### Load the kubernetes config in the cluster
@@ -55,14 +46,14 @@ VOLTHA relies to a set of infrastructure components (ONOS, Kafka, ETCD, ...) tha
 can be installed via the `voltha-infra` helm chart:
 
 ```shell
-helm upgrade --install -n infra voltha-infra voltha-infra
+helm upgrade --install -n infra voltha-infra onf/voltha-infra
 ```
 
 By default the `voltha-infra` helm chart will install one instance of each component,
 but that can be customized via a custom value file or via flags, eg:
 
 ```shell
-helm upgrade --install -n infra voltha-infra voltha-infra \
+helm upgrade --install -n infra voltha-infra onf/voltha-infra \
   --set onos-classic.replicas=3,onos-classic.atomix.replicas=3 \
   --set kafka.replicaCount=3,kafka.zookeeper.replicaCount=3 \
   --set etcd.statefulset.replicaCount=3
@@ -99,7 +90,7 @@ Being the content of the configuration multiline text is not possible to overrid
 necessary to create a custom value file with your content and install the chart with:
 
 ```shell
-helm upgrade --install -n infra voltha-infra voltha-infra -f myfile.yaml
+helm upgrade --install -n infra voltha-infra onf/voltha-infra -f myfile.yaml
 ```
 
 #### Support for logging and tracing (optional)
@@ -109,7 +100,7 @@ In order to deploy those components together with the infrastructure add these f
 the VOLTHA infrastructure:
 
 ```shell
-helm upgrade --install -n infra voltha-infra voltha-infra \
+helm upgrade --install -n infra voltha-infra onf/voltha-infra \
   --set voltha-tracing.enabled=true \
   --set efk.enabled=true
 ```
@@ -137,7 +128,7 @@ To deploy a VOLTHA stack with the opensource adapters (OpenOLT and OpenONU) you 
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 voltha-stack \
+  -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra
@@ -148,7 +139,7 @@ helm upgrade --install --create-namespace \
 >
 > ```
 > helm upgrade --install --create-namespace \
->  -n voltha2 voltha2 voltha-stack \
+>  -n voltha2 voltha2 onf/voltha-stack \
 >  --set global.stack_name=voltha2 \
 >  --set voltha_infra_name=voltha-infra \
 >  --set voltha_infra_namespace=infra
@@ -160,7 +151,7 @@ To enable tracing across the VOLTHA components add `--set global.tracing.enabled
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 voltha-stack \
+  -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
@@ -175,20 +166,20 @@ To enable log correlation across the VOLTHA components add `--set global.log_cor
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 voltha-stack \
+  -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
   --set global.log_correlation.enabled=true
 ```
 
-## Use the OpenONU python adapter
+### Use the OpenONU python adapter
 
 > NOTE that this adapter is now unsupported, so you're in uncharted territory from now on.
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 voltha-stack \
+  -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
@@ -248,17 +239,17 @@ For you convenience here are the commands to deploy those workflows:
 **DT**
 
 ```shell
-helm upgrade --install -n infra voltha-infra voltha-infra -f examples/dt-values.yaml
+helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/dt-values.yaml
 helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10 -f examples/dt-values.yaml
-helm upgrade --install --create-namespace   -n voltha1 voltha1 voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
+helm upgrade --install --create-namespace   -n voltha1 voltha1 onf/voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
 **TT**
 
 ```shell
-helm upgrade --install -n infra voltha-infra voltha-infra -f examples/tt-values.yaml
+helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/tt-values.yaml
 helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10 -f examples/tt-values.yaml
-helm upgrade --install --create-namespace   -n voltha1 voltha1 voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
+helm upgrade --install --create-namespace   -n voltha1 voltha1 onf/voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
 ## Post installation
@@ -378,7 +369,7 @@ installation guide while providing a new image for one of the component, eg:
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 voltha-stack \
+  -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
@@ -402,7 +393,7 @@ and then use the local copy of your chart to install it, eg:
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 voltha-stack \
+  -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
