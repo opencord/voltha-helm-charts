@@ -99,6 +99,7 @@ spec:
             - "--trace_enabled={{ .Values.global.tracing.enabled }}"
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
             - "--allowed_onu_vendors={{ template "allowed_onu_vendors" . }}"
+            - "--metrics_enabled={{ .Values.global.metrics.enabled }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
