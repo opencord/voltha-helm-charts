@@ -53,14 +53,11 @@ voltha-adapter-openonu:
   services:
     kafka:
       adapter:
-        service: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc"
-        port: 9092
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
       cluster:
-        service: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc"
-        port: 9092
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
     etcd:
-      service: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc"
-      port: 2379
+      address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
     tracing_agent:
       address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
 
