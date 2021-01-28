@@ -38,6 +38,9 @@ global:
   # Configure Tracing
   tracing:
     enabled: true
+  # Configure Peformance Metrics
+  metrics:
+    enabled: true
 
 # Default security context under which the containers run
 securityContext:
