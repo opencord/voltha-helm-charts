@@ -50,16 +50,13 @@ securityContext:
 services:
   kafka:
     adapter:
-      service: kafka
-      port: 9092
+      address: kafka:9092
     cluster:
-      service: kafka
-      port: 9092
+      address: kafka:9092
 
   # Define connectivity to etcd
   etcd:
-    service: etcd
-    port: 2379
+    address: etcd:2379
 
   # Define Tracing Agent connection details
   tracing_agent:
