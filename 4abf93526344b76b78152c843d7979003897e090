@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6d49e12_a16dc4b6",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-01-28T23:05:05Z",
+      "side": 1,
+      "message": "I would prefer to keep this enabled (true) and during deployment of helm chart, override it to false if needed.",
+      "revId": "4abf93526344b76b78152c843d7979003897e090",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
