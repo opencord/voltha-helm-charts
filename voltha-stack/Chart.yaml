@@ -28,7 +28,7 @@ maintainers:
 name: voltha-stack
 
 appVersion: "1.0"
-version: 0.1.2
+version: 0.1.3
 
 dependencies:
   - name: voltha
@@ -36,8 +36,8 @@ dependencies:
     version: 2.8.1
     condition: voltha.enabled
   - name: voltha-adapter-openonu
-    repository: https://charts.opencord.org
-    version: 2.7.3
+    repository: file://../voltha-adapter-openonu
+    version: 2.7.5
     condition: voltha-adapter-openonu.enabled
   - name: voltha-adapter-openolt
     repository: https://charts.opencord.org
