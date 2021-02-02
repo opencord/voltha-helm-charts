@@ -21,6 +21,8 @@ onos-classic:
   replicas: 1
   atomix:
     replicas: 0
+    persistence:
+      enabled: false
   image:
     pullPolicy: Always
     repository: voltha/voltha-onos
