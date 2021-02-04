@@ -423,7 +423,7 @@ On patchset submission, jobs are run in Jenkins that validate the correctness
 of the helm charts.
 
 The code for these jobs can be found in
-[helm-repo-tools](http://gerrit.opencord.org/helm-repo-tools)
+[helm-repo-tools](https://gerrit.opencord.org/admin/repos/helm-repo-tools)
 
 The two scripts that should be run to test are:
 
