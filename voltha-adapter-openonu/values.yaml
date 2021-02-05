@@ -38,9 +38,14 @@ global:
   # Configure Tracing
   tracing:
     enabled: true
-  # Configure Peformance Metrics
+  # Configure Performance Metrics
   metrics:
     enabled: true
+  # Configure Mib Audit
+  mib_audit:
+  # configure "0s" to disable Mib Audit 
+    interval: 0s
+
 
 # Default security context under which the containers run
 securityContext:
@@ -107,5 +112,5 @@ images:
   adapter_open_onu_go:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-openonu-adapter-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.2.0{{- end }}{{- else }}1.2.0{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.2.1{{- end }}{{- else }}1.2.1{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
