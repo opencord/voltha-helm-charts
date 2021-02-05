@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "19ffcfbd_cf533749",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2021-02-05T15:21:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e719d670_371bbac3",
+      "revId": "cc58a6ceb927e23d681070c40c1a7402dcf12a86",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6b5d2240_b7cc939e",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "cc58a6ceb927e23d681070c40c1a7402dcf12a86",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4761d976_f0c310f5",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2021-02-05T15:21:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6b5d2240_b7cc939e",
+      "revId": "cc58a6ceb927e23d681070c40c1a7402dcf12a86",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
