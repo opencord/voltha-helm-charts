@@ -97,6 +97,7 @@ spec:
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
             - "--allowed_onu_vendors={{ template "allowed_onu_vendors" . }}"
             - "--metrics_enabled={{ .Values.global.metrics.enabled }}"
+            - "--mib_audit_interval={{ .Values.global.mib_audit.interval }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
