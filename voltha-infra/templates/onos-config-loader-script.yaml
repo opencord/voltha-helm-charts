@@ -28,6 +28,12 @@ data:
     CFGS=$(ls /opt/configs | grep -v netcfg.json);
     for CFG in ${CFGS};
     do
-      echo -e "Loading $CFG config"
+      echo -e "Check that component $CFG is active";
+      until curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X GET "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG";
+      do
+        echo -e "Waiting for $CFG to be active";
+        sleep 5;
+      done
+      echo -e "Loading $CFG config";
       curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG" -H Content-type:application/json -d @/opt/configs/$CFG;
     done
