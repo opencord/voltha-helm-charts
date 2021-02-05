@@ -38,9 +38,14 @@ global:
   # Configure Tracing
   tracing:
     enabled: true
-  # Configure Peformance Metrics
+  # Configure Performance Metrics
   metrics:
     enabled: true
+  # Configure Mib Audit
+  mib_audit:
+  # configure "0s" to disable Mib Audit 
+    interval: 0s
+
 
 # Default security context under which the containers run
 securityContext:
