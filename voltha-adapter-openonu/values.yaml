@@ -89,6 +89,10 @@ allowed_onu_vendors:
   - ARCA
   - AVMG
 
+# Expose the golang pprof webserver, if enabled
+profiler:
+  enabled: false
+
 # Define the recplica count for everything
 replicas:
   adapter_open_onu: 1
