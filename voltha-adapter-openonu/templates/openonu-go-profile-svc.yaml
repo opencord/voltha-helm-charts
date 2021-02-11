@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 {{- if .Values.profiler.enabled }}
-{{- $log_level := tpl .Values.adapter_open_olt.log_level . | upper }}
+{{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
 ---
 apiVersion: v1
 kind: Service
@@ -22,10 +22,10 @@ metadata:
 spec:
   clusterIP: None
   ports:
-    - name: profiler
+    - name: openonu-profiler
       port: 6060
       targetPort: 6060
   selector:
-    app: adapter-open-olt
+    app: adapter-open-onu
     release: {{ .Release.Name }}
 {{- end }}
