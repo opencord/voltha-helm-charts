@@ -95,6 +95,7 @@ spec:
             - "--max_timeout_interadapter_comm={{ tpl .Values.adapter_open_onu.max_timeout_interadapter_comm . }}"
             - "--trace_enabled={{ .Values.global.tracing.enabled }}"
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
+            - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
             - "--allowed_onu_vendors={{ template "allowed_onu_vendors" . }}"
             - "--metrics_enabled={{ .Values.global.metrics.enabled }}"
             - "--mib_audit_interval={{ .Values.global.mib_audit.interval }}"
