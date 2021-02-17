@@ -23,6 +23,7 @@ data:
 
     # a POST to a non ready netcfg return 207 in case of failure, while a GET returns 404,
     # check the apps key is ready to accept data before sending them
+    
     until curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X GET -H 'Accept: application/json' "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/apps";
     do
       echo -e "Waiting for netcfg to be active";
