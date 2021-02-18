@@ -132,6 +132,18 @@ onos:
       {
         "enabled": "false"
       }
+    "org.onosproject.net.flow.impl.FlowRuleManager": >
+      {
+        "purgeOnDisconnection": "false"
+      }
+    "org.onosproject.net.meter.impl.MeterManager": >
+      {
+        "purgeOnDisconnection": "false"
+      }
+    "org.onosproject.net.groups.impl.GroupManager": >
+      {
+        "purgeOnDisconnection": "false"
+      }
 
 # START EFK Setup to push voltha logs
 # elasticstack config
