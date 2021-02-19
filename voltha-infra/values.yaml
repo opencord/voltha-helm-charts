@@ -27,6 +27,19 @@ onos-classic:
     pullPolicy: Always
     repository: voltha/voltha-onos
     tag: master
+  apps:
+    - org.onosproject.lldpprovider
+    - org.onosproject.openflow-base
+    - org.onosproject.gui2
+    - org.onosproject.drivers
+    - org.onosproject.mcast
+    - org.opencord.kafka
+    - org.opencord.sadis
+    - org.opencord.dhcpl2relay
+    - org.opencord.igmpproxy
+    - org.opencord.mcast
+    - org.opencord.olt
+    - org.opencord.aaa
 
 bbsim-sadis-server:
   enabled: true
@@ -140,7 +153,7 @@ onos:
       {
         "purgeOnDisconnection": "false"
       }
-    "org.onosproject.net.groups.impl.GroupManager": >
+    "org.onosproject.net.group.impl.GroupManager": >
       {
         "purgeOnDisconnection": "false"
       }
