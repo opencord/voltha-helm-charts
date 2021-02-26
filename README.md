@@ -410,6 +410,33 @@ helm upgrade --install --create-namespace \
   --set services.etcd.service=voltha-infra-etcd.infra.svc
 ```
 
+## Redis as KVStore (currently in BETA)
+
+It's possible to install redis as a KV store instead of etcd. To do that
+don't install etcd while installing voltha-infra
+
+```shell
+helm upgrade --install --create-namespace -n infra voltha-infra voltha-infra --set etcd.enabled=false
+```
+
+Since the charts is not published yet, you have to download the
+voltha-helm-charts repository locally and run
+
+```shell
+cd voltha-stack
+helm dep update
+```
+
+This will download the local voltha charts inside charts directory.
+Install the voltha stack by
+
+```shell
+helm upgrade --install --create-namespace -n voltha1 voltha1 ./voltha-stack \
+  --set global.stack_name=voltha1 \
+  --set voltha_infra_name=voltha-infra \
+  -f voltha-stack/values-redis.yaml
+```
+
 ## Known issues
 
 Known VOLTHA issues are tracked in [JIRA](https://jira.opencord.org). Issues

@@ -6,7 +6,9 @@ Here are some commands to expose services:
 
 ONOS SSH: kubectl port-forward -n {{ .Release.Namespace }} svc/{{ .Release.Name }}-onos-classic-hs 8101
 ONOS GUI: kubectl port-forward -n {{ .Release.Namespace }} svc/{{ .Release.Name }}-onos-classic-hs 8181
+{{- if .Values.etcd.enabled }}
 ETCD: kubectl port-forward -n {{ .Release.Namespace }} svc/{{ .Release.Name }}-etcd {{ .Values.etcd.service.port }}
+{{- end }}
 KAFKA: kubectl port-forward -n {{ .Release.Namespace }} svc/{{ .Release.Name }}-kafka {{ .Values.kafka.service.port }}
 
 Jaeger: kubectl port-forward -n {{ .Release.Namespace }} --address 0.0.0.0 svc/{{ .Release.Name }}-voltha-tracing-jaeger-gui 16686

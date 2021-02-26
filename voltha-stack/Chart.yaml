@@ -32,7 +32,7 @@ version: 0.1.6
 
 dependencies:
   - name: voltha
-    repository: https://charts.opencord.org
+    repository: file://../voltha
     version: 2.8.1
     condition: voltha.enabled
   - name: voltha-adapter-openonu
@@ -40,6 +40,10 @@ dependencies:
     version: 2.7.9
     condition: voltha-adapter-openonu.enabled
   - name: voltha-adapter-openolt
-    repository: https://charts.opencord.org
+    repository: file://../voltha-adapter-openolt
     version: 2.8.1
     condition: voltha-adapter-openolt.enabled
+  - name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: 11.2.3
+    condition: redis.enabled
