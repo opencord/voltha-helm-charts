@@ -43,3 +43,7 @@ dependencies:
     repository: file://../voltha-adapter-openolt
     version: 2.9.1
     condition: voltha-adapter-openolt.enabled
+  - name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: 14.1.0
+    condition: redis.enabled
