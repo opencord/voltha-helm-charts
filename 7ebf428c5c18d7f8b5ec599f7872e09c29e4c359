@@ -70,6 +70,24 @@
       "revId": "7ebf428c5c18d7f8b5ec599f7872e09c29e4c359",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "772a305d_1020b997",
+        "filename": "voltha-stack/values-redis.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-26T14:40:22Z",
+      "side": 1,
+      "message": "sounds good, thanks! I\u0027ll try to schedule some tests internally as soon as we can.",
+      "parentUuid": "f186cfdd_929ce3e6",
+      "revId": "7ebf428c5c18d7f8b5ec599f7872e09c29e4c359",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
