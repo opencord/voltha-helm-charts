@@ -16,6 +16,24 @@
       "revId": "7ebf428c5c18d7f8b5ec599f7872e09c29e4c359",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4dc9739a_8ac2cc77",
+        "filename": "voltha-stack/values-redis.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2021-02-26T14:34:04Z",
+      "side": 1,
+      "message": "this is just for adapters and rw-core. Redis image comes from directly from bitnami repo as a dependency in the Chart.",
+      "parentUuid": "a54be5c0_c403174b",
+      "revId": "7ebf428c5c18d7f8b5ec599f7872e09c29e4c359",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
