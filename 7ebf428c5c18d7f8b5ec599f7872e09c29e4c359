@@ -34,6 +34,24 @@
       "revId": "7ebf428c5c18d7f8b5ec599f7872e09c29e4c359",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c8c0124_bb230dc4",
+        "filename": "voltha-stack/values-redis.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-02-26T14:36:41Z",
+      "side": 1,
+      "message": "would this not override the of-agent as well and fail ? or did you upload image for that one as well ?",
+      "parentUuid": "4dc9739a_8ac2cc77",
+      "revId": "7ebf428c5c18d7f8b5ec599f7872e09c29e4c359",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
