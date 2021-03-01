@@ -386,6 +386,22 @@ kubectl delete pod -n voltha1 $(kubectl get pods -n voltha1 | grep openonu | awk
 
 > In order for this to work the `imagePullPolicy` has to be set to `Always`.
 
+### Develop with latest code
+
+The voltha-infra and voltha-stack charts pull the latest released version of every component. 
+If for your development and testing you'd like to have all the `master` of each components, independently if that has 
+been officially tagged and release there is a provided `dev-values.yaml`. You can use it for the a `voltha-stack` like so:
+```shell
+helm upgrade --install --create-namespace \
+  -n voltha1 voltha1 onf/voltha-stack \
+  --set global.stack_name=voltha1 \
+  --set voltha_infra_name=voltha-infra \
+  --set voltha_infra_namespace=infra \
+  -f examples/dev-values.yaml
+```
+After the feature you are working on is released by modifying the `VERSION` file and removing `-dev` you 
+can remove the `dev-values.yaml` file from your helm command. 
+
 ### Test changes to a chart
 
 If you are working on an helm chart you can install a stack omitting that component,
