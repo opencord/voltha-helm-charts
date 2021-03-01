@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6deda521_f518558c",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-03-01T18:01:32Z",
+      "side": 1,
+      "message": "this is only true if the charts are up to date",
+      "range": {
+        "startLine": 391,
+        "startChar": 50,
+        "endLine": 391,
+        "endChar": 65
+      },
+      "revId": "05993d150d8e3a5184604c85770c953d11e0a21c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
