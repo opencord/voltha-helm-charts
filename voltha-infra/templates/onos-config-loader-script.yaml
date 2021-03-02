@@ -23,7 +23,7 @@ data:
 
     # a POST to a non ready netcfg return 207 in case of failure, while a GET returns 404,
     # check the apps key is ready to accept data before sending them
-    
+
     until curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X GET -H 'Accept: application/json' "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/apps";
     do
       echo -e "Waiting for netcfg to be active";
@@ -31,7 +31,11 @@ data:
     done
 
     echo -e "Loading netcfg into ONOS\n";
-    curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/" -H Content-type:application/json -d @/opt/configs/netcfg.json;
+    responseCode=$(curl --write-out '%{http_code}' --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/" -H Content-type:application/json -d @/opt/configs/netcfg.json);
+    if [[ $responseCode == 207 ]]; then
+      echo "Failed to load netcfg, exiting..."
+      exit 1
+    fi
 
     echo -e "Loading component configs into ONOS\n";
     CFGS=$(ls /opt/configs | grep -v netcfg.json);
