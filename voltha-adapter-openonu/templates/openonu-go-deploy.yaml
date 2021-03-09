@@ -94,6 +94,7 @@ spec:
             - "--accept_incr_evto={{ tpl .Values.adapter_open_onu.incremental_evto_update . }}"
             - "--max_timeout_interadapter_comm={{ tpl .Values.adapter_open_onu.max_timeout_interadapter_comm . }}"
             - "--max_timeout_reconciling={{ tpl .Values.adapter_open_onu.max_timeout_reconciling . }}"
+            - "--omci_timeout={{ tpl .Values.adapter_open_onu.omci_timeout . }}"
             - "--trace_enabled={{ .Values.global.tracing.enabled }}"
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
             - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
