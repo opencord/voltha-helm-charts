@@ -145,6 +145,25 @@ helm upgrade --install --create-namespace \
 >  --set voltha_infra_namespace=infra
 > ```
 
+If you add a different number of ONOS you need also to tell the `ofagent` to connect to all of them
+by adding it to the `voltha-stack` command. The following is an example for 3 ONOS instances. 
+```shell
+helm upgrade --install --create-namespace \
+  -n voltha1 voltha1 onf/voltha-stack \
+  --set global.stack_name=voltha1 \
+  --set voltha_infra_name=voltha-infra \
+  --set voltha_infra_namespace=infra \
+  --set voltha.services.controller[0].service=voltha-infra-onos-classic-0.voltha-infra-onos-classic-hs.infra.svc \
+  --set voltha.services.controller[0].port=6653 \
+  --set voltha.services.controller[0].address=voltha-infra-onos-classic-0.voltha-infra-onos-classic-hs.infra.svc:6653 \
+  --set voltha.services.controller[1].service=voltha-infra-onos-classic-1.voltha-infra-onos-classic-hs.infra.svc \
+  --set voltha.services.controller[1].port=6653 \
+  --set voltha.services.controller[1].address=voltha-infra-onos-classic-1.voltha-infra-onos-classic-hs.infra.svc:6653 \
+  --set voltha.services.controller[2].service=voltha-infra-onos-classic-2.voltha-infra-onos-classic-hs.infra.svc \
+  --set voltha.services.controller[2].port=6653 \
+  --set voltha.services.controller[2].address=voltha-infra-onos-classic-2.voltha-infra-onos-classic-hs.infra.svc:6653
+```
+
 #### Enable tracing in VOLTHA (optional)
 
 To enable tracing across the VOLTHA components add `--set global.tracing.enabled=true` to the install command, for example:
