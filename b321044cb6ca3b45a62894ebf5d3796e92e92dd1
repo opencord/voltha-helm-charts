@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a14d3b1_bb66e5dd",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-03-12T08:11:12Z",
+      "side": 1,
+      "message": "why the change to a file ? can we keep the upstream one ? this makes little sense, the versions you refer to should be upstreamed. it is possibile that we need to do this in 2 patches.",
+      "revId": "b321044cb6ca3b45a62894ebf5d3796e92e92dd1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
