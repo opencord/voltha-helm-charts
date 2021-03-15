@@ -49,6 +49,9 @@ global:
   mib_audit:
   # configure "0s" to disable Mib Audit
     interval: 0s
+  alarm_audit:
+  # configure "0s" to disable omci alarm audit
+    interval: 300s
 
 
 # Default security context under which the containers run
@@ -109,6 +112,7 @@ adapter_open_onu:
   omci_timeout: '{{ .Values.global.omci_timeout }}'
   kv_store_timeout: '{{ .Values.global.adapter_open_onu.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
+  alarm_audit_interval: '{{ .Values.global.alarm_audit.interval }}'
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_onu_topic: "{{ .Values.global.stack_name }}_brcm_openomci_onu"
@@ -122,5 +126,5 @@ images:
   adapter_open_onu_go:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-openonu-adapter-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.2.4{{- end }}{{- else }}1.2.4{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.2.6{{- end }}{{- else }}1.2.6{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
