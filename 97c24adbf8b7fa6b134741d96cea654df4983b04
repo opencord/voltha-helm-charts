@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "064a4020_247acb65",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2021-03-15T14:55:51Z",
+      "side": 1,
+      "message": "Should be 1.2.6",
+      "range": {
+        "startLine": 128,
+        "startChar": 132,
+        "endLine": 128,
+        "endChar": 133
+      },
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c48900ec_1281b2b6",
         "filename": "voltha-stack/Chart.yaml",
         "patchSetId": 1
