@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "912ba11b_066a673e",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000726
+      },
+      "writtenOn": "2021-03-15T15:55:02Z",
+      "side": 1,
+      "message": "adapter specific",
+      "parentUuid": "2797452c_f2cada02",
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0333c2b9_6e081ea3",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17cf4083_54aa6b64",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000726
+      },
+      "writtenOn": "2021-03-15T15:55:02Z",
+      "side": 1,
+      "message": "adapter specific",
+      "parentUuid": "0333c2b9_6e081ea3",
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
@@ -56,6 +92,30 @@
       "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9961fd5_f25111f8",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000726
+      },
+      "writtenOn": "2021-03-15T15:55:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "064a4020_247acb65",
+      "range": {
+        "startLine": 128,
+        "startChar": 132,
+        "endLine": 128,
+        "endChar": 133
+      },
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     },
     {
       "key": {
