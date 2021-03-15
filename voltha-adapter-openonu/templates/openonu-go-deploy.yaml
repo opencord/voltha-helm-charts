@@ -101,6 +101,7 @@ spec:
             - "--allowed_onu_vendors={{ template "allowed_onu_vendors" . }}"
             - "--metrics_enabled={{ .Values.global.metrics.enabled }}"
             - "--mib_audit_interval={{ .Values.global.mib_audit.interval }}"
+            - "--alarm_audit_interval={{ .Values.adapter_open_onu.alarm_audit.interval }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
