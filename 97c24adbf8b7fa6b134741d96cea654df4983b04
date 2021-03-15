@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2797452c_f2cada02",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000666
+      },
+      "writtenOn": "2021-03-15T14:52:56Z",
+      "side": 1,
+      "message": "Is this really some gobal value or maybe more an adapter specifc value - compare e.g. max_timeout_reconciling",
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0333c2b9_6e081ea3",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000666
+      },
+      "writtenOn": "2021-03-15T14:52:56Z",
+      "side": 1,
+      "message": "also here global or adapter specific?",
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c48900ec_1281b2b6",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000666
+      },
+      "writtenOn": "2021-03-15T14:52:56Z",
+      "side": 1,
+      "message": "2.7.11 - think the last change was alreadyforgotten here by Girish.",
+      "revId": "97c24adbf8b7fa6b134741d96cea654df4983b04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
