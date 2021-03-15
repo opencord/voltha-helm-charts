@@ -49,6 +49,9 @@ global:
   mib_audit:
   # configure "0s" to disable Mib Audit
     interval: 0s
+  alarm_audit:
+  # configure "0s" to disable omci alarm audit
+    interval: 300s
 
 
 # Default security context under which the containers run
@@ -122,5 +125,5 @@ images:
   adapter_open_onu_go:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-openonu-adapter-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.2.4{{- end }}{{- else }}1.2.4{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}1.2.7{{- end }}{{- else }}1.2.7{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
