@@ -16,6 +16,24 @@
       "revId": "b321044cb6ca3b45a62894ebf5d3796e92e92dd1",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ab65324_1f6d710e",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-03-16T01:00:54Z",
+      "side": 1,
+      "message": "The chart needs to refer to the local charts otherwise it\u0027s impossible to validate that it\u0027s still working when you make changes to single charts.",
+      "parentUuid": "2a14d3b1_bb66e5dd",
+      "revId": "b321044cb6ca3b45a62894ebf5d3796e92e92dd1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
