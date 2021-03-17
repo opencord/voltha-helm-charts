@@ -25,6 +25,8 @@ global:
   image_pullPolicy: "Always"
   adapter_open_olt:
     timeout: "5s"
+    heartbeat_check_interval: "15s"
+    heartbeat_fail_interval: "31s"
 
   #enable OMCC encryption
   omcc_encryption: false
@@ -74,7 +76,7 @@ services:
 profiler:
   enabled: false
 
-# Define the recplica count for everything
+# Define the replica count for everything
 replicas:
   current_replica: 1
   total_replica: 1
@@ -83,6 +85,8 @@ adapter_open_olt:
   log_level: '{{ .Values.global.log_level }}'
   kv_store_timeout: '{{ .Values.global.adapter_open_olt.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
+  heartbeat_check_interval: '{{ .Values.global.adapter_open_olt.heartbeat_check_interval }}'
+  heartbeat_fail_interval: '{{ .Values.global.adapter_open_olt.heartbeat_fail_interval }}'
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
