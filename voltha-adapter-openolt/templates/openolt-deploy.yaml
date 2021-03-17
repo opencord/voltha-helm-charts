@@ -96,6 +96,7 @@ spec:
             - "--adapter_topic={{ tpl .Values.adapter_open_olt.topics.adapter_open_olt_topic . }}"
             - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
             - "--kv_store_request_timeout={{ tpl .Values.adapter_open_olt.kv_store_timeout . }}"
+            - "--hearbeat_fail_interval={{ tpl .Values.adapter_open_olt.hearbeat_fail_interval . }}"
             - "--log_level={{ $log_level }}"
             - "--current_replica={{ .Values.replicas.current_replica }}"
             - "--total_replica={{ .Values.replicas.total_replica }}"

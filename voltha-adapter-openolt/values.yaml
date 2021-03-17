@@ -25,6 +25,7 @@ global:
   image_pullPolicy: "Always"
   adapter_open_olt:
     timeout: "5s"
+    hearbeat_fail_interval: "31s"
 
   #enable OMCC encryption
   omcc_encryption: false
@@ -83,6 +84,7 @@ adapter_open_olt:
   log_level: '{{ .Values.global.log_level }}'
   kv_store_timeout: '{{ .Values.global.adapter_open_olt.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
+  hearbeat_fail_interval: '{{ .Values.global.adapter_open_olt.hearbeat_fail_interval }}'
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
