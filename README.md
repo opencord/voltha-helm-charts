@@ -194,6 +194,8 @@ helm upgrade --install --create-namespace \
 
 ### Use the OpenONU python adapter
 
+Up to release `0.10.0` of the `voltha-stack` chart you can still use the openonu-py version of the adapter. 
+
 > NOTE that this adapter is now unsupported, so you're in uncharted territory from now on.
 
 ```shell
