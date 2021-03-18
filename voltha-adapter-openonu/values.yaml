@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-use_openonu_adapter_go: true
 
 nameOverride: ~
 fullNameOverride: ~
@@ -118,11 +117,6 @@ adapter_open_onu:
     adapter_open_onu_topic: "{{ .Values.global.stack_name }}_brcm_openomci_onu"
 
 images:
-  adapter_open_onu:
-    registry: '{{ .Values.global.image_registry }}'
-    repository: '{{ .Values.global.image_org }}voltha-openonu-adapter'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.7.0{{- end }}{{- else }}2.7.0{{- end }}'
-    pullPolicy: '{{ .Values.global.image_pullPolicy }}'
   adapter_open_onu_go:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-openonu-adapter-go'

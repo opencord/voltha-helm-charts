@@ -11,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- if and (hasKey .Values "use_openonu_adapter_go") .Values.use_openonu_adapter_go }}
 {{- $log_level := tpl .Values.adapter_open_onu.log_level . | upper }}
 ---
 apiVersion: apps/v1
@@ -118,4 +117,3 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
-{{- end }}
