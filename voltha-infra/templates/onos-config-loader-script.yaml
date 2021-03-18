@@ -48,5 +48,9 @@ data:
         sleep 5;
       done
       echo -e "Loading $CFG config";
-      curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG" -H Content-type:application/json -d @/opt/configs/$CFG;
+      responseCode=$(curl --write-out '%{http_code}' --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG" -H Content-type:application/json -d @/opt/configs/$CFG);
+      if [[ $responseCode == 207 ]]; then
+        echo "Failed to load $CFG, exiting..."
+        exit 1
+      fi
     done
