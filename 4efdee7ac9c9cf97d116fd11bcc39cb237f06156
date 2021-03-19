@@ -16,6 +16,24 @@
       "revId": "4efdee7ac9c9cf97d116fd11bcc39cb237f06156",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13bb10f7_c784e764",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-03-19T10:29:05Z",
+      "side": 1,
+      "message": "indeed, we will update the charts when we are ready to release ;)",
+      "parentUuid": "589bc576_fc9ef8cd",
+      "revId": "4efdee7ac9c9cf97d116fd11bcc39cb237f06156",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
