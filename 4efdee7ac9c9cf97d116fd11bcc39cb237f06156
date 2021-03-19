@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "589bc576_fc9ef8cd",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000666
+      },
+      "writtenOn": "2021-03-19T10:27:43Z",
+      "side": 1,
+      "message": "I guess the voltha R2.7 will be done with Onu Adapter version 1.2.7, may be that should already be considered?",
+      "revId": "4efdee7ac9c9cf97d116fd11bcc39cb237f06156",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
