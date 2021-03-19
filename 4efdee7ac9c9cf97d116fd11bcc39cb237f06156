@@ -1,0 +1,9 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Holger Hildebrandt <holger.hildebrandt@adtran.com>
+Code-Review+1: Michael Pagenkopf <michael.pagenkopf@adtran.com>
+Code-Review+2: Andrea Campanella <andrea@opennetworking.org>
+Submitted-by: Andrea Campanella <andrea@opennetworking.org>
+Submitted-at: Fri, 19 Mar 2021 10:29:16 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/23542
+Project: voltha-helm-charts
+Branch: refs/heads/master
