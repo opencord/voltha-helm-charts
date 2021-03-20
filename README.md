@@ -273,6 +273,151 @@ helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10 -f examples/t
 helm upgrade --install --create-namespace   -n voltha1 voltha1 onf/voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
+### Using an ingress controller
+
+A process to expose the VOLTHA API external to the Kubernetes cluster was described
+using the `port-forward` option from the `kubectl` command line tool. This mechanism,
+while convenient, is not recommended for a production deployment. For a production
+deployment a [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) is recommended.
+
+There are many choices when deploying an ingress controller including open source and
+commercial options. This document does not recommend or require a specific 
+ingress controller, but it is important to note that VOLTHA has only been tested
+using the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+and thus examples for Kubernetes manifests are offered in that context.
+
+#### VOLTHA API
+
+When specifing the ingress resource for the VOLTHA API there are a few key values
+that must be including in the specification:
+
+- `namespace` - typically the same as the stack name when deploying
+a voltha stack instance (_ex:_ `voltha1`)
+
+- `host` - a virtual hostname that will resolve to the
+exteral IP address of the ingress controller. this allows for multiple stacks
+to be multiplexed over a single IP address (_ex:_ `voltha1.example.com`)
+
+- `path` - allows a single ingress port to multiplex
+between mutliple backend services (_ex:_ `/voltha.VolthaService/`)
+
+- `service.name` - typically the name of the stack appended
+with `-voltha-api` (_ex:_ `voltha1-voltha-api`)
+
+- `service.port.number` - the port on which the VOLTHA API service
+listens (_ex:_ `55555`)
+
+Below is an example Ingress manifest for a VOLTHA stack instance:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    nginx.ingress.kubernetes.io/grpc-backend: "true"
+  name: voltha-ingress
+  namespace: voltha1
+spec:
+  rules:
+  - host: voltha1.example.com
+    http:
+      paths:
+      - path: /voltha.VolthaService/
+        pathType: Prefix
+        backend:
+         service:
+           name: voltha1-voltha-api
+           port:
+             number: 55555
+```
+
+#### etcd API
+
+In addition to the VOLTHA API is it suggested that the etcd service API also
+be exposed via an ingress controller as the `voltctl` command line tool directly
+access the etcd configuration store to read and manipulate the VOLTHA logging
+configuration.
+
+Below is an example Ingress manifest for the etcd server. It is important to
+note that no `host` specification is required as there is only a single instance
+of etcd recommended for a VOLTHA deployment.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    nginx.ingress.kubernetes.io/grpc-backend: "true"
+  name: etcd-ingress
+  namespace: infra
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /etcdserverpb.KV/
+        pathType: Prefix
+        backend:
+         service:
+           name: voltha-infra-etcd
+           port:
+             number: 2379
+```
+
+#### Usage with `voltctl`
+
+Once the Ingress resources are defined `voltctl` should be able to access the 
+VOLTHA deployment without having to run `kubectl port-forward` commands. The 
+configuration to `voltctl` to enable to utilize the ingress controller can be
+specified either via the command line options or via the voltctl configuration
+file (default `~/.volt/config`).
+
+The importand settings are 
+
+- `--server`/`server` - the value of the external IP address of the ingress controller
+and the port on which it is listening (_ex:_ `voltha1.example.com:443`)
+
+- `--kvstore`/`kvstore` - the value of the external IP address of the ingress
+controller and the point on which it is listening (_ex:_ `localhost:443`)
+
+- `--tls`/`tls.useTls` - indicates that TLS should be used when communicating
+through the ingress controller, which is required for the NGINX ingress controller
+(_ex:_ `true`)
+
+_CLI example_:
+
+```bash
+voltctl --server=voltha1.example.com:442 --kvstore=localhost:443 --tls version
+```
+
+_`voltctl` configuration file example:_
+
+```yaml
+server: voltha1.example.com:443
+kafka: localhost:443
+kvstore: localhost:443
+tls:
+  useTls: true
+  caCert: ""
+  cert: ""
+  key: ""
+  verify: false
+grpc:
+  timeout: 5m0s
+  maxCallRecvMsgSize: 4M
+kvstoreconfig:
+  timeout: 5s
+```
+
+#### Ingress Controller References
+
+1. [Guide to setting up ingress on a kind cluster.](https://kind.sigs.k8s.io/docs/user/ingress/)
+
 ## Post installation
 
 Ok, now I have VOLTHA installed and everything is running.
