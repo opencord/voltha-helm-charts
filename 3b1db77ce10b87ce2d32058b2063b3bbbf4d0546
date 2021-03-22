@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf12a46b_afff162c",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-03-22T07:32:31Z",
+      "side": 1,
+      "message": "space",
+      "revId": "3b1db77ce10b87ce2d32058b2063b3bbbf4d0546",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbe3743e_db4a6e10",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-03-22T07:32:31Z",
+      "side": 1,
+      "message": "useless spaces.",
+      "revId": "3b1db77ce10b87ce2d32058b2063b3bbbf4d0546",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
