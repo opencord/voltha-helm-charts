@@ -101,6 +101,7 @@ spec:
             - "--trace_enabled={{ .Values.global.tracing.enabled }}"
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
             - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
+            - "--stack_id={{ tpl .Values.rw_core.stack_id . }}"
           ports:
             - containerPort: 50057
               name: grpc
