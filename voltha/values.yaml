@@ -99,3 +99,17 @@ images:
     repository: '{{ .Values.global.image_org }}voltha-rw-core'
     tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.7.0{{- end }}{{- else }}2.7.0{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
+
+ingress:
+  enabled: false
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    nginx.ingress.kubernetes.io/grpc-backend: "true"
+  enableVirtualHosts: false
+  hosts:
+    - host:
+      paths:
+        - "/voltha.VolthaService/"
+  tls: []
