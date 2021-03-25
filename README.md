@@ -146,7 +146,7 @@ helm upgrade --install --create-namespace \
 > ```
 
 If you add a different number of ONOS you need also to tell the `ofagent` to connect to all of them
-by adding it to the `voltha-stack` command. The following is an example for 3 ONOS instances. 
+by adding it to the `voltha-stack` command. The following is an example for 3 ONOS instances.
 ```shell
 helm upgrade --install --create-namespace \
   -n voltha1 voltha1 onf/voltha-stack \
@@ -272,6 +272,106 @@ helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/tt-val
 helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10 -f examples/tt-values.yaml
 helm upgrade --install --create-namespace   -n voltha1 voltha1 onf/voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
+
+### Using an ingress controller
+
+A process to expose the VOLTHA API external to the Kubernetes cluster was described
+using the `port-forward` option from the `kubectl` command line tool. This mechanism,
+while convenient, is not recommended for a production deployment. For a production
+deployment a [Kubernetes Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress/) is recommended.
+
+There are many choices when deploying an ingress controller including open source and
+commercial options. This document does not recommend or require a specific
+ingress controller, but it is important to note that VOLTHA has only been tested
+using the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+and thus examples for Kubernetes manifests are offered in that context.
+
+To deploy the NGINX ingress controller please see the [instructions](https://kubernetes.github.io/ingress-nginx/deploy/) on the NGINX site. For instructions on deploying
+an ingress controller when using a kind cluster, as is common for VOLTHA development,
+please see the [instructions](https://kind.sigs.k8s.io/docs/user/ingress/) on the
+kind site.
+
+#### VOLTHA Helm Charts
+
+The VOLTHA Helm charts were updated to deploy Ingress resources for the etcd
+and VOLTHA API services. By default these Ingress resources are disabled and
+not deployed.
+
+By default the Ingress resources are defined without a `host` option. This
+is convenient when running a single stack but is not sufficient when
+running multiple stacks and enabling external access to both stacks through
+the ingress controller.
+
+When using multiple stacks and an Ingress controller virtual hosts will be
+required to differentiate the stacks and direct API requests to the correct
+service. If `--set voltha.ingress.enableVirtualHosts=true` is used when
+installing the voltha stack then a virtual host will be defined using
+`<stack-name>.voltha.local`. In order to use this virtual host this virtual
+host name will need to resolve to the IP address of your Ingress controller.
+
+To include the Ingress resources when deploying VOLTHA the following
+values need to be set:
+
+##### When Installing Infra
+
+`--set etcd.ingress.enabled=true`
+
+##### When Installing the VOLTHA Stack
+
+`--set voltha.ingress.enabled=true`
+
+#### Usage with `voltctl`
+
+Once the Ingress resources are defined `voltctl` should be able to access the
+VOLTHA deployment without having to run `kubectl port-forward` commands for 
+each specific service. The configuration to `voltctl` to utilize the ingress
+controller can be specified either via the command line options or via the
+voltctl configuration file (default `~/.volt/config`).
+
+The important settings are
+
+**NOTE:** _Note hostname and port will vary depending on how you deploy as
+well as how the Ingress controller is accessed from outside the cluster._
+
+- `--server`/`server` - the value of the external IP address of the ingress
+controller and the port on which it is listening (_ex:_ `localhost:8443` or
+`voltha1.voltha.com:30474`).
+
+- `--kvstore`/`kvstore` - the value of the external IP address of the ingress
+controller and the point on which it is listening (_ex:_ `localhost:443`)
+
+- `--tls`/`tls.useTls` - indicates that TLS should be used when communicating
+through the ingress controller, which is required for the NGINX ingress controller
+(_ex:_ `true`)
+
+_CLI example_:
+
+```bash
+voltctl --server=voltha1.voltha.com:443 --kvstore=localhost:443 --tls version
+```
+
+_`voltctl` configuration file example:_
+
+```yaml
+server: voltha1.example.com:443
+kafka: localhost:443
+kvstore: localhost:443
+tls:
+  useTls: true
+  caCert: ""
+  cert: ""
+  key: ""
+  verify: false
+grpc:
+  timeout: 5m0s
+  maxCallRecvMsgSize: 4M
+kvstoreconfig:
+  timeout: 5s
+```
+
+#### Ingress Controller References
+
+1. [Guide to setting up ingress on a kind cluster.](https://kind.sigs.k8s.io/docs/user/ingress/)
 
 ## Post installation
 
@@ -409,9 +509,9 @@ kubectl delete pod -n voltha1 $(kubectl get pods -n voltha1 | grep openonu | awk
 
 ### Develop with latest code
 
-The voltha-infra and voltha-stack charts pull the referenced version of every component, if your charts are up to date 
-that will be the latest released one.  
-If for your development and testing you'd like to have all the `master` of each component, independently if that has 
+The voltha-infra and voltha-stack charts pull the referenced version of every component, if your charts are up to date
+that will be the latest released one.
+If for your development and testing you'd like to have all the `master` of each component, independently if that has
 been officially tagged and release there is a provided `dev-values.yaml`. You can use it for the a `voltha-stack` like so:
 ```shell
 helm upgrade --install --create-namespace \
@@ -421,8 +521,8 @@ helm upgrade --install --create-namespace \
   --set voltha_infra_namespace=infra \
   -f examples/dev-values.yaml
 ```
-After the feature you are working on is released by modifying the `VERSION` file and removing `-dev` you 
-can remove the `dev-values.yaml` file from your helm command. 
+After the feature you are working on is released by modifying the `VERSION` file and removing `-dev` you
+can remove the `dev-values.yaml` file from your helm command.
 
 ### Test changes to a chart
 
