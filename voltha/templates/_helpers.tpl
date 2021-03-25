@@ -21,3 +21,9 @@
 {{- $fullname := default (printf "%s-%s" .Release.Name $name) .Values.fullNameOverride -}}
 {{- $fullname | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+{{/* Create a default fully qualified virtual hostname. We truncate at 63 chars because . . . */}}
+{{- define "virtual-hostname" -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- $fullname := default (printf "%s.%s.local" .Values.global.stack_name $name) .Values.fullNameOverride -}}
+{{- $fullname | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
