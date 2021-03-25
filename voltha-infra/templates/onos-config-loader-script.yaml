@@ -30,14 +30,20 @@ data:
       sleep 5;
     done
 
-    echo -e "Loading netcfg into ONOS\n";
+    echo -e "\nLoading netcfg into ONOS\n";
     responseCode=$(curl --write-out '%{http_code}' --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration/" -H Content-type:application/json -d @/opt/configs/netcfg.json);
     if [[ $responseCode == 207 ]]; then
       echo "Failed to load netcfg, exiting..."
       exit 1
     fi
 
-    echo -e "Loading component configs into ONOS\n";
+    sleep 5;
+    echo -e "Updated netconfig is:";
+    curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X GET -H 'Accept: application/json' "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/network/configuration";
+    echo -e "\nCompleted on: ";
+    date;
+
+    echo -e "\n\n\nLoading component configs into ONOS\n";
     CFGS=$(ls /opt/configs | grep -v netcfg.json);
     for CFG in ${CFGS};
     do
@@ -47,10 +53,14 @@ data:
         echo -e "Waiting for $CFG to be active";
         sleep 5;
       done
-      echo -e "Loading $CFG config";
+      echo -e "\nLoading $CFG config";
       responseCode=$(curl --write-out '%{http_code}' --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X POST "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG" -H Content-type:application/json -d @/opt/configs/$CFG);
       if [[ $responseCode == 207 ]]; then
         echo "Failed to load $CFG, exiting..."
         exit 1
       fi
+      echo -e "Updated component config for $CFG is:";
+      curl --fail -sSL --user {{ .Values.onos.username }}:{{ .Values.onos.password }} -X GET "http://{{ .Release.Name }}-onos-classic-hs:8181/onos/v1/configuration/$CFG";
+      echo -e "\nCompleted on: ";
+      date;
     done
