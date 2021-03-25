@@ -25,6 +25,9 @@ global:
 
 voltha:
   enabled: true
+  ingress:
+    enabled: false
+    enableVirtualHosts: false
   rw_core:
     kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
     topics:
