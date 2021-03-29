@@ -33,18 +33,21 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/onos-config-loader-configmap.yaml") . | sha256sum }}
     spec:
       restartPolicy: OnFailure
+      serviceAccountName: "{{ .Release.Name }}-onos-config-loader-service-account"
       containers:
         - name: onos-config-loader
-          image: ellerbrock/alpine-bash-curl-ssl:latest
-          imagePullPolicy: IfNotPresent
+          image: voltha/voltha-ci-tools:2.3.2-onos-config-loader
+          imagePullPolicy: Always
           command:
-            - "bash"
+            - "/bin/bash"
             - "/opt/loader/loader.sh"
           volumeMounts:
             - name: onos-configs
               mountPath: /opt/configs
             - name: onos-loader
               mountPath: /opt/loader
+            - name: kube-config-volume
+              mountPath: /etc/kube
       volumes:
         - name: onos-configs
           configMap:
@@ -53,3 +56,8 @@ spec:
           configMap:
             name: {{ .Release.Name }}-onos-configs-loader
             defaultMode: 0777
+        - name: kube-config-volume
+          configMap:
+            # Provide the name of the ConfigMap containing the files you want
+            # to add to the container
+            name: kube-config
