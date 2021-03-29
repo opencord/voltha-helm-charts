@@ -21,6 +21,26 @@ data:
   loader.sh: >
     set -euo pipefail
 
+    # onos-config-loader most likely start before ONOS is deployed, so check for ONOS before waiting for it to be ready
+
+    has_onos=$(kubectl get pods -l app=onos-classic --all-namespaces | wc -l);
+
+    while [[ $has_onos == 0 ]]; do
+      echo -e "Waiting for ONOS to be deployed";
+      sleep 5;
+      has_onos=$(kubectl get pods -l app=onos-classic --all-namespaces | wc -l);
+    done
+
+    # wait all ONOS pods to be ready
+
+    onos_starting=$(kubectl get pods -l app=onos-classic --all-namespaces --field-selector=status.phase!=Running | wc -l);
+
+    while [[ $onos_starting != 0 ]]; do
+      echo -e "$onos_starting ONOS instances are still starting...";
+      sleep 5;
+      onos_starting=$(kubectl get pods --all-namespaces -l app=onos-classic | grep "0/" | wc -l);
+    done
+
     # a POST to a non ready netcfg return 207 in case of failure, while a GET returns 404,
     # check the apps key is ready to accept data before sending them
 
