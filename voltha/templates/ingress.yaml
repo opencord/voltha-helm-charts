@@ -40,7 +40,7 @@ spec:
   rules:
     {{- range .Values.ingress.hosts }}
     {{- if $.Values.ingress.enableVirtualHosts }}
-    - host: '{{ template "virtual-hostname" $ }}'
+    - host: {{ template "virtual-hostname" $ }}
       http:
     {{- else }}
     {{- if .host }}
