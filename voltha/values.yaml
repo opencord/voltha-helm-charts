@@ -14,6 +14,7 @@
 ---
 nameOverride: ~
 fullNameOverride: ~
+fullHostnameOverride: ~
 
 # Default Values
 # The following are the default values used for every container in the
@@ -109,6 +110,7 @@ ingress:
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     nginx.ingress.kubernetes.io/grpc-backend: "true"
   enableVirtualHosts: false
+  baseHostname: local
   hosts:
     - host:
       paths:
