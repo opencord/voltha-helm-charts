@@ -29,12 +29,12 @@ maintainers:
 name: voltha-infra
 
 appVersion: "2.8-dev"
-version: 0.2.0
+version: 0.2.1
 
 dependencies:
   - name: onos-classic
     repository: https://charts.onosproject.org
-    version: 0.1.13
+    version: 0.1.15
     condition: onos-classic.enabled
   - name: bbsim-sadis-server
     repository: https://charts.opencord.org

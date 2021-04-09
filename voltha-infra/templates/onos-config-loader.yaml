@@ -36,8 +36,8 @@ spec:
       serviceAccountName: "{{ .Release.Name }}-onos-config-loader-service-account"
       containers:
         - name: onos-config-loader
-          image: voltha/voltha-ci-tools:2.3.2-onos-config-loader
-          imagePullPolicy: Always
+          image: '{{ tpl .Values.images.onos-config-loader.registry . }}{{ tpl .Values.images.onos-config-loader.repository . }}:{{ tpl .Values.images.onos-config-loader.tag . }}'
+          imagePullPolicy: {{ tpl .Values.images.onos-config-loader.pullPolicy . }}
           command:
             - "/bin/bash"
             - "/opt/loader/loader.sh"
