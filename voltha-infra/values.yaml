@@ -32,10 +32,6 @@ images:
 onos-classic:
   enabled: true
   replicas: 1
-  atomix:
-    replicas: 0
-    persistence:
-      enabled: false
   image:
     pullPolicy: Always
     repository: voltha/voltha-onos
@@ -53,6 +49,19 @@ onos-classic:
     - org.opencord.mcast
     - org.opencord.olt
     - org.opencord.aaa
+  java_opts: >
+    -XX:+UseG1GC
+    -XX:MaxGCPauseMillis=200
+    -XX:-UseContainerSupport
+    -Dkaraf.log.console=INFO
+    -Dds.lock.timeout.milliseconds=10000
+  atomix:
+    replicas: 0
+    persistence:
+      enabled: false
+    java_opts: >
+      -Xmx2G
+      -XX:-UseContainerSupport
 
 bbsim-sadis-server:
   enabled: true
