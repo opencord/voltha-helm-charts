@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5a913f9_aa53e6e8",
+        "filename": "voltha-infra/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2021-04-28T07:08:16Z",
+      "side": 1,
+      "message": "Or we can update this to use `master`. @Teo, your thoughts?",
+      "range": {
+        "startLine": 38,
+        "startChar": 9,
+        "endLine": 38,
+        "endChar": 170
+      },
+      "revId": "046d7d69dd23eaf58814bac6a26216841a1c14e2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
