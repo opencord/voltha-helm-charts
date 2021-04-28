@@ -35,7 +35,7 @@ onos-classic:
   image:
     pullPolicy: Always
     repository: voltha/voltha-onos
-    tag: 4.3.1
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}4.3.1{{- end }}{{- else }}4.3.1{{- end }}'
   apps:
     - org.onosproject.lldpprovider
     - org.onosproject.openflow-base
