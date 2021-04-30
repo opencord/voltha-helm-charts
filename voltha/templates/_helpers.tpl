@@ -27,3 +27,17 @@
 {{- $fullname := default (print .Values.global.stack_name "." $name "." .Values.ingress.baseHostname) .Values.fullHostnameOverride -}}
 {{- $fullname | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+{{/* Create a list of controllers for of-agent starting from the number of ONOS Instances and the first openflow port */}}
+{{- define "onosControllers" -}}
+{{- $onosReplicas := default .Values.onos_classic.replicas 1 -}}
+{{- $onosOfPort := default .Values.onos_classic.onosOfPort 6653 -}}
+{{- $infraName := default .Values.global.voltha_infra_name "voltha-infra" -}}
+{{- $infraNamespaces := default .Values.global.voltha_infra_namespace "infra" -}}
+{{- $controllers := dict "controllers" (list) -}}
+{{range $i, $e := until ($onosReplicas | int)}}
+  {{- $port := add $onosOfPort $i -}}
+  {{- $current := printf "--controller=%s-onos-classic-hs.%s.svc:%d" $infraName $infraNamespaces $port -}}
+  {{- $controllers := (mustAppend $controllers.controllers $current) | set $controllers "controllers" -}}
+{{end}}
+{{- $controllers.controllers | join " " | quote -}}
+{{- end -}}
