@@ -59,8 +59,10 @@ services:
     address: jaeger-agent:6831
 
   # Define the list of controllers to connect to
-  controller:
-    - address: onos-openflow:6653
+  # NOTE this is needed only in case you need to connect to an external ONOS,
+  # if you want to connect to an ONOS installed via voltha-infra please refer to the onos_classic field in this config
+  controller: []
+  #   - address: onos-openflow:6653
 
 # Expose the golang pprof webserver, if enabled
 profiler:
@@ -118,3 +120,8 @@ ingress:
       paths:
         - "/voltha.VolthaService/"
   tls: []
+
+# ofAgent needs to connect to multiple instances of ONOS.
+onos_classic:
+  onosOfPort: 6653
+  replicas: 1
