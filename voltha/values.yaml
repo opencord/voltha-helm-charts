@@ -59,8 +59,9 @@ services:
     address: jaeger-agent:6831
 
   # Define the list of controllers to connect to
-  controller:
-    - address: onos-openflow:6653
+  # NOTE this is for backward compatibility, if it's not set it's generated via a template
+  controller: []
+  #   - address: onos-openflow:6653
 
 # Expose the golang pprof webserver, if enabled
 profiler:
@@ -116,3 +117,7 @@ ingress:
       paths:
         - "/voltha.VolthaService/"
   tls: []
+
+onos_classic:
+  onosOfPort: 6653
+  replicas: 1

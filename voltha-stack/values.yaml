@@ -43,9 +43,6 @@ voltha:
       address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
     tracing_agent:
       address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
-    controller:
-      # TODO need to customize for multiple instances
-      - address: "{{ .Values.global.voltha_infra_name }}-onos-classic-hs.{{ .Values.global.voltha_infra_namespace }}.svc:6653"
 
 voltha-adapter-openonu:
   enabled: true
@@ -82,3 +79,7 @@ voltha-adapter-openolt:
       address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
     tracing_agent:
       address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
+
+onos-classic:
+  onosOfPort: 31653
+  replicas: 1
