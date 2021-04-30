@@ -81,6 +81,7 @@ spec:
             value: {{ .Values.global.kv_store_data_prefix }}
         args:
         - "/app/ofagent"
+        - {{ include "onosControllers" . }}
         {{- range .Values.services.controller }}
         - "--controller={{ tpl .address $ }}"
         {{- end }}
