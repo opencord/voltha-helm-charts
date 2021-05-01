@@ -29,7 +29,7 @@ maintainers:
 name: voltha-infra
 
 appVersion: "2.8-dev"
-version: 0.2.2
+version: 0.2.3
 
 dependencies:
   - name: onos-classic
@@ -42,7 +42,7 @@ dependencies:
     condition: bbsim-sadis-server.enabled
   - name: etcd
     repository: https://charts.bitnami.com/bitnami
-    version: 5.4.2
+    version: 6.1.0
     condition: etcd.enabled
   - name: kafka
     repository: https://charts.bitnami.com/bitnami
