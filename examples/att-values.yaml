@@ -17,3 +17,15 @@
 # ATT values are the defaults, nothing to override here.
 # This file is only useful so that during CI we can always invoke `helm install`
 # with `-f examples/${workflow}-values.yaml`
+
+servicesConfig:
+  workflow: att
+  services:
+    - name: hsia
+      c_tag: 900
+      c_tag_allocation: unique
+      s_tag: 900
+      s_tag_allocation: shared
+      needs_eapol: true
+      needs_dhcp: true
+      tp_id: 64
