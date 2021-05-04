@@ -25,7 +25,7 @@ images:
   onos_config_loader:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-ci-tools'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.3.2-onos-config-loader{{- end }}{{- else }}2.3.2-onos-config-loader{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}-onos-config-loader{{- else }}2.3.2-onos-config-loader{{- end }}{{- else }}2.3.2-onos-config-loader{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
 # components config
