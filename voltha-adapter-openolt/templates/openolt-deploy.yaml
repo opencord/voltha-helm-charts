@@ -108,6 +108,7 @@ spec:
             - "--omcc_encryption={{ .Values.global.omcc_encryption }}"
             - "--enable_onu_stats={{ .Values.global.enable_onu_stats }}"
             - "--enable_gem_stats={{ .Values.global.enable_gem_stats }}"
+            - "--reconnection_timeout={{ .Values.adapter_open_olt.reconnection_timeout }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false

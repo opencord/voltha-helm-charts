@@ -87,6 +87,8 @@ adapter_open_olt:
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   heartbeat_check_interval: '{{ .Values.global.adapter_open_olt.heartbeat_check_interval }}'
   heartbeat_fail_interval: '{{ .Values.global.adapter_open_olt.heartbeat_fail_interval }}'
+  # Time the adapter should try reconnect to a device if the connection drops
+  reconnection_timeout: "60s"
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
