@@ -16,6 +16,63 @@
 
 # override ONOS config
 onos:
+  netcfg: >
+    {
+      "apps" : {
+        "org.opencord.igmpproxy" : {
+          "igmpproxy":{
+             "FastLeave":"true",
+             "LastQueryInterval":1,
+             "MaxResp":1,
+             "enableIgmpProvisioning":"false",
+             "globalConnectPointMode":"true",
+             "globalConnectPoint" : "of:0000000000000001/3",
+             "sourceDeviceAndPort":"of:0000000000000001/3",
+             "outgoingIgmpVlanId":550,
+             "outgoingIgmpInnerVlanId":55,
+             "outgoingIgmpWithV3":"true",
+             "IgmpCos":5,
+             "IgmpUniCos":5,
+             "PeriodicQuery":"true",
+             "KeepAliveInterval":60,
+             "KeepAliveCount":5,
+             "requestDsIgmpPackets":false
+          }
+        },
+        "org.opencord.dhcpl2relay" : {
+          "dhcpl2relay" : {
+            "useOltUplinkForServerPktInOut" : true
+          }
+        },
+        "org.opencord.kafka": {
+          "kafka" : {
+            "bootstrapServers" : "{{ .Release.Name }}-kafka.{{ .Release.Namespace }}.svc:9092"
+          }
+        },
+        "org.opencord.sadis": {
+          "sadis": {
+            "integration": {
+              "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/subscribers/%s",
+              "cache": {
+                "enabled": true,
+                "maxsize": 50,
+                "ttl": "PT1m"
+              }
+            }
+          },
+          "bandwidthprofile": {
+            "integration": {
+              "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/profiles/%s",
+              "cache": {
+                "enabled": true,
+                "maxsize": 50,
+                "ttl": "PT1m"
+              }
+            }
+          }
+        }
+      }
+    }
   componentConfig:
     "org.opencord.olt.impl.OltFlowService": >
       {

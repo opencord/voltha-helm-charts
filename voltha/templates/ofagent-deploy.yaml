@@ -89,6 +89,7 @@ spec:
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
+        - "--device-refresh-interval={{ .Values.ofagent.device_refresh_interval }}"
         - "--probe=:8080"
         - "--trace_enabled={{ .Values.global.tracing.enabled }}"
         - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"

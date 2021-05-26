@@ -93,6 +93,7 @@ spec:
             - "--kafka_adapter_address={{ tpl .Values.services.kafka.adapter.address . }}"
             - "--kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}"
             - "--rw_core_topic={{ tpl .Values.rw_core.topics.core_topic . }}"
+            - "--event_topic={{ .Values.rw_core.topics.event_topic }}"
             - "--core_timeout={{ tpl .Values.rw_core.core_timeout . }}"
             - "--timeout_long_request={{ tpl .Values.rw_core.timeout_long_request . }}"
             - "--timeout_request={{ tpl .Values.rw_core.timeout_request . }}"

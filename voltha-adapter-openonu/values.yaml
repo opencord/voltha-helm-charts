@@ -115,6 +115,7 @@ adapter_open_onu:
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_onu_topic: "{{ .Values.global.stack_name }}_brcm_openomci_onu"
+    event_topic: "voltha.events"
 
 images:
   adapter_open_onu_go:

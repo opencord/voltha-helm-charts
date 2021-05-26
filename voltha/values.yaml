@@ -84,9 +84,11 @@ rw_core:
   stack_id: "{{ .Values.global.stack_name }}"
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
+    event_topic: "voltha.events"
 
 ofagent:
   log_level: '{{ .Values.global.log_level }}'
+  device_refresh_interval: '15s'
 
 # Define Docker images to be used
 images:

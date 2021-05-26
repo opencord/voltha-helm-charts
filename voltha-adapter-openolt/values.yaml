@@ -90,6 +90,7 @@ adapter_open_olt:
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
+    event_topic: "voltha.events"
 
 images:
   adapter_open_olt:
