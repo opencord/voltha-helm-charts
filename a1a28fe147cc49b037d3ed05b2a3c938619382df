@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9ebdc84_513b89d0",
+        "filename": "voltha-infra/templates/etcd-periodic-defrag.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-05-27T22:55:39Z",
+      "side": 1,
+      "message": "I was not sure how to derive this via templating.\nAlso looking at scale run https://jenkins.opencord.org/view/voltha-scale-measurements/job/voltha-scale-measurements-master-2-16-32-att-subscribers/1540/artifact/logs/helm-list.txt, I see it runs in default namespace. However on other HW pod jobs it runs in infra namespace. How is the namespace controlled?",
+      "range": {
+        "startLine": 33,
+        "startChar": 60,
+        "endLine": 33,
+        "endChar": 66
+      },
+      "revId": "a1a28fe147cc49b037d3ed05b2a3c938619382df",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
