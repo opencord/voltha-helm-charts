@@ -1,0 +1,23 @@
+WIP:
+- Use etcd chart 6.2.5 autoCompactionMode=revision and
+  autocompactionRetention=1
+- Also create a cron job to defragement etcd DB every 5 mins
+
+Change-Id: I32db16ab64f9ea30d69875a34016ff0479913f70
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu May 27 15:52:04 2021 -0700
+#
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# Changes to be committed:
+#	modified:   voltha-infra/Chart.yaml
+#	modified:   voltha-infra/templates/clusterrole.yaml
+#	new file:   voltha-infra/templates/etcd-periodic-defrag.yaml
+#	modified:   voltha-infra/values.yaml
+#
