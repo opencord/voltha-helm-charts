@@ -118,3 +118,10 @@ spec:
               port: 8080
             initialDelaySeconds: 10
             periodSeconds: 5
+          volumeMounts:
+          - name: timezone-config
+            mountPath: /etc/localtime
+      volumes:
+      - name: timezone-config
+        hostPath:
+           path: /usr/share/zoneinfo/US/Pacific
