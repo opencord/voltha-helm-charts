@@ -19,5 +19,5 @@ metadata:
   namespace: {{ .Release.Namespace | quote }}
 rules:
   - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["get", "list", "watch"]
+    resources: ["pods", "pods/exec"]
+    verbs: ["get", "list", "watch", "create"]
