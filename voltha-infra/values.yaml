@@ -89,11 +89,18 @@ etcd:
     rbac:
       enabled: false
   persistence:
-    enabled: false
+    enabled: true
   statefulset:
-    replicaCount: 1
+    replicaCount: 3
   service:
     port: 2379
+  autoCompactionMode: "revision"
+  autoCompactionRetention: 1
+  extraEnvVars:
+    - name: ETCD_ELECTION_TIMEOUT
+      value: "3000"
+    - name: ETCD_HEARTBEAT_INTERVAL
+      value: "1000"
 
 kafka:
   enabled: true
