@@ -93,6 +93,8 @@ etcd:
     replicaCount: 1
   service:
     port: 2379
+  autoCompactionMode: "revision"
+  autoCompactionRetention: 1
 
 kafka:
   enabled: true
