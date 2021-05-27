@@ -42,7 +42,7 @@ dependencies:
     condition: bbsim-sadis-server.enabled
   - name: etcd
     repository: https://charts.bitnami.com/bitnami
-    version: 5.4.2
+    version: 6.2.5
     condition: etcd.enabled
   - name: kafka
     repository: https://charts.bitnami.com/bitnami
