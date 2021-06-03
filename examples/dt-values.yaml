@@ -38,3 +38,6 @@ servicesConfig:
       s_tag: 900
       s_tag_allocation: unique
       tp_id: 64
+
+# override Bandwidth Profile format in Sadis BBSim
+bp_format: ietf
