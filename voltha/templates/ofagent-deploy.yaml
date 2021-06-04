@@ -18,8 +18,7 @@
 {{- $infraNamespaces := default "infra" .Values.global.voltha_infra_namespace -}}
 {{- $controllers := dict "controllers" (list) -}}
 {{- range $i, $e := until ($onosReplicas | int) -}}
-  {{- $port := add $onosOfPort $i -}}
-  {{- $current := printf "%s-onos-classic-%d.%s-onos-classic-hs.%s.svc:%d" $infraName $i $infraName $infraNamespaces $port -}}
+  {{- $current := printf "%s-onos-classic-%d.%s-onos-classic-hs.%s.svc:%d" $infraName $i $infraName $infraNamespaces ($onosOfPort | int) -}}
   {{- $controllers := (mustAppend $controllers.controllers $current) | set $controllers "controllers" -}}
 {{- end -}}
 ---
