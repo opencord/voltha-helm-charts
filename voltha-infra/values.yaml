@@ -35,13 +35,14 @@ onos-classic:
   image:
     pullPolicy: Always
     repository: voltha/voltha-onos
-    tag: 4.4.0
+    tag: 5.0.0
   apps:
     - org.onosproject.lldpprovider
     - org.onosproject.openflow-base
     - org.onosproject.gui2
     - org.onosproject.drivers
     - org.onosproject.mcast
+    - org.onosproject.segmentrouting
     - org.opencord.kafka
     - org.opencord.sadis
     - org.opencord.dhcpl2relay
