@@ -112,6 +112,7 @@ adapter_open_onu:
   kv_store_timeout: '{{ .Values.global.adapter_open_onu.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   alarm_audit_interval: '{{ .Values.global.alarm_audit.interval }}'
+  uni_port_mask: "0x0001"
   topics:
     core_topic: "{{ .Values.global.stack_name }}_rwcore"
     adapter_open_onu_topic: "{{ .Values.global.stack_name }}_brcm_openomci_onu"
