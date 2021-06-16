@@ -33,4 +33,4 @@ maintainers:
 
 # app version applies to multiple components with potentially different
 # container image versions
-appVersion: "2.9-dev"
+appVersion: "2.9.0-dev"
