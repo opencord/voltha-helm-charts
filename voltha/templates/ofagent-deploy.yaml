@@ -87,7 +87,7 @@ spec:
               fieldRef:
                 fieldPath: metadata.labels['app.kubernetes.io/name']
           - name: KV_STORE_DATAPATH_PREFIX
-            value: {{ .Values.global.kv_store_data_prefix }}
+            value: {{ .Values.ofagent.kv_store_data_prefix }}
         args:
         - "/app/ofagent"
         {{- range $controllers.controllers }}
