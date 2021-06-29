@@ -19,7 +19,7 @@ global:
   voltha_infra_name: "voltha-infra"
   voltha_infra_namespace: "infra"
   log_correlation:
-    enabled: false
+    enabled: true
   tracing:
     enabled: false
 
