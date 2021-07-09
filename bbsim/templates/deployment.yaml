@@ -61,6 +61,7 @@ spec:
               - get
             initialDelaySeconds: 5
             periodSeconds: 30
+            timeoutSeconds: 5
           readinessProbe:
             httpGet:
               path: /v2/cfg
@@ -68,9 +69,10 @@ spec:
               httpHeaders:
             initialDelaySeconds: 5
             periodSeconds: 30
+            timeoutSeconds: 5
           command: [
             "/app/bbsim",
-            "-openolt_address", ":{{ .Values.olt_tcp_port }}",
+            "-openolt_address", "0.0.0.0:{{ .Values.olt_tcp_port }}",
             "-olt_id", "{{ .Values.olt_id }}",
             "-nni", "{{ .Values.nni }}",
             "-pon", "{{ .Values.pon }}",
