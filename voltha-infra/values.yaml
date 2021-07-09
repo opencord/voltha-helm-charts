@@ -35,7 +35,7 @@ onos-classic:
   image:
     pullPolicy: Always
     repository: voltha/voltha-onos
-    tag: 5.0.0
+    tag: 5.0.1
   apps:
     - org.onosproject.lldpprovider
     - org.onosproject.openflow-base

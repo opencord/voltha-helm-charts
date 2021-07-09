@@ -28,8 +28,8 @@ maintainers:
     url: "https://www.opennetworking.org"
 name: voltha-infra
 
-appVersion: "2.8-dev"
-version: 0.2.7
+appVersion: "2.8"
+version: 0.2.8
 
 dependencies:
   - name: onos-classic
