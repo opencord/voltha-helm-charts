@@ -22,6 +22,30 @@
       "revId": "73b4b2d5349f084daa6bf69e78151e8169e6eee1",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e688148d_456f760a",
+        "filename": "voltha/templates/ofagent-deploy.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000569
+      },
+      "writtenOn": "2021-07-14T18:42:03Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "ba537405_07cb2481",
+      "range": {
+        "startLine": 89,
+        "startChar": 10,
+        "endLine": 90,
+        "endChar": 61
+      },
+      "revId": "73b4b2d5349f084daa6bf69e78151e8169e6eee1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
