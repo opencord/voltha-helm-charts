@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0af49998_5df2c1cc",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-07-14T21:21:23Z",
+      "side": 1,
+      "message": "Chart version should increment every time the Chart.yaml is modified.\nThis should bump to next patch version, i.e., 2.9.8 or even better start a new minor version 2.10.0 for the next voltha release cycle (from now on until the end of voltha-2.9 we just keep bumping the patch version of the chart).",
+      "revId": "e4314ca5cdd9ffb5de2e5f1194868152fe55df59",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6dd80e8_4abf860b",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-07-14T21:21:23Z",
+      "side": 1,
+      "message": "This should be 2.9.0-dev",
+      "revId": "e4314ca5cdd9ffb5de2e5f1194868152fe55df59",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}

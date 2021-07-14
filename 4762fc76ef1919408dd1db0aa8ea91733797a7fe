@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ccb8890_4aeaee1f",
+        "filename": "VERSION",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-07-14T21:21:23Z",
+      "side": 0,
+      "message": "This should have been 2.9.0-dev post voltha-2.8 release. I just submitted and merged the patch to do this. Can you please rebase. Once you do that no change would be needed in this file.",
+      "revId": "4762fc76ef1919408dd1db0aa8ea91733797a7fe",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
