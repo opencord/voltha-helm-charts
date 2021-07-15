@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cb18a9c_82f2160a",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-07-15T08:41:35Z",
+      "side": 1,
+      "message": "this needs to be 2.10.1",
+      "revId": "9751bab81fc2cbe6b7c5304770ffa4a4a252bd33",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
