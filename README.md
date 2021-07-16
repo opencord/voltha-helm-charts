@@ -62,6 +62,12 @@ helm upgrade --install --create-namespace -n infra voltha-infra onf/voltha-infra
   --set etcd.statefulset.replicaCount=3
 ```
 
+To deploy a released version of the `voltha-infra` chart you can specify the `--version` in the command.
+As an example to deploy the infrastructure for the 2.8 LTS release you can use `--version 2.8.0` like:
+```shell
+helm upgrade --install --create-namespace -n infra --version 2.8.0 voltha-infra onf/voltha-infra
+```
+
 #### Accessing the ONOS Cli and API
 
 In order to access the ONOS CLI you need to expose the ONOS SSH port:
@@ -156,15 +162,17 @@ helm upgrade --install --create-namespace \
   --set global.stack_name=voltha1 \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
-  --set voltha.services.controller[0].service=voltha-infra-onos-classic-0.voltha-infra-onos-classic-hs.infra.svc \
-  --set voltha.services.controller[0].port=6653 \
-  --set voltha.services.controller[0].address=voltha-infra-onos-classic-0.voltha-infra-onos-classic-hs.infra.svc:6653 \
-  --set voltha.services.controller[1].service=voltha-infra-onos-classic-1.voltha-infra-onos-classic-hs.infra.svc \
-  --set voltha.services.controller[1].port=6653 \
-  --set voltha.services.controller[1].address=voltha-infra-onos-classic-1.voltha-infra-onos-classic-hs.infra.svc:6653 \
-  --set voltha.services.controller[2].service=voltha-infra-onos-classic-2.voltha-infra-onos-classic-hs.infra.svc \
-  --set voltha.services.controller[2].port=6653 \
-  --set voltha.services.controller[2].address=voltha-infra-onos-classic-2.voltha-infra-onos-classic-hs.infra.svc:6653
+  --set voltha.onos_classic.replicas=3
+```
+
+To deploy a released version of the `voltha-stack` chart you can specify the `--version` in the command.
+As an example to deploy VOLTHA 2.8 LTS release you can use `--version 2.8.0` like:
+```shell
+helm upgrade --install --create-namespace \
+  -n voltha1 --version 2.8.0 voltha1 onf/voltha-stack \
+  --set global.stack_name=voltha1 \
+  --set voltha_infra_name=voltha-infra \
+  --set voltha_infra_namespace=infra
 ```
 
 #### Enable tracing in VOLTHA (optional)
