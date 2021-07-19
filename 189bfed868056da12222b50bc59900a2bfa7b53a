@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d719689_5003e4d1",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-07-19T17:24:30Z",
+      "side": 1,
+      "message": "needs to be 2.9.1",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 14
+      },
+      "revId": "189bfed868056da12222b50bc59900a2bfa7b53a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
