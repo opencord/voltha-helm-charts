@@ -25,11 +25,11 @@ spec:
       template:
         spec:
           restartPolicy: OnFailure
-          serviceAccountName: "{{ .Release.Name }}-onos-config-loader-service-account"
+          serviceAccountName: "{{ .Release.Name }}-service-account"
           containers:
             - name: etcd-db-defrag
-              image: '{{ tpl .Values.images.onos_config_loader.registry . }}{{ tpl .Values.images.onos_config_loader.repository . }}:{{ tpl .Values.images.onos_config_loader.tag . }}'
-              imagePullPolicy: {{ tpl .Values.images.onos_config_loader.pullPolicy . }}
+              image: '{{ tpl .Values.etcd.defrag.image.registry . }}{{ tpl .Values.etcd.defrag.image.repository . }}:{{ tpl .Values.etcd.defrag.image.tag . }}'
+              imagePullPolicy: {{ tpl .Values.etcd.defrag.image.pullPolicy . }}
               command:
                 - /bin/sh
                 - -c
