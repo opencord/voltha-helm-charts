@@ -1,6 +1,4 @@
----
-
-# Copyright 2018-present Open Networking Foundation
+# Copyright 2020-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,12 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-apiVersion: v1
-kind: ConfigMap
+---
+apiVersion: "rbac.authorization.k8s.io/v1"
+kind: "ClusterRoleBinding"
 metadata:
-  name: {{ .Release.Name }}-onos-configs-data
-data:
-  netcfg.json: {{ tpl .Values.onos.netcfg . | quote }}
-  {{- range $key, $val := .Values.onos.componentConfig }}
-  {{ $key }}: {{ $val | quote }}
-  {{- end }}
+  name: "{{ .Release.Name }}-etcd-defrag"
+  namespace: {{ .Release.Namespace | quote }}
+subjects:
+  - kind: "ServiceAccount"
+    name: "{{ .Release.Name }}-service-account"
+    namespace: {{ .Release.Namespace | quote }}
+roleRef:
+    kind: "ClusterRole"
+    name: "{{ .Release.Name }}-etcd-defrag"
+    apiGroup: "rbac.authorization.k8s.io"

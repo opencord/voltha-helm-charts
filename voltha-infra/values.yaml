@@ -21,13 +21,6 @@ global:
   image_tag: ~
   image_pullPolicy: "Always"
 
-images:
-  onos_config_loader:
-    registry: '{{ .Values.global.image_registry }}'
-    repository: '{{ .Values.global.image_org }}voltha-ci-tools'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}-onos-config-loader{{- else }}2.3.2-onos-config-loader{{- end }}{{- else }}2.3.2-onos-config-loader{{- end }}'
-    pullPolicy: '{{ .Values.global.image_pullPolicy }}'
-
 # components config
 onos-classic:
   enabled: true
@@ -63,6 +56,79 @@ onos-classic:
     java_opts: >
       -Xmx2G
       -XX:-UseContainerSupport
+  config:
+    enabled: true
+    netcfg: >
+      {
+        "apps" : {
+          "org.opencord.dhcpl2relay" : {
+            "dhcpl2relay" : {
+              "useOltUplinkForServerPktInOut" : true
+            }
+          },
+          "org.opencord.kafka": {
+            "kafka" : {
+              "bootstrapServers" : "{{ .Release.Name }}-kafka.{{ .Release.Namespace }}.svc:9092"
+            }
+          },
+          "org.opencord.aaa" : {
+            "AAA": {
+              "radiusConnectionType" : "socket",
+              "radiusHost": "{{ .Release.Name }}-freeradius.{{ .Release.Namespace }}.svc",
+              "radiusServerPort": "1812",
+              "radiusSecret": "SECRET"
+            }
+          },
+          "org.opencord.sadis": {
+            "sadis": {
+              "integration": {
+                "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/subscribers/%s",
+                "cache": {
+                  "enabled": true,
+                  "maxsize": 50,
+                  "ttl": "PT1m"
+                }
+              }
+            },
+            "bandwidthprofile": {
+              "integration": {
+                "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/profiles/%s",
+                "cache": {
+                  "enabled": true,
+                  "maxsize": 50,
+                  "ttl": "PT1m"
+                }
+              }
+            }
+          }
+        }
+      }
+    componentConfig:
+      "org.opencord.olt.impl.OltFlowService": >
+        {
+          "enableDhcpOnNni": "true",
+          "defaultTechProfileId": "64",
+          "enableIgmpOnNni": "false",
+          "enableEapol": "true",
+          "enableDhcpV6": "false",
+          "enableDhcpV4": "true"
+        }
+      "org.onosproject.provider.lldp.impl.LldpLinkProvider": >
+        {
+          "enabled": "false"
+        }
+      "org.onosproject.net.flow.impl.FlowRuleManager": >
+        {
+          "purgeOnDisconnection": "false"
+        }
+      "org.onosproject.net.meter.impl.MeterManager": >
+        {
+          "purgeOnDisconnection": "false"
+        }
+      "org.onosproject.net.group.impl.GroupManager": >
+        {
+          "purgeOnDisconnection": "false"
+        }
 
 bbsim-sadis-server:
   enabled: true
@@ -77,8 +143,13 @@ etcd:
   # ETCD defrag creates a CronJob that runs "etcdctl defrag --cluster"
   # on a defined schedule
   defrag:
-    enabled: false
+    enabled: true
     schedule: "*/5 * * * *"
+    image:
+      registry: '{{ .Values.global.image_registry }}'
+      repository: 'opennetworking/utils'
+      tag: 0.2.0
+      pullPolicy: 'IfNotPresent'
 
   ingress:
     enabled: false
@@ -128,84 +199,6 @@ voltha-tracing:
 
 efk:
   enabled: false
-
-# onos configuration
-# used in the job "onos-config-loader"
-onos:
-  # NOTE that these values won't change the configuration in the ONOS container, they are only used in the script that loads the config
-  username: karaf
-  password: karaf
-  netcfg: >
-    {
-      "apps" : {
-        "org.opencord.dhcpl2relay" : {
-          "dhcpl2relay" : {
-            "useOltUplinkForServerPktInOut" : true
-          }
-        },
-        "org.opencord.kafka": {
-          "kafka" : {
-            "bootstrapServers" : "{{ .Release.Name }}-kafka.{{ .Release.Namespace }}.svc:9092"
-          }
-        },
-        "org.opencord.aaa" : {
-          "AAA": {
-            "radiusConnectionType" : "socket",
-            "radiusHost": "{{ .Release.Name }}-freeradius.{{ .Release.Namespace }}.svc",
-            "radiusServerPort": "1812",
-            "radiusSecret": "SECRET"
-          }
-        },
-        "org.opencord.sadis": {
-          "sadis": {
-            "integration": {
-              "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/subscribers/%s",
-              "cache": {
-                "enabled": true,
-                "maxsize": 50,
-                "ttl": "PT1m"
-              }
-            }
-          },
-          "bandwidthprofile": {
-            "integration": {
-              "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/profiles/%s",
-              "cache": {
-                "enabled": true,
-                "maxsize": 50,
-                "ttl": "PT1m"
-              }
-            }
-          }
-        }
-      }
-    }
-  componentConfig:
-    "org.opencord.olt.impl.OltFlowService": >
-      {
-        "enableDhcpOnNni": "true",
-        "defaultTechProfileId": "64",
-        "enableIgmpOnNni": "false",
-        "enableEapol": "true",
-        "enableDhcpV6": "false",
-        "enableDhcpV4": "true"
-      }
-    "org.onosproject.provider.lldp.impl.LldpLinkProvider": >
-      {
-        "enabled": "false"
-      }
-    "org.onosproject.net.flow.impl.FlowRuleManager": >
-      {
-        "purgeOnDisconnection": "false"
-      }
-    "org.onosproject.net.meter.impl.MeterManager": >
-      {
-        "purgeOnDisconnection": "false"
-      }
-    "org.onosproject.net.group.impl.GroupManager": >
-      {
-        "purgeOnDisconnection": "false"
-      }
 
 # START EFK Setup to push voltha logs
 # elasticstack config

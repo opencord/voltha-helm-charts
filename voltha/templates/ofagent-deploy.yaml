@@ -88,8 +88,10 @@ spec:
                 fieldPath: metadata.labels['app.kubernetes.io/name']
         args:
         - "/app/ofagent"
+        {{- if eq (len .Values.services.controller) 0 }}
         {{- range $controllers.controllers }}
         - "--controller={{ . }}"
+        {{- end }}
         {{- end }}
         {{- range .Values.services.controller }}
         - "--controller={{ tpl .address $ }}"
