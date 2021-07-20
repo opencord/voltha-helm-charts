@@ -13,15 +13,11 @@
 # limitations under the License.
 ---
 apiVersion: "rbac.authorization.k8s.io/v1"
-kind: "ClusterRoleBinding"
+kind: "ClusterRole"
 metadata:
-  name: "{{ .Release.Name }}-onos-config-loader-pod-reader"
+  name: "{{ .Release.Name }}-etcd-defrag"
   namespace: {{ .Release.Namespace | quote }}
-subjects:
-  - kind: "ServiceAccount"
-    name: "{{ .Release.Name }}-onos-config-loader-service-account"
-    namespace: {{ .Release.Namespace | quote }}
-roleRef:
-    kind: "ClusterRole"
-    name: "{{ .Release.Name }}-onos-config-loader-pod-reader"
-    apiGroup: "rbac.authorization.k8s.io"
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "pods/exec"]
+    verbs: ["get", "list", "watch", "create"]

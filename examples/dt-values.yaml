@@ -15,17 +15,18 @@
 # limitations under the License.
 
 # override ONOS config
-onos:
-  componentConfig:
-    "org.opencord.olt.impl.OltFlowService": >
-      {
-        "enableDhcpOnNni": "false",
-        "defaultTechProfileId": "64",
-        "enableIgmpOnNni": "false",
-        "enableEapol": "false",
-        "enableDhcpV6": "false",
-        "enableDhcpV4": "false"
-      }
+onos-classic:
+  config:
+    componentConfig:
+      "org.opencord.olt.impl.OltFlowService": >
+        {
+          "enableDhcpOnNni": "false",
+          "defaultTechProfileId": "64",
+          "enableIgmpOnNni": "false",
+          "enableEapol": "false",
+          "enableDhcpV6": "false",
+          "enableDhcpV4": "false"
+        }
 
 # override BBSim config
 servicesConfig:
