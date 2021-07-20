@@ -22,6 +22,30 @@
       "revId": "2ce42b0ad7c44329cb0a6cae8998355ff700485d",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4333fc47_6cb165d9",
+        "filename": "voltha-infra/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-07-20T23:00:39Z",
+      "side": 1,
+      "message": "it is maintained by the ONOS team",
+      "parentUuid": "268199a2_1265d09e",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 16
+      },
+      "revId": "2ce42b0ad7c44329cb0a6cae8998355ff700485d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
