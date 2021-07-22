@@ -58,6 +58,7 @@ onos-classic:
       -XX:-UseContainerSupport
   config:
     enabled: true
+    reconcile_mode: false
     netcfg: >
       {
         "apps" : {
@@ -143,7 +144,7 @@ etcd:
   # ETCD defrag creates a CronJob that runs "etcdctl defrag --cluster"
   # on a defined schedule
   defrag:
-    enabled: true
+    enabled: false
     schedule: "*/5 * * * *"
     image:
       registry: '{{ .Values.global.image_registry }}'
