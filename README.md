@@ -92,8 +92,8 @@ kubectl -n infra port-forward --address 0.0.0.0 svc/voltha-infra-onos-classic-hs
 
 The ONOS configuration is defined in two separate variables in the value file:
 
-- `onos.netcfg`: multiline text (json)
-- `onos.componentConfig`: yaml list of component name and multiline text
+- `onos-classic.config.netcfg`: multiline text (json)
+- `onos-classic.config.componentConfig`: yaml list of component name and multiline text
 
 Being the content of the configuration multiline text is not possible to override the configuration via `--set` it's
 necessary to create a custom value file with your content and install the chart with:
@@ -139,8 +139,8 @@ To deploy a VOLTHA stack with the opensource adapters (OpenOLT and OpenONU) you 
 helm upgrade --install --create-namespace \
   -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra
+  --set global.voltha_infra_name=voltha-infra \
+  --set global.voltha_infra_namespace=infra
 ```
 
 > _We suggest to keep VOLTHA separated by deploying them in different namespaces._
@@ -150,8 +150,8 @@ helm upgrade --install --create-namespace \
 > helm upgrade --install --create-namespace \
 >  -n voltha2 voltha2 onf/voltha-stack \
 >  --set global.stack_name=voltha2 \
->  --set voltha_infra_name=voltha-infra \
->  --set voltha_infra_namespace=infra
+>  --set global.voltha_infra_name=voltha-infra \
+>  --set global.voltha_infra_namespace=infra
 > ```
 
 If you add a different number of ONOS you need also to tell the `ofagent` to connect to all of them
@@ -160,8 +160,8 @@ by adding it to the `voltha-stack` command. The following is an example for 3 ON
 helm upgrade --install --create-namespace \
   -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra \
+  --set global.voltha_infra_name=voltha-infra \
+  --set global.voltha_infra_namespace=infra \
   --set voltha.onos_classic.replicas=3
 ```
 
@@ -171,8 +171,8 @@ As an example to deploy VOLTHA 2.8 LTS release you can use `--version 2.8.0` lik
 helm upgrade --install --create-namespace \
   -n voltha1 --version 2.8.0 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra
+  --set global.voltha_infra_name=voltha-infra \
+  --set global.voltha_infra_namespace=infra
 ```
 
 #### Enable tracing in VOLTHA (optional)
@@ -183,8 +183,8 @@ To enable tracing across the VOLTHA components add `--set global.tracing.enabled
 helm upgrade --install --create-namespace \
   -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra \
+  --set global.voltha_infra_name=voltha-infra \
+  --set global.voltha_infra_namespace=infra \
   --set global.tracing.enabled=true
 ```
 
@@ -198,8 +198,8 @@ To enable log correlation across the VOLTHA components add `--set global.log_cor
 helm upgrade --install --create-namespace \
   -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra \
+  --set global.voltha_infra_name=voltha-infra \
+  --set global.voltha_infra_namespace=infra \
   --set global.log_correlation.enabled=true
 ```
 
@@ -213,8 +213,8 @@ Up to release `0.10.0` of the `voltha-stack` chart you can still use the openonu
 helm upgrade --install --create-namespace \
   -n voltha1 voltha1 onf/voltha-stack \
   --set global.stack_name=voltha1 \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra \
+  --set global.voltha_infra_name=voltha-infra \
+  --set global.voltha_infra_namespace=infra \
   --set voltha-adapter-openonu.use_openonu_adapter_go=false
 ```
 
