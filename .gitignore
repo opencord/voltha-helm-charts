@@ -1,15 +1,15 @@
 # local chart repo dir used when building the http-accessible repo
 chart_repo
 
-# helm-repo-tools repo (in case of local testing)
-helm-repo-tools/
-
 # lockfiles for requirements.yaml for dependent charts
 requirements.lock
 Chart.lock
 
 # sub charts directories, created by helm dep ...
 charts
+
+# tagcollisionreject.sh is downloaded via the makefile if not present
+tagcollisionreject.sh
 
 # misc files
 .*.swp

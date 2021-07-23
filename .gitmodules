@@ -1,0 +1,3 @@
+[submodule "helm-repo-tools"]
+	path = helm-repo-tools
+	url = https://gerrit.opencord.org/helm-repo-tools
