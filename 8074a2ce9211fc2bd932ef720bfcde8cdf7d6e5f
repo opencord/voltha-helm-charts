@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2bb47f9a_12838710",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2021-07-27T20:32:50Z",
+      "side": 1,
+      "message": "Would prefer to copy this into the repo (recommended) or check against a SHA256 hash after download to verify it\u0027s the file that is expected.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 30
+      },
+      "revId": "8074a2ce9211fc2bd932ef720bfcde8cdf7d6e5f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
