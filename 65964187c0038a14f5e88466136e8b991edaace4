@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c99394e_16069fe7",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-07-27T21:41:55Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be 1.3.7. Check this https://gerrit.opencord.org/c/voltha-openonu-adapter-go/+/26305/1/VERSION",
+      "revId": "65964187c0038a14f5e88466136e8b991edaace4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
