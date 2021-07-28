@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3de436f_8fd8ab80",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2021-07-28T19:08:35Z",
+      "side": 1,
+      "message": "Put the download in /tmp or a temporary file, then move it after it\u0027s been checked. \n\nOtherwise, the first time the makefile target is run it will fail, then the next time it\u0027s run whatever was downloaded (which doesn\u0027t match the checksum) would be run.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 30
+      },
+      "revId": "82acb34c48ed18ffac282a3e09aef14c9028e65c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37cceec6_625a1572",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000011
+      },
+      "writtenOn": "2021-07-28T19:08:35Z",
+      "side": 1,
+      "message": "Use the HTTP url in this case?",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 66
+      },
+      "revId": "82acb34c48ed18ffac282a3e09aef14c9028e65c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
