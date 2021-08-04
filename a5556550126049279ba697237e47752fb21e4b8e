@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef57ed17_c084888c",
+        "filename": "Makefile",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-08-04T16:32:06Z",
+      "side": 1,
+      "message": "should we put the ONF copyright template here.",
+      "revId": "a5556550126049279ba697237e47752fb21e4b8e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
