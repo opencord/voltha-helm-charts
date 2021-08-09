@@ -88,24 +88,27 @@ spec:
             - "/app/rw_core"
             - "--kv_store_type=etcd"
             - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
-            - "--grpc_address=0.0.0.0:50057"
+            - "--grpc_nbi_address=0.0.0.0:50057"
+            - "--grpc_sbi_address=0.0.0.0:50058"
             - "--banner"
-            - "--kafka_adapter_address={{ tpl .Values.services.kafka.adapter.address . }}"
             - "--kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}"
-            - "--rw_core_topic={{ tpl .Values.rw_core.topics.core_topic . }}"
+            - "--rpc_timeout={{ tpl .Values.rw_core.rpc_timeout . }}"
+            - "--internal_timeout={{ tpl .Values.rw_core.internal_timeout . }}"
             - "--event_topic={{ .Values.rw_core.topics.event_topic }}"
-            - "--core_timeout={{ tpl .Values.rw_core.core_timeout . }}"
-            - "--timeout_long_request={{ tpl .Values.rw_core.timeout_long_request . }}"
-            - "--timeout_request={{ tpl .Values.rw_core.timeout_request . }}"
             - "--log_level={{ $log_level }}"
             - "--probe_address=:8080"
             - "--trace_enabled={{ .Values.global.tracing.enabled }}"
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
             - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
             - "--stack_id={{ tpl .Values.rw_core.stack_id . }}"
+            - "--backoff_retry_initial_interval={{ .Values.rw_core.backoff_initial_interval }}"
+            - "--backoff_retry_max_interval={{ .Values.rw_core.backoff_max_interval }}"
+            - "--backoff_retry_max_elapsed_time={{ .Values.rw_core.backoff_max_elapsed_time }}"
           ports:
             - containerPort: 50057
-              name: grpc
+              name: nbi-grpc
+            - containerPort: 50058
+              name: core-grpc
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
