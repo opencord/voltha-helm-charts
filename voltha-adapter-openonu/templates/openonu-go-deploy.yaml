@@ -82,10 +82,9 @@ spec:
             - "/app/openonu"
             - "--banner=true"
             - "--kafka_reconnect_retries=-1"
-            - "--kafka_adapter_address={{ tpl .Values.services.kafka.adapter.address . }}"
+            - "--core_endpoint={{ tpl .Values.global.core_endpoint . }}"
+            - "--adapter_endpoint={{ tpl .Values.adapter_open_onu.endpoints.address . }}.{{ .Release.Namespace }}.svc:{{ print .Values.adapter_open_onu.endpoints.port }}"
             - "--kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}"
-            - "--core_topic={{ tpl .Values.adapter_open_onu.topics.core_topic . }}"
-            - "--adapter_topic={{ tpl .Values.adapter_open_onu.topics.adapter_open_onu_topic . }}"
             - "--event_topic={{ .Values.adapter_open_onu.topics.event_topic }}"
             - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
             - "--kv_store_request_timeout={{ tpl .Values.adapter_open_onu.kv_store_timeout . }}"
@@ -95,6 +94,7 @@ spec:
             - "--max_timeout_interadapter_comm={{ tpl .Values.adapter_open_onu.max_timeout_interadapter_comm . }}"
             - "--max_timeout_reconciling={{ tpl .Values.adapter_open_onu.max_timeout_reconciling . }}"
             - "--omci_timeout={{ tpl .Values.adapter_open_onu.omci_timeout . }}"
+            - "--rpc_timeout={{ tpl .Values.adapter_open_onu.rpc_timeout . }}"
             - "--trace_enabled={{ .Values.global.tracing.enabled }}"
             - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
             - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
@@ -107,18 +107,21 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
           {{- end }}
+          ports:
+            - containerPort: {{ .Values.adapter_open_onu.endpoints.port }}
+              name: grpc
           livenessProbe:
             httpGet:
               path: /healthz
               port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: {{ .Values.probe.liveness.initial_delay_seconds }}
+            periodSeconds: {{ .Values.probe.liveness.period_seconds }}
           readinessProbe:
             httpGet:
               path: /readz
               port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: {{ .Values.probe.readiness.initial_delay_seconds }}
+            periodSeconds: {{ .Values.probe.readiness.period_seconds }}
           resources:
             requests:
               {{- if .Values.resources.requests.memory }}
