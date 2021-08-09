@@ -29,3 +29,10 @@ servicesConfig:
       needs_eapol: true
       needs_dhcp: true
       tp_id: 64
+
+# NOTE this is a temporary workaround as in the reconcile case the meter might get deleted while there is
+# a PENDING_ADD flow pointing to it.
+onos-classic:
+  config:
+    componentConfig:
+      "org.opencord.olt.impl.OltMeterService": '{"deleteMeters": "false"}'
