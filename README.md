@@ -136,8 +136,8 @@ To deploy a VOLTHA stack with the opensource adapters (OpenOLT and OpenONU) you 
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set global.voltha_infra_name=voltha-infra \
   --set global.voltha_infra_namespace=infra
 ```
@@ -157,8 +157,8 @@ If you add a different number of ONOS you need also to tell the `ofagent` to con
 by adding it to the `voltha-stack` command. The following is an example for 3 ONOS instances.
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set global.voltha_infra_name=voltha-infra \
   --set global.voltha_infra_namespace=infra \
   --set voltha.onos_classic.replicas=3
@@ -168,8 +168,8 @@ To deploy a released version of the `voltha-stack` chart you can specify the `--
 As an example to deploy VOLTHA 2.8 LTS release you can use `--version 2.8.0` like:
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 --version 2.8.0 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha --version 2.8.0 voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set global.voltha_infra_name=voltha-infra \
   --set global.voltha_infra_namespace=infra
 ```
@@ -180,8 +180,8 @@ To enable tracing across the VOLTHA components add `--set global.tracing.enabled
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set global.voltha_infra_name=voltha-infra \
   --set global.voltha_infra_namespace=infra \
   --set global.tracing.enabled=true
@@ -195,8 +195,8 @@ To enable log correlation across the VOLTHA components add `--set global.log_cor
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set global.voltha_infra_name=voltha-infra \
   --set global.voltha_infra_namespace=infra \
   --set global.log_correlation.enabled=true
@@ -210,8 +210,8 @@ Up to release `0.10.0` of the `voltha-stack` chart you can still use the openonu
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set global.voltha_infra_name=voltha-infra \
   --set global.voltha_infra_namespace=infra \
   --set voltha-adapter-openonu.use_openonu_adapter_go=false
@@ -226,7 +226,7 @@ In order to install a single BBSim instance to test VOLTHA,
 you can use the BBSim helm chart:
 
 ```shell
-helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10
+helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10
 ```
 
 > _While it's not mandatory to install BBSim in the same namespace as the VOLTHA stack it's advised to do so to make explicit which stack is controlling it._
@@ -271,16 +271,16 @@ For you convenience here are the commands to deploy those workflows:
 
 ```shell
 helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/dt-values.yaml
-helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10 -f examples/dt-values.yaml
-helm upgrade --install --create-namespace   -n voltha1 voltha1 onf/voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
+helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10 -f examples/dt-values.yaml
+helm upgrade --install --create-namespace   -n voltha voltha onf/voltha-stack   --set global.stack_name=voltha   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
 **TT**
 
 ```shell
 helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/tt-values.yaml
-helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10 -f examples/tt-values.yaml
-helm upgrade --install --create-namespace   -n voltha1 voltha1 onf/voltha-stack   --set global.stack_name=voltha1   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
+helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10 -f examples/tt-values.yaml
+helm upgrade --install --create-namespace   -n voltha voltha onf/voltha-stack   --set global.stack_name=voltha   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
 ### Using an ingress controller
@@ -345,7 +345,7 @@ well as how the Ingress controller is accessed from outside the cluster._
 
 - `--server`/`server` - the value of the external IP address of the ingress
 controller and the port on which it is listening (_ex:_ `localhost:443` or
-`voltha1.voltha.com:30474`).
+`voltha.voltha.com:30474`).
 
 - `--kvstore`/`kvstore` - the value of the external IP address of the ingress
 controller and the point on which it is listening (_ex:_ `localhost:443`)
@@ -357,13 +357,13 @@ through the ingress controller, which is required for the NGINX ingress controll
 _CLI example_:
 
 ```bash
-voltctl --server=voltha1.voltha.com:443 --kvstore=localhost:443 --tls version
+voltctl --server=voltha.voltha.com:443 --kvstore=localhost:443 --tls version
 ```
 
 _`voltctl` configuration file example:_
 
 ```yaml
-server: voltha1.example.com:443
+server: voltha.example.com:443
 kafka: localhost:443
 kvstore: localhost:443
 tls:
@@ -408,11 +408,11 @@ infra         voltha-infra-onos-classic-0                           1/1     Runn
 infra         voltha-infra-voltha-infra-onos-config-loader-whdtz    0/1     Completed   3          14m
 infra         voltha-infra-voltha-tracing-jaeger-7fffb6cdf6-l5r8s   1/1     Running     0          14m
 infra         voltha-infra-zookeeper-0                              1/1     Running     0          14m
-voltha1       bbsim0-6f9584b4dd-txtj4                              1/1     Running     0          66s
-voltha1       voltha1-voltha-adapter-openolt-5b5844b5b6-htlvp       1/1     Running     0          91s
-voltha1       voltha1-voltha-adapter-openonu-85749df5fc-n5kdd       1/1     Running     0          91s
-voltha1       voltha1-voltha-ofagent-5b5dc9b7b5-htxt6               1/1     Running     0          91s
-voltha1       voltha1-voltha-rw-core-7d69cb4567-9cn2n               1/1     Running     0          91s
+voltha       bbsim0-6f9584b4dd-txtj4                              1/1     Running     0          66s
+voltha       voltha-voltha-adapter-openolt-5b5844b5b6-htlvp       1/1     Running     0          91s
+voltha       voltha-voltha-adapter-openonu-85749df5fc-n5kdd       1/1     Running     0          91s
+voltha       voltha-voltha-ofagent-5b5dc9b7b5-htxt6               1/1     Running     0          91s
+voltha       voltha-voltha-rw-core-7d69cb4567-9cn2n               1/1     Running     0          91s
 ```
 > _Note that is completely fine if the `onos-config-loader` pod restarts a few times, it is a job that loads
 configuration into ONOS and will fail until ONOS is ready to accept the configuration._
@@ -421,7 +421,7 @@ Once all the kubernetes pods are in `Ready` and `Running` state make sure the ad
 
 In order to use `voltctl` you need to expose the `voltha-api` service:
 ```shell
-kubectl -n voltha1 port-forward --address 0.0.0.0 svc/voltha1-voltha-api 55555
+kubectl -n voltha port-forward --address 0.0.0.0 svc/voltha-voltha-api 55555
 ```
 
 > _If you have deployed multiple stacks you need to change the `port-forward` command to connect to the stack you want to operate, eg:_
@@ -435,8 +435,8 @@ Once that is done you can query `rw-core` for a list of adapters:
 ```shell
 $ voltctl adapter list
 ID                     VENDOR              TYPE                 ENDPOINT                     VERSION            CURRENTREPLICA    TOTALREPLICAS    LASTCOMMUNICATION
-brcm_openomci_onu_1    VOLTHA OpenONUGo    brcm_openomci_onu    voltha1_brcm_openomci_onu    unknown-version    1                 1
-openolt_1              VOLTHA OpenOLT      openolt              voltha1_openolt              3.0.2              1                 1
+brcm_openomci_onu_1    VOLTHA OpenONUGo    brcm_openomci_onu    voltha_brcm_openomci_onu    unknown-version    1                 1
+openolt_1              VOLTHA OpenOLT      openolt              voltha_openolt              3.0.2              1                 1
 ```
 
 ### Provisioning an OLT
@@ -447,7 +447,7 @@ We suggest to start with `BBSim` (see above for installation instructions).
 To create and enable the OLT device in VOLTHA you can use these `voltctl` commands:
 
 ```shell
-voltctl device create -t openolt -H bbsim0.voltha1.svc:50060
+voltctl device create -t openolt -H bbsim0.voltha.svc:50060
 voltctl device list --filter Type~openolt -q | xargs voltctl device enable
 ```
 
@@ -473,7 +473,7 @@ voltctl config > ~/.volt/config
 export VOLTCONFIG="~/.volt/config"
 make sanity-kind
 ```
-> This assumes that both the `onos-ssh`, `onos-rest` and `voltha-api` ports are forwarded on the host and bbsim was installed with ` helm install -n voltha1 bbsim0 onf/bbsim --set olt_id=10`.
+> This assumes that both the `onos-ssh`, `onos-rest` and `voltha-api` ports are forwarded on the host and bbsim was installed with ` helm install -n voltha bbsim0 onf/bbsim --set olt_id=10`.
 
 ### Remove VOLTHA from your cluster
 
@@ -481,7 +481,7 @@ make sanity-kind
 
 If you need to completely uninstall everything that you installed following this guide, you can simply remove the installed `helm` charts:
 ```shell
-helm del -n voltha1 voltha1 bbsim0
+helm del -n voltha voltha bbsim0
 helm del -n infra voltha-infra
 ```
 
@@ -500,8 +500,8 @@ installation guide while providing a new image for one of the component, eg:
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
   --set voltha-adapter-openonu.images.adapter_open_onu_go.repository=voltha/voltha-openonu-adapter-go \
@@ -512,7 +512,7 @@ If as part of your development process you have published a new image with the s
 by restarting the pod, for example:
 
 ```shell
-kubectl delete pod -n voltha1 $(kubectl get pods -n voltha1 | grep openonu | awk '{print $1}')
+kubectl delete pod -n voltha $(kubectl get pods -n voltha | grep openonu | awk '{print $1}')
 ```
 
 > In order for this to work the `imagePullPolicy` has to be set to `Always`.
@@ -525,8 +525,8 @@ If for your development and testing you'd like to have all the `master` of each 
 been officially tagged and release there is a provided `dev-values.yaml`. You can use it for the a `voltha-stack` like so:
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
   -f examples/dev-values.yaml
@@ -541,18 +541,18 @@ and then use the local copy of your chart to install it, eg:
 
 ```shell
 helm upgrade --install --create-namespace \
-  -n voltha1 voltha1 onf/voltha-stack \
-  --set global.stack_name=voltha1 \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
   --set voltha_infra_name=voltha-infra \
   --set voltha_infra_namespace=infra \
   --set voltha-adapter-openonu.enabled=false
 
 helm upgrade --install --create-namespace \
-  -n voltha1 opeonu-adapter voltha-adapter-openonu \
-  --set global.stack_name=voltha1 \
-  --set adapter_open_onu.kv_store_data_prefix=service/voltha/voltha1_voltha1 \
-  --set adapter_open_onu.topics.core_topic=voltha1_voltha1_rwcore \
-  --set adapter_open_onu.topics.adapter_open_onu_topic=voltha1_voltha1_brcm_openomci_onu \
+  -n voltha opeonu-adapter voltha-adapter-openonu \
+  --set global.stack_name=voltha \
+  --set adapter_open_onu.kv_store_data_prefix=service/voltha/voltha_voltha \
+  --set adapter_open_onu.topics.core_topic=voltha_voltha_rwcore \
+  --set adapter_open_onu.topics.adapter_open_onu_topic=voltha_voltha_brcm_openomci_onu \
   --set services.kafka.adapter.service=voltha-infra-kafka.infra.svc \
   --set services.kafka.cluster.service=voltha-infra-kafka.infra.svc \
   --set services.etcd.service=voltha-infra-etcd.infra.svc

@@ -17,16 +17,20 @@ fullNameOverride: ~
 
 # Default overrides
 global:
+  voltha_release_name: voltha
   stack_name: voltha
   log_level: "WARN"
   image_registry: ""
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  core_endpoint: "{{ .Values.global.voltha_release_name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
   adapter_open_olt:
     timeout: "5s"
     heartbeat_check_interval: "15s"
     heartbeat_fail_interval: "31s"
+    # timeout for RPC request
+    rpc_timeout: "10s"
 
   #enable OMCC encryption
   omcc_encryption: false
@@ -42,6 +46,15 @@ global:
   # Configure Tracing
   tracing:
     enabled: true
+
+# Probe values
+probe:
+  liveness:
+    initial_delay_seconds: 3
+    period_seconds: 3
+  readiness:
+    initial_delay_seconds: 3
+    period_seconds: 3
 
 # Default security context under which the containers run
 securityContext:
@@ -59,8 +72,6 @@ nodeAffinityConfig:
 # Define connectivity to required services
 services:
   kafka:
-    adapter:
-      address: kafka:9092
     cluster:
       address: kafka:9092
 
@@ -87,9 +98,13 @@ adapter_open_olt:
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   heartbeat_check_interval: '{{ .Values.global.adapter_open_olt.heartbeat_check_interval }}'
   heartbeat_fail_interval: '{{ .Values.global.adapter_open_olt.heartbeat_fail_interval }}'
+  rpc_timeout: '{{ .Values.global.adapter_open_olt.rpc_timeout }}'
+  endpoints:
+    # core_endpoint: '{{ .Values.global.adapter_open_olt.core_endpoint }}'
+    # adapter_endpoint: '{{ template "fullname" . }}-api:55560'
+    address: '{{ template "fullname" . }}-api'
+    port: 50060
   topics:
-    core_topic: "{{ .Values.global.stack_name }}_rwcore"
-    adapter_open_olt_topic: "{{ .Values.global.stack_name }}_openolt"
     event_topic: "voltha.events"
 
 images:

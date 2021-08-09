@@ -18,12 +18,14 @@ fullNameOverride: ~
 
 # Default overrides
 global:
+  voltha_release_name: voltha
   stack_name: voltha
   log_level: "WARN"
   image_registry: ""
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  core_endpoint: "{{ .Values.global.voltha_release_name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
   incremental_evto_update: False
   # timeout for deadline for interadapter communication
   # should be in format as expected by parseDuration golang.
@@ -32,6 +34,8 @@ global:
   max_timeout_reconciling: "10s"
   # timeout for OMCI channel
   omci_timeout: "1s"
+  # timeout for RPC request
+  rpc_timeout: "10s"
   # kv store timeout
   adapter_open_onu:
     timeout: "5s"
@@ -52,6 +56,14 @@ global:
   # configure "0s" to disable omci alarm audit
     interval: 300s
 
+# Probe values
+probe:
+  liveness:
+    initial_delay_seconds: 3
+    period_seconds: 3
+  readiness:
+    initial_delay_seconds: 3
+    period_seconds: 3
 
 # Default security context under which the containers run
 securityContext:
@@ -63,8 +75,6 @@ securityContext:
 # Define connectivity to required services
 services:
   kafka:
-    adapter:
-      address: kafka:9092
     cluster:
       address: kafka:9092
 
@@ -109,13 +119,15 @@ adapter_open_onu:
   max_timeout_interadapter_comm: '{{ .Values.global.max_timeout_interadapter_comm }}'
   max_timeout_reconciling: '{{ .Values.global.max_timeout_reconciling }}'
   omci_timeout: '{{ .Values.global.omci_timeout }}'
+  rpc_timeout: '{{ .Values.global.rpc_timeout }}'
   kv_store_timeout: '{{ .Values.global.adapter_open_onu.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   alarm_audit_interval: '{{ .Values.global.alarm_audit.interval }}'
   uni_port_mask: "0x0001"
+  endpoints:
+    address: '{{ template "fullname" . }}-api'
+    port: 50060
   topics:
-    core_topic: "{{ .Values.global.stack_name }}_rwcore"
-    adapter_open_onu_topic: "{{ .Values.global.stack_name }}_brcm_openomci_onu"
     event_topic: "voltha.events"
 
 images:
