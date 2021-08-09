@@ -578,3 +578,49 @@ The two scripts that should be run to test are:
 
 - `helmlint.sh`
 - `chart_version_check.sh`
+
+
+
+## gRPC Migration 
+*Note*:  This section is temporary and meant to be used for integration testing only.   It will be removed once integration testing is completed and the code in all the repos have been merged.
+
+In Voltha release 2.9 the inter-container communication (Voltha Core and Adapters) will be over gRPC instead of the Kafka messaging service.  Kafka messaging service will still be used to send Events and KPIs.
+
+Since the gRPC code for Voltha Core, OpenOLT Adapter and OpenONU Adapter have not been merged (requires full integration testing in various environment) then the instructions below show how to run the Voltha stack with these custom images and this version of helm chart in a single node/single instances environment.  The sames instructions (described above) on running multiple stacks, multiple instances and multiple nodes also apply here.
+
+## Start Voltha Infrastructure (ONOS, KAFKA, ETCD, etc)
+```
+helm upgrade --install --create-namespace -n infra --version 2.8.0 voltha-infra onf/voltha-infra
+```
+
+## Start BBSIM
+```
+helm upgrade --install -n voltha1 bbsim0 onf/bbsim --set olt_id=10
+```
+
+## Start Voltha Stack with custom images and this helm charts
+```
+helm upgrade --install --create-namespace \
+-n voltha1 voltha1 ./voltha-stack \
+  --set global.stack_name=voltha1 \
+  --set voltha_infra_name=voltha-infra \
+  --set voltha_infra_namespace=infra \
+  --set voltha.images.rw_core.repository=volthacore/voltha-rw-core \
+  --set voltha.images.rw_core.tag=grpc_v1  \
+  --set voltha.ofagent.log_level=DEBUG \
+  --set voltha.rw_core.log_level=DEBUG \
+  --set voltha-adapter-openolt.images.adapter_open_olt.repository=volthacore/voltha-openolt-adapter \
+  --set voltha-adapter-openolt.images.adapter_open_olt.tag=grpc_v1 \
+  --set voltha-adapter-openolt.adapter_open_olt.endpoints.core_endpoint=voltha1-voltha-api.voltha1.svc:55555 \
+  --set voltha-adapter-openolt.adapter_open_olt.endpoints.adapter_endpoint=voltha1-voltha-adapter-openolt-api.voltha1.svc:50060 \
+  --set voltha-adapter-openolt.adapter_open_olt.log_level=DEBUG \
+  --set voltha-adapter-openonu.images.adapter_open_onu_go.repository=volthacore/voltha-openonu-adapter-go \
+  --set voltha-adapter-openonu.images.adapter_open_onu_go.tag=grpc_v1 \
+  --set voltha-adapter-openonu.adapter_open_onu.endpoints.core_endpoint=voltha1-voltha-api.voltha1.svc:55555 \
+  --set voltha-adapter-openonu.adapter_open_onu.endpoints.adapter_endpoint=voltha1-voltha-adapter-openonu-api.voltha1.svc:50060 \
+  --set voltha-adapter-openonu.adapter_open_onu.log_level=DEBUG \
+  --set services.kafka.cluster.address=voltha-infra-kafka.infra.svc:9092 \
+  --set services.etcd.address=voltha-infra-etcd.infra.svc:2379 \
+  --set global.log_level=DEBUG \
+  --set global.tracing.enabled=true
+```

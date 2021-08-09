@@ -27,7 +27,8 @@ global:
   image_tag: ~
   image_pullPolicy: "Always"
   rw_core:
-    timeout: "10s"
+    rpc_timeout: "10s"
+    internal_timeout: "10s"
   # Configure Log Correlation
   log_correlation:
     enabled: true
@@ -45,8 +46,6 @@ securityContext:
 # Define connectivity to services on which VOLTHA depends
 services:
   kafka:
-    adapter:
-      address: kafka:9092
     cluster:
       address: kafka:9092
 
@@ -79,13 +78,11 @@ replicas:
 
 rw_core:
   log_level: '{{ .Values.global.log_level }}'
-  core_timeout: '{{ .Values.global.rw_core.timeout }}'
-  timeout_long_request: '{{ .Values.global.rw_core.timeout }}'
-  timeout_request: '{{ .Values.global.rw_core.timeout }}'
+  rpc_timeout: '{{ .Values.global.rw_core.rpc_timeout }}'
+  internal_timeout: '{{ .Values.global.rw_core.internal_timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   stack_id: "{{ .Values.global.stack_name }}"
   topics:
-    core_topic: "{{ .Values.global.stack_name }}_rwcore"
     event_topic: "voltha.events"
 
 ofagent:
