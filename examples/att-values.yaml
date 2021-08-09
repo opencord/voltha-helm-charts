@@ -29,3 +29,8 @@ servicesConfig:
       needs_eapol: true
       needs_dhcp: true
       tp_id: 64
+
+onos-classic:
+  config:
+    componentConfig:
+      "org.opencord.olt.impl.OltMeterService": '{"deleteMeters": "false"}'
