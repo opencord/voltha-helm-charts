@@ -116,15 +116,15 @@ spec:
               value: {{ tpl .Values.adapter_open_olt.kv_store_data_prefix . }}
           args:
             - "/app/openolt"
-            - "--kafka_adapter_address={{ tpl .Values.services.kafka.adapter.address . }}"
+            - "--core_endpoint={{ tpl .Values.adapter_open_olt.endpoints.core_endpoint . }}"
+            - "--adapter_endpoint={{ tpl .Values.adapter_open_olt.endpoints.adapter_endpoint . }}"
             - "--kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}"
-            - "--core_topic={{ tpl .Values.adapter_open_olt.topics.core_topic . }}"
-            - "--adapter_topic={{ tpl .Values.adapter_open_olt.topics.adapter_open_olt_topic . }}"
             - "--event_topic={{ .Values.adapter_open_olt.topics.event_topic }}"
             - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
             - "--kv_store_request_timeout={{ tpl .Values.adapter_open_olt.kv_store_timeout . }}"
             - "--heartbeat_check_interval={{ tpl .Values.adapter_open_olt.heartbeat_check_interval . }}"
             - "--heartbeat_fail_interval={{ tpl .Values.adapter_open_olt.heartbeat_fail_interval . }}"
+            - "--rpc_timeout={{ tpl .Values.adapter_open_olt.rpc_timeout . }}"
             - "--log_level={{ $log_level }}"
             - "--current_replica={{ .Values.replicas.current_replica }}"
             - "--total_replica={{ .Values.replicas.total_replica }}"
@@ -139,18 +139,21 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
           {{- end }}
+          ports:
+            - containerPort: 50060
+              name: grpc
           livenessProbe:
             httpGet:
               path: /healthz
               port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: {{ .Values.probe.liveness.initial_delay_seconds }}
+            periodSeconds: {{ .Values.probe.liveness.period_seconds }}
           readinessProbe:
             httpGet:
               path: /readz
               port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: {{ .Values.probe.readiness.initial_delay_seconds }}
+            periodSeconds: {{ .Values.probe.readiness.period_seconds }}
           resources:
             requests:
               {{- if .Values.resources.requests.memory }}
