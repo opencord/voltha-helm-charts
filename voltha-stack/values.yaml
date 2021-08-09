@@ -18,6 +18,7 @@ global:
   log_level: "WARN"
   voltha_infra_name: "voltha-infra"
   voltha_infra_namespace: "infra"
+  core_endpoint: ""
   log_correlation:
     enabled: true
   tracing:
@@ -34,12 +35,8 @@ voltha:
   rw_core:
     kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
     stack_id: "{{ .Values.global.stack_name }}"
-    topics:
-      core_topic: "{{ .Release.Name }}_{{ .Values.global.stack_name }}_rwcore"
   services:
     kafka:
-      adapter:
-        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
       cluster:
         address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
     etcd:
@@ -51,31 +48,27 @@ voltha-adapter-openonu:
   enabled: true
   adapter_open_onu:
     kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
-    topics:
-      core_topic: "{{ .Release.Name }}_{{ .Values.global.stack_name }}_rwcore"
-      adapter_open_onu_topic: "{{ .Release.Name }}_{{ .Values.global.stack_name }}_brcm_openomci_onu"
+    endpoints:
+      core_endpoint: '{{ .Values.global.core_endpoint }}'
+      adapter_endpoint: '{{ template "fullname" . }}-api:55560'
   services:
     kafka:
-      adapter:
-        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
       cluster:
         address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
     etcd:
       address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
     tracing_agent:
       address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
-
+      
 voltha-adapter-openolt:
   enabled: true
   adapter_open_olt:
     kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
-    topics:
-      core_topic: "{{ .Release.Name }}_{{ .Values.global.stack_name }}_rwcore"
-      adapter_open_olt_topic: "{{ .Release.Name }}_{{ .Values.global.stack_name }}_openolt"
+    endpoints:
+      core_endpoint: '{{ .Values.global.core_endpoint }}'
+      adapter_endpoint: '{{ template "fullname" . }}-api:55560'
   services:
     kafka:
-      adapter:
-        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
       cluster:
         address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
     etcd:
