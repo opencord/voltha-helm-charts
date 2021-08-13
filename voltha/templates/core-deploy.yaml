@@ -122,3 +122,18 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
+          resources:
+            requests:
+              {{- if .Values.resources.rw_core.requests.memory }}
+              memory: {{ .Values.resources.rw_core.requests.memory }}
+              {{- end }}
+              {{- if .Values.resources.rw_core.requests.cpu }}
+              cpu: {{ .Values.resources.rw_core.requests.cpu }}
+              {{- end }}
+            limits:
+              {{- if .Values.resources.rw_core.limits.memory }}
+              memory: {{ .Values.resources.rw_core.limits.memory }}
+              {{- end }}
+              {{- if .Values.resources.rw_core.limits.cpu }}
+              cpu: {{ .Values.resources.rw_core.limits.cpu }}
+              {{- end }}
