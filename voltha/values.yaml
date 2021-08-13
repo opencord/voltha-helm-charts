@@ -125,3 +125,19 @@ ingress:
 onos_classic:
   onosOfPort: 6653
   replicas: 1
+
+resources:
+  rw_core:
+    requests:
+      cpu: 1
+      memory: 200Mi
+    limits:
+      cpu: ~
+      memory: ~
+  ofagent:
+    requests:
+      cpu: 300m
+      memory: 50Mi
+    limits:
+      cpu: ~
+      memory: ~
