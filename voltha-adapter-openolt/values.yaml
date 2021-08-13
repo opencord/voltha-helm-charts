@@ -98,3 +98,11 @@ images:
     repository: '{{ .Values.global.image_org }}voltha-openolt-adapter'
     tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy | default "Always" }}'
+
+resources:
+  requests:
+    cpu: 0.5
+    memory: 256Mi
+  limits:
+    cpu: ~
+    memory: ~
