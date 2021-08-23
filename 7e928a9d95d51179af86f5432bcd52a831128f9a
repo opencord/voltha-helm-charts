@@ -16,6 +16,24 @@
       "revId": "7e928a9d95d51179af86f5432bcd52a831128f9a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e1776c1_050e40c3",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000569
+      },
+      "writtenOn": "2021-08-23T15:08:04Z",
+      "side": 1,
+      "message": "unfortunately currently the scale test results are empty in ci pipelines I cannot see the latest numbers. We at DT use 0.7. But also consider it to be a reserved limit rather than a hard limit which kills the pod",
+      "parentUuid": "843e8576_ed7bae1e",
+      "revId": "7e928a9d95d51179af86f5432bcd52a831128f9a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
     }
   ]
 }
