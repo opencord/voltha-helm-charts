@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "843e8576_ed7bae1e",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-08-23T14:40:18Z",
+      "side": 1,
+      "message": "just to double check, seems a little low for the openonu adapter. is this value correct ?",
+      "revId": "7e928a9d95d51179af86f5432bcd52a831128f9a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
