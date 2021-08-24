@@ -137,3 +137,30 @@ spec:
               {{- if .Values.resources.ofagent.limits.cpu }}
               cpu: {{ .Values.resources.ofagent.limits.cpu }}
               {{- end }}
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            {{- if .Values.scheduleRules.preferStackPodsOnSameNode }}
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/stack
+                      operator: In
+                      values:
+                        - {{ .Values.global.stack_name }}
+              weight: 100
+            {{- end }}
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            {{- if .Values.scheduleRules.preferStacksOnDifferentNodes }}
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - open-flow-agent
+              weight: 100
+            {{- end }}
