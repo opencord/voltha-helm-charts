@@ -66,8 +66,8 @@ spec:
         runAsGroup: {{ .Values.securityContext.runAsGroup }}
         fsGroup: {{ .Values.securityContext.fsGroup }}
       {{- end }}
-      {{- if .Values.nodeAffinityConfig.enabled }}
       affinity:
+        {{- if .Values.nodeAffinityConfig.enabled }}
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
@@ -76,7 +76,33 @@ spec:
                 operator: In
                 values:
                 - "{{ .Values.nodeAffinityConfig.node_label_value }}"
-      {{- end }}
+        {{- end }}
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            {{- if .Values.scheduleRules.preferStackPodsOnSameNode }}
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/stack
+                      operator: In
+                      values:
+                        - {{ .Values.global.stack_name }}
+              weight: 100
+            {{- end }}
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            {{- if .Values.scheduleRules.preferStacksOnDifferentNodes }}
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - adapter-open-olt
+              weight: 100
+            {{- end }}
       containers:
         - name: adapter-open-olt
           image: '{{ tpl .Values.images.adapter_open_olt.registry . }}{{ tpl .Values.images.adapter_open_olt.repository . }}:{{ tpl ( tpl .Values.images.adapter_open_olt.tag . ) . }}'
