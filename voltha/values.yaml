@@ -141,3 +141,8 @@ resources:
     limits:
       cpu: ~
       memory: ~
+
+# Define scheduling rules for stack pods
+scheduleRules:
+  preferStackPodsOnSameNode: false
+  preferStacksOnDifferentNodes: false
