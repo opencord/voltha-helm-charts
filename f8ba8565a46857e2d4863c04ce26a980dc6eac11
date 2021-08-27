@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "07360216_570772be",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-08-27T15:41:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "588582f2_df5d66f1",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "f8ba8565a46857e2d4863c04ce26a980dc6eac11",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f675972_0a0e1c27",
         "filename": "voltha-stack/Chart.yaml",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "2adda951_eb61eba7",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-08-27T15:41:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f675972_0a0e1c27",
+      "range": {
+        "startLine": 40,
+        "startChar": 13,
+        "endLine": 40,
+        "endChar": 18
+      },
+      "revId": "f8ba8565a46857e2d4863c04ce26a980dc6eac11",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "32fd076d_6c01763f",
         "filename": "voltha-stack/Chart.yaml",
         "patchSetId": 4
@@ -68,6 +116,30 @@
       "revId": "f8ba8565a46857e2d4863c04ce26a980dc6eac11",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25b3874e_f4970e8c",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-08-27T15:41:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32fd076d_6c01763f",
+      "range": {
+        "startLine": 44,
+        "startChar": 13,
+        "endLine": 44,
+        "endChar": 19
+      },
+      "revId": "f8ba8565a46857e2d4863c04ce26a980dc6eac11",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
