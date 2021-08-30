@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d229212_080b3328",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000569
+      },
+      "writtenOn": "2021-08-30T16:54:38Z",
+      "side": 1,
+      "message": "kafka stays?",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "295bc4df_4653ff09",
+        "filename": "voltha-adapter-openonu/templates/openonu-svc.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000569
+      },
+      "writtenOn": "2021-08-30T16:54:38Z",
+      "side": 1,
+      "message": "it would be nice to make type also customisable (NodePort vs ClusterIP)?",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "836d59b6_02f2c155",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000569
+      },
+      "writtenOn": "2021-08-30T16:54:38Z",
+      "side": 1,
+      "message": "kafka needed?",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    }
+  ]
+}
