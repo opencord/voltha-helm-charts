@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f571f2fb_4a5a3fa5",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-08-30T17:01:30Z",
+      "side": 1,
+      "message": "Automatic rebasing issue :( will fix.",
+      "parentUuid": "0d229212_080b3328",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "295bc4df_4653ff09",
         "filename": "voltha-adapter-openonu/templates/openonu-svc.yaml",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2021-08-30T16:54:38Z",
       "side": 1,
       "message": "kafka needed?",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e424af7_76e30931",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-08-30T17:01:30Z",
+      "side": 1,
+      "message": "rebasing issue",
+      "parentUuid": "836d59b6_02f2c155",
       "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": true
