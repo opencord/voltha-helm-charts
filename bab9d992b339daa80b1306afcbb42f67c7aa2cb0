@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a0ca0cb_b5500e6a",
+        "filename": "voltha-adapter-openonu/templates/openonu-svc.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000569
+      },
+      "writtenOn": "2021-09-23T10:41:35Z",
+      "side": 1,
+      "message": "ping",
+      "parentUuid": "295bc4df_4653ff09",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "836d59b6_02f2c155",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 4
