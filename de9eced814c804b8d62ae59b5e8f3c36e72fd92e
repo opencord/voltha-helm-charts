@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f3b468d_d0616c56",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-09-23T10:12:59Z",
+      "side": 1,
+      "message": "are we missing:\n  live_probe_interval: \"10s\"\n  not_live_probe_interval: \"10s\"",
+      "revId": "de9eced814c804b8d62ae59b5e8f3c36e72fd92e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "485f30d5_894f1136",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-09-23T10:12:59Z",
+      "side": 1,
+      "message": "same as olt",
+      "revId": "de9eced814c804b8d62ae59b5e8f3c36e72fd92e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
