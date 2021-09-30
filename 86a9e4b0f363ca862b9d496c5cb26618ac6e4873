@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "253f5706_d347ef34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-09-30T13:57:44Z",
+      "side": 1,
+      "message": "will include also ONOS and BBSIM update. ",
+      "revId": "86a9e4b0f363ca862b9d496c5cb26618ac6e4873",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
