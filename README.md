@@ -2,8 +2,7 @@
 
 This repository defines [Kubernetes Helm](https://helm.sh/) charts that can be
 used to deploy a [VOLTHA](https://www.opennetworking.org/voltha/) instance.
-More information and documentation can be found in the the [kind-voltha README](https://github.com/opencord/kind-voltha/blob/master/README.md) which we recommend as the starting point
-and the [voltha docs](https://docs.voltha.org/).
+More information and documentation can be found in the [voltha docs](https://docs.voltha.org/).
 
 ## Installing charts
 
