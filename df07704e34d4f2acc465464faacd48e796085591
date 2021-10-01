@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "208252b7_11b51045",
+        "filename": "examples/att-values.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-10-01T19:29:56Z",
+      "side": 1,
+      "message": "We do not need this given that a new ONOS version is released which fixes this issue.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 0
+      },
+      "revId": "df07704e34d4f2acc465464faacd48e796085591",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "94b95b5c_cdf5a25d",
         "filename": "voltha/values.yaml",
         "patchSetId": 13
