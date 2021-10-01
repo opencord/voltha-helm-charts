@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94b95b5c_cdf5a25d",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-01T17:03:13Z",
+      "side": 1,
+      "message": "just wondering if ti makes sense to move the probe timeout as a \"global\" parameter since we have it in all the charts",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 28
+      },
+      "revId": "df07704e34d4f2acc465464faacd48e796085591",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}

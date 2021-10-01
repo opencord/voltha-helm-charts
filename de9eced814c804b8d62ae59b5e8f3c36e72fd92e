@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cde0e35d_60abca9c",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-01T17:03:13Z",
+      "side": 1,
+      "message": "what are those params? I don\u0027t see them in the templates",
+      "parentUuid": "4f3b468d_d0616c56",
+      "revId": "de9eced814c804b8d62ae59b5e8f3c36e72fd92e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "485f30d5_894f1136",
         "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
         "patchSetId": 9

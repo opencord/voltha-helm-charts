@@ -122,6 +122,24 @@
       "parentUuid": "836d59b6_02f2c155",
       "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4645fa01_2b912ada",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-01T17:03:13Z",
+      "side": 1,
+      "message": "Not a rebasing issue, kafka is staying to push metrics and events, this is still needed.",
+      "parentUuid": "3e424af7_76e30931",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
