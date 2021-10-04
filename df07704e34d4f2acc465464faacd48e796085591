@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5f3bbc77_906791a2",
+        "filename": "examples/att-values.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-10-04T08:03:35Z",
+      "side": 1,
+      "message": "nope, these are two separate things, this is because with the flows being synchronous and the adapters taking long to restart the meter will be removed. This is actually NOT an ONOS issue, VOLTHA needs to increment the meter stats for PENDING_AD flows as well before reporting them. Please change the comment.",
+      "parentUuid": "208252b7_11b51045",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 0
+      },
+      "revId": "df07704e34d4f2acc465464faacd48e796085591",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "94b95b5c_cdf5a25d",
         "filename": "voltha/values.yaml",
         "patchSetId": 13
