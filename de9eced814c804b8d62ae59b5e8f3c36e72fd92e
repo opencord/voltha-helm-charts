@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b3fe166_2faca50b",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-10-05T13:35:51Z",
+      "side": 1,
+      "message": "There are a number of parameters that the containers support but which are not exposed by the helm charts (or at least consistently.   I think we should clean that up, along as standardizing on params names and where it makes sense to use env variables instead.   I opened a jira for timers (https://jira.opencord.org/browse/VOL-4354), but we can make the scope bigger.",
+      "parentUuid": "58ba7491_5ed2dde0",
+      "revId": "de9eced814c804b8d62ae59b5e8f3c36e72fd92e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "485f30d5_894f1136",
         "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
         "patchSetId": 9

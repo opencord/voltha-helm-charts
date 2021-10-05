@@ -48,6 +48,30 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a967ed8_daf80d7b",
+        "filename": "examples/att-values.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-10-05T13:35:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f3bbc77_906791a2",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 0
+      },
+      "revId": "df07704e34d4f2acc465464faacd48e796085591",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "94b95b5c_cdf5a25d",
@@ -61,6 +85,30 @@
       "writtenOn": "2021-10-01T17:03:13Z",
       "side": 1,
       "message": "just wondering if ti makes sense to move the probe timeout as a \"global\" parameter since we have it in all the charts",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 28
+      },
+      "revId": "df07704e34d4f2acc465464faacd48e796085591",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79dcfc45_ad0f4e26",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-10-05T13:35:51Z",
+      "side": 1,
+      "message": "Yes, it makes sense.   I suggest we do this as part of the cleanup/standardization activity.",
+      "parentUuid": "94b95b5c_cdf5a25d",
       "range": {
         "startLine": 42,
         "startChar": 4,

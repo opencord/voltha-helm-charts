@@ -140,6 +140,24 @@
       "parentUuid": "3e424af7_76e30931",
       "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b437b8c3_f6c67681",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-10-05T13:35:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4645fa01_2b912ada",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
