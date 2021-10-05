@@ -105,6 +105,24 @@
       "message": "same as olt",
       "revId": "de9eced814c804b8d62ae59b5e8f3c36e72fd92e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2938eb84_9a283c22",
+        "filename": "voltha-adapter-openonu/templates/openonu-go-deploy.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-05T21:16:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "485f30d5_894f1136",
+      "revId": "de9eced814c804b8d62ae59b5e8f3c36e72fd92e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
