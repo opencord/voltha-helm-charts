@@ -16,6 +16,23 @@
       "message": "we\u0027ll need to retrigger this once the component have merged and the test should pass",
       "revId": "9c85ff167474f1ef021f2f97c66094b5601d7bd7",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15dac7c4_9cb02a21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-05T19:58:45Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "9c85ff167474f1ef021f2f97c66094b5601d7bd7",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
