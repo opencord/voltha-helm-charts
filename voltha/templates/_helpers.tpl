@@ -17,7 +17,7 @@
 {{- end -}}
 {{/* Create a default fully qualified app name. We truncate at 63 chars because . . . */}}
 {{- define "fullname" -}}
-{{- $name := default .Values.global.stack_name .Values.nameOverride -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- $fullname := default (printf "%s-%s" .Release.Name $name) .Values.fullNameOverride -}}
 {{- $fullname | trunc 63 | trimSuffix "-" -}}
 {{- end -}}

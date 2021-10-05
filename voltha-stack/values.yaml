@@ -18,7 +18,7 @@ global:
   log_level: "WARN"
   voltha_infra_name: "voltha-infra"
   voltha_infra_namespace: "infra"
-  core_endpoint: "{{ .Release.Name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
+  core_endpoint: "{{ .Release.Name }}-voltha-core.{{ .Release.Namespace }}.svc:55558"
   log_correlation:
     enabled: true
   tracing:
