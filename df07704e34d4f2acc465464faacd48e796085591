@@ -117,6 +117,30 @@
       },
       "revId": "df07704e34d4f2acc465464faacd48e796085591",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da795d8f_eeee9512",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-05T18:34:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "79dcfc45_ad0f4e26",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 28
+      },
+      "revId": "df07704e34d4f2acc465464faacd48e796085591",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }

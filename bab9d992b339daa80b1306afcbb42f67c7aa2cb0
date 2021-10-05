@@ -54,6 +54,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc6d68f9_f7b7a9db",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-05T18:34:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "733e2c19_9ecb9de6",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "295bc4df_4653ff09",
@@ -85,6 +103,24 @@
       "side": 1,
       "message": "ping",
       "parentUuid": "295bc4df_4653ff09",
+      "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de8d1d6a_09909f9c",
+        "filename": "voltha-adapter-openonu/templates/openonu-svc.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-05T18:34:00Z",
+      "side": 1,
+      "message": "there is no need to expose the adapter\u0027s endpoint outside the cluster",
+      "parentUuid": "8a0ca0cb_b5500e6a",
       "revId": "bab9d992b339daa80b1306afcbb42f67c7aa2cb0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
