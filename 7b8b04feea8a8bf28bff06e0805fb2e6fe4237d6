@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ce56697_b90f4188",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000042
+      },
+      "writtenOn": "2021-10-06T10:41:59Z",
+      "side": 1,
+      "message": "This includes more changes. ONOS resources limit and other changes from HungWei. It should be ok -please double check",
+      "revId": "7b8b04feea8a8bf28bff06e0805fb2e6fe4237d6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
