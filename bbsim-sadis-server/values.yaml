@@ -25,7 +25,7 @@ replicas: 1
 
 bbsim_sadis_port: 50074
 
-serviceAccountName: ~
+serviceAccountName: bbsim-sadis-server
 
 images:
   bbsim_sadis_server:

@@ -12,16 +12,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
+apiVersion: "v1"
+kind: "ServiceAccount"
+metadata:
+  name: "{{ .Values.serviceAccountName }}"
+  namespace: {{ .Release.Namespace | quote }}
+---
+apiVersion: "rbac.authorization.k8s.io/v1"
+kind: ClusterRole
+metadata:
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}-pod-svc-reader"
+  namespace: {{ .Release.Namespace | quote }}
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods
+      - services
+    verbs:
+      - get
+      - list
+      - watch
+---
 apiVersion: "rbac.authorization.k8s.io/v1"
 kind: "ClusterRoleBinding"
 metadata:
-  name: "{{ .Release.Name }}-pod-svc-reader-binding"
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}-pod-svc-reader-binding"
   namespace: {{ .Release.Namespace | quote }}
 subjects:
   - kind: "ServiceAccount"
-    name: "{{ .Release.Name }}-service-account"
+    name: "{{ .Values.serviceAccountName }}"
     namespace: {{ .Release.Namespace | quote }}
 roleRef:
     kind: "ClusterRole"
-    name: "{{ .Release.Name }}-pod-svc-reader"
+    name: "{{ .Release.Name }}-{{ .Chart.Name }}-pod-svc-reader"
     apiGroup: "rbac.authorization.k8s.io"
