@@ -36,7 +36,7 @@ spec:
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     spec:
-      serviceAccountName: {{ default (printf "%s-%s" .Release.Name "service-account") .Values.serviceAccountName | quote }}
+      serviceAccountName: {{ .Values.serviceAccountName | quote }}
       containers:
         - name: "sadis"
           image: "{{ tpl .Values.images.bbsim_sadis_server.registry . }}{{ tpl .Values.images.bbsim_sadis_server.repository . }}:{{ tpl ( tpl .Values.images.bbsim_sadis_server.tag . ) . }}"
@@ -46,12 +46,3 @@ spec:
             - "-log_level={{.Values.global.log_level}}"
             - "-log_format={{.Values.global.log_format}}"
             - "-bbsim_sadis_port={{.Values.bbsim_sadis_port}}"
-          volumeMounts:
-            - name: kube-config-volume
-              mountPath: /etc/kube
-      volumes:
-        - name: kube-config-volume
-          configMap:
-            # Provide the name of the ConfigMap containing the files you want
-            # to add to the container
-            name: kube-config

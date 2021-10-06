@@ -37,8 +37,8 @@ dependencies:
     version: 0.1.20
     condition: onos-classic.enabled
   - name: bbsim-sadis-server
-    repository: https://charts.opencord.org
-    version: 0.2.0
+    repository: file://../bbsim-sadis-server
+    version: 0.2.1
     condition: bbsim-sadis-server.enabled
   - name: etcd
     repository: https://charts.bitnami.com/bitnami

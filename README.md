@@ -30,18 +30,6 @@ helm repo add onf https://charts.opencord.org
 helm repo update
 ```
 
-#### Load the kubernetes config in the cluster
-
-*This is only required if you will deploy `bbsim-sadis-server`*
-
-```
-kubectl create namespace infra
-kubectl create configmap -n infra kube-config "--from-file=kube_config=$KUBECONFIG"
-```
-*If the `kubectl create namespace infra` outputs `Error from server (AlreadyExists): namespaces "infra" already exists`
-that is fine and you can proceed. That output means that somebody already deployed in that cluster and created the
-`infra` namespace.*
-
 ### Installing VOLTHA infrastructure
 
 VOLTHA relies to a set of infrastructure components (ONOS, Kafka, ETCD, ...) that
