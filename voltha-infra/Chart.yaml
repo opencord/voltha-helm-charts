@@ -34,7 +34,7 @@ version: 2.9.5
 dependencies:
   - name: onos-classic
     repository: https://charts.onosproject.org
-    version: 0.1.20
+    version: 0.1.23
     condition: onos-classic.enabled
   - name: bbsim-sadis-server
     repository: https://charts.opencord.org
