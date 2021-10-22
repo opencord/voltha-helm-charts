@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42a7a7de_6f29a54a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-10-22T23:39:40Z",
+      "side": 1,
+      "message": "seems quite flaky to me, what happens if the adapter take longer than 30 seconds?",
+      "revId": "f8ac4035aee76d1fce02b73e118981eba92e2022",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
