@@ -27,8 +27,8 @@ global:
   image_tag: ~
   image_pullPolicy: "Always"
   rw_core:
-    rpc_timeout: "10s"
-    internal_timeout: "10s"
+    rpc_timeout: "30s"
+    internal_timeout: "30s"
   # Configure Log Correlation
   log_correlation:
     enabled: true
