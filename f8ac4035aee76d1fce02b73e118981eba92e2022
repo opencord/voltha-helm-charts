@@ -16,6 +16,24 @@
       "message": "seems quite flaky to me, what happens if the adapter take longer than 30 seconds?",
       "revId": "f8ac4035aee76d1fce02b73e118981eba92e2022",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5af1106c_35c98ddd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-10-22T23:53:51Z",
+      "side": 1,
+      "message": "A very valid point. I could be wrong, but 10s was like a border line in the worst case with each adapter having 5s monitor interval and at most it could take 10s (5s from each adapter). So even 15s timeout could work.",
+      "parentUuid": "42a7a7de_6f29a54a",
+      "revId": "f8ac4035aee76d1fce02b73e118981eba92e2022",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
