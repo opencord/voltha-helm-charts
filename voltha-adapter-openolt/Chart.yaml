@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-openolt"
-version: "2.9.7"
+version: "2.9.8"
 description: "A Helm chart for Voltha OpenOLT Adapter"
 keywords:
   - "onf"
@@ -33,4 +33,4 @@ maintainers:
 
 # appVersion refers to multiple components with potentially different
 # container image versions.
-appVersion: "3.5.7"
+appVersion: "3.5.8"
