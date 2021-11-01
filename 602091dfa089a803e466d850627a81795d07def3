@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9db1f02a_c2b8360f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-11-01T19:55:25Z",
+      "side": 1,
+      "message": "https://gerrit.opencord.org/c/voltha-openolt-adapter/+/28776 has to merge first",
+      "revId": "602091dfa089a803e466d850627a81795d07def3",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
