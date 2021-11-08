@@ -93,6 +93,7 @@ spec:
             - "--banner"
             - "--kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}"
             - "--rpc_timeout={{ tpl .Values.rw_core.rpc_timeout . }}"
+            - "--flow_timeout={{ tpl .Values.rw_core.flow_timeout . }}"
             - "--internal_timeout={{ tpl .Values.rw_core.internal_timeout . }}"
             - "--event_topic={{ .Values.rw_core.topics.event_topic }}"
             - "--log_level={{ $log_level }}"
