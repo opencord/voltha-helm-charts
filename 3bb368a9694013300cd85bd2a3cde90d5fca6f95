@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a7d22b5_6d43d347",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-11-10T15:43:04Z",
+      "side": 1,
+      "message": "please update according to: https://gerrit.opencord.org/c/voltha-openolt-adapter/+/29018/1/VERSION",
+      "revId": "3bb368a9694013300cd85bd2a3cde90d5fca6f95",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
