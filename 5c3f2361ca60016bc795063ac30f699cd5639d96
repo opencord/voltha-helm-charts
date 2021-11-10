@@ -16,6 +16,23 @@
       "message": "recheck\n",
       "revId": "5c3f2361ca60016bc795063ac30f699cd5639d96",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f0d612b_d8f0c462",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-11-10T11:45:20Z",
+      "side": 1,
+      "message": "please update the versions of openolt to 4.1.0 and openonu to 2.0.2 and all the respective stack chart",
+      "revId": "5c3f2361ca60016bc795063ac30f699cd5639d96",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
