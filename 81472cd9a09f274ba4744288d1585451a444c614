@@ -1,0 +1,8 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Matteo Scandolo <teo@opennetworking.org>
+Code-Review+2: Andrea Campanella <andrea@opennetworking.org>
+Submitted-by: Andrea Campanella <andrea@opennetworking.org>
+Submitted-at: Thu, 11 Nov 2021 14:55:43 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/28945
+Project: voltha-helm-charts
+Branch: refs/heads/master
