@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "602dbd4f_ab5b31e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2021-11-11T12:13:56Z",
+      "side": 1,
+      "message": "verified here: https://jenkins.opencord.org/view/All%20Jobs/job/periodic-voltha-multiple-olts-openonu-go-test-bbsim-2.8/134",
+      "revId": "fe41c2896e3bd3167fbf2a54bfac811d5543858d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
