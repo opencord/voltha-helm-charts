@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db100284_917d6867",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2021-11-15T18:51:44Z",
+      "side": 1,
+      "message": "Changes look good. Let\u0027s verify once on the hw before we merge this.",
+      "revId": "6f9653ea2eac296580351a429c3ffc4037af7d8d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
