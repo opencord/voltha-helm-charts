@@ -104,6 +104,7 @@ allowed_onu_vendors:
   - ADTN
   - ARCA
   - AVMG
+  - ZYWN
 
 # Expose the golang pprof webserver, if enabled
 profiler:
