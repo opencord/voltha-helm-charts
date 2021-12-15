@@ -56,6 +56,7 @@ onos-classic:
     -XX:-UseContainerSupport
     -Dkaraf.log.console=INFO
     -Dds.lock.timeout.milliseconds=10000
+    -Dlog4j2.formatMsgNoLookups=true
   atomix:
     replicas: 0
     persistence:
