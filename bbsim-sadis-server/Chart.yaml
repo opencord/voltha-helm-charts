@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "bbsim-sadis-server"
-version: "0.2.2"
+version: "0.2.3"
 description: "A Helm chart for Voltha BBSIM sadis server"
 keywords:
   - "onf"
@@ -32,4 +32,4 @@ maintainers:
 
 # appVersion refers to multiple components with potentially different
 # container image versions.
-appVersion: "0.3.1"
+appVersion: "0.3.2"
