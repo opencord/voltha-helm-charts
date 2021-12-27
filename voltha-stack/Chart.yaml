@@ -27,7 +27,7 @@ maintainers:
     url: "https://www.opennetworking.org"
 name: voltha-stack
 
-appVersion: "2.9-dev"
+appVersion: "2.9"
 version: 2.9.15
 
 dependencies:
