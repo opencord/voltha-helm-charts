@@ -22,6 +22,30 @@
       },
       "revId": "fe2b938d155632f90462e584d27e9b3bce761feb",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efe7efd4_c9ea1df0",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2022-01-03T14:09:53Z",
+      "side": 1,
+      "message": "Saw the version in repo now. Pls ignore.",
+      "parentUuid": "40cd7f1f_e9c6b7f3",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 19
+      },
+      "revId": "fe2b938d155632f90462e584d27e9b3bce761feb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
