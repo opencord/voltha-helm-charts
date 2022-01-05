@@ -239,6 +239,7 @@ if [ "$HOSTARCH" == "x86_64" ]; then
     HOSTARCH="amd64"
 fi
 sudo wget https://github.com/opencord/voltctl/releases/download/v1.3.1/voltctl-1.3.1-$HOSTOS-$HOSTARCH -O /usr/local/bin/voltctl
+sudo chmod +x /usr/local/bin/voltctl
 source <(voltctl completion bash)
 ```
 
@@ -479,33 +480,11 @@ If you are using the `bbsim-sadis-server` component as well then remember to rem
 kubectl delete cm -n infra kube-config
 ```
 
-### Upgrade a component
+## Develop and test for VOLTHA
 
 > NOTE that this section is intended for development purposes, it's not a guide for in service software upgrade.
 
-If you want to upgrade a component within a VOLTHA stack you can use the same `helm upgrade` command as per the
-installation guide while providing a new image for one of the component, eg:
-
-```shell
-helm upgrade --install --create-namespace \
-  -n voltha voltha onf/voltha-stack \
-  --set global.stack_name=voltha \
-  --set voltha_infra_name=voltha-infra \
-  --set voltha_infra_namespace=infra \
-  --set voltha-adapter-openonu.images.adapter_open_onu_go.repository=voltha/voltha-openonu-adapter-go \
-  --set voltha-adapter-openonu.images.adapter_open_onu_go.tag=test
-```
-
-If as part of your development process you have published a new image with the same tag you can force it's download simply
-by restarting the pod, for example:
-
-```shell
-kubectl delete pod -n voltha $(kubectl get pods -n voltha | grep openonu | awk '{print $1}')
-```
-
-> In order for this to work the `imagePullPolicy` has to be set to `Always`.
-
-### Develop with latest code
+### Develop with latest (master) code
 
 The voltha-infra and voltha-stack charts pull the referenced version of every component, if your charts are up to date
 that will be the latest released one.
@@ -521,6 +500,62 @@ helm upgrade --install --create-namespace \
 ```
 After the feature you are working on is released by modifying the `VERSION` file and removing `-dev` you
 can remove the `dev-values.yaml` file from your helm command.
+
+### Build a custom container
+
+When you have made a change to a component in VOLTHA and you need to test it the first step is to build a custom 
+docker image. Every VOLTHA component has a `make` target called `docker-build` that builds the docker image with the 
+code in the local folder, e.g.:
+```shell
+DOCKER_REGISTRY="voltha-test/" DOCKER_TAG="custom-feature" make docker-build
+```
+this generates the docker image for that repo, e.g. `voltha-test/voltha-openonu-adapter-go:custom-feature`
+
+### (Up)load the custom container
+
+Now that you have the custom image with your changes you have to make the image available to your k8s cluster.
+
+If you are developing locally please load the image into your cluster of choice via the specific command 
+(e.g. `kind load docker-image`).
+
+If your cluster is remote, you want to share your image with others or test on Jenkins 
+every VOLTHA component has a `make` target called `docker-push` that pushes the docker image to the registry 
+you specify, e.g. 
+```shell
+DOCKER_REGISTRY="voltha-test/" DOCKER_TAG="custom-feature" make docker-push
+```
+
+### Upgrade a component or use a custom image
+
+If you want to upgrade a component within a VOLTHA stack or use the custom built image you just created, 
+you can use the same `helm upgrade` command as per the
+installation guide while providing a new image for one of the component, via custom helm flags. 
+The following is an example for the openonu adapter go with the image we built during previous steps:
+```shell
+--set voltha-adapter-openonu.images.adapter_open_onu_go.repository=voltha-test/voltha-openonu-adapter-go \
+--set voltha-adapter-openonu.images.adapter_open_onu_go.tag=custom-feature
+```
+
+A full command looks like the following:
+
+```shell
+helm upgrade --install --create-namespace \
+  -n voltha voltha onf/voltha-stack \
+  --set global.stack_name=voltha \
+  --set voltha_infra_name=voltha-infra \
+  --set voltha_infra_namespace=infra \
+  --set voltha-adapter-openonu.images.adapter_open_onu_go.repository=voltha-test/voltha-openonu-adapter-go \
+  --set voltha-adapter-openonu.images.adapter_open_onu_go.tag=custom-feature
+```
+
+If as part of your development process you have published a new image with the same tag you can force its download simply
+by restarting the pod, for example:
+
+```shell
+kubectl delete pod -n voltha $(kubectl get pods -n voltha | grep openonu | awk '{print $1}')
+```
+
+> In order for this to work the `imagePullPolicy` has to be set to `Always`.
 
 ### Test changes to a chart
 
