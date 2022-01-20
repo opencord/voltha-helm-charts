@@ -17,4 +17,4 @@ description: Broadband Simulator
 icon: https://guide.opencord.org/logos/cord.svg
 apiVersion: v1
 version: 4.6.0-dev
-appVersion: 1.9.1
+appVersion: 1.10.0-dev

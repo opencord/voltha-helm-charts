@@ -79,6 +79,7 @@ spec:
             "-pon", "{{ .Values.pon }}",
             "-onu", "{{ .Values.onu }}",
             "-uni", "{{ .Values.uni }}",
+            "-pots", "{{ .Values.pots }}",
             "-bp_format", "{{ .Values.bp_format }}",
             "-oltRebootDelay", "{{ .Values.oltRebootDelay }}",
             "-logLevel", "{{ $log_level }}",
