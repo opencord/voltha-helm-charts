@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a57ed22a_049499f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-01-20T09:43:07Z",
+      "side": 1,
+      "message": "This should not be merged until https://gerrit.opencord.org/c/bbsim/+/30198 is merged",
+      "revId": "90badf04f343e5f970bd0cd0c3295795851e97ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
