@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae228f3c_24ab953f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-01-25T08:47:30Z",
+      "side": 1,
+      "message": "I\u0027m ok releasing the chart as well, next one should be 4.6.1-dev",
+      "revId": "ffb9da59178441b6d19afdb6d17b9f1aae20a04e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
