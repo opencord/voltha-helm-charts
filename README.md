@@ -238,7 +238,7 @@ HOSTARCH="$(uname -m | tr "[:upper:]" "[:lower:"])"
 if [ "$HOSTARCH" == "x86_64" ]; then
     HOSTARCH="amd64"
 fi
-sudo wget https://github.com/opencord/voltctl/releases/download/v1.3.1/voltctl-1.3.1-$HOSTOS-$HOSTARCH -O /usr/local/bin/voltctl
+sudo wget https://github.com/opencord/voltctl/releases/download/v1.7.4/voltctl-1.7.4-$HOSTOS-$HOSTARCH -O /usr/local/bin/voltctl
 sudo chmod +x /usr/local/bin/voltctl
 source <(voltctl completion bash)
 ```
