@@ -43,6 +43,7 @@ onos-classic:
     - org.opencord.mcast
     - org.opencord.olt
     - org.opencord.aaa
+    - org.opencord.maclearner
   java_opts: >
     -XX:+UseG1GC
     -XX:MaxGCPauseMillis=200
