@@ -1,0 +1,95 @@
+global:
+  stack_name: voltha
+  voltha_infra_name: voltha-infra
+  voltha_infra_namespace: default
+  log_level: DEBUG
+  image_tag: master
+  image_pullPolicy: "Always"
+etcd:
+  ingress:
+    enabled: false
+  statefulset:
+    replicaCount: 1
+voltha:
+  securityContext:
+    enabled: false
+  ingress:
+    enabled: true
+    enableVirtualHosts: true
+  fullHostnameOverride: voltha.tedx.dev
+#  images:
+#    rw_core:
+#      # repository: matteoscandolo/voltha-rw-core
+#      # tag: grpc
+#      repository: volthacore/voltha-rw-core
+#      tag: grpc_v1
+#    ofagent:
+#      repository: matteoscandolo/voltha-ofagent-go
+#      tag: grpc
+voltha-adapter-openolt:
+  adapter_open_olt:
+    endpoints:
+      core_endpoint: voltha-voltha-core.default.svc:55558
+      adapter_endpoint: voltha-voltha-adapter-openolt-api.default.svc:50060
+  images:
+    adapter_open_olt:
+      repository: gcgirish/voltha-openolt-adapter
+      tag: onu_single_ic
+#      repository: volthacore/voltha-openolt-adapter
+#      tag: grpc_v1
+voltha-adapter-openonu:
+  adapter_open_onu:
+    omci_timeout: 1s
+    endpoints:
+      core_endpoint: voltha-voltha-core.default.svc:55558
+      adapter_endpoint: voltha-voltha-adapter-openonu-api.default.svc:50060
+    uni_port_mask: "0x0001"
+  images:
+    adapter_open_onu_go:
+      repository: gcgirish/voltha-openonu-adapter-go
+      tag: onu_single_ic
+onu: 1
+pon: 1
+# omci_response_rate: 9
+images:
+  bbsim:
+    repository: gcgirish/bbsim
+    tag: onu_single_ic
+onos-classic:
+  replicas: 1
+  atomix:
+    replicas: 0
+  image:
+    tag: master
+  onosSshPort: 30115
+  onosApiPort: 30120
+  ports:
+    - name: openflow
+      port: 6653
+    - name: ovsdb
+      port: 6640
+    - name: east-west
+      port: 9876
+    - name: cli
+      port: 8101
+    - name: ui
+      port: 8181
+    - name: debugger
+      port: 5005
+  apps:
+    - org.onosproject.lldpprovider
+    - org.onosproject.openflow-base
+    - org.onosproject.gui2
+    - org.onosproject.drivers
+    - org.opencord.sadis
+  java_opts: >
+    -XX:+UseG1GC
+    -XX:MaxGCPauseMillis=200
+    -XX:-UseContainerSupport
+    -Dkaraf.log.console=INFO
+    -Dds.lock.timeout.milliseconds=10000
+    -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+  config:
+    reconcile_mode: true
+    componentConfig:
+      "org.opencord.olt.impl.OltMeterService": '{"deleteMeters": "false"}'
