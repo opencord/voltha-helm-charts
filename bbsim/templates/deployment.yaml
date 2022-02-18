@@ -88,6 +88,9 @@ spec:
             "-rest_api_address", ":{{ .Values.bbsim_rest_port }}",
             "-ca", "{{ .Values.controlledActivation }}",
             "-omci_response_rate", "{{ .Values.omci_response_rate }}",
+            {{ if .Values.injectOmciUnknownAttributes }}
+            "-injectOmciUnknownAttributes",
+            {{ end -}}
             {{ if .Values.enableEvents -}}
             "-enableEvents",
             "-kafkaAddress", "{{ .Values.kafkaAddress }}",
