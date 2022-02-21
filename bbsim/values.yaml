@@ -25,6 +25,7 @@ global:
 # CLI switches passed to bbsim
 olt_id: 0
 nni: 1
+nni_speed: 10000 # in Mbps (= 1Gbps)
 pon: 1
 onu: 1
 uni: 4

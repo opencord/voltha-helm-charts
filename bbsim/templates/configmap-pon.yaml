@@ -1,4 +1,5 @@
-# Copyright 2018-present Open Networking Foundation
+---
+# Copyright 2022-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: bbsim
-description: Broadband Simulator
-icon: https://guide.opencord.org/logos/cord.svg
+# This configmap mounts a yaml file in the container to describe the pon ports configuration
 apiVersion: v1
-version: 4.7.0
-appVersion: 1.11.0
+kind: ConfigMap
+metadata:
+  name: bbsim-pon-ports-{{ .Values.olt_id }}
+data:
+  bbsimPonPortsConfig: |
+{{ toYaml .Values.ponPortsConfig | indent 4 }}
