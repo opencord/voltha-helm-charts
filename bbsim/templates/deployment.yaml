@@ -12,7 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-{{- $log_level := tpl .Values.log_level . }}
+{{- $log_level := tpl .Values.log_level . | lower }}
 
 apiVersion: apps/v1
 kind: Deployment
@@ -76,6 +76,7 @@ spec:
             "-dmi_server_address", ":{{ .Values.bbsim_dmi_port}}",
             "-olt_id", "{{ .Values.olt_id }}",
             "-nni", "{{ .Values.nni }}",
+            "-nni_speed", "{{ .Values.nni_speed }}",
             "-pon", "{{ .Values.pon }}",
             "-onu", "{{ .Values.onu }}",
             "-uni", "{{ .Values.uni }}",
@@ -85,6 +86,9 @@ spec:
             "-logLevel", "{{ $log_level }}",
             "-delay", "{{ .Values.delay }}",
             "-services", "configs/services.yaml",
+            {{ if .Values.ponPortsConfig -}}
+            "-pon_port_config_file", "configs/pon-config.yaml",
+            {{ end -}}
             "-rest_api_address", ":{{ .Values.bbsim_rest_port }}",
             "-ca", "{{ .Values.controlledActivation }}",
             "-omci_response_rate", "{{ .Values.omci_response_rate }}",
@@ -134,6 +138,9 @@ spec:
             - name: bbsim-services-config
               mountPath: /app/configs/services.yaml
               subPath: services.yaml
+            - name: bbsim-pon-ports-config
+              mountPath: /app/configs/pon-config.yaml
+              subPath: pon-config.yaml
       volumes:
         - name: bbsim-services-config
           configMap:
@@ -141,6 +148,12 @@ spec:
             items:
               - key: bbsimServicesConfig
                 path: services.yaml
+        - name: bbsim-pon-ports-config
+          configMap:
+            name: bbsim-pon-ports-{{ .Values.olt_id }}
+            items:
+              - key: bbsimPonPortsConfig
+                path: pon-config.yaml
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
