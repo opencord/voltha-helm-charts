@@ -16,6 +16,23 @@
       "message": "there is no need to change the version on the 2.10 release please just cane the parameter",
       "revId": "8d587698e2a2d9eceeebf0cdca2f4c8845efa774",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0963235a_e901ee21",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2022-02-23T09:56:35Z",
+      "side": 1,
+      "message": "Is there a rule of thumb for when to change the chart version and when not to?",
+      "revId": "8d587698e2a2d9eceeebf0cdca2f4c8845efa774",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
