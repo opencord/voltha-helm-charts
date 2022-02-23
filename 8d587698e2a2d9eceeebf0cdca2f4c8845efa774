@@ -33,6 +33,24 @@
       "message": "Is there a rule of thumb for when to change the chart version and when not to?",
       "revId": "8d587698e2a2d9eceeebf0cdca2f4c8845efa774",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "662620f8_854ab77d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-02-23T10:03:12Z",
+      "side": 1,
+      "message": "we usually do it for new/deprecated input parameters/API changes",
+      "parentUuid": "0963235a_e901ee21",
+      "revId": "8d587698e2a2d9eceeebf0cdca2f4c8845efa774",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
