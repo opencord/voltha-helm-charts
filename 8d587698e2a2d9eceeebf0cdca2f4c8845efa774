@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d3b2907_f389c7cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-02-23T09:47:23Z",
+      "side": 1,
+      "message": "there is no need to change the version on the 2.10 release please just cane the parameter",
+      "revId": "8d587698e2a2d9eceeebf0cdca2f4c8845efa774",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
