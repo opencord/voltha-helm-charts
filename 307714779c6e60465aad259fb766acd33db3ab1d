@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "555312da_886e3cfe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-02-23T10:29:27Z",
+      "side": 1,
+      "message": "the chart versione needs a 2.10.0-dev1 version to pass ",
+      "revId": "307714779c6e60465aad259fb766acd33db3ab1d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
