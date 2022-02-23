@@ -33,6 +33,24 @@
       "message": "@Andrea: Does the test then need to be adjusted?\n\"Changes to chart but no version update in \u0027voltha-adapter-openonu\u0027\"",
       "revId": "307714779c6e60465aad259fb766acd33db3ab1d",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47720947_68190184",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000671
+      },
+      "writtenOn": "2022-02-23T10:33:20Z",
+      "side": 1,
+      "message": "Only in open-onu chart, or in the stack chart too?",
+      "parentUuid": "555312da_886e3cfe",
+      "revId": "307714779c6e60465aad259fb766acd33db3ab1d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
