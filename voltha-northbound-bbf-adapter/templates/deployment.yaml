@@ -1,0 +1,137 @@
+# Copyright 2022-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+{{- $log_level := tpl .Values.voltha_northbound_bbf_adapter.log_level . }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ template "fullname" . }}"
+  namespace: {{ .Release.Namespace }}
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "openolt_deployment_labels") }}
+  labels:
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+    {{- if hasKey .Values "openolt_deployment_labels" }}
+    {{- range $key, $val := .Values.openolt_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+  {{- end }}
+spec:
+  selector:
+    matchLabels:
+      app: bbf-adapter
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      namespace: {{ .Release.Namespace }}
+      labels:
+        app: bbf-adapter
+        release: {{ .Release.Name }}
+        app.kubernetes.io/name: "bbf-adapter"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "adapter"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/stack: "{{ .Values.global.stack_name }}"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+        {{- if hasKey .Values "openolt_pod_labels" }}
+        {{- range $key, $val := .Values.openolt_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+    spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
+      affinity:
+        {{- if .Values.nodeAffinityConfig.enabled }}
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "{{ .Values.nodeAffinityConfig.node_label_key }}"
+                operator: In
+                values:
+                - "{{ .Values.nodeAffinityConfig.node_label_value }}"
+        {{- end }}
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            {{- if .Values.scheduleRules.preferStackPodsOnSameNode }}
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/stack
+                      operator: In
+                      values:
+                        - {{ .Values.global.stack_name }}
+              weight: 100
+            {{- end }}
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            {{- if .Values.scheduleRules.preferStacksOnDifferentNodes }}
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values:
+                        - bbf-adapter
+              weight: 100
+            {{- end }}
+      containers:
+        - name: bbf-adapter
+          image: '{{ tpl .Values.images.voltha_northbound_bbf_adapter.registry . }}{{ tpl .Values.images.voltha_northbound_bbf_adapter.repository . }}:{{ tpl ( tpl .Values.images.voltha_northbound_bbf_adapter.tag . ) . }}'
+          imagePullPolicy: {{ tpl .Values.images.voltha_northbound_bbf_adapter.pullPolicy . }}
+          env:
+            - name: COMPONENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['app.kubernetes.io/name']
+          args:
+            - "/app/bbf-adapter"
+            - "--log_level={{ $log_level }}"
+            - "--probe_address=:8080"
+            - "--trace_enabled={{ .Values.global.tracing.enabled }}"
+            - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
+            - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
+          {{- if .Values.securityContext.enabled }}
+          securityContext:
+            allowPrivilegeEscalation: false
+          {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: {{ .Values.probe.liveness.initial_delay_seconds }}
+            periodSeconds: {{ .Values.probe.liveness.period_seconds }}
+          readinessProbe:
+            httpGet:
+              path: /readz
+              port: 8080
+            initialDelaySeconds: {{ .Values.probe.readiness.initial_delay_seconds }}
+            periodSeconds: {{ .Values.probe.readiness.period_seconds }}
