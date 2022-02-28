@@ -1,0 +1,73 @@
+# Copyright 2022-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+---
+nameOverride: ~
+fullNameOverride: ~
+
+# Default overrides
+global:
+  log_level: "WARN"
+  image_registry: ""
+  image_tag: ~
+  image_org: "voltha/"
+  image_pullPolicy: "Always"
+
+  # Configure Log Correlation
+  log_correlation:
+    enabled: true
+
+  # Configure Tracing
+  tracing:
+    enabled: true
+
+# Probe values
+probe:
+  liveness:
+    initial_delay_seconds: 3
+    period_seconds: 3
+  readiness:
+    initial_delay_seconds: 3
+    period_seconds: 3
+
+# Default security context under which the containers run
+securityContext:
+  enabled: true
+  fsGroup: 1001
+  runAsUser: 1001
+  runAsGroup: 1001
+
+# Define connectivity to required services
+services:
+  # Define Tracing Agent connection details
+  tracing_agent:
+    address: jaeger-agent:6831
+
+# Define the replica count for everything
+replicas:
+  bbf_adapter: 1
+
+voltha_northbound_bbf_adapter:
+  log_level: '{{ .Values.global.log_level }}'
+
+images:
+  voltha_northbound_bbf_adapter:
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}voltha-northbound-bbf-adapter'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy | default "Always" }}'
+
+# Define scheduling rules for stack pods
+scheduleRules:
+  preferStackPodsOnSameNode: false
+  preferStacksOnDifferentNodes: false
