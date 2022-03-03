@@ -24,6 +24,30 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "378282e0_8da8fc31",
+        "filename": "voltha-northbound-bbf-adapter/templates/deployment.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-03-03T10:44:34Z",
+      "side": 1,
+      "message": "Removed them since they are not needed here, as we discussed.",
+      "parentUuid": "f32deed8_8ecb1bae",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 18
+      },
+      "revId": "bd2fa870e98725137bc67390d2e762485f2bf7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9743bdf7_bd93d797",
@@ -47,6 +71,30 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "853755b9_d717696e",
+        "filename": "voltha-northbound-bbf-adapter/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-03-03T10:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9743bdf7_bd93d797",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "bd2fa870e98725137bc67390d2e762485f2bf7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7e2453c_3a8d0910",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-03-01T18:17:14Z",
       "side": 1,
       "message": "are these used?",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 18
+      },
+      "revId": "bd2fa870e98725137bc67390d2e762485f2bf7ce",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afe391ca_7b92c2f4",
+        "filename": "voltha-northbound-bbf-adapter/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-03-03T10:44:34Z",
+      "side": 1,
+      "message": "Used a better name for the value and added it to the deployment.",
+      "parentUuid": "d7e2453c_3a8d0910",
       "range": {
         "startLine": 62,
         "startChar": 0,
