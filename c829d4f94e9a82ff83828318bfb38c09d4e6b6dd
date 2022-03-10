@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5c3445b_a3274153",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-03-10T09:04:00Z",
+      "side": 1,
+      "message": "tested here: https://jenkins.opencord.org/view/VOLTHA-2.X-Tests/job/periodic-voltha-test-bbsim/1247/robot/report/bbsim-failurescenarios/log.html and https://jenkins.opencord.org/view/VOLTHA-2.X-Tests/job/periodic-voltha-openonu-go-test-bbsim/958/ failures are unrelated to the update",
+      "revId": "c829d4f94e9a82ff83828318bfb38c09d4e6b6dd",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
