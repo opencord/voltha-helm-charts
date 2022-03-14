@@ -77,12 +77,10 @@ spec:
                 fieldRef:
                   fieldPath: metadata.labels['app.kubernetes.io/name']
           args:
-            - "/app/bbf-adapter"
-            - "--log_level={{ $log_level }}"
-            - "--probe_address=:8080"
-            - "--trace_enabled={{ .Values.global.tracing.enabled }}"
-            - "--trace_agent_address={{ tpl .Values.services.tracing_agent.address . }}"
-            - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
+            - "/startup/startup.sh" #Defined in configmap-startup.yaml
+          ports:
+            - containerPort: 830
+              name: netopeer2-ssh
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
@@ -99,3 +97,11 @@ spec:
               port: 8080
             initialDelaySeconds: {{ .Values.probe.readiness.initial_delay_seconds }}
             periodSeconds: {{ .Values.probe.readiness.period_seconds }}
+          volumeMounts:
+            - name: startup-script-volume
+              mountPath: /startup/
+      volumes:
+        - name: startup-script-volume
+          configMap:
+            name: bbf-adapter-startup
+            defaultMode: 0550

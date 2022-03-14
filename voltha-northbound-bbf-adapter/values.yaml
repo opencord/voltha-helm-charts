@@ -22,6 +22,10 @@ global:
   image_tag: ~
   image_org: "voltha/"
   image_pullPolicy: "Always"
+  voltha_infra_name: "voltha-infra"
+  voltha_infra_namespace: "infra"
+  voltha_stack_name: "voltha"
+  voltha_stack_namespace: "voltha"
 
   # Configure Log Correlation
   log_correlation:
@@ -42,7 +46,7 @@ probe:
 
 # Default security context under which the containers run
 securityContext:
-  enabled: true
+  enabled: false
   fsGroup: 1001
   runAsUser: 1001
   runAsGroup: 1001
@@ -59,6 +63,12 @@ replicas:
 
 voltha_northbound_bbf_adapter:
   log_level: '{{ .Values.global.log_level }}'
+  voltha_nbi_port: 55555
+  tls_enabled: false
+  tls_verify: false
+  onos_rest_port: 8181
+  onos_user: onos
+  onos_pass: rocks
 
 images:
   voltha_northbound_bbf_adapter:
