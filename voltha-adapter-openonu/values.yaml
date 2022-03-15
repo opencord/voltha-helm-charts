@@ -31,7 +31,7 @@ global:
   # timeout for ONU reconciling
   max_timeout_reconciling: "10s"
   # timeout for OMCI channel
-  omci_timeout: "1s"
+  omci_timeout: "3s"
   # kv store timeout
   adapter_open_onu:
     timeout: "5s"
