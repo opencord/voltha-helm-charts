@@ -264,11 +264,27 @@ helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10 -f examples/dt
 helm upgrade --install --create-namespace   -n voltha voltha onf/voltha-stack   --set global.stack_name=voltha   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
+**DT-FTTB**
+
+```shell
+helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/dt-fttb-values.yaml
+helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10 -f examples/dt-fttb-values.yaml
+helm upgrade --install --create-namespace   -n voltha voltha onf/voltha-stack   --set global.stack_name=voltha   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
+```
+
 **TT**
 
 ```shell
 helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/tt-values.yaml
 helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10 -f examples/tt-values.yaml
+helm upgrade --install --create-namespace   -n voltha voltha onf/voltha-stack   --set global.stack_name=voltha   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
+```
+
+**TT-MacLearner**
+
+```shell
+helm upgrade --install -n infra voltha-infra onf/voltha-infra -f examples/tt-maclearner-values.yaml
+helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10 -f examples/tt-maclearner-values.yaml
 helm upgrade --install --create-namespace   -n voltha voltha onf/voltha-stack   --set global.stack_name=voltha   --set voltha_infra_name=voltha-infra   --set voltha_infra_namespace=infra
 ```
 
