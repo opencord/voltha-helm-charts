@@ -30,6 +30,7 @@ pon: 1
 onu: 1
 uni: 4
 pots: 0
+nni_dhcp_trap_vid: 0
 injectOmciUnknownAttributes: false
 
 # time that BBSim should wait to emulate an hardware reboot
