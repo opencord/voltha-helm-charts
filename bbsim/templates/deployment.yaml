@@ -81,6 +81,7 @@ spec:
             "-onu", "{{ .Values.onu }}",
             "-uni", "{{ .Values.uni }}",
             "-pots", "{{ .Values.pots }}",
+            "-nni_dhcp_trap_vid", "{{ .Values.nni_dhcp_trap_vid }}",
             "-bp_format", "{{ .Values.bp_format }}",
             "-oltRebootDelay", "{{ .Values.oltRebootDelay }}",
             "-logLevel", "{{ $log_level }}",
