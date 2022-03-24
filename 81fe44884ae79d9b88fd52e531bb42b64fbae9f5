@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "842544bb_7b0841de",
+        "filename": "VERSION",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2022-03-24T08:46:47Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be 3.1.0 only?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "81fe44884ae79d9b88fd52e531bb42b64fbae9f5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85f7f9d7_276ef562",
+        "filename": "bbsim/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2022-03-24T08:46:47Z",
+      "side": 1,
+      "message": "This file can be removed from review.",
+      "revId": "81fe44884ae79d9b88fd52e531bb42b64fbae9f5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
