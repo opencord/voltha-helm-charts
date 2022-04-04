@@ -62,6 +62,7 @@ replicas:
   bbf_adapter: 1
 
 voltha_northbound_bbf_adapter:
+  log_netopeer2: false # If set to true netopeer2.log is created in the root of the container
   log_level: '{{ .Values.global.log_level }}'
   voltha_nbi_port: 55555
   tls_enabled: false
@@ -69,6 +70,7 @@ voltha_northbound_bbf_adapter:
   onos_rest_port: 8181
   onos_user: onos
   onos_pass: rocks
+  schema_mount_path: "/schema-mount.xml"
 
 images:
   voltha_northbound_bbf_adapter:
