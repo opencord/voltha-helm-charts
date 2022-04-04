@@ -21,9 +21,13 @@ metadata:
 data:
   startup.sh: |-
     #!/bin/sh
-
-    netopeer2-server
-
+    
+    {{- if .Values.voltha_northbound_bbf_adapter.log_netopeer2 }}
+    netopeer2-server -x {{ .Values.voltha_northbound_bbf_adapter.schema_mount_path }} -d -v3 > /netopeer2.log 2>&1 &
+    {{- else }}
+    netopeer2-server -x {{ .Values.voltha_northbound_bbf_adapter.schema_mount_path }}
+    {{- end }}
+    
     exec /app/bbf-adapter \
         --log_level={{ $log_level }} \
         --probe_address=:8080 \
@@ -35,4 +39,5 @@ data:
         --tls_verify={{ .Values.voltha_northbound_bbf_adapter.tls_verify }} \
         --onos_rest_endpoint={{ .Values.global.voltha_infra_name }}-onos-classic-hs.{{ .Values.global.voltha_infra_namespace }}.svc:{{ .Values.voltha_northbound_bbf_adapter.onos_rest_port }} \
         --onos_user={{ .Values.voltha_northbound_bbf_adapter.onos_user }} \
-        --onos_pass={{ .Values.voltha_northbound_bbf_adapter.onos_pass }}
+        --onos_pass={{ .Values.voltha_northbound_bbf_adapter.onos_pass }} \
+        --schema_mount_path={{ .Values.voltha_northbound_bbf_adapter.schema_mount_path }}
