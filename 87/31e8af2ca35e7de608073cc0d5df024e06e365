@@ -1,0 +1,7 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+2: Matteo Scandolo <matteo.scandolo@intel.com>
+Submitted-by: Matteo Scandolo <matteo.scandolo@intel.com>
+Submitted-at: Tue, 26 Apr 2022 17:20:36 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/32309
+Project: voltha-helm-charts
+Branch: refs/heads/master
