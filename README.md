@@ -346,7 +346,10 @@ voltctl configuration file (default `~/.volt/config`).
 The important settings are
 
 **NOTE:** _Note hostname and port will vary depending on how you deploy as
-well as how the Ingress controller is accessed from outside the cluster._
+well as how the Ingress controller is accessed from outside the cluster. 
+If you are deploying VOLTHA locally edit your `/etc/hosts` file adding at the end 
+the same hostname you specified in the `voltctl` config, 
+as an example `127.0.0.1 voltha.voltha.com`_
 
 - `--server`/`server` - the value of the external IP address of the ingress
 controller and the port on which it is listening (_ex:_ `localhost:443` or
