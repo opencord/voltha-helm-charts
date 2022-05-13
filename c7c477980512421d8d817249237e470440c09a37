@@ -16,6 +16,23 @@
       "message": "Patch depends on https://gerrit.opencord.org/c/bbsim/+/32468",
       "revId": "c7c477980512421d8d817249237e470440c09a37",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cc96f20_12864af3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-05-13T11:38:06Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "c7c477980512421d8d817249237e470440c09a37",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
