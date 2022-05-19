@@ -37,6 +37,8 @@ spec:
     matchLabels:
       app: adapter-open-onu
       release: {{ .Release.Name }}
+  strategy:
+    type: Recreate
   template:
     metadata:
       namespace: {{ .Release.Namespace }}

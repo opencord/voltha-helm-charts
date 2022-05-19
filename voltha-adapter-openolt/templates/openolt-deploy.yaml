@@ -36,6 +36,8 @@ spec:
     matchLabels:
       app: adapter-open-olt
       release: {{ .Release.Name }}
+  strategy:
+    type: Recreate
   template:
     metadata:
       namespace: {{ .Release.Namespace }}
