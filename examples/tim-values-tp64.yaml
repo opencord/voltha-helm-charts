@@ -1,0 +1,317 @@
+# Copyright 2020-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# override ONOS config
+onos-classic:
+  config:
+    netcfg: >
+      {
+        "devices" : {
+          "of:00000a0a0a0a0a0a" : {
+            "basic": {
+              "driver": "voltha"
+            },
+            "accessDevice": {
+              "uplink": 16777216,
+              "vlan": 4096
+            }
+          }
+        },
+        "apps" : {
+          "org.opencord.igmpproxy": {
+            "igmpproxy": {
+            "FastLeave": "true",
+            "LastQueryInterval": 1,
+            "MaxResp": 1,
+            "globalConnectPointMode": "true",
+            "globalConnectPoint": "of:00000a0a0a0a0a0a/16777216",
+            "enableIgmpProvisioning": "false",
+            "sourceDeviceAndPort": "of:00000a0a0a0a0a0a/16777216",
+            "outgoingIgmpWithV3":"false",
+            "PeriodicQuery":"true",
+            "outgoingIgmpVlanId":4096,
+            "outgoingIgmpInnerVlanId":101,
+            "igmpOnPodBasis": "false"
+            }
+          },
+         "org.opencord.sadis": {
+          "sadis": {
+            "integration": {
+              "cache": {
+                "enabled": false,
+                "maxsize": 50,
+                "ttl": "PT0m"
+              }
+            },
+            "entries": [
+              {
+                "id": "BBSIM_OLT_10",
+                "hardwareIdentifier": "0a:0a:0a:0a:0a:0a",
+                "ipAddress": "0.0.0.0",
+                "nasId": "BBSIM_OLT_10",
+                "uplinkPort": 16777216
+              },
+              {
+                "id": "BBSM000a0001-1",
+                "nasPortId": "BBSM000a0001-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  },
+                  {
+                  "ponCTag":101,
+                  "ponSTag":4096,
+                  "dsPonCTagPriority":5,
+                  "dsPonSTagPriority":5,
+                  "technologyProfileId":66,
+                  "serviceName":"MC"
+                  }
+                ]
+              },
+              {
+                "id": "BBSM000a0002-1",
+                "nasPortId": "BBSM000a0002-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              },
+              {
+                "id": "BBSM000a0003-1",
+                "nasPortId": "BBSM000a0003-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              },
+              {
+                "id": "BBSM000a0101-1",
+                "nasPortId": "BBSM000a0101-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              },
+              {
+                "id": "BBSM000a0102-1",
+                "nasPortId": "BBSM000a0102-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              },
+              {
+                "id": "BBSM000a0103-1",
+                "nasPortId": "BBSM000a0103-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              },
+              {
+                "id": "BBSIM_OLT_11",
+                "hardwareIdentifier": "0a:0a:0a:0a:0a:0b",
+                "ipAddress": "0.0.0.0",
+                "nasId": "BBSIM_OLT_11",
+                "uplinkPort": 16777216
+              },
+              {
+                "id": "BBSM000b0001-1",
+                "nasPortId": "BBSM000b0001-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              },
+              {
+                "id": "BBSM000b0101-1",
+                "nasPortId": "BBSM000b0101-1",
+                "circuitId": "",
+                "remoteId": "",
+                "uniTagList": [
+                  {
+                    "uniTagMatch": 835,
+                    "ponCTag": 100,
+                    "ponSTag": 4096,
+                    "technologyProfileId": 64,
+                    "upstreamBandwidthProfile": "User_Bandwidth1",
+                    "downstreamBandwidthProfile": "User_Bandwidth2",
+                    "isDhcpRequired": false,
+                    "isIgmpRequired": false,
+                    "isPppoeRequired": true,
+                    "serviceName": "hsia"
+                  }
+                ]
+              }
+            ]
+          },
+          "bandwidthprofile": {
+            "integration": {
+              "cache": {
+                "enabled": true,
+                "maxsize": 40,
+                "ttl": "PT1m"
+              }
+            },
+            "entries": [
+              {
+                "id": "User_Bandwidth1",
+                "air": 100000,
+                "cbs": 10000,
+                "cir": 30000,
+                "ebs": 1000,
+                "eir": 100000
+              },
+              {
+                "id": "User_Bandwidth2",
+                "air": 100000,
+                "cbs": 5000,
+                "cir": 100000,
+                "ebs": 5000,
+                "eir": 100000
+              },
+              {
+                "id": "Default",
+                "air": 100000,
+                "cbs": 30,
+                "cir": 600,
+                "ebs": 30,
+                "eir": 400
+              }
+            ]
+          }
+         }
+        }
+      }
+    componentConfig:
+      "org.opencord.olt.impl.OltFlowService": >
+        {
+          "enableDhcpOnNni": "false",
+          "enablePppoeOnNni": "true",
+          "defaultTechProfileId": "64",
+          "enableIgmpOnNni": "true",
+          "enableEapol": "false",
+          "enableDhcpV6": "false",
+          "enableDhcpV4": "false",
+          "enablePppoe": "true"
+        }
+
+
+
+# override BBSim config
+servicesConfig:
+  workflow: tim
+  services:
+    - name: hsia
+      uni_tag_match: 835
+      c_tag: 100
+      c_tag_allocation: shared
+      s_tag: 4096
+      s_tag_allocation: shared
+      needs_pppoe: true
+      tp_id: 64
+    - name: MC
+      uni_tag_match: 836
+      c_tag: 101
+      c_tag_allocation: shared
+      s_tag: 4096
+      s_tag_allocation: shared
+      tp_id: 64
+      ds_pon_c_tag_priority: 5
+      ds_pon_s_tag_priority: 5
+
+
