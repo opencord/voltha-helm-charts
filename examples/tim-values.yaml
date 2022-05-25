@@ -1,0 +1,98 @@
+# Copyright 2020-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# override ONOS config
+onos-classic:
+  config:
+    netcfg: >
+      {
+        "apps" : {
+          "org.opencord.igmpproxy" : {
+            "igmpproxy":{
+              "FastLeave":"true",
+              "LastQueryInterval":1,
+              "MaxResp":1,
+              "enableIgmpProvisioning":"false",
+              "globalConnectPointMode":"true",
+              "globalConnectPoint" : "of:0000000000000001/3",
+              "sourceDeviceAndPort":"of:0000000000000001/3",
+              "outgoingIgmpVlanId":4096,
+              "outgoingIgmpInnerVlanId":101,
+              "outgoingIgmpWithV3":"false",
+              "IgmpCos":5,
+              "IgmpUniCos":5,
+              "PeriodicQuery":"true",
+              "KeepAliveInterval":60,
+              "KeepAliveCount":5,
+              "requestDsIgmpPackets":false
+            }
+          },
+         "org.opencord.sadis": {
+            "sadis": {
+              "integration": {
+                "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/subscribers/%s",
+                "cache": {
+                  "enabled": true,
+                  "maxsize": 50,
+                  "ttl": "PT1m"
+                }
+              }
+            },
+          "bandwidthprofile": {
+              "integration": {
+                "url": "http://bbsim-sadis-server.{{ .Release.Namespace }}.svc:58080/profiles/%s",
+                "cache": {
+                  "enabled": true,
+                  "maxsize": 50,
+                  "ttl": "PT1m"
+                }
+              }
+          }
+         }
+        }
+      }
+    componentConfig: 
+      "org.opencord.olt.impl.OltFlowService": >
+        {
+          "enableDhcpOnNni": "false",
+          "enablePppoeOnNni": "true",
+          "defaultTechProfileId": "64",
+          "enableIgmpOnNni": "true",
+          "enableEapol": "false",
+          "enableDhcpV6": "false",
+          "enableDhcpV4": "false",
+          "enablePppoe": "true"
+        }
+
+# override BBSim config
+servicesConfig:
+  workflow: tim
+  services:
+    - name: hsia
+      uni_tag_match: 835
+      c_tag: 100
+      c_tag_allocation: shared
+      s_tag: 4096
+      s_tag_allocation: shared
+      needs_pppoe: true
+      tp_id: 64
+    - name: MC
+      uni_tag_match: 836
+      c_tag: 101
+      c_tag_allocation: shared
+      s_tag: 4096
+      s_tag_allocation: shared
+      tp_id: 66
+      ds_pon_c_tag_priority: 5
+      ds_pon_s_tag_priority: 5
