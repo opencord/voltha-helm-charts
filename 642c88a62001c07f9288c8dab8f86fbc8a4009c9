@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "917dcfdc_e6d1a883",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2022-05-26T07:57:47Z",
+      "side": 1,
+      "message": "Please rename file to tim-values.yaml to be consistent.",
+      "revId": "642c88a62001c07f9288c8dab8f86fbc8a4009c9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a12156dc_ba0bef07",
+        "filename": "examples/tim-values-tp64.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2022-05-26T07:57:47Z",
+      "side": 1,
+      "message": "Please remove the extra spaces (this and below)",
+      "range": {
+        "startLine": 57,
+        "startChar": 12,
+        "endLine": 57,
+        "endChar": 16
+      },
+      "revId": "642c88a62001c07f9288c8dab8f86fbc8a4009c9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
