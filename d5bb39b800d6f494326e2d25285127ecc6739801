@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a019f25a_10b7b0de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-05-27T16:32:47Z",
+      "side": 1,
+      "message": "minor comment, great work otherwise. ",
+      "revId": "d5bb39b800d6f494326e2d25285127ecc6739801",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14089bad_5ced03c7",
+        "filename": "examples/tim-values.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-05-27T16:32:47Z",
+      "side": 1,
+      "message": "please remove the useless space after `componentConfig:`",
+      "range": {
+        "startLine": 65,
+        "startChar": 20,
+        "endLine": 65,
+        "endChar": 21
+      },
+      "revId": "d5bb39b800d6f494326e2d25285127ecc6739801",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
