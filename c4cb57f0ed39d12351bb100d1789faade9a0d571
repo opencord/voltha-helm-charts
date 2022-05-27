@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "273a2d5b_809bf1dd",
+        "filename": "examples/tim-values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000741
+      },
+      "writtenOn": "2022-05-27T07:19:11Z",
+      "side": 1,
+      "message": "Please fix the indentation.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 36
+      },
+      "revId": "c4cb57f0ed39d12351bb100d1789faade9a0d571",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
