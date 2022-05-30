@@ -40,6 +40,13 @@ onos-classic:
               "requestDsIgmpPackets":false
             }
           },
+          "org.onosproject.core" : {
+            "multicast" : {
+              "ingressVlan" : 550,
+              "egressVlan" : 550,
+              "egressInnerVlan" : 55
+            }
+          },
           "org.opencord.dhcpl2relay" : {
             "dhcpl2relay" : {
               "useOltUplinkForServerPktInOut" : true
