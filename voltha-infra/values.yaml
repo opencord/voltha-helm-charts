@@ -167,7 +167,7 @@ etcd:
           - "/etcdserverpb.KV/"
   auth:
     rbac:
-      enabled: false
+      create: false
   persistence:
     enabled: false
   statefulset:
