@@ -114,7 +114,7 @@ images:
   rw_core:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.1.0{{- end }}{{- else }}3.1.0{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.1.2{{- end }}{{- else }}3.1.2{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
 ingress:
