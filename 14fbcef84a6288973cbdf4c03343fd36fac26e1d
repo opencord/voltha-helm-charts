@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6676ae8_f925e7d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-06-24T10:36:18Z",
+      "side": 1,
+      "message": "works looks good, there is an issue with helm charts publishing, want to fix that before merging this, working on it with ONF infra",
+      "revId": "14fbcef84a6288973cbdf4c03343fd36fac26e1d",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
