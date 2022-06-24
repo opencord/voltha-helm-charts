@@ -31,6 +31,7 @@ global:
     timeout: "5s"
     heartbeat_check_interval: "15s"
     heartbeat_fail_interval: "31s"
+    check_onu_exist_on_discovery: false
 
   #enable OMCC encryption
   omcc_encryption: false

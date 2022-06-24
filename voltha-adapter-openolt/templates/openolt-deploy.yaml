@@ -135,6 +135,7 @@ spec:
             - "--omcc_encryption={{ .Values.global.omcc_encryption }}"
             - "--enable_onu_stats={{ .Values.global.enable_onu_stats }}"
             - "--enable_gem_stats={{ .Values.global.enable_gem_stats }}"
+            - "--check_onu_exist_on_discovery={{ .Values.adapter_open_olt.check_onu_exist_on_discovery }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
