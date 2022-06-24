@@ -28,12 +28,12 @@ maintainers:
 name: voltha-stack
 
 appVersion: "2.10-dev"
-version: 2.10.5
+version: 2.10.6
 
 dependencies:
   - name: voltha
     repository: file://../voltha
-    version: 2.11.1
+    version: 2.11.2
     condition: voltha.enabled
   - name: voltha-adapter-openonu
     repository: file://../voltha-adapter-openonu
@@ -41,5 +41,5 @@ dependencies:
     condition: voltha-adapter-openonu.enabled
   - name: voltha-adapter-openolt
     repository: file://../voltha-adapter-openolt
-    version: 2.11.1
+    version: 2.11.2
     condition: voltha-adapter-openolt.enabled
