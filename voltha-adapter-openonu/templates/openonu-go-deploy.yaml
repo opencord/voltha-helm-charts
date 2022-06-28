@@ -100,7 +100,6 @@ spec:
             - "--log_correlation_enabled={{ .Values.global.log_correlation.enabled }}"
             - "--allowed_onu_vendors={{ template "allowed_onu_vendors" . }}"
             - "--metrics_enabled={{ .Values.global.metrics.enabled }}"
-            - "--extended_omci_support_enabled={{ .Values.global.extended_omci_support.enabled }}"
             - "--mib_audit_interval={{ .Values.global.mib_audit.interval }}"
             - "--alarm_audit_interval={{ .Values.global.alarm_audit.interval }}"
             - "--uni_port_mask={{ .Values.adapter_open_onu.uni_port_mask }}"

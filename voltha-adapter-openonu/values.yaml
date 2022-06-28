@@ -48,9 +48,6 @@ global:
   # Configure Performance Metrics
   metrics:
     enabled: true
-  # Configure Extended OMCI Support
-  extended_omci_support:
-    enabled: false
   # Configure Mib Audit
   mib_audit:
   # configure "0s" to disable Mib Audit
