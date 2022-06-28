@@ -25,7 +25,8 @@ onos-classic:
           "enableIgmpOnNni": "false",
           "enableEapol": "false",
           "enableDhcpV6": "false",
-          "enableDhcpV4": "false"
+          "enableDhcpV4": "false",
+          "removeFlowsOnDisable": "true"
         }
 
 # override BBSim config
