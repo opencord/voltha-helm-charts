@@ -131,6 +131,10 @@ onos-classic:
         {
           "purgeOnDisconnection": "false"
         }
+      "org.onosproject.net.device.impl.DeviceManager": >
+        {
+          "roleTimeoutSeconds": "120"
+        }
 
 bbsim-sadis-server:
   enabled: true
