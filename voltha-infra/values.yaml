@@ -28,7 +28,7 @@ onos-classic:
   image:
     pullPolicy: Always
     repository: voltha/voltha-onos
-    tag: 5.0.5
+    tag: 5.1.0
   apps:
     - org.onosproject.lldpprovider
     - org.onosproject.openflow-base
@@ -130,6 +130,10 @@ onos-classic:
       "org.onosproject.net.group.impl.GroupManager": >
         {
           "purgeOnDisconnection": "false"
+        }
+      "org.onosproject.net.device.impl.DeviceManager": >
+        {
+          "roleTimeoutSeconds": "120"
         }
 
 bbsim-sadis-server:
