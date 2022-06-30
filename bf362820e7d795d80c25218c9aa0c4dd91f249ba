@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "bf362820e7d795d80c25218c9aa0c4dd91f249ba",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b8f37ac_a1dbd90d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2022-06-30T09:37:10Z",
+      "side": 1,
+      "message": "This will only work after voltha-onos release",
+      "revId": "bf362820e7d795d80c25218c9aa0c4dd91f249ba",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
