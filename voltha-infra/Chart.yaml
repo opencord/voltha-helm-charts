@@ -29,7 +29,7 @@ maintainers:
 name: voltha-infra
 
 appVersion: "2.10"
-version: 2.10.4
+version: 2.10.5
 
 dependencies:
   - name: onos-classic
