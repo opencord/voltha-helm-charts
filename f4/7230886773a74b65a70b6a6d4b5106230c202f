@@ -1,0 +1,9 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Holger Hildebrandt <holger.hildebrandt@adtran.com>
+Code-Review+1: Andrea Campanella <andrea.campanella@intel.com>
+Code-Review+2: Torsten Thieme <torsten.thieme@adtran.com>
+Submitted-by: Torsten Thieme <torsten.thieme@adtran.com>
+Submitted-at: Mon, 11 Jul 2022 12:20:55 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/33042
+Project: voltha-helm-charts
+Branch: refs/heads/master
