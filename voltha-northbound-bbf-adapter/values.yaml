@@ -53,9 +53,12 @@ securityContext:
 
 # Define connectivity to required services
 services:
+  kafka:
+      cluster:
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
   # Define Tracing Agent connection details
   tracing_agent:
-    address: jaeger-agent:6831
+      address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
 
 # Define the replica count for everything
 replicas:

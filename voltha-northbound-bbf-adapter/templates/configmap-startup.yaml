@@ -40,4 +40,5 @@ data:
         --onos_rest_endpoint={{ .Values.global.voltha_infra_name }}-onos-classic-hs.{{ .Values.global.voltha_infra_namespace }}.svc:{{ .Values.voltha_northbound_bbf_adapter.onos_rest_port }} \
         --onos_user={{ .Values.voltha_northbound_bbf_adapter.onos_user }} \
         --onos_pass={{ .Values.voltha_northbound_bbf_adapter.onos_pass }} \
-        --schema_mount_path={{ .Values.voltha_northbound_bbf_adapter.schema_mount_path }}
+        --schema_mount_path={{ .Values.voltha_northbound_bbf_adapter.schema_mount_path }} \
+        --kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}
