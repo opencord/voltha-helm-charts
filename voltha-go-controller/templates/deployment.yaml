@@ -1,0 +1,73 @@
+# Copyright 2022-present Open Networking Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voltha-go-controller
+  labels:
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: voltha-go-controller
+  template:
+    metadata:
+      labels:
+        app: voltha-go-controller
+    spec:
+      containers:
+      - env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: VOLTHA_HOST
+          value: "$(NAMESPACE)-voltha-api.$(NAMESPACE).svc.cluster.local"
+        - name: VOLTHA_PORT
+          value: "55555"
+        - name: KV_STORE_TYPE
+          value: "redis"
+        - name: KV_STORE_HOST
+          value: "redis-master.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
+        - name: KV_STORE_PORT
+          value: "6379"
+        - name: KAFKA_ADAPTER_HOST
+          value: "internal-kafka-headless.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
+        - name: KAFKA_ADAPTER_PORT
+          value: "9092"
+        - name: LOG_LEVEL
+          value: "DEBUG"
+        image: 'voltha-go-controller:latest'
+        imagePullPolicy: "IfNotPresent"
+        name: voltha-go-controller
+        ports:
+        - containerPort: 8101
+          name: ssh-port
+        - containerPort: 8181
+          name: ui-port
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /tmp/docker.sock 
+          name: sockets
+      volumes:
+      - name: sockets
+        hostPath:
+          path: /var/run/docker.sock
+      restartPolicy: "Always"

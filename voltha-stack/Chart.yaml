@@ -28,7 +28,7 @@ maintainers:
 name: voltha-stack
 
 appVersion: "2.10"
-version: 2.10.7
+version: 2.10.8
 
 dependencies:
   - name: voltha
@@ -43,3 +43,7 @@ dependencies:
     repository: file://../voltha-adapter-openolt
     version: 2.11.3
     condition: voltha-adapter-openolt.enabled
+  - name: voltha-go-controller
+    repository: file://../voltha-go-controller
+    version: 0.1.0
+    condition: voltha-go-controller.enabled
