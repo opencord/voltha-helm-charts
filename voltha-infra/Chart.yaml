@@ -36,6 +36,10 @@ dependencies:
     repository: https://charts.onosproject.org
     version: 0.1.29
     condition: onos-classic.enabled
+  - name: redis
+    repository: file://../redis
+    version: 11.1.0
+    condition: redis.enabled
   - name: bbsim-sadis-server
     repository: file://../bbsim-sadis-server
     version: 0.3.1
