@@ -18,6 +18,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17e1bf0d_01ce33a6",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9e01eb5_cd7cfa3d",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "637a2331_9b97ff00",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-08-02T18:40:22Z",
       "side": 1,
       "message": "Already present in values.yaml, use that here.",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5a58966_a4ff39ab",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "637a2331_9b97ff00",
       "revId": "4426352a04904382ee91ccf73ac23743573176e5",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -52,6 +88,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cac009b_644ba08f",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c75e9d71_255b236a",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aaedc162_522cca64",
@@ -65,6 +119,24 @@
       "writtenOn": "2022-08-02T18:40:22Z",
       "side": 1,
       "message": "No need to hardcode here again. Already present in voltha-go-controller/Chart.yaml. Pull it from there.",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3fbd461_14e80e61",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aaedc162_522cca64",
       "revId": "4426352a04904382ee91ccf73ac23743573176e5",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -86,6 +158,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b310bf18_7130225a",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6328992_eb3672eb",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc2094d2_9c61d01e",
@@ -99,6 +189,30 @@
       "writtenOn": "2022-08-02T18:40:22Z",
       "side": 1,
       "message": "This should be parameterized in the values.yaml.\nYou may look at examples of how this done in other charts.",
+      "range": {
+        "startLine": 57,
+        "startChar": 16,
+        "endLine": 57,
+        "endChar": 44
+      },
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "380b9939_2b3894f1",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc2094d2_9c61d01e",
       "range": {
         "startLine": 57,
         "startChar": 16,
@@ -132,6 +246,30 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c875126c_d42fb97b",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8802639_f9e8fa5c",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 23
+      },
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e678cb2d_dbe779c3",
@@ -145,6 +283,24 @@
       "writtenOn": "2022-08-02T18:40:22Z",
       "side": 1,
       "message": "parameterize",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5999756b_b01a3b97",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e678cb2d_dbe779c3",
       "revId": "4426352a04904382ee91ccf73ac23743573176e5",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -166,6 +322,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbad9e54_21a19bf1",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9255553_0ac5cecb",
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09974ae3_8fc3867c",
@@ -179,6 +353,30 @@
       "writtenOn": "2022-08-02T18:40:22Z",
       "side": 1,
       "message": "Same comments as in deployment.yaml file",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "4426352a04904382ee91ccf73ac23743573176e5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac8787f8_36de628c",
+        "filename": "voltha-go-controller/templates/service.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-08T05:00:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09974ae3_8fc3867c",
       "range": {
         "startLine": 17,
         "startChar": 0,
