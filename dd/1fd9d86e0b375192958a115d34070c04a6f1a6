@@ -1,0 +1,8 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Girish Gowdra <girish.gowdra@intel.com>
+Code-Review+2: Suhas Gururaj Rao <sgururaj@radisys.com>
+Submitted-by: Suhas Gururaj Rao <sgururaj@radisys.com>
+Submitted-at: Mon, 08 Aug 2022 06:12:56 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/33116
+Project: voltha-helm-charts
+Branch: refs/heads/master
