@@ -18,6 +18,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f14aa7c3_1e08f691",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-09T07:01:03Z",
+      "side": 1,
+      "message": "Can we take it up as a patch later?",
+      "parentUuid": "5112c7b9_cb7a2c2e",
+      "revId": "dd1fd9d86e0b375192958a115d34070c04a6f1a6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ceab52b0_f381cc12",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-08-09T06:41:28Z",
       "side": 1,
       "message": "both vgc and onos cannot run together. So how do we make it configurable that only either of the two gets installed",
+      "revId": "dd1fd9d86e0b375192958a115d34070c04a6f1a6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a576a226_b146d9bf",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-09T07:01:03Z",
+      "side": 1,
+      "message": "Set the flag voltha-go-controller.enabled\u003dfalse/onos-classic.enabled\u003dfalse  while deployment depending on which one to run.",
+      "parentUuid": "ceab52b0_f381cc12",
       "revId": "dd1fd9d86e0b375192958a115d34070c04a6f1a6",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
