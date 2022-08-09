@@ -16,6 +16,23 @@
       "message": "@tinoj: Sorry, I have a comment post merge. Why did we need to push the entire Bitnami redis charts. It should have been pulled as a dependency in this chart https://github.com/opencord/voltha-helm-charts/blob/master/voltha-infra/Chart.yaml and it is already being pulled. The version is 11.1.0. That version can be overridden I think during install if a different version is required. Also the default values of redis can be overridden in the values.yaml here https://github.com/opencord/voltha-helm-charts/blob/master/voltha-infra/values.yaml ",
       "revId": "dd1fd9d86e0b375192958a115d34070c04a6f1a6",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ceab52b0_f381cc12",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000097
+      },
+      "writtenOn": "2022-08-09T06:41:28Z",
+      "side": 1,
+      "message": "both vgc and onos cannot run together. So how do we make it configurable that only either of the two gets installed",
+      "revId": "dd1fd9d86e0b375192958a115d34070c04a6f1a6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
