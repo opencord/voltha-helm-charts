@@ -36,6 +36,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "757b1657_e5201c6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2022-08-09T14:09:32Z",
+      "side": 1,
+      "message": "Sure. My bad, did not notice this earlier.",
+      "parentUuid": "f14aa7c3_1e08f691",
+      "revId": "dd1fd9d86e0b375192958a115d34070c04a6f1a6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ceab52b0_f381cc12",
