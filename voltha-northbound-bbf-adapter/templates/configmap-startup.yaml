@@ -41,4 +41,8 @@ data:
         --onos_user={{ .Values.voltha_northbound_bbf_adapter.onos_user }} \
         --onos_pass={{ .Values.voltha_northbound_bbf_adapter.onos_pass }} \
         --schema_mount_path={{ .Values.voltha_northbound_bbf_adapter.schema_mount_path }} \
-        --kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}
+        --kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }} \
+        --kv_store_type={{ tpl .Values.services.kv_store.type . }} \
+        --kv_store_address={{ tpl .Values.services.kv_store.address . }} \
+        --kv_store_request_timeout={{ tpl .Values.voltha_northbound_bbf_adapter.kv_store_timeout . }} \
+        --kv_store_prefix={{ tpl .Values.voltha_northbound_bbf_adapter.kv_store_data_prefix . }}

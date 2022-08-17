@@ -56,6 +56,9 @@ services:
   kafka:
       cluster:
         address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+  kv_store:
+      type: "etcd"
+      address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
   # Define Tracing Agent connection details
   tracing_agent:
       address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
@@ -65,6 +68,8 @@ replicas:
   bbf_adapter: 1
 
 voltha_northbound_bbf_adapter:
+  kv_store_timeout: "5s"
+  kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.voltha_stack_name }}'
   log_netopeer2: false # If set to true netopeer2.log is created in the root of the container
   log_level: '{{ .Values.global.log_level }}'
   voltha_nbi_port: 55555
