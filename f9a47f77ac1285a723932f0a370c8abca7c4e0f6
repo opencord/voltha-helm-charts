@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66f4826c_a615d8bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-08-17T13:52:56Z",
+      "side": 1,
+      "message": "Should not be merged before https://gerrit.opencord.org/c/voltha-northbound-bbf-adapter/+/33151",
+      "revId": "f9a47f77ac1285a723932f0a370c8abca7c4e0f6",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
