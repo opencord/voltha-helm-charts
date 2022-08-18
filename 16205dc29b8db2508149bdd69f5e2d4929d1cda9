@@ -18,6 +18,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "349b4e36_ec8c683a",
+        "filename": "voltha-northbound-bbf-adapter/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-08-18T13:15:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c4724de_1e5243da",
+      "revId": "16205dc29b8db2508149bdd69f5e2d4929d1cda9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d502c6c6_f5d233b8",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-08-18T13:08:45Z",
       "side": 1,
       "message": "can be moved to services-\u003ekv_store-\u003etype",
+      "revId": "16205dc29b8db2508149bdd69f5e2d4929d1cda9",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05f8c59e_fa4b62f5",
+        "filename": "voltha-northbound-bbf-adapter/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000894
+      },
+      "writtenOn": "2022-08-18T13:15:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d502c6c6_f5d233b8",
       "revId": "16205dc29b8db2508149bdd69f5e2d4929d1cda9",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
