@@ -28,7 +28,7 @@ maintainers:
 name: voltha-stack
 
 appVersion: "2.10"
-version: 2.10.8
+version: 2.10.9
 
 dependencies:
   - name: voltha

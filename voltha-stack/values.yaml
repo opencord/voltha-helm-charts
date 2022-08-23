@@ -73,3 +73,6 @@ voltha-adapter-openolt:
       address: "{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379"
     tracing_agent:
       address: "{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831"
+
+voltha-go-controller:
+  enabled: false

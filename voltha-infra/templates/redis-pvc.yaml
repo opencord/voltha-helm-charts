@@ -11,19 +11,19 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-{{- if .Values.serviceAccount.create -}}
+{{- if $.Values.redis.enabled}}
+kind: PersistentVolume
 apiVersion: v1
-kind: ServiceAccount
 metadata:
-  name: {{ template "redis.serviceAccountName" . }}
-  namespace: {{ .Release.Namespace | quote }}
+  name: redis-volume-voltha-infra-0
   labels:
-    app: {{ template "redis.name" . }}
-    chart: {{ template "redis.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
-  {{- if .Values.serviceAccount.annotations }}
-  annotations: {{ toYaml .Values.serviceAccount.annotations | nindent 4 }}
-  {{- end }}
-{{- end -}}
+    type: local
+spec:
+  #storageClassName: local
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/var/data/redis-0"
+{{- end }}
