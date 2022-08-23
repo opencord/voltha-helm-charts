@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: redis-volume-voltha-infra-0
+  labels:
+    type: local
+spec:
+  #storageClassName: local
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/var/data/redis-0"
