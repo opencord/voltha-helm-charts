@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6f93be2_f3623d42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000127
+      },
+      "writtenOn": "2022-08-23T18:29:55Z",
+      "side": 1,
+      "message": "Thanks for the Redis changes. This looks good. \n\nI think there was a comment to disable voltha-go-controller by default during voltha-stack deployment. You need to changes like this. If you want to address this in a separate patch, that is ok too. +1 for this patch.\n\ndiff --git a/voltha-stack/values.yaml b/voltha-stack/values.yaml\nindex ce0a87e..bebc6ca 100644\n--- a/voltha-stack/values.yaml\n+++ b/voltha-stack/values.yaml\n@@ -73,3 +73,6 @@ voltha-adapter-openolt:\n       address: \"{{ .Values.global.voltha_infra_name }}-etcd.{{ .Values.global.voltha_infra_namespace }}.svc:2379\"\n     tracing_agent:\n       address: \"{{ .Values.global.voltha_infra_name }}-voltha-tracing-jaeger-agent.{{ .Values.global.voltha_infra_namespace }}.svc:6831\"\n+\n+voltha-go-controller:\n+  enabled: false",
+      "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
