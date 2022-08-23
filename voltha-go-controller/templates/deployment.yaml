@@ -45,7 +45,7 @@ spec:
         - name: KV_STORE_TYPE
           value: "redis"
         - name: KV_STORE_HOST
-          value: "redis-master.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
+          value: "voltha-infra-redis-headless.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
         - name: KV_STORE_PORT
           value: "6379"
         - name: KAFKA_ADAPTER_HOST

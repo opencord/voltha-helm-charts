@@ -243,3 +243,19 @@ fluentd-elasticsearch:
     # set elasticsearch host
     hosts: ["elasticsearch-master:9200"]
     sslVerify: false
+
+redis:
+  auth:
+    enabled: false
+  volumePermissions:
+    enabled: true
+  networkPolicy:
+    enabled: false
+  replica:
+    replicaCount: 1
+  sentinel:
+    enabled: true
+    masterSet: sebaRedis
+  commonConfiguration: |-
+    # The filename where to dump the DB
+    dbfilename dump.rdb
