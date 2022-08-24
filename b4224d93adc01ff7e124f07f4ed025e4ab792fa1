@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "395bac11_027e641f",
+        "filename": "voltha-infra/templates/redis-pvc.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2022-08-24T12:51:49Z",
+      "side": 1,
+      "message": "I think we should discuss further creating PVs. The PV must be externally created and should be left as an operator choice. For example, an operator may want to use NFS storage instead of using static hostPath.\nIn case, there is an existing PV on the k8s cluster, the operator may choose to use it while installing the redis chart with an extra parameter: --set master.persistence.existingClaim\u003dPVC_NAME",
+      "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1002ce0b_425febef",
         "filename": "voltha-infra/values.yaml",
         "patchSetId": 3
