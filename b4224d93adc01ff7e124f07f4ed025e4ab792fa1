@@ -35,6 +35,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6bd217d_c827b1c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-29T04:02:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60e0ec56_7191be7f",
+      "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "395bac11_027e641f",
@@ -52,6 +70,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7c2f4f5_92e8f1b3",
+        "filename": "voltha-infra/templates/redis-pvc.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-29T04:02:00Z",
+      "side": 1,
+      "message": "As discussed created a Jira to support user defined PV with Redis, Jira id: VOL-4764",
+      "parentUuid": "395bac11_027e641f",
+      "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1002ce0b_425febef",
@@ -65,6 +101,24 @@
       "writtenOn": "2022-08-23T18:34:03Z",
       "side": 1,
       "message": "Can you introduce a new field here, like below. That gets used in voltha-infra/Chart.yaml -\u003e \"redis.enabled\". We do not want redis to get deployed by default.\n\nredis:\n  enabled: false",
+      "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66b9088c_2ec346a1",
+        "filename": "voltha-infra/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000940
+      },
+      "writtenOn": "2022-08-29T04:02:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1002ce0b_425febef",
       "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
