@@ -121,6 +121,24 @@
       "parentUuid": "1002ce0b_425febef",
       "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58c92c5e_3ba7683d",
+        "filename": "voltha-infra/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2022-08-30T04:55:38Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "1002ce0b_425febef",
+      "revId": "b4224d93adc01ff7e124f07f4ed025e4ab792fa1",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
