@@ -40,5 +40,7 @@ test: test-tags helm-repo-tools # @HELP Makes sure the versions used in the char
 	@COMPARISON_BRANCH=origin/$(branch) ./helm-repo-tools/chart_version_check.sh
 
 clean: # @HELP Removes all files downloaded to run the tests
-	rm -rf helm-repo-tools
-	rm tagcollisionreject.*
+	$(RM) -r helm-repo-tools
+	$(RM) tagcollisionreject.*
+
+# [EOF]
