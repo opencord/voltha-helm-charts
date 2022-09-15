@@ -25,16 +25,16 @@ onos-classic:
               "MaxResp":1,
               "enableIgmpProvisioning":"false",
               "globalConnectPointMode":"true",
-              "globalConnectPoint" : "of:0000000000000001/3",
-              "sourceDeviceAndPort":"of:0000000000000001/3",
+              "globalConnectPoint" : "of:00000a0a0a0a0a0a/16777216",
+              "sourceDeviceAndPort": "of:00000a0a0a0a0a0a/16777216",
               "outgoingIgmpVlanId":4096,
               "outgoingIgmpInnerVlanId":101,
               "outgoingIgmpWithV3":"false",
-              "IgmpCos":5,
-              "IgmpUniCos":5,
+              "IgmpCos":3,
+              "IgmpUniCos":3,
               "PeriodicQuery":"true",
-              "KeepAliveInterval":60,
-              "KeepAliveCount":5,
+              "KeepAliveInterval":125,
+              "KeepAliveCount":1,
               "requestDsIgmpPackets":false
             }
           },
@@ -87,12 +87,19 @@ servicesConfig:
       s_tag_allocation: shared
       needs_pppoe: true
       tp_id: 64
+    - name: vod
+      uni_tag_match: 836
+      c_tag: 101
+      c_tag_allocation: shared
+      s_tag: 4096
+      s_tag_allocation: shared
+      needs_igmp: true
+      tp_id: 64
     - name: MC
       uni_tag_match: 836
       c_tag: 101
       c_tag_allocation: shared
       s_tag: 4096
       s_tag_allocation: shared
-      tp_id: 66
-      ds_pon_c_tag_priority: 5
-      ds_pon_s_tag_priority: 5
+      tp_id: 64
+
