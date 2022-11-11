@@ -1,3 +1,5 @@
+# -*- makefile -*-
+# -----------------------------------------------------------------------
 # Copyright 2021-present Open Networking Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,10 +13,30 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# -----------------------------------------------------------------------
+
+.DEFAULT_GOAL := help
+
+##-------------------##
+##---]  GLOBALS  [---##
+##-------------------##
+dot         ?= .
+TOP         ?= $(dot)
+MAKEDIR     ?= $(TOP)/makefiles
+
+##--------------------##
+##---]  INCLUDES  [---##
+##--------------------##
+include $(MAKEDIR)/include.mk
 
 branch=`cat .gitreview | grep branch | cut -d '=' -f2`
 
-help: # @HELP Print the command options
+help:: # @HELP Print the command options
+	@echo "  test                          Sanity check chart versions"
+	@echo
+	@echo "[CHECK: release]"
+	@echo "  helm-repo-tools               Repository clone target"
+	@echo "  tagcollisionreject.sh         404 - raw.github source MIA"
 	@echo
 	@echo "\033[0;31m    VOLTHA HELM CHARTS \033[0m"
 	@echo
@@ -25,6 +47,10 @@ help: # @HELP Print the command options
         {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}; \
     '
 
+# -----------------------------------
+# curl: 404: Not Found
+#   https://raw.githubusercontent.com
+# -----------------------------------
 tagcollisionreject.sh:
 	@curl -o tagcollisionreject.tmp.sh https://raw.githubusercontent.com/opencord/ci-management/master/jjb/shell/tagcollisionreject.sh
 	@echo 6dc8352d47f415e003dbddc30ede194ca304907d25f1c2a384f928083194860f tagcollisionreject.tmp.sh | sha256sum --check
@@ -40,5 +66,7 @@ test: test-tags helm-repo-tools # @HELP Makes sure the versions used in the char
 	@COMPARISON_BRANCH=origin/$(branch) ./helm-repo-tools/chart_version_check.sh
 
 clean: # @HELP Removes all files downloaded to run the tests
-	rm -rf helm-repo-tools
-	rm tagcollisionreject.*
+	$(RM) -r helm-repo-tools
+	$(RM) tagcollisionreject.*
+
+# [EOF]
