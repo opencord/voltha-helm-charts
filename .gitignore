@@ -11,6 +11,9 @@ charts
 # tagcollisionreject.sh is downloaded via the Makefile if not present
 tagcollisionreject.sh
 
+# should be working in a temp dir -vs- (read-only) checkout dir.
+tagcollisionreject.tmp.sh
+
 # helm-repo-tools is cloned in the Makefile if not present
 helm-repo-tools/
 
