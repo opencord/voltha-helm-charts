@@ -24,8 +24,8 @@
 #   - on demand for now, errors and cleanup needed
 #   - Usage: make lint-helm USE_LEGACY=<blank>
 # ------------------------------------------------
-$(if $(findstring lint-helm,$(MAKECMDGOALS)),\
-  $(eval include $(MAKEDIR)/lint/helm/include.mk))
+include $(MAKEDIR)/lint/helm.mk
+include $(MAKEDIR)/lint/helm/include.mk
 
 # ------------------------------------------------------------
 ## yaml checking

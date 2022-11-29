@@ -15,6 +15,7 @@
 # limitations under the License.
 # -----------------------------------------------------------------------
 
+.PHONY: help
 .DEFAULT_GOAL := help
 
 ##-------------------##
@@ -72,8 +73,8 @@ test-tags: tagcollisionreject.sh
 ## -----------------------------------------------------------------------
 ## [NOTE] moving to makefiles/lint/helm/include.mk
 ## -----------------------------------------------------------------------
-helm-repo-tools:
-	git clone "https://gerrit.opencord.org/helm-repo-tools"
+# helm-repo-tools:
+#	git clone "https://gerrit.opencord.org/helm-repo-tools"
 
 lint-local: lint-helm lint-chart
 
@@ -86,8 +87,9 @@ lint-chart:
 
 ## -----------------------------------------------------------------------
 ## -----------------------------------------------------------------------
-# test-all += test-tags # tagcollisionreject + curl is broken
-test-all += helm-repo-tools
+.PHONY: test
+test-all += $(chartcheck-sh)
+test-all += $(helmlint-sh)
 test: $(test-all) # @HELP Makes sure the versions used in the charts are valid
 	@COMPARISON_BRANCH=origin/$(branch) ./helm-repo-tools/chart_version_check.sh
 
@@ -96,5 +98,8 @@ test: $(test-all) # @HELP Makes sure the versions used in the charts are valid
 clean :: # @HELP Removes all files downloaded to run the tests
 	$(RM) -r helm-repo-tools
 	$(RM) tagcollisionreject.*
+
+cvc:
+	helm-repo-tools/chart_version_check.sh USE_LEGACY= 2>&1 | less
 
 # [EOF]
