@@ -32,6 +32,8 @@ include $(MAKEDIR)/include.mk
 branch=`cat .gitreview | grep branch | cut -d '=' -f2`
 
 help:: # @HELP Print the command options
+	@echo
+	@echo "[TEST]"
 	@echo "  test                          Sanity check chart versions"
 	@echo
 	@echo "[CHECK: release]"
@@ -73,7 +75,7 @@ helm-repo-tools:
 test: test-tags helm-repo-tools # @HELP Makes sure the versions used in the charts are valid
 	@COMPARISON_BRANCH=origin/$(branch) ./helm-repo-tools/chart_version_check.sh
 
-clean: # @HELP Removes all files downloaded to run the tests
+clean :: # @HELP Removes all files downloaded to run the tests
 	$(RM) -r helm-repo-tools
 	$(RM) tagcollisionreject.*
 
