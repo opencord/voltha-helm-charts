@@ -18,15 +18,9 @@
 # SPDX-License-Identifier: Apache-2.0
 # -----------------------------------------------------------------------
 
-MAKEDIR ?= $(error MAKEDIR= is required)
-
-## -----------------------------------------------------------------------
-## -----------------------------------------------------------------------
-help::
-	@echo "USAGE: $(MAKE) [options] [target] ..."
-
-include $(MAKEDIR)/consts.mk
-include $(MAKEDIR)/lint/include.mk
-include $(MAKEDIR)/variables.mk
+help ::
+	@echo
+	@echo "[VARIABLES]"
+	@echo "  UNSTABLE=                     Build targets prone to failure (lint-helm)"
 
 # [EOF]

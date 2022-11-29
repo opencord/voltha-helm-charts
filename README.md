@@ -617,5 +617,5 @@ The code for these jobs can be found in
 
 The two scripts that should be run to test are:
 
-- `helmlint.sh`
-- `chart_version_check.sh`
+- `helmlint.sh`             (make lint-helm)
+- `chart_version_check.sh`  (make lint-chart)
