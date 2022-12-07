@@ -31,13 +31,13 @@ include $(MAKEDIR)/include.mk
 
 branch=`cat .gitreview | grep branch | cut -d '=' -f2`
 
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
 help:: # @HELP Print the command options
-	@echo
-	@echo "[TEST]"
 	@echo "  test                          Sanity check chart versions"
 	@echo
 	@echo "[CHECK: release]"
-	@echo "  helm-repo-tools               Repository clone target"
+	@echo "  helm-repo-tools               Helper tools"
 	@echo "  tagcollisionreject.sh         404 - raw.github source MIA"
 	@echo
 	@echo "\033[0;31m    VOLTHA HELM CHARTS \033[0m"
@@ -69,12 +69,21 @@ tagcollisionreject.sh:
 test-tags: tagcollisionreject.sh
 	@bash ./tagcollisionreject.sh
 
+## -----------------------------------------------------------------------
+## [NOTE] moving to makefiles/lint/helm/include.mk
+## -----------------------------------------------------------------------
 helm-repo-tools:
 	git clone "https://gerrit.opencord.org/helm-repo-tools"
 
-test: test-tags helm-repo-tools # @HELP Makes sure the versions used in the charts are valid
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
+# test-all += test-tags # tagcollisionreject + curl is broken
+test-all += helm-repo-tools
+test: $(test-all) # @HELP Makes sure the versions used in the charts are valid
 	@COMPARISON_BRANCH=origin/$(branch) ./helm-repo-tools/chart_version_check.sh
 
+## -----------------------------------------------------------------------
+## -----------------------------------------------------------------------
 clean :: # @HELP Removes all files downloaded to run the tests
 	$(RM) -r helm-repo-tools
 	$(RM) tagcollisionreject.*

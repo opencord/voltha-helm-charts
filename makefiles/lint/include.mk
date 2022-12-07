@@ -13,14 +13,25 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+# SPDX-FileCopyrightText: 2022 Open Networking Foundation (ONF) and the ONF Contributors
+# SPDX-License-Identifier: Apache-2.0
 # -----------------------------------------------------------------------
 
-help::
-	@echo
-	@echo "[LINT]"
+# ------------------------------------------------
+# On-demand loading:
+#   - lint helm charts
+#   - on demand for now, errors and cleanup needed
+#   - Usage: make lint-helm USE_LEGACY=<blank>
+# ------------------------------------------------
+$(if $(findstring lint-helm,$(MAKECMDGOALS)),\
+  $(eval include $(MAKEDIR)/lint/helm/include.mk))
 
-include $(MAKEDIR)/lint/helm.mk
-
+# ------------------------------------------------------------
+## yaml checking
+##   o yamllint - check everything, all the time.
+##   o python   - dependency based checking
+# ------------------------------------------------------------
 ifdef YAML_FILES
   include $(MAKEDIR)/lint/yaml/python.mk
 else
