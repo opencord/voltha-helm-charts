@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c841a0e4_c6ad8354",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000947
+      },
+      "writtenOn": "2022-12-08T18:42:51Z",
+      "side": 1,
+      "message": "File content looks good -- But maybe remove the backup version of makefiles/lint/helm/include.mk in the changeset?\nReally like the README.",
+      "revId": "0358897086f1316f2ad55731ebe7334840e1ee21",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
