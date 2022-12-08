@@ -1,0 +1,8 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: David Ferguson <daf@opennetworking.org>
+Code-Review+2: Joey Armstrong <joey@opennetworking.org>
+Submitted-by: Joey Armstrong <joey@opennetworking.org>
+Submitted-at: Thu, 08 Dec 2022 19:20:01 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/33512
+Project: voltha-helm-charts
+Branch: refs/heads/master
