@@ -26,10 +26,8 @@ maintainers:
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
 name: voltha-stack
-
 appVersion: "2.11"
-version: 2.11.1
-
+version: 2.11.2
 dependencies:
   - name: voltha
     repository: file://../voltha
@@ -45,5 +43,5 @@ dependencies:
     condition: voltha-adapter-openolt.enabled
   - name: voltha-go-controller
     repository: file://../voltha-go-controller
-    version: 0.1.2
+    version: 0.1.3
     condition: voltha-go-controller.enabled
