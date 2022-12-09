@@ -26,10 +26,8 @@ maintainers:
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
 name: voltha-stack
-
 appVersion: "2.11"
-version: 2.11.1
-
+version: 2.11.2
 dependencies:
   - name: voltha
     repository: file://../voltha
