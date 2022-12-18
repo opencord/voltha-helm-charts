@@ -16,32 +16,32 @@ apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
   name: "bbsim-sadis-server"
-  namespace: {{ .Release.Namespace | quote }}
+  namespace: {{.Release.Namespace | quote}}
 spec:
-  replicas: {{ .Values.replicas | int }}
+  replicas: {{.Values.replicas | int}}
   selector:
     matchLabels:
       app: "bbsim-sadis-server"
-      release: {{ .Release.Name | quote }}
+      release: {{.Release.Name | quote}}
   template:
     metadata:
-      namespace: {{ .Release.Namespace | quote }}
+      namespace: {{.Release.Namespace | quote}}
       labels:
         app: "bbsim-sadis-server"
-        release: {{ .Release.Name | quote }}
+        release: {{.Release.Name | quote}}
         app.kubernetes.io/name: "bbsim-sadis-server"
-        app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+        app.kubernetes.io/version: {{.Chart.AppVersion | quote}}
         app.kubernetes.io/component: "sadis-server"
         app.kubernetes.io/part-of: "voltha"
-        app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
+        app.kubernetes.io/managed-by: {{.Release.Service | quote}}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     spec:
-      serviceAccountName: {{ .Values.serviceAccountName | quote }}
+      serviceAccountName: {{.Values.serviceAccountName | quote}}
       containers:
         - name: "sadis"
           image: "{{ tpl .Values.images.bbsim_sadis_server.registry . }}{{ tpl .Values.images.bbsim_sadis_server.repository . }}:{{ tpl ( tpl .Values.images.bbsim_sadis_server.tag . ) . }}"
-          imagePullPolicy: {{ tpl .Values.images.bbsim_sadis_server.pullPolicy . | quote }}
-          command: [ "/app/bbsim-sadis-server" ]
+          imagePullPolicy: {{tpl .Values.images.bbsim_sadis_server.pullPolicy . | quote}}
+          command: ["/app/bbsim-sadis-server"]
           args:
             - "-log_level={{.Values.global.log_level}}"
             - "-log_format={{.Values.global.log_format}}"

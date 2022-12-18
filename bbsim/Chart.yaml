@@ -1,4 +1,4 @@
-# Copyright 2018-present Open Networking Foundation
+# Copyright 2018-2022 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,5 +16,5 @@ name: bbsim
 description: Broadband Simulator
 icon: https://guide.opencord.org/logos/cord.svg
 apiVersion: v1
-version: 4.8.6
+version: 4.8.7
 appVersion: 1.12.10

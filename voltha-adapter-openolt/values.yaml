@@ -33,11 +33,11 @@ global:
     heartbeat_fail_interval: "31s"
     check_onu_exist_on_discovery: false
 
-  #enable OMCC encryption
+  # enable OMCC encryption
   omcc_encryption: false
-  #enable ONU stats
+  # enable ONU stats
   enable_onu_stats: false
-  #enable GEM stats
+  # enable GEM stats
   enable_gem_stats: false
 
   # Configure Log Correlation
@@ -99,7 +99,7 @@ adapter_open_olt:
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   heartbeat_check_interval: '{{ .Values.global.adapter_open_olt.heartbeat_check_interval }}'
   heartbeat_fail_interval: '{{ .Values.global.adapter_open_olt.heartbeat_fail_interval }}'
-  check_onu_exist_on_discovery: '{{ .Values.global.adapter_open_olt.check_onu_exist_on_discovery }}' 
+  check_onu_exist_on_discovery: '{{ .Values.global.adapter_open_olt.check_onu_exist_on_discovery }}'
   rpc_timeout: '{{ .Values.global.rpc_timeout }}'
   endpoints:
     # core_endpoint: '{{ .Values.global.adapter_open_olt.core_endpoint }}'

@@ -1,6 +1,6 @@
 {{/* vim: set filetype=mustache: */}}
 {{/*
-Copyright 2018-present Open Networking Foundation
+Copyright 2018-2022 Open Networking Foundation (ONF) and the ONF Contributors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
