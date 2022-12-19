@@ -76,3 +76,7 @@ voltha-adapter-openolt:
 
 voltha-go-controller:
   enabled: false
+  services:
+     kafka:
+       cluster:
+         address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
