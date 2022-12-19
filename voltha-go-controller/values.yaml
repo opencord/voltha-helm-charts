@@ -103,3 +103,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Define connectivity to required services
+services:
+  kafka:
+    cluster:
+      address: kafka:9092
