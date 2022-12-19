@@ -49,7 +49,7 @@ spec:
         - name: KV_STORE_PORT
           value: "6379"
         - name: KAFKA_ADAPTER_HOST
-          value: "internal-kafka-headless.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
+          value: "{{ tpl .Values.services.kafka.cluster.address . }}"
         - name: KAFKA_ADAPTER_PORT
           value: "9092"
         - name: LOG_LEVEL
