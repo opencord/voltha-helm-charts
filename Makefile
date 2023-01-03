@@ -1,6 +1,6 @@
 # -*- makefile -*-
 # -----------------------------------------------------------------------
-# Copyright 2021-2022 Open Networking Foundation (ONF) and the ONF Contributors
+# Copyright 2021-2023 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -74,6 +74,15 @@ test-tags: tagcollisionreject.sh
 ## -----------------------------------------------------------------------
 helm-repo-tools:
 	git clone "https://gerrit.opencord.org/helm-repo-tools"
+
+lint-local: lint-helm lint-chart
+
+lint-helm:
+	helm-repo-tools/helmlint.sh
+
+lint-chart:
+	helm-repo-tools/chart_version_check.sh
+#	helm-repo-tools/lchart_version_check.sh
 
 ## -----------------------------------------------------------------------
 ## -----------------------------------------------------------------------

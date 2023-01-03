@@ -46,11 +46,11 @@ dependencies:
     condition: bbsim-sadis-server.enabled
   - name: etcd
     repository: https://charts.bitnami.com/bitnami
-    version: 6.13.9
+    version: 8.5.10
     condition: etcd.enabled
   - name: kafka
     repository: https://charts.bitnami.com/bitnami
-    version: 14.9.0
+    version: 20.0.0
     condition: kafka.enabled
   - name: freeradius
     repository: https://charts.opencord.org
