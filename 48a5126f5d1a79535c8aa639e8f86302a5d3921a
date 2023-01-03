@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5193c0e5_157a6aa1",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-01-03T20:55:24Z",
+      "side": 1,
+      "message": "repo: voltha-go-controller is at ver 0.0.1-dev.  Bumping the chart version w/o a corresponding repository edit may create a disconnect or failure if the repository has not been tagged for v0.1.1\n\nhttps://gerrit.opencord.org/plugins/gitiles/voltha-go-controller/+/refs/heads/master/VERSION\n\n\nTry more edits to make them visible",
+      "revId": "48a5126f5d1a79535c8aa639e8f86302a5d3921a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
