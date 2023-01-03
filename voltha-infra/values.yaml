@@ -176,8 +176,6 @@ etcd:
     enabled: false
   statefulset:
     replicaCount: 1
-  service:
-    port: 2379
   autoCompactionMode: "revision"
   autoCompactionRetention: 1
   extraEnvVars:
