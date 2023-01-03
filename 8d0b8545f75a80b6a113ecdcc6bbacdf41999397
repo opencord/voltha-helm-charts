@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e0d5e2f_1094a8d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-01-03T14:51:30Z",
+      "side": 1,
+      "message": "Bump version string for release.\n\nUpdated README text to reference the golang openonu adapter -vs- retired python adapter.\n\nlint-helm reporting version problems for etcd \u0026 kafka charts.\nTried submitting etcd edits as part of another pull request but not obvious from the logs if proper chart version loaded due to job failing for the same reason  Hoping this is not a one-off problem for deploying version updates.",
+      "revId": "8d0b8545f75a80b6a113ecdcc6bbacdf41999397",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
