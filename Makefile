@@ -75,6 +75,14 @@ test-tags: tagcollisionreject.sh
 helm-repo-tools:
 	git clone "https://gerrit.opencord.org/helm-repo-tools"
 
+lint-local: lint-helm lint-chart
+
+lint-helm:
+	helm-repo-tools/helmlint.sh
+
+lint-chart:
+	helm-repo-tools/lchart_version_check.sh
+
 ## -----------------------------------------------------------------------
 ## -----------------------------------------------------------------------
 # test-all += test-tags # tagcollisionreject + curl is broken

@@ -190,20 +190,9 @@ helm upgrade --install --create-namespace \
   --set global.log_correlation.enabled=true
 ```
 
-### Use the OpenONU python adapter
+### Use the OpenONU golang adapter
 
-Up to release `0.10.0` of the `voltha-stack` chart you can still use the openonu-py version of the adapter.
-
-> NOTE that this adapter is now unsupported, so you're in uncharted territory from now on.
-
-```shell
-helm upgrade --install --create-namespace \
-  -n voltha voltha onf/voltha-stack \
-  --set global.stack_name=voltha \
-  --set global.voltha_infra_name=voltha-infra \
-  --set global.voltha_infra_namespace=infra \
-  --set voltha-adapter-openonu.use_openonu_adapter_go=false
-```
+https://docs.voltha.org/master/voltha-openonu-adapter-go/README.html
 
 ### Deploy BBSim
 
