@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d695e8ce_4804000a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-01-04T17:28:52Z",
+      "side": 1,
+      "message": "Strange (delayed job failure) but chart test/lint behavior does make sense.\n\nA simple copyright notice edit was made in sources and Chart.yaml.\nComment change in Chart.yaml interpreted as a content change, pull request then failed on a jenkins job lint-helm check.\nTo resolve modify version string in an orthogonal chart file that is indirectly dependent on voltha/Chart.yaml.\n\n\nThis may not be a normal sequence for chart editing but trying to follow version strings and dependency checking in general for chart updates.  Failure mode in this case was a surprise due to the indirection and not being warned about it earlier.\n",
+      "revId": "0c2ce9beb0dcd3489103017f4970570d76102c9b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
