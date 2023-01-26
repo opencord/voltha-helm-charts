@@ -28,8 +28,8 @@ maintainers:
     url: "https://www.opennetworking.org"
 name: voltha-infra
 
-appVersion: "2.10"
-version: 2.10.10
+appVersion: "2.11"
+version: 2.11.0
 
 dependencies:
   - name: onos-classic
@@ -42,7 +42,7 @@ dependencies:
     condition: redis.enabled
   - name: bbsim-sadis-server
     repository: file://../bbsim-sadis-server
-    version: 0.3.1
+    version: 0.3.2
     condition: bbsim-sadis-server.enabled
   - name: etcd
     repository: https://charts.bitnami.com/bitnami

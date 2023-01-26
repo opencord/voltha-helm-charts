@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-simulated"
-version: "2.3.1"
+version: "2.3.2"
 description: "A Helm chart for Voltha Simulated Adapter"
 keywords:
   - "onf"
