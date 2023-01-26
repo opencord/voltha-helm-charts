@@ -1,0 +1,8 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review-1: Andrea Campanella <andrea.campanella@intel.com>
+Code-Review+2: Joey Armstrong <joey@opennetworking.org>
+Submitted-by: Joey Armstrong <joey@opennetworking.org>
+Submitted-at: Thu, 26 Jan 2023 14:14:26 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/33853
+Project: voltha-helm-charts
+Branch: refs/heads/master
