@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00a309c0_8075e1ef",
+        "filename": "voltha-infra/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2023-01-26T12:17:21Z",
+      "side": 1,
+      "message": "you need to go 2.11 if you are releasing that.",
+      "revId": "6fdbccf1224d4540ef1878785914c425f63b2a3b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68acf4b4_64fc92ad",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2023-01-26T12:17:21Z",
+      "side": 1,
+      "message": "same",
+      "revId": "6fdbccf1224d4540ef1878785914c425f63b2a3b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
