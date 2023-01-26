@@ -1,6 +1,6 @@
 # -*- makefile -*-
 # -----------------------------------------------------------------------
-# Copyright 2022 Open Networking Foundation (ONF) and the ONF Contributors
+# Copyright 2022-2023 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,48 +18,30 @@
 ##-------------------##
 ##---]  GLOBALS  [---##
 ##-------------------##
-env-clean     = /usr/bin/env --ignore-environment
-xargs-n1      := xargs -0 -t -n1 --no-run-if-empty
-
 helmlint-sh   := $(TOP)/helm-repo-tools/helmlint.sh
 chartcheck-sh := $(TOP)/helm-repo-tools/chart_version_check.sh
 
 ##-------------------##
 ##---]  TARGETS  [---##
 ##-------------------##
-.PHONY: lint-helm
-.PHONY: lint-chart
-
-ifdef UNSTABLE
-  # Repair failures before enabling as a default.
-  lint : lint-helm
-  lint : lint-chart
-endif
 
 ## -----------------------------------------------------------------------
-## -----------------------------------------------------------------------
-lint-helm: $(helmlint-sh)
-	$(helmlint-sh)
-
-## -----------------------------------------------------------------------
-## -----------------------------------------------------------------------
-lint-chart: $(chartcheck-sh)
-	$(chartcheck-sh)
-
-## -----------------------------------------------------------------------
+## Intent: repo:helm-repo-tools
+##   o Use script as a dependency for on-demand cloning.
+##   o Use of repo name (r-h-t) as a dependency is problematic.
 ## -----------------------------------------------------------------------
 $(helmlint-sh) $(chartcheck-sh):
 	git clone "https://gerrit.opencord.org/helm-repo-tools"
 
 ## -----------------------------------------------------------------------
+## Intent: Remove generated targets
 ## -----------------------------------------------------------------------
-help::
-	@echo "  lint-chart                    chart_version_check.sh"
-	@echo "  lint-helm                     Syntax check helm configs"
+clean ::
+	$(chartcheck-sh) clean
 
 ## -----------------------------------------------------------------------
 ## -----------------------------------------------------------------------
-clean::
+sterile::
 	$(RM) -r $(TOP)/helm-repo-tools
 
 # [EOF]
