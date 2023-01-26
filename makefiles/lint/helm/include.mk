@@ -20,84 +20,17 @@
 
 GIT ?= /usr/bin/git
 
-chart-version-check-sh := helm-repo-tools/chart_version_check.sh
-
-## -------------------------------------------------------------------
-## NOTE: This uglyness can go away with proper command line switch use
-## -------------------------------------------------------------------
-##   o USE_LEGACY= (default)
-##       - bridge logic: support existing behavior.
-##       - helmlint.sh contains hardcoded branch='origin/opencord'
-##   o TODO:
-##       - infer values from repository checkout on disk.
-##       - parameterize helmlint.sh
-##       - use simple flags to toggle behavior:
-##           MASTER_BRANCH=1  || --branch master (default)
-##           LOCAL_BRANCH=1   || --branch local)
-##           MY_BRANCH=1      || --branch local
-##       - Better yet: when branch name is known simply pass it:
-##           % make lint-helm BRANCH=alt-branch-name
-## -----------------------------------------------------------------------
-USE_LEGACY = 1
-ifdef USE_LEGACY
-  $(if $(DEBUG),$(info ifdef USE_LEGACY))
-
-  lint-helm-branch ?= $(shell cat .gitreview | grep branch | cut -d '=' -f2)
-
-else
-  $(if $(DEBUG),$(info not USE_LEGACY))
-
-  ifdef LOCAL_BRANCH
-     get-git-branch ?= $(shell $(GIT) branch --show-current)# empty if detached
-     get-git-branch ?= $(shell awk -F '/branch/ {print $$2}' .gitreview)
-     get-git-branch ?= $(error Detected detached head)
-
-  else # master
-     # refs/remotes/origin/HEAD => origin/master
-     get-git-branch ?= $(shell $(GIT) symbolic-ref --short refs/remotes/origin/HEAD)
-  endif
-
-  lint-helm-branch ?= $(COMPARISON_BRANCH)
-  lint-helm-branch ?= $(get-git-branch)
-
-  $(if $(DEBUG),$(info get-git-branch = $(get-git-branch)))
-  $(if $(DEBUG),$(info lint-branch=$(lint-branch)))
-endif
+##--------------------##
+##---]  INCLUDES  [---##
+##--------------------##
+include $(MAKEDIR)/lint/helm/tools.mk
+include $(MAKEDIR)/lint/helm/branch-detect.mk
+include $(MAKEDIR)/lint/helm/chart.mk
+include $(MAKEDIR)/lint/helm/helm.mk
 
 ##-------------------##
 ##---]  TARGETS  [---##
 ##-------------------##
-.PHONY : lint-helm
-lint   : lint-helm
-
-## -----------------------------------------------------------------------
-## Intent: Lint helm charts
-##   o This logic mirrors gerrit/jenkins commit hook behavior.
-##   o Adding to stem incidents of late pull request jenkins failures.
-##   o see: make help VERBOSE=1
-## -----------------------------------------------------------------------
-.PHONY: lint-helm
-lint-helm: $(chart-version-check-sh)# helm-repo-tools
-lint-helm:
-	COMPARISON_BRANCH="$(get-git-branch)" $(chart-version-check-sh)
-#	COMPARISON_BRANCH="$(lint-helm-branch)" $(chart-version-check-sh)
-
-## -----------------------------------------------------------------------
-## Intent: repo:helm-repo-tools
-##   o Use script as a dependency for on-demand cloning.
-##   o Use of repo name (r-h-t) as a dependency is problematic.
-## -----------------------------------------------------------------------
-$(chart-version-check-sh):
-	$(GIT) clone "https://gerrit.opencord.org/helm-repo-tools"
-
-## -----------------------------------------------------------------------
-## Intent: 
-## -----------------------------------------------------------------------
-# branch=`cat .gitreview | grep branch | cut -d '=' -f2`
-pre-commit :: lint-helm
-#	$(chart-version-check-sh) clean
-#	@COMPARISON_BRANCH=origin/$(branch) $(chart-version-check-sh)
-#	$(chart-version-check-sh)
 
 ## -----------------------------------------------------------------------
 ## [TODO] Extract hardcoded values from lint.sh:
@@ -112,30 +45,21 @@ lint-helm-deps:
 	helm repo add cord https://charts.opencord.org
 
 ## -----------------------------------------------------------------------
-## Intent: Remove generated targets
-## -----------------------------------------------------------------------
-clean ::
-	$(chart-version-check-sh) clean
-
-## -----------------------------------------------------------------------
-## Intent: Remove all non-source targets
-## -----------------------------------------------------------------------
-sterile ::
-	$(RM) helm-repo-tools
-
-## -----------------------------------------------------------------------
 ## Intent: Display target help with context
 ##   % make help
 ##   % make help VERBOSE=1
 ## -----------------------------------------------------------------------
 help ::
-	@echo "  lint-helm            Syntax check helm charts"
+	@echo
+	@echo '[LINT: helm]'
+	@echo "  lint-chart                    chart_version_check.sh"
+
+	@echo "  lint-helm                     Syntax check helm configs"
 ifdef VERBOSE
-	@echo "  lint-helm COMPARISON_BRANCH=1    Local/dev lint (branch != master)"
+	@echo '    COMPARISON_BRANCH="origin/master" make lint-chart'
 endif
-ifdef VERBOSE
-	@echo "  lint-helm-deps       Configure dependent helm charts"
-endif
+
+	@echo "  lint-helm-deps                Configure dependent helm charts"
 
 ## -----------------------------------------------------------------------
 ## Intent: Future enhancement list

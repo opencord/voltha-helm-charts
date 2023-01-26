@@ -37,7 +37,6 @@ help:: # @HELP Print the command options
 	@echo "  test                          Sanity check chart versions"
 	@echo
 	@echo "[CHECK: release]"
-	@echo "  helm-repo-tools               Helper tools"
 	@echo "  tagcollisionreject.sh         404 - raw.github source MIA"
 	@echo
 	@echo "\033[0;31m    VOLTHA HELM CHARTS \033[0m"
@@ -77,12 +76,11 @@ helm-repo-tools:
 
 lint-local: lint-helm lint-chart
 
-lint-helm:
-	helm-repo-tools/helmlint.sh
+# lint-helm:
+#	helm-repo-tools/helmlint.sh
 
-lint-chart:
-	helm-repo-tools/chart_version_check.sh
-#	helm-repo-tools/lchart_version_check.sh
+# lint-chart:
+#	COMPARISON_BRANCH=origin/master helm-repo-tools/chart_version_check.sh
 
 ## -----------------------------------------------------------------------
 ## -----------------------------------------------------------------------

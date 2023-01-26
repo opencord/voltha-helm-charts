@@ -33,7 +33,7 @@ version: 2.10.9
 dependencies:
   - name: voltha
     repository: file://../voltha
-    version: 2.11.3
+    version: 2.11.5
     condition: voltha.enabled
   - name: voltha-adapter-openonu
     repository: file://../voltha-adapter-openonu
@@ -45,5 +45,5 @@ dependencies:
     condition: voltha-adapter-openolt.enabled
   - name: voltha-go-controller
     repository: file://../voltha-go-controller
-    version: 0.1.0
+    version: 0.1.1
     condition: voltha-go-controller.enabled
