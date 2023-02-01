@@ -33,4 +33,4 @@ maintainers:
 
 # appVersion refers to multiple components with potentially different
 # container image versions.
-appVersion: "2.2.8"
+appVersion: "2.7.3"
