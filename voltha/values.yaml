@@ -108,13 +108,13 @@ images:
   ofagent:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.1.2{{- end }}{{- else }}2.1.2{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.1.3{{- end }}{{- else }}2.1.3{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.1.5{{- end }}{{- else }}3.1.5{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.1.8{{- end }}{{- else }}3.1.8{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
 ingress:
