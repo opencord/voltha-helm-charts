@@ -16,6 +16,24 @@
       "message": "fyi\u003e  Two makefile targets can be used to screen for content problems:\n   % make lint-helm\n   % make lint-chart\n\nmake help will display available targets.",
       "revId": "f4f5a4177d09bc2b5da05ca8d243bc519de77f8c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e63277c_bad9ab4e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2023-02-07T20:25:15Z",
+      "side": 1,
+      "message": "The problem is: [ERROR] Chart modified but version unchanged: voltha\nSince you already bumped up the chart versions, I did not want to change the chart versions again. How should we proceed?",
+      "parentUuid": "e1914ddd_1ad2fcad",
+      "revId": "f4f5a4177d09bc2b5da05ca8d243bc519de77f8c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
