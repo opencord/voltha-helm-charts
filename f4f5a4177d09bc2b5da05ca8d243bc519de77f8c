@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1914ddd_1ad2fcad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-02-07T18:12:47Z",
+      "side": 1,
+      "message": "fyi\u003e  Two makefile targets can be used to screen for content problems:\n   % make lint-helm\n   % make lint-chart\n\nmake help will display available targets.",
+      "revId": "f4f5a4177d09bc2b5da05ca8d243bc519de77f8c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
