@@ -34,6 +34,24 @@
       "parentUuid": "e1914ddd_1ad2fcad",
       "revId": "f4f5a4177d09bc2b5da05ca8d243bc519de77f8c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc8c2dda_afca09c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-02-08T15:03:27Z",
+      "side": 1,
+      "message": "The version will need to be bumped again (part of the fun editing charts).\nLint checking will require a delta and a non-dev VERSION edit will be needed to trigger anything release related (in this case:\nhttps://jenkins.opencord.org/job/publish-helm-repo_voltha-helm-charts)",
+      "parentUuid": "0e63277c_bad9ab4e",
+      "revId": "f4f5a4177d09bc2b5da05ca8d243bc519de77f8c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
