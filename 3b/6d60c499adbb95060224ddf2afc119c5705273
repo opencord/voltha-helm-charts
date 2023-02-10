@@ -1,0 +1,9 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Torsten Thieme <torsten.thieme@adtran.com>
+Code-Review+1: Joey Armstrong <joey@opennetworking.org>
+Code-Review+2: Serkant Uluderya <serkant.uluderya@netsia.com>
+Submitted-by: Serkant Uluderya <serkant.uluderya@netsia.com>
+Submitted-at: Fri, 10 Feb 2023 14:26:27 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/33929
+Project: voltha-helm-charts
+Branch: refs/heads/master
