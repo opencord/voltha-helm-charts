@@ -16,6 +16,40 @@
       "message": "Take over modifications by Serkant for 2.11.1 and update BBSIM regarding release notes.\nHopefully I did not forget something.",
       "revId": "8e81bda4991d708d93c4efca7343aae9ab27e111",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "441e2e8d_a7bbb2a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2023-02-24T10:23:26Z",
+      "side": 1,
+      "message": "small thing, LGTM otherwise. ",
+      "revId": "8e81bda4991d708d93c4efca7343aae9ab27e111",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54904de8_45b37055",
+        "filename": "bbsim/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000116
+      },
+      "writtenOn": "2023-02-24T10:23:26Z",
+      "side": 1,
+      "message": "need to bump to 4.8.9",
+      "revId": "8e81bda4991d708d93c4efca7343aae9ab27e111",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
