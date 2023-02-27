@@ -52,6 +52,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49e32308_7bc1a47c",
+        "filename": "bbsim/Chart.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-02-27T13:12:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54904de8_45b37055",
+      "revId": "8e81bda4991d708d93c4efca7343aae9ab27e111",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "07690d1f_f9a01cc2",

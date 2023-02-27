@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3ef18f9_2ebb23f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-02-27T13:12:03Z",
+      "side": 1,
+      "message": "Beside comment by Andrea patchset #2 includes also the correction for jenkins verification.\n\nStill open is the decision regarding openuno-go-adapter version: 2.7.3 \u003c-\u003e 2.8.1!",
+      "revId": "9c67d90250cf7a71564cbc71c3368b753d99d458",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
