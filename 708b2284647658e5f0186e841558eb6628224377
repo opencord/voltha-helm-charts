@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8766beb_3dbe1271",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-03-01T12:24:42Z",
+      "side": 1,
+      "message": "Update of VERSION File and set openonu-go-adapter version regarding its Voltha-2.11 branch.\n",
+      "revId": "708b2284647658e5f0186e841558eb6628224377",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
