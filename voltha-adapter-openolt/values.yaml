@@ -27,6 +27,8 @@ global:
   core_endpoint: "{{ .Values.global.voltha_release_name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
   # timeout for RPC request
   rpc_timeout: "10s"
+  per_rpc_retry_timeout : "2s"  
+  rpc_retry: "5"
   adapter_open_olt:
     timeout: "5s"
     heartbeat_check_interval: "15s"
@@ -101,6 +103,8 @@ adapter_open_olt:
   heartbeat_fail_interval: '{{ .Values.global.adapter_open_olt.heartbeat_fail_interval }}'
   check_onu_exist_on_discovery: '{{ .Values.global.adapter_open_olt.check_onu_exist_on_discovery }}'
   rpc_timeout: '{{ .Values.global.rpc_timeout }}'
+  rpc_retry: '{{ .Values.global.adapter_open_olt.rpc_retry }}'
+  per_rpc_retry_timeout : '{{ .Values.global.adapter_open_olt.per_rpc_retry_timeout }}'  
   endpoints:
     # core_endpoint: '{{ .Values.global.adapter_open_olt.core_endpoint }}'
     # adapter_endpoint: '{{ template "fullname" . }}-api:55560'

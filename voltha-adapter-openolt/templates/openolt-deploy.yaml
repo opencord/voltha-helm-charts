@@ -136,6 +136,8 @@ spec:
             - "--enable_onu_stats={{ .Values.global.enable_onu_stats }}"
             - "--enable_gem_stats={{ .Values.global.enable_gem_stats }}"
             - "--check_onu_exist_on_discovery={{ tpl .Values.adapter_open_olt.check_onu_exist_on_discovery . }}"
+            - "--max_grpc_client_retry={{ tpl .Values.adapter_open_olt.rpc_retry . }}"
+            - "--per_rpc_retry_timeout={{ tpl .Values.adapter_open_olt.per_rpc_retry_timeout . }}"            
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
