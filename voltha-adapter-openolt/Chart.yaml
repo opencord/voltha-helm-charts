@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-openolt"
-version: "2.11.5"
+version: "2.11.7"
 description: "A Helm chart for Voltha OpenOLT Adapter"
 keywords:
   - "onf"
