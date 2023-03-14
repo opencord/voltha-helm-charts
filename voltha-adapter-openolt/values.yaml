@@ -32,7 +32,8 @@ global:
     heartbeat_check_interval: "15s"
     heartbeat_fail_interval: "31s"
     check_onu_exist_on_discovery: false
-
+    per_rpc_retry_timeout : "2s"
+    rpc_retry: "5"
   # enable OMCC encryption
   omcc_encryption: false
   # enable ONU stats
@@ -101,6 +102,8 @@ adapter_open_olt:
   heartbeat_fail_interval: '{{ .Values.global.adapter_open_olt.heartbeat_fail_interval }}'
   check_onu_exist_on_discovery: '{{ .Values.global.adapter_open_olt.check_onu_exist_on_discovery }}'
   rpc_timeout: '{{ .Values.global.rpc_timeout }}'
+  rpc_retry: '{{ .Values.global.adapter_open_olt.rpc_retry }}'
+  per_rpc_retry_timeout : '{{ .Values.global.adapter_open_olt.per_rpc_retry_timeout }}'
   endpoints:
     # core_endpoint: '{{ .Values.global.adapter_open_olt.core_endpoint }}'
     # adapter_endpoint: '{{ template "fullname" . }}-api:55560'
