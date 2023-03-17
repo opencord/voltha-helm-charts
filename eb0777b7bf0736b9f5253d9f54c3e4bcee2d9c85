@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c745a38_95cf1ab9",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-03-17T07:47:36Z",
+      "side": 1,
+      "message": "I\u0027m not sure, but should we increase to 2.12 here too?\nappVersion: \"2.12\"\nversion: 2.12.0",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
