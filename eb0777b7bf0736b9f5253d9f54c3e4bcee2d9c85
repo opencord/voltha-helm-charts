@@ -22,6 +22,30 @@
       },
       "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d1dda7b_b2a68636",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-03-17T09:18:45Z",
+      "side": 1,
+      "message": "there is an issue with the helm chart pipeline i think , to give an example if i bump up the version to 2.12 for voltha-stack, then the voltha/chart.yaml version must be also bumped up from 2.12.1 to 2.12.2 because when the tar files are made during build the 2.12.1\u0027s tar is already present in the pipeline(from older build) causing it to fail, so as of now to bump up any version of any changed  charts the version of all other changed charts must be also bumped up",
+      "parentUuid": "1c745a38_95cf1ab9",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
