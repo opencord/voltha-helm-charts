@@ -46,6 +46,30 @@
       },
       "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "599fb5b6_a4c7402f",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-03-17T09:55:59Z",
+      "side": 1,
+      "message": "Absolutely, that\u0027s the result of wrong version(s) bumping, but I think your feature is for 2.12, so we have to start to correct all the versions. I know one issue follow the other.",
+      "parentUuid": "3d1dda7b_b2a68636",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
