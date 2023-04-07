@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "807f99ad_3fe9c796",
+        "filename": "VERSION",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000218
+      },
+      "writtenOn": "2023-04-07T17:13:36Z",
+      "side": 0,
+      "message": "The temporary version is set to 3.2.2-dev1 in release. No need to keep dev1 suffix. The new version can be 3.2.3 instead of 3.2.3-dev1",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 10
+      },
+      "revId": "3b6d60c499adbb95060224ddf2afc119c5705273",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
