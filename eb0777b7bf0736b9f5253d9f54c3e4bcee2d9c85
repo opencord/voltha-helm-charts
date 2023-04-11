@@ -94,6 +94,30 @@
       },
       "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3bc7fb8_0f081261",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-04-11T11:37:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3663fe97_406ed42f",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "eb0777b7bf0736b9f5253d9f54c3e4bcee2d9c85",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
