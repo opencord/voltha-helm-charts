@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc5200f9_c4939435",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-04-14T11:00:55Z",
+      "side": 1,
+      "message": "need to set this to 2 according to the discussion in https://gerrit.opencord.org/c/voltha-openolt-adapter/+/34017/comment/1507d109_27591089/, will do that change test it once and raise the review",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 4
+      },
+      "revId": "887c2c90857a2960ca904970f3123fad8a1c90b0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
