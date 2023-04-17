@@ -22,6 +22,30 @@
       },
       "revId": "887c2c90857a2960ca904970f3123fad8a1c90b0",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74f9403e_042d1145",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-04-17T05:28:32Z",
+      "side": 1,
+      "message": "on further testing i found that we should use a separate variable for time out of each rpc call(as suggested in https://gerrit.opencord.org/c/voltha-openolt-adapter/+/34017/comment/1507d109_27591089/), this is because if we use the same variable the grpc librarie\u0027s retry logic will exit on time out of the parent context itself without caring for the retry codes.So we must use a separate variable to squeeze in the mentioned number of retries(5) with in the parent context timeout(10seconds). Thereby giving a per_rpc_retry_timeout of 2 seconds",
+      "parentUuid": "cc5200f9_c4939435",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 4
+      },
+      "revId": "887c2c90857a2960ca904970f3123fad8a1c90b0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
