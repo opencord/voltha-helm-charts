@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46b6d328_cc21efe0",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-05-03T06:33:28Z",
+      "side": 1,
+      "message": "You have to update the versions accordingly.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 15
+      },
+      "revId": "2be5dd26836c1aaa37a7e285c03cb72b46516ee2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9de29e0_d5810ef4",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000643
+      },
+      "writtenOn": "2023-05-03T06:33:28Z",
+      "side": 1,
+      "message": "Update accordingly.",
+      "range": {
+        "startLine": 46,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 18
+      },
+      "revId": "2be5dd26836c1aaa37a7e285c03cb72b46516ee2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
