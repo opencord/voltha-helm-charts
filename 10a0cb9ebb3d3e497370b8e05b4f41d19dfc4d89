@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dab66a47_4c8211d4",
+        "filename": "voltha-infra/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-05-03T09:01:16Z",
+      "side": 1,
+      "message": "Thanks Torsten. Yes you are correct changes are required in only voltha stack reverted the voltha-infra to previous versions",
+      "parentUuid": "0e689a79_f43b45ea",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 18
+      },
+      "revId": "10a0cb9ebb3d3e497370b8e05b4f41d19dfc4d89",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fb226b25_287e9e34",
         "filename": "voltha-infra/Chart.yaml",
         "patchSetId": 4
@@ -37,6 +61,30 @@
       "writtenOn": "2023-05-03T07:46:31Z",
       "side": 1,
       "message": "It is a change for master and master is 2.12. Please increase to 2.12.0 accordingly, maybe with development extension \u0027-dev0\u0027. 2.11.1 should prevent for patches for LTS 2.11.\nAnd see also comment above, you will change voltha-stack only!",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 15
+      },
+      "revId": "10a0cb9ebb3d3e497370b8e05b4f41d19dfc4d89",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9511050b_23cd9141",
+        "filename": "voltha-infra/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-05-03T09:01:16Z",
+      "side": 1,
+      "message": "Correct reverted the changes thanks",
+      "parentUuid": "fb226b25_287e9e34",
       "range": {
         "startLine": 32,
         "startChar": 0,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ca310140_255d41ac",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-05-03T09:01:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1cb8f642_9fc138e2",
+      "range": {
+        "startLine": 29,
+        "startChar": 13,
+        "endLine": 29,
+        "endChar": 17
+      },
+      "revId": "10a0cb9ebb3d3e497370b8e05b4f41d19dfc4d89",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71fbc8d5_bd06596e",
         "filename": "voltha-stack/Chart.yaml",
         "patchSetId": 4
@@ -83,6 +155,30 @@
       "writtenOn": "2023-05-03T07:46:31Z",
       "side": 1,
       "message": "We are changing in master and master is 2.12. so this should be 2.12.0, maybe with development extension \u0027-dev0\u0027: 2.12.0-dev0.",
+      "range": {
+        "startLine": 30,
+        "startChar": 9,
+        "endLine": 30,
+        "endChar": 15
+      },
+      "revId": "10a0cb9ebb3d3e497370b8e05b4f41d19dfc4d89",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01f970ee_b585883f",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-05-03T09:01:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71fbc8d5_bd06596e",
       "range": {
         "startLine": 30,
         "startChar": 9,
