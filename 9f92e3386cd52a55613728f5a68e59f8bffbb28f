@@ -16,6 +16,23 @@
       "message": "\u003e Patch Set 23: Verified-1\n\u003e \n\u003e Build Unstable \n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/990/ : UNSTABLE\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/115/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1139/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/113/ : SUCCESS\n\nrecheck",
       "revId": "9f92e3386cd52a55613728f5a68e59f8bffbb28f",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b7b38f0_b22b769f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-05-05T06:19:36Z",
+      "side": 1,
+      "message": "\u003e Patch Set 23:\n\u003e \n\u003e Build Unstable \n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/991/ : UNSTABLE\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/116/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1140/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/114/ : SUCCESS\n\nretry",
+      "revId": "9f92e3386cd52a55613728f5a68e59f8bffbb28f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
