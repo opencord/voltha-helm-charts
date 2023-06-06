@@ -86,6 +86,8 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.labels['app.kubernetes.io/name']
+          - name: KV_STORE_DATAPATH_PREFIX
+            value: {{ tpl .Values.ofagent.kv_store_data_prefix . }}
         args:
         - "/app/ofagent"
         {{- if eq (len .Values.services.controller) 0 }}
@@ -97,7 +99,7 @@ spec:
         - "--controller={{ tpl .address $ }}"
         {{- end }}
         - "--voltha={{ template "fullname" . }}-api.{{ .Release.Namespace }}.svc:55555"
-        - "--kv_store_address={{ .Values.services.etcd.address }}"
+        - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
         - "--kv_store_type=etcd"
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
