@@ -35,6 +35,9 @@ voltha:
   rw_core:
     kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
     stack_id: "{{ .Values.global.stack_name }}"
+  ofagent:
+    kv_store_data_prefix: 'service/voltha/{{ .Release.Name }}_{{ .Values.global.stack_name }}'
+    stack_id: "{{ .Values.global.stack_name }}"
   services:
     kafka:
       cluster:

@@ -102,6 +102,7 @@ rw_core:
 ofagent:
   log_level: '{{ .Values.global.log_level }}'
   device_refresh_interval: '15s'
+  kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
 
 # Define Docker images to be used
 images:
