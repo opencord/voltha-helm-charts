@@ -80,3 +80,13 @@ voltha-go-controller:
      kafka:
        cluster:
          address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+
+igmpca:
+  enabled: false
+  services:
+    kafka:
+      cluster:
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+    redis:
+      sentinel: false
+      address: "{{ .Values.global.voltha_infra_name }}-redis-headless.{{ .Values.global.voltha_infra_namespace }}.svc:6379"

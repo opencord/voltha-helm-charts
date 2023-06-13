@@ -1,0 +1,168 @@
+# Copyright 2022-2023 Open Networking Foundation (ONF) and the ONF Contributors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+nameOverride: ~
+fullNameOverride: ~
+
+global:
+  log_level: "WARN"
+  image_registry: ""
+  image_tag: ~
+  image_org: "voltha/"
+  image_pullPolicy: "IfNotPresent"
+
+replicaCount: 1
+
+images:
+  igmpca:
+    registry: '{{ .Values.global.image_registry }}'
+    repository: '{{ .Values.global.image_org }}igmpca'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
+    pullPolicy: '{{ .Values.global.image_pullPolicy | default "Always" }}'
+
+services:
+  kafka:
+    enabled: true
+    cluster:
+      address: voltha-infra-kafka.default.svc:9092
+  redis:
+    sentinel: false
+    address: voltha-infra-redis-headless.default.svc:6379
+
+igmpca:
+  # max number of groups per uni port, 0 means unlimited
+  maxNumberOfGroupsPerUni: 0
+  # max number of groups per pon port, 0 means unlimited
+  maxNumberOfGroupsPerPon: 0
+  topics:
+    event_topic: voltha.events
+  probe:
+    probeAddress: ":8080"
+    liveProbeInterval: "30s"
+    notLiveProbeInterval: "5s"
+  flowIdRange:
+    startId: 1
+    endId: 10240
+  endpoints:
+    grpc:
+      port: 9000
+    restapi:
+      port: 9001
+    http:
+      port: 8080
+    metrics:
+      enabled: true
+      port: 8081
+
+nodeSelector: {}
+
+kvStore:
+  enable: true
+  timeout: 60s
+
+logLevel: '{{ .Values.global.log_level }}'
+
+defaults:
+  cpuProfile: ~
+  logCaller: false
+
+serviceConfig:
+  # Contains a description of the services that needs to be created for each UNI and the corresponding tagging scheme
+  name: tt
+  serviceDefinitions:
+    - name: vlan55
+      # expected VLAN tag from the ONU for this service, ANY_VLAN=4096
+      vlan: 55
+      # expected pbit from the ONU for this service, ANY_PBIT=255
+      pbit: 255
+      # inner VLAN tag value to be set, NO_VID=0
+      translateInnerVlan: 0
+      # inner pbit to be set, NO_REMARK_ACTION=255
+      # not supported
+      remarkInnerPbit: 255
+      # outer VLAN tag value to be added for this service NO_VID=0
+      addOuterVlan: 550
+      # outer pbit value to be set if the add_outer_vlan is not set to NO_ACTION
+      # NO_REMARK_ACTION=255
+      remarkOuterPbit: 255
+      # If it is false, IgmpProxy sends [LastQueryCount] Group-Specific
+      # Queries every [LastQueryInterval] to the group being left.
+      fastLeave: true
+      # The Max Response Time inserted into Group-Specific Queries sent
+      # in response to Leave Group messages, and is also the amount of time
+      # between Group-Specific Query messages.
+      # If FastLeave":"true", this parameter has no affect.
+      lastQueryInterval: 15
+      # The number of Specific Queries sent before IgmpProxy application
+      # assumes there are no local members.
+      # If "FastLeave":"true", this parameter has no effect.
+      lastQueryCount: 2
+      # Used to calculate the Max Resp Code inserted into the periodic Queries.
+      # Unit is 1/10 second. This parameter will affect IGMP General Query and
+      # IGMP Group Specific Query Respond time.
+      maxResp: 10
+      # If the flag is true, outgoing IGMP Group Membership Report messages
+      # will be IGMP v3. It will be IGMP v2 otherwise.
+      outgoingIgmpWithV3: false
+      # Priority code that is set to downstream IGMP General Query packets.
+      # should be considered again when we start remarking inner p bits
+      igmpQueryPbit: 5
+      # If true, downstream IGMP General Query packets will be sent periodically.
+      enableGeneralQuery: true
+      # The interval between General Queries sent.
+      generalQueryInterval: 60
+      # Defines IGMP version of downstream IGMP General Query packets.
+      # If the flag is set to true, the version of downstream IGMP General Query packets will be v3. It will be v2 otherwise.
+      enableGeneralQueryIgmpV3: false
+      # Number of Group-Specific Queries sent before igmpca assumes there are no local members.
+      # It has no effect enable_periodic_group_specific_query is false
+      keepAliveCount: 2
+      # the time between repetitions of the proxy’s initial report of membership in a group. Unit is 1 second.
+      unsolicitedTimeout: 3
+      # add route alert into uplink IGMP v3 Membership packets
+      withRaUplink: true
+      # add route alert into down link packets (IgmpQuery packet)
+      withRaDownlink: false
+      # IPTV service priority given in the Technology Profile. This value
+      # must be set to the same value given in the Technology Profile while
+      # provisioning services to the subscribers.
+      servicePriority: 2
+      # multicast gem port ID
+      multicastGemPortId: 4069
+      # Differentiated Services (DS) field in the IP header of uplink IGMP packets. Negative values default to zero.
+      dsField: 0
+      # If true, the groups and flows is not deleted from the OLT when there are no members left
+      # unless the max number of groups limit (specified by the OLT) is reached
+      dynamicToStaticGroups: true
+      # If true, ignores IGMP Membershipment messages sent to group IPs outside of the ACL Ranges.
+      enableAcl: true
+      aclRanges:
+        - 239.254.0.0/24
+        - 239.254.1.0/24
+        - 239.254.2.0/24
+        - 239.254.3.0/24
+
+olts:
+  - name: olt
+    ipAddress: 127.0.0.1
+    port: "9191"
+    macAddress: DE:AD:BE:EF:BA:11
+    type: openolt
+    heartbeatCheckInterval: 15s
+    heartbeatFailReportInterval: 45s
+    grpcTimeoutInterval: 2s
+
+scheduleRules:
+  preferStackPodsOnSameNode: false
+  preferStacksOnDifferentNodes: false

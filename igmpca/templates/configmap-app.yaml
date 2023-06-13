@@ -1,0 +1,97 @@
+# Copyright 2022-2023 Open Networking Foundation (ONF) and the ONF Contributors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+{{- $fullname := include "common.names.fullname" . }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $fullname }}-app
+  namespace: {{ .Release.Namespace }}
+data:
+  igmpca.yaml: |
+    ---
+    # CLI arguments override values specified here.
+    # Commented values show defaults.
+
+    # igmpca specific settings
+    api_address: ":{{ .Values.igmpca.endpoints.grpc.port }}"
+    rest_api_address: ":{{ .Values.igmpca.endpoints.http.port }}"
+    service_config_file: "configs/service.yaml"
+    kv_store_enabled: {{ .Values.kvStore.enable }}
+    kv_store_type: "{{ ternary "redis-sentinel" "redis" (eq (tpl (.Values.services.redis.sentinel | toString) .) "true") }}"
+    kv_store_address: "{{ tpl .Values.services.redis.address . }}"
+    kv_store_timeout: "{{ .Values.kvStore.timeout }}"
+
+    metrics:
+      port: {{ .Values.igmpca.endpoints.metrics.port }}
+      enabled: {{ .Values.igmpca.endpoints.metrics.enabled }}
+    kafka_enabled: {{ .Values.services.kafka.enabled }}
+    kafka_cluster_address: "{{ tpl .Values.services.kafka.cluster.address . }}"
+    event_topic: "{{ tpl .Values.igmpca.topics.event_topic . }}"
+    probe_address: "{{ .Values.igmpca.probe.probeAddress }}"
+    live_probe_interval: "{{ .Values.igmpca.probe.liveProbeInterval }}"
+    not_live_probe_interval: "{{ .Values.igmpca.probe.notLiveProbeInterval }}"
+    multicast_flow_id_start: {{ .Values.igmpca.flowIdRange.startId }}
+    multicast_flow_id_end: {{ .Values.igmpca.flowIdRange.endId }}
+    max_number_of_groups_per_uni: {{ .Values.igmpca.maxNumberOfGroupsPerUni }}
+    max_number_of_groups_per_pon: {{ .Values.igmpca.maxNumberOfGroupsPerPon }}
+
+    olts:
+      {{- range $index, $olt := .Values.olts }}
+      - name: {{ (tpl ($olt.name | default (print "olt" ($index | toString))) $) }}
+        ip_address: {{ (tpl ($olt.ipAddress | default "127.0.0.1") $) }}
+        port: {{ (tpl (ternary ($olt.port | toString) "9191" (hasKey $olt "port")) $) }}
+        mac_address: {{ (tpl ($olt.macAddress | default "DE:AD:BE:EF:BA:11") $) }}
+        type: {{ (tpl ($olt.type | default "openolt") $) }}
+        heartbeat_check_interval: {{ (tpl ($olt.heartbeatCheckInterval | default "15s") $) }}
+        heartbeat_fail_report_interval: {{ (tpl ($olt.heartbeatFailReportInterval | default "45s") $) }}
+        grpc_timeout_interval: {{ (tpl ($olt.grpcTimeoutInterval | default "2s") $) }}
+      {{- end }}
+
+  service.yaml: |
+    name: {{ .Values.serviceConfig.name }}
+    service_definitions:
+      {{- range $index, $serviceDefinition := .Values.serviceConfig.serviceDefinitions }}
+      {{- /*
+      do not use "default" method for float64 and boolean params, not working for 0 (zero). Evaluates it as nil.
+      */}}
+      - name: {{ $serviceDefinition.name | default "vlan55" }}
+        vlan: {{ if kindIs "float64" $serviceDefinition.vlan }}{{ $serviceDefinition.vlan }}{{ else }}55{{ end }}
+        pbit: {{ if kindIs "float64" $serviceDefinition.pbit  }}{{ $serviceDefinition.pbit }}{{ else }}255{{ end }}
+        translate_inner_vlan: {{ if kindIs "float64" $serviceDefinition.translateInnerVlan  }}{{ $serviceDefinition.translateInnerVlan }}{{ else }}0{{ end }}
+        remark_inner_pbit: {{ if kindIs "float64" $serviceDefinition.remarkInnerPbit  }}{{ $serviceDefinition.remarkInnerPbit }}{{ else }}255{{ end }}
+        add_outer_vlan: {{ if kindIs "float64" $serviceDefinition.addOuterVlan  }}{{ $serviceDefinition.addOuterVlan }}{{ else }}550{{ end }}
+        remark_outer_pbit: {{ if kindIs "float64" $serviceDefinition.remarkOuterPbit  }}{{ $serviceDefinition.remarkOuterPbit }}{{ else }}255{{ end }}
+        fast_leave: {{ hasKey $serviceDefinition "fastLeave" | ternary $serviceDefinition.fastLeave true }}
+        last_query_interval: {{ if kindIs "float64" $serviceDefinition.lastQueryInterval }}{{ $serviceDefinition.lastQueryInterval }}{{ else }}15{{ end }}
+        last_query_count: {{ if kindIs "float64" $serviceDefinition.lastQueryCount }}{{ $serviceDefinition.lastQueryCount }}{{ else }}2{{ end }}
+        max_resp: {{ if kindIs "float64" $serviceDefinition.maxResp }}{{ $serviceDefinition.maxResp }}{{ else }}10{{ end }}
+        outgoing_igmp_with_v3: {{ hasKey $serviceDefinition "outgoingIgmpWithV3" | ternary $serviceDefinition.outgoingIgmpWithV3 false }}
+        igmp_query_pbit: {{ if kindIs "float64" $serviceDefinition.igmpQueryPbit }}{{ $serviceDefinition.igmpQueryPbit }}{{ else }}5{{ end }}
+        enable_general_query: {{ hasKey $serviceDefinition "enableGeneralQuery" | ternary $serviceDefinition.enableGeneralQuery true }}
+        general_query_interval : {{ if kindIs "float64" $serviceDefinition.generalQueryInterval }}{{ $serviceDefinition.generalQueryInterval }}{{ else }}60{{ end }}
+        enable_general_query_igmp_v3: {{ hasKey $serviceDefinition "enableGeneralQueryIgmpV3" | ternary $serviceDefinition.enableGeneralQueryIgmpV3 false }}
+        keep_alive_count: {{ if kindIs "float64" $serviceDefinition.keepAliveCount }}{{ $serviceDefinition.keepAliveCount }}{{ else }}2{{ end }}
+        unsolicited_timeout: {{ if kindIs "float64" $serviceDefinition.unsolicitedTimeout }}{{ $serviceDefinition.unsolicitedTimeout }}{{ else }}3{{ end }}
+        with_ra_uplink: {{ hasKey $serviceDefinition "withRaUplink" | ternary $serviceDefinition.withRaUplink true }}
+        with_ra_downlink: {{ hasKey $serviceDefinition "withRaDownlink" | ternary $serviceDefinition.withRaDownlink false }}
+        service_priority: {{ if kindIs "float64" $serviceDefinition.servicePriority }}{{ $serviceDefinition.servicePriority }}{{ else }}2{{ end }}
+        multicast_gem_port_id: {{ if kindIs "float64" $serviceDefinition.multicastGemPortId }}{{ $serviceDefinition.multicastGemPortId }}{{ else }}4069{{ end }}
+        ds_field: {{ if kindIs "float64" $serviceDefinition.dsField }}{{ $serviceDefinition.dsField }}{{ else }}0{{ end }}
+        dynamic_to_static_groups: {{ hasKey $serviceDefinition "dynamicToStaticGroups" | ternary $serviceDefinition.dynamicToStaticGroups true }}
+        enable_acl: {{ hasKey $serviceDefinition "enableAcl" | ternary $serviceDefinition.enableAcl true }}
+        acl_ranges:
+          {{- range $index2, $aclRange := $serviceDefinition.aclRanges }}
+          - {{ $aclRange }}
+          {{- end }}
+      {{- end }}
