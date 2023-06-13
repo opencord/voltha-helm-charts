@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bca556d4_e3ddbae8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2023-06-13T20:21:11Z",
+      "side": 1,
+      "message": "Hi Andrea, is it possible for you to provide a patch to reflect TIM workflow here: https://docs.voltha.org/master/voltha-helm-charts/README.html#deploying-a-different-workflow\n\nWe\u0027ll also need a verification job for TIM workflow, so that every commit can be tested against TIM workflow:\nhttps://sebadeploy.argela.com.tr/view/performans-20/job/20-Test-Scale/405/",
+      "revId": "eab23cc0f8ff1e35a34e211aedd92f7c4940e320",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
