@@ -26,14 +26,14 @@ global:
   image_pullPolicy: "Always"
   core_endpoint: "{{ .Values.global.voltha_release_name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
   # timeout for RPC request
-  rpc_timeout: "10s"
+  rpc_timeout: "20s"
   adapter_open_olt:
     timeout: "5s"
     heartbeat_check_interval: "15s"
     heartbeat_fail_interval: "31s"
     check_onu_exist_on_discovery: false
-    per_rpc_retry_timeout : "2s"
-    rpc_retry: "5"
+    per_rpc_retry_timeout : "5s"
+    rpc_retry: "4"
   # enable OMCC encryption
   omcc_encryption: false
   # enable ONU stats
