@@ -28,6 +28,8 @@ global:
   image_pullPolicy: "Always"
   rw_core:
     rpc_timeout: "30s"
+    per_rpc_retry_timeout : "6s"
+    rpc_retry: "5"
     flow_timeout: "30s"
     internal_timeout: "30s"
   # Configure Log Correlation
@@ -89,6 +91,8 @@ replicas:
 rw_core:
   log_level: '{{ .Values.global.log_level }}'
   rpc_timeout: '{{ .Values.global.rw_core.rpc_timeout }}'
+  rpc_retry: '{{ .Values.global.rw_core.rpc_retry }}'
+  per_rpc_retry_timeout : '{{ .Values.global.rw_core.per_rpc_retry_timeout }}'
   flow_timeout: '{{ .Values.global.rw_core.flow_timeout }}'
   internal_timeout: '{{ .Values.global.rw_core.internal_timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
