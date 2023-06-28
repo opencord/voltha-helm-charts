@@ -27,11 +27,11 @@ maintainers:
     url: "https://www.opennetworking.org"
 name: voltha-stack
 appVersion: "2.12"
-version: 2.12.3
+version: 2.12.5
 dependencies:
   - name: voltha
     repository: file://../voltha
-    version: 2.12.6
+    version: 2.12.8
     condition: voltha.enabled
   - name: voltha-adapter-openonu
     repository: file://../voltha-adapter-openonu
