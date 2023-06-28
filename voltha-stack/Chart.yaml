@@ -31,11 +31,11 @@ version: 2.12.5
 dependencies:
   - name: voltha
     repository: file://../voltha
-    version: 2.12.11
+    version: 2.12.12
     condition: voltha.enabled
   - name: voltha-adapter-openonu
     repository: file://../voltha-adapter-openonu
-    version: 2.12.1
+    version: 2.12.2
     condition: voltha-adapter-openonu.enabled
   - name: voltha-adapter-openolt
     repository: file://../voltha-adapter-openolt
