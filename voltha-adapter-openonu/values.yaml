@@ -35,7 +35,9 @@ global:
   # timeout for OMCI channel
   omci_timeout: "3s"
   # timeout for RPC request
-  rpc_timeout: "10s"
+  rpc_timeout: "150s"
+  per_rpc_retry_timeout : "30s"
+  rpc_retry: "5"
   # kv store timeout
   adapter_open_onu:
     timeout: "5s"
@@ -124,6 +126,8 @@ adapter_open_onu:
   max_timeout_reconciling: '{{ .Values.global.max_timeout_reconciling }}'
   omci_timeout: '{{ .Values.global.omci_timeout }}'
   rpc_timeout: '{{ .Values.global.rpc_timeout }}'
+  rpc_retry: '{{ .Values.global.rpc_retry }}'
+  per_rpc_retry_timeout : '{{ .Values.global.per_rpc_retry_timeout }}'
   kv_store_timeout: '{{ .Values.global.adapter_open_onu.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   alarm_audit_interval: '{{ .Values.global.alarm_audit.interval }}'
