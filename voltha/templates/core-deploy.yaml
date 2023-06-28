@@ -93,6 +93,8 @@ spec:
             - "--banner"
             - "--kafka_cluster_address={{ tpl .Values.services.kafka.cluster.address . }}"
             - "--rpc_timeout={{ tpl .Values.rw_core.rpc_timeout . }}"
+            - "--max_grpc_client_retry={{ tpl .Values.rw_core.rpc_retry . }}"
+            - "--per_rpc_retry_timeout={{ tpl .Values.rw_core.per_rpc_retry_timeout . }}"
             - "--flow_timeout={{ tpl .Values.rw_core.flow_timeout . }}"
             - "--internal_timeout={{ tpl .Values.rw_core.internal_timeout . }}"
             - "--event_topic={{ .Values.rw_core.topics.event_topic }}"
