@@ -27,6 +27,7 @@ include $(MAKEDIR)/lint/helm/tools.mk
 include $(MAKEDIR)/lint/helm/branch-detect.mk
 include $(MAKEDIR)/lint/helm/chart.mk
 include $(MAKEDIR)/lint/helm/helm.mk
+include $(MAKEDIR)/lint/helm/helmrepo.mk
 
 ##-------------------##
 ##---]  TARGETS  [---##

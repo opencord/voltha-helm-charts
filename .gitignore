@@ -1,3 +1,5 @@
+# -*- makefile -*-
+
 # local chart repo dir used when building the http-accessible repo
 chart_repo
 
@@ -14,12 +16,20 @@ tagcollisionreject.sh
 # should be working in a temp dir -vs- (read-only) checkout dir.
 tagcollisionreject.tmp.sh
 
-# helm-repo-tools is cloned in the Makefile if not present
+# ---------------------------
+# Repositories cloned locally
+# ---------------------------
+cord-charts-repo/
 helm-repo-tools/
 
+# ----------
 # misc files
+# ----------
 .*.swp
+*~
 .remote-sync.json
 .DS_Store
 #Idea
 .idea/
+
+# [EOF]
