@@ -68,12 +68,6 @@ tagcollisionreject.sh:
 test-tags: tagcollisionreject.sh
 	@bash ./tagcollisionreject.sh
 
-## -----------------------------------------------------------------------
-## [NOTE] moving to makefiles/lint/helm/include.mk
-## -----------------------------------------------------------------------
-helm-repo-tools:
-	git clone "https://gerrit.opencord.org/helm-repo-tools"
-
 lint-local: lint-helm lint-chart
 
 # lint-helm:
@@ -92,7 +86,6 @@ test: $(test-all) # @HELP Makes sure the versions used in the charts are valid
 ## -----------------------------------------------------------------------
 ## -----------------------------------------------------------------------
 clean :: # @HELP Removes all files downloaded to run the tests
-	$(RM) -r helm-repo-tools
 	$(RM) tagcollisionreject.*
 
 # [EOF]
