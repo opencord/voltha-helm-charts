@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "475f8b70_98092d3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-07T15:19:35Z",
+      "side": 1,
+      "message": "recheck\n\nsanity test failure resolved so see if that runs cleanly.\nNikesh encountered the helm lint problem with another job so this failure is likely persistent.",
+      "revId": "dca5a365f7f209ef851cc65bdbe8c8b1eafd33a0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
