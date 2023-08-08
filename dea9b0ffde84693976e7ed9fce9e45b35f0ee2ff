@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36e390d2_bac64ace",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-08-08T15:35:02Z",
+      "side": 1,
+      "message": "\u003e Patch Set 9:\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/149/ : FAILURE\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/1030/ : FAILURE\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/151/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1173/ : SUCCESS\n\nrecheck",
+      "revId": "dea9b0ffde84693976e7ed9fce9e45b35f0ee2ff",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
