@@ -67,6 +67,23 @@
       "message": "recheck\n\ncomment out debugging find command in repo:ci-management/.../bbsim-test.groovy.\nStrange syntax complaint about parens in the command.",
       "revId": "4d21a18950b4826fad1870541f5ec65f0f4234e4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e7c6de5_79c26fb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-08T00:57:58Z",
+      "side": 1,
+      "message": "recheck\n\nWhy is the debug find command change in repo:ci-management not propagating ?\nRemoved debug logic block for \u003e 1 line delta, see if that will get the ball rolling.",
+      "revId": "4d21a18950b4826fad1870541f5ec65f0f4234e4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
