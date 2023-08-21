@@ -16,6 +16,23 @@
       "message": "recheck\n\njob ABORTED (by commit --amend ?) so restart",
       "revId": "748ff28f3d773831b76b0955eaf149cb42a9e081",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c731cd44_f6c2b7f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-21T21:16:52Z",
+      "side": 1,
+      "message": "Ran cleanly last recheck so merge in the lint/makefile edits.",
+      "revId": "748ff28f3d773831b76b0955eaf149cb42a9e081",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
