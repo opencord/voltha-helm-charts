@@ -101,6 +101,23 @@
       "message": "Debugging find command removed from bbsim-test.groovy, jenkins why are you still trying to use the old version ?!?  Lets see if time heals all wounds and a caching delay may be the problem.",
       "revId": "4d21a18950b4826fad1870541f5ec65f0f4234e4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fe999be_43d8d947",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-21T19:59:26Z",
+      "side": 1,
+      "message": "recheck\n\nLet(s) see if enough time has passed to regenerate the JJB job configs.\nLast attempt was still using the old script version.",
+      "revId": "4d21a18950b4826fad1870541f5ec65f0f4234e4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
