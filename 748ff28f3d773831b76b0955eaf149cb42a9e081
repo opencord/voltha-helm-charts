@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14d81e05_755c8b8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-08-21T20:43:06Z",
+      "side": 1,
+      "message": "recheck\n\njob ABORTED (by commit --amend ?) so restart",
+      "revId": "748ff28f3d773831b76b0955eaf149cb42a9e081",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
