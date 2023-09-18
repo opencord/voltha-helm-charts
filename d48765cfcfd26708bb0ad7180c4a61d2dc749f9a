@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68c803cb_3c4cd788",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-09-18T19:28:13Z",
+      "side": 1,
+      "message": "recheck\n\nvars/volthaStackDeploy.groovy, etc -- updated to wait for successful launch (VS is_active status) after installVolthaStack and waitForOnosLaunch.\n\nProblems will persist but let(s) see what effect waiting until ready has on failing downstream tasks.",
+      "revId": "d48765cfcfd26708bb0ad7180c4a61d2dc749f9a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
