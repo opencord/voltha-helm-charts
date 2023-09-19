@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67c3e2d9_1bf7b754",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-09-19T12:41:54Z",
+      "side": 1,
+      "message": "recheck\n\nHmmm, last recheck attempt was PASS (+1 verify) but I cannot think of any repo:ci-management patches that would directly alter problem state form the history.  Possible peripheral patches have helped but lets re-run the job a 2nd time to verify the PASS state is repeatable.",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
