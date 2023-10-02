@@ -33,6 +33,41 @@
       "message": "recheck\n\nrunning with the latest bbsim-tests.groovy script I have been debugging bbsim job failures with.\nmerged into master, if job progresses to the \u0027getIam\u0027 failure we are good to merge.",
       "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbe1e52c_6bfac94b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-10-02T17:35:54Z",
+      "side": 1,
+      "message": "\"No such DSL method \u0027getIam\u0027 found among steps\"\n\nwe got to this failure so can we merge?",
+      "parentUuid": "6b528b86_1b15af25",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "315dce84_b1b6e834",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-10-02T17:35:54Z",
+      "side": 1,
+      "message": "\u003e Patch Set 18:\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/1060/ : FAILURE\n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/176/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/178/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1199/ : SUCCESS\n\n",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
