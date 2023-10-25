@@ -156,6 +156,40 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13f4b324_c3bedea6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-10-25T14:42:23Z",
+      "side": 1,
+      "message": "Looking through the changes, i have to admit that i do not understand why the versions and appversions where increased like that. Maybe you could update the commit message and explain why we need to update the versions for these three helm charts like done in this MR.",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed901b4b_f410eee5",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-10-25T14:42:23Z",
+      "side": 1,
+      "message": "Why is this version updated from 2.11.1 to 2.11.3 (and not 2.11.2 ?)",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bad684a2_a7c0ead8",
@@ -169,6 +203,23 @@
       "writtenOn": "2023-10-25T13:35:50Z",
       "side": 1,
       "message": "There is no image with this tag currently available for mirror.registry.opennetworking.org/voltha/voltha-openonu-adapter-go.",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01edda7a_cbcf6830",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-10-25T14:42:23Z",
+      "side": 1,
+      "message": "Looking at the available releases for voltha-openonu-adapter-go, this release does not exist. The latest 2.7.X release is 2.7.3 and the latest overall release is 2.11.1 atm.",
       "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
