@@ -120,6 +120,23 @@
       "message": "recheck",
       "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88004b20_c59353fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-10-25T12:59:50Z",
+      "side": 1,
+      "message": "For me it looks like the test is failing because the docker image for the new voltha-adapter-openonu version is not yet available/published in the registry.",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
