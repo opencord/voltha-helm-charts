@@ -192,6 +192,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d562bd4f_01be8de4",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-10-25T14:55:06Z",
+      "side": 1,
+      "message": "this was because on putting the initial versions the pipeline was showing a duplicate tar file exists and erroring out",
+      "parentUuid": "ed901b4b_f410eee5",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bad684a2_a7c0ead8",
         "filename": "voltha-adapter-openonu/Chart.yaml",
         "patchSetId": 18
@@ -220,6 +238,24 @@
       "writtenOn": "2023-10-25T14:42:23Z",
       "side": 1,
       "message": "Looking at the available releases for voltha-openonu-adapter-go, this release does not exist. The latest 2.7.X release is 2.7.3 and the latest overall release is 2.11.1 atm.",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db97feb5_f23c3e8a",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-10-25T14:55:06Z",
+      "side": 1,
+      "message": "same thing as above happend here",
+      "parentUuid": "01edda7a_cbcf6830",
       "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
