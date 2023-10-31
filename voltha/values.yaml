@@ -105,17 +105,19 @@ ofagent:
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
 
 # Define Docker images to be used
+# voltha-ofagent-go repo https://github.com/opencord/ofagent-go
+# voltha-rw-core repo https://github.com/opencord/voltha-go
 images:
   ofagent:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.1.3{{- end }}{{- else }}2.1.3{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.1.6{{- end }}{{- else }}2.1.6{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.1.8{{- end }}{{- else }}3.1.8{{- end }}'
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.4.8{{- end }}{{- else }}3.4.8{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
 ingress:
