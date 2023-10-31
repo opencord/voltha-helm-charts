@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha"
-version: "2.12.7"
+version: "2.12.8"
 description: "A Helm chart for Voltha based on K8S resources in Voltha project"
 keywords:
   - "onf"
@@ -31,6 +31,6 @@ maintainers:
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
 
-# app version applies to multiple components with potentially different
-# container image versions
+# app version is NOT used in this chart for application versions or image tags
+# but represents the voltha release version itself
 appVersion: "2.12"
