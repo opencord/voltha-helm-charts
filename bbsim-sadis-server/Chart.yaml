@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "bbsim-sadis-server"
-version: "0.3.2"
+version: "0.3.3"
 description: "A Helm chart for Voltha BBSIM sadis server"
 keywords:
   - "onf"
@@ -30,6 +30,5 @@ maintainers:
     email: "info@opennetworking.org"
     url: "https://www.opennetworking.org"
 
-# appVersion refers to multiple components with potentially different
-# container image versions.
-appVersion: "0.3.4"
+# appVersion refers to the release version of bbsim-sadis-server
+appVersion: "0.3.5"
