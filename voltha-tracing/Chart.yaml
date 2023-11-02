@@ -14,7 +14,7 @@
 ---
 apiVersion: v1
 name: "voltha-tracing"
-version: "1.0.3"
+version: "1.0.4"
 description: "A Helm chart for deploying Jaeger all-in-one container for Trace data collection and analysis"
 keywords:
   - "onf"

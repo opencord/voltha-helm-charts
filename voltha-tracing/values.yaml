@@ -19,7 +19,7 @@ fullNameOverride: ~
 tracing:
   image:
     repository: "jaegertracing/all-in-one"
-    tag: "1.18"
+    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}{{ .Chart.AppVersion }}{{- end }}{{- else }}{{ .Chart.AppVersion }}{{- end }}'
     pullPolicy: "IfNotPresent"
   maxTraces: 100000
 
