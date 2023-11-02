@@ -34,6 +34,24 @@
       "parentUuid": "db5cb811_f9264a62",
       "revId": "a197ecd730a83ecc5f7fba8ea707c064d87db538",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf5e2768_fddea272",
+        "filename": "voltha-tracing/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-02T13:56:01Z",
+      "side": 1,
+      "message": "From the conditional replacement I now see two potential values replacing the single hardcoded version \u00271.18\u0027:\n\nif .Values.global.image_tag\n   return .Values.global.image_tag\nelse\n   return Chart.AppVersion\n\n\nFrom the checkin message:\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n* although the comment in the Chart.yaml says that appVersion is used to\n  define the tag/version of the jaeger container, it actually was not\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\n\nIf logic added was the byproduct of copying in existing version logic, revisiting may not be needed.  Between the commit message and two potential return values for a trace library -- the patch resembled an override for tracing.",
+      "parentUuid": "e13ee088_58769964",
+      "revId": "a197ecd730a83ecc5f7fba8ea707c064d87db538",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
