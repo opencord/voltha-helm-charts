@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db5cb811_f9264a62",
+        "filename": "voltha-tracing/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-02T12:20:01Z",
+      "side": 1,
+      "message": "Should add a local README.md or README.jager.md to document why the conditional tag/version handling was needed -- in addition to the commit message.\n\nIf tag handling was incorrect for the Jager container was it due to a bug in the tracing system ?\n  o If yes should the conditional be revisited later to revert (open a jira ticket as a reminder) ?\n  o Or is a distinct version/image tag explicitly needed and the image tag should persist ?\n\napiVersion bumps look ok",
+      "revId": "a197ecd730a83ecc5f7fba8ea707c064d87db538",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
