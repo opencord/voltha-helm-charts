@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5d9598b3_3c7dcfc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-02T14:04:55Z",
+      "side": 1,
+      "message": "I can easily make the same argument for makefile patches.\nLogically submitting a bulk patch ensures everything is added at once.\n\nMakefile patches have been split like I was asked to do:\n  - display help\n  - install tools\n  - target logic\n  - testing\n\nWe should either support bulk patches or split patches for review rather than adding an undue burden for some patches and relax them in other cases.",
+      "parentUuid": "082b2996_e2d5950c",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fc09956_0d6ae509",
         "filename": "voltha/values.yaml",
         "patchSetId": 3
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "I think the logic used in this chart (and most of the other ones) could profit from some refactoring, but i think this is not the right place or time to make those changes. I would prefer to stick with a consistent way of handling tags for now and do the refactoring throughout all charts after we have done a release.",
       "parentUuid": "3fc09956_0d6ae509",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14418916_8e5dd4f8",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-02T14:04:55Z",
+      "side": 1,
+      "message": "This would be the time to clean things up, while code is being handled and actively worked on.  Otherwise we continue to propagate rampant copy \u0026 pasting that contributes toward having to maintain duplicate code throughout the repositories.",
+      "parentUuid": "5f50dd6a_b4d4c436",
       "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
