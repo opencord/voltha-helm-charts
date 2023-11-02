@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae5d5d73_3670486b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-02T13:02:06Z",
+      "side": 1,
+      "message": "\u003e\u003e maybe split this into multiple commits\n\nYes that would be helpful for reviews.  I am doing the same thing splitting makefile, etc patches so there is less stray logic to digest during review.\n",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fc09956_0d6ae509",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-02T13:02:06Z",
+      "side": 1,
+      "message": "Is there any syntax or library templating that could be used to replace inlined conditional logic with a common template ?\n\nSomething like:\nimage_tag_or_value \".Values.global\" \"2.1.6\"\n\nThat would help improve readability and reduce the chance for typos to be introduced.",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
