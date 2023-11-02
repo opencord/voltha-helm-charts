@@ -52,6 +52,24 @@
       "parentUuid": "e13ee088_58769964",
       "revId": "a197ecd730a83ecc5f7fba8ea707c064d87db538",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "534c9798_e0c12935",
+        "filename": "voltha-tracing/values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000983
+      },
+      "writtenOn": "2023-11-02T14:11:34Z",
+      "side": 1,
+      "message": "Yes, the logic was copied to make the tag look and act exactly like other instances in this repo. The logic look more complex than is actually needed, but adding yet another variant (even it it were simplified) would arguably make the repo code harder to understand.",
+      "parentUuid": "bf5e2768_fddea272",
+      "revId": "a197ecd730a83ecc5f7fba8ea707c064d87db538",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
