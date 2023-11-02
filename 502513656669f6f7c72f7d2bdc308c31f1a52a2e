@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "082b2996_e2d5950c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-02T13:36:21Z",
+      "side": 1,
+      "message": "Doing the updates for each chart by itself has a couple of disadvantages:\n1. Due to interdependencies between the applications, upgrading only one of them might lead to issues because of incompatibilities, which can only be resolved by also upgrading the other applications.\n2. For each upgrade for a single application, we also need to upgrade the meta helm chart \"voltha\" and \"voltha-stack\", meaning while going through all applications we do quite a couple of version bumps without actually beeing interested in the intermediate results.\n3. Given that we are mostly working towards a stable state with \"the latest and greates application code\" and most applications have not been upgraded for a while now, doing one big jump and then smaller jumps in the future might be the \"easier\" and more pragmatic way forward.",
+      "parentUuid": "ae5d5d73_3670486b",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fc09956_0d6ae509",
         "filename": "voltha/values.yaml",
         "patchSetId": 3
@@ -31,6 +49,24 @@
       "writtenOn": "2023-11-02T13:02:06Z",
       "side": 1,
       "message": "Is there any syntax or library templating that could be used to replace inlined conditional logic with a common template ?\n\nSomething like:\nimage_tag_or_value \".Values.global\" \"2.1.6\"\n\nThat would help improve readability and reduce the chance for typos to be introduced.",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f50dd6a_b4d4c436",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-02T13:36:21Z",
+      "side": 1,
+      "message": "I think the logic used in this chart (and most of the other ones) could profit from some refactoring, but i think this is not the right place or time to make those changes. I would prefer to stick with a consistent way of handling tags for now and do the refactoring throughout all charts after we have done a release.",
+      "parentUuid": "3fc09956_0d6ae509",
       "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
