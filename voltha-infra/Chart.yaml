@@ -29,7 +29,7 @@ maintainers:
 name: voltha-infra
 
 appVersion: "2.11"
-version: 2.11.0
+version: 2.12.0
 
 dependencies:
   - name: onos-classic
@@ -57,8 +57,8 @@ dependencies:
     version: 1.0.2
     condition: radius.enabled
   - name: voltha-tracing
-    repository: https://charts.opencord.org
-    version: 1.0.0
+    repository: file://../voltha-tracing
+    version: 1.0.4
     condition: voltha-tracing.enabled
   - name: elasticsearch
     repository: https://helm.elastic.co
