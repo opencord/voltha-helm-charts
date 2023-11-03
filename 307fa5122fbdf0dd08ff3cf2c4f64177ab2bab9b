@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76f40a34_7f7d26a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-03T15:31:29Z",
+      "side": 1,
+      "message": "Patchset 9:\nhttps://jenkins.opencord.org/view/vip/job/build_berlin-community-pod-1-gpon_1T8GEM_DT_voltha_master/69/\nhttps://jenkins.opencord.org/view/vip/job/build_berlin-community-pod-1-gpon_1T8GEM_voltha_DT_master_test/60/",
+      "revId": "307fa5122fbdf0dd08ff3cf2c4f64177ab2bab9b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
