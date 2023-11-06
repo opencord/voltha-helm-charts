@@ -54,6 +54,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a37cc723_71501e4f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-06T11:10:54Z",
+      "side": 1,
+      "message": "I do not see this as a \"bulk patch\", but rather as an update of the app and chart version needed for the upcoming release. I already split out all additional changes in regards to changing the logic and the only thing left now is the pure update of the charts, which should be easy enough to review.",
+      "parentUuid": "5d9598b3_3c7dcfc5",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fc09956_0d6ae509",
@@ -103,6 +121,24 @@
       "side": 1,
       "message": "This would be the time to clean things up, while code is being handled and actively worked on.  Otherwise we continue to propagate rampant copy \u0026 pasting that contributes toward having to maintain duplicate code throughout the repositories.",
       "parentUuid": "5f50dd6a_b4d4c436",
+      "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a2c7736_437bb03a",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-06T11:10:54Z",
+      "side": 1,
+      "message": "If you have a suggestion on how to improve the logic here, i think we can do that in a separate MR. This MR is specifically only about updating the appVersions to the latest available release (no logic changes).",
+      "parentUuid": "14418916_8e5dd4f8",
       "revId": "502513656669f6f7c72f7d2bdc308c31f1a52a2e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
