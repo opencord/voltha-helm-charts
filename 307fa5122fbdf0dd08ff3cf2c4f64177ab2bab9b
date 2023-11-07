@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0f66ef0a_2d5166f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000983
+      },
+      "writtenOn": "2023-11-07T08:55:31Z",
+      "side": 1,
+      "message": "This looks like a linter run for current master, not for the proposed change.",
+      "parentUuid": "64df72ad_6832d554",
+      "revId": "307fa5122fbdf0dd08ff3cf2c4f64177ab2bab9b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "25385559_70b820ba",
         "filename": "voltha/Chart.yaml",
         "patchSetId": 9
