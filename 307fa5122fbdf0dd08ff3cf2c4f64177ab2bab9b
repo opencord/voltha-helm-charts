@@ -53,6 +53,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb7040d4_3accf39c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-07T13:44:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f66ef0a_2d5166f5",
+      "revId": "307fa5122fbdf0dd08ff3cf2c4f64177ab2bab9b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "25385559_70b820ba",
@@ -66,6 +84,24 @@
       "writtenOn": "2023-11-06T16:22:15Z",
       "side": 1,
       "message": "The comment about apiver representing multiple components and  container image version predates v2.10.  Do we lose any context by replacing VS appending the clarifying summary line ?",
+      "revId": "307fa5122fbdf0dd08ff3cf2c4f64177ab2bab9b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b456740_b278b8f1",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-07T13:44:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25385559_70b820ba",
       "revId": "307fa5122fbdf0dd08ff3cf2c4f64177ab2bab9b",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
