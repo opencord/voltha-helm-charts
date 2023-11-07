@@ -16,6 +16,23 @@
       "message": "As diskussed in slack, it seems that there is a more general issue with the appVersion values throughout most/all voltha charts (those seem to not be updated regularly) and i think we should probably split the needed update of those into a separate MR/PR. For now, i would think this MR should probably focus only on the changes needed to add the new rpc values you suggested.",
       "revId": "b53ceab41db1607396c1376aba1a9df44870e0a8",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df62763f_6db35291",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-07T10:31:11Z",
+      "side": 1,
+      "message": "I proposed a change to update all appVersions here https://gerrit.opencord.org/c/voltha-helm-charts/+/34809. Could you try to rebase your change on top of that?",
+      "revId": "b53ceab41db1607396c1376aba1a9df44870e0a8",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
