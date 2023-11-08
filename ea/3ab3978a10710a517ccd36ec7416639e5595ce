@@ -1,0 +1,8 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Roger Luethi <roger@opennetworking.org>
+Code-Review+2: Mahir Gunyel <mahir.gunyel@netsia.com>
+Submitted-by: Jan Klare <jan@opennetworking.org>
+Submitted-at: Wed, 08 Nov 2023 08:55:14 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/34809
+Project: voltha-helm-charts
+Branch: refs/heads/master
