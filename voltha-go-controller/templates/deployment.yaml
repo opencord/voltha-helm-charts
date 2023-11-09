@@ -57,6 +57,8 @@ spec:
         image: '{{ tpl .Values.images.voltha_go_controller.registry . }}{{ tpl .Values.images.voltha_go_controller.repository . }}:{{ tpl ( tpl .Values.images.voltha_go_controller.tag . ) . }}'
         imagePullPolicy: {{ tpl .Values.images.voltha_go_controller.pullPolicy . }}
         name: voltha-go-controller
+        args:
+          - "/app/voltha-go-controller"
         ports:
         - containerPort: {{ .Values.voltha_go_controller.sshPort }}
           name: ssh-port
