@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aada5774_befe155c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-11-13T13:12:02Z",
+      "side": 1,
+      "message": "\u003e Patch Set 25: Verified+1\n\u003e \n\u003e Build Successful \n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/205/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/207/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1226/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/1095/ : SUCCESS\n\nfinally!! thanks a lot @joey and @jan",
+      "revId": "9e2aeb894faf7c4bfc2b3ba7678d3dafc6734eb2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
