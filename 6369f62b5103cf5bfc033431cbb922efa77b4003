@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4606adde_ababe2b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-15T14:23:46Z",
+      "side": 1,
+      "message": "I think it would be good to use the commit message to explain a bit more in detail what the newly added argument does and why this is needed. Linking the Jira ticket in addition to that is a good idea.",
+      "revId": "6369f62b5103cf5bfc033431cbb922efa77b4003",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b41cfcc7_3627b718",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-11-15T14:23:46Z",
+      "side": 1,
+      "message": "One comment regarding the commit message.",
+      "revId": "6369f62b5103cf5bfc033431cbb922efa77b4003",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
