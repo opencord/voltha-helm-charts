@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f6a18ec_a81900ca",
+        "filename": "voltha-go-controller/templates/deployment.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-11-21T16:32:51Z",
+      "side": 1,
+      "message": "/home/volth-go-controller/ likely does not exist on the jenkins server.  In general dependencies on /home tend to cause problems -- inconsistencies and race conditions are created when several jobs access the path and one performs a write while others consume.",
+      "revId": "452b26ae1f94f4829945302bcf45caeac0108d39",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
