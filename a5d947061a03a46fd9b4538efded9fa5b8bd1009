@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18c17e9d_5e3c8230",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-12-04T14:58:52Z",
+      "side": 1,
+      "message": "Patch looks ready to go, just need to click the \u003csubmit\u003e button.",
+      "revId": "a5d947061a03a46fd9b4538efded9fa5b8bd1009",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
