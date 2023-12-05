@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a464cfc_54165a34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000960
+      },
+      "writtenOn": "2023-12-05T15:08:28Z",
+      "side": 1,
+      "message": "Have updated the commit message and the Jira issue https://jira.opencord.org/browse/VOL-5203 is updated with detailed description of the issue",
+      "revId": "af7b5be9dc57159d3242c8747d7490af31a90465",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
