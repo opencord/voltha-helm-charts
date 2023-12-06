@@ -16,6 +16,29 @@
       "message": "\u003e Patch Set 25: Verified+1\n\u003e \n\u003e Build Successful \n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/205/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/207/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1226/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/1095/ : SUCCESS\n\nfinally!! thanks a lot @joey and @jan",
       "revId": "9e2aeb894faf7c4bfc2b3ba7678d3dafc6734eb2",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "538eeed0_c16beab6",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-12-06T11:37:55Z",
+      "side": 1,
+      "message": "Why are those values chosen? What are the \"defaults\" from the application here? I think it would be good to mention the specific added parameters and explain why those values where chosen in the commit message.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 16
+      },
+      "revId": "9e2aeb894faf7c4bfc2b3ba7678d3dafc6734eb2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
