@@ -16,6 +16,23 @@
       "message": "Have updated the commit message and the Jira issue https://jira.opencord.org/browse/VOL-5203 is updated with detailed description of the issue",
       "revId": "af7b5be9dc57159d3242c8747d7490af31a90465",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "734abe42_b452c553",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-12-06T09:44:24Z",
+      "side": 1,
+      "message": "After checking the related patch here:\n\nhttps://gerrit.opencord.org/c/voltha-go-controller/+/34824/3/docker/Dockerfile.voltha-go-controller#b52\n\nIt looks like the linked line above removed the CMD without a replacement. The commit message does not explain why this was needed, so i assume this was done by accident. My suggestion here would be to add the correct CMD to launch the voltha-go-controller application to the Dockerfile (as a replacement for the removed script) instead of passing it here as an argument.",
+      "revId": "af7b5be9dc57159d3242c8747d7490af31a90465",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
