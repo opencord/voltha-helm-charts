@@ -87,6 +87,30 @@
       },
       "revId": "9e2aeb894faf7c4bfc2b3ba7678d3dafc6734eb2",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08dc8748_46591b1c",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-12-11T16:41:26Z",
+      "side": 1,
+      "message": "I think it is important to describe why those values are chosen and what their default value in the application would be if they were not set. It would also be important to describe why this change is needed.",
+      "parentUuid": "9d5bfe6f_6ea73b66",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 16
+      },
+      "revId": "9e2aeb894faf7c4bfc2b3ba7678d3dafc6734eb2",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
