@@ -175,6 +175,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "72c90465_f7b17e5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-12-11T16:33:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f148cc37_95d34737",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed901b4b_f410eee5",
         "filename": "voltha-adapter-openonu/Chart.yaml",
         "patchSetId": 18
@@ -204,6 +222,24 @@
       "side": 1,
       "message": "this was because on putting the initial versions the pipeline was showing a duplicate tar file exists and erroring out",
       "parentUuid": "ed901b4b_f410eee5",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29168f49_eb6fd337",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-12-11T16:33:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d562bd4f_01be8de4",
       "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -256,6 +292,42 @@
       "side": 1,
       "message": "same thing as above happend here",
       "parentUuid": "01edda7a_cbcf6830",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b0fabb4_2315f1ac",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-12-11T16:33:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bad684a2_a7c0ead8",
+      "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ecb303c_04de9e59",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2023-12-11T16:33:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db97feb5_f23c3e8a",
       "revId": "0255bbcefbed782d56d4af4aa836a0db7a2b038e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
