@@ -16,6 +16,23 @@
       "message": "\u003e Patch Set 29: Verified+1\n\u003e \n\u003e Build Successful \n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/213/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/215/ : SUCCESS\n\nrecheck",
       "revId": "8a070fb8f59a37ea1af5384f1015118fbd4ab4d4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b057844c_77828e71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000982
+      },
+      "writtenOn": "2023-12-12T07:59:27Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "8a070fb8f59a37ea1af5384f1015118fbd4ab4d4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
