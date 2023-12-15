@@ -33,6 +33,23 @@
       "message": "lgtm",
       "revId": "8a070fb8f59a37ea1af5384f1015118fbd4ab4d4",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b07dad2_b02f9940",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2023-12-15T14:32:57Z",
+      "side": 1,
+      "message": "- Click(ed) [done] on a few review records with a comment of \u0027Done\u0027 so gerrit is aware of resolution.\n- make lint is reporting a problem.\n\n% git clone ssh://gerrit.opencord.org:29418/voltha-helm-charts.git \n% git review -d  I1007f778a35a616263e13394f078d65320fdf650\n% make lint\n\nChecking chart: ./voltha-stack\n\u003d\u003d\u003e Linting ./voltha-go-controller\n[INFO] Chart.yaml: icon is recommended\n\n1 chart(s) linted, 0 chart(s) failed\nChecking chart: ./voltha-stack\nHang tight while we grab the latest from your chart repositories...\n...Successfully got an update from the \"rook-release\" chart repository\n...Successfully got an update from the \"onf\" chart repository\n...Successfully got an update from the \"cord\" chart repository\n...Successfully got an update from the \"stable\" chart repository\nUpdate Complete. ⎈Happy Helming!⎈\nError: can\u0027t get a valid version for repositories voltha, voltha-adapter-openonu. Try changing the version constraint in Chart.yaml\n\u003d\u003d\u003e Linting ./voltha-stack\n[WARNING] voltha-helm-charts-all/I1007f778a35a616263e13394f078d65320fdf650/voltha-stack: chart directory is missing these dependencies: voltha,voltha-adapter-openonu,voltha-adapter-openolt,voltha-go-controller\n\nError: 1 chart(s) linted, 1 chart(s) failed\n\n\n",
+      "revId": "8a070fb8f59a37ea1af5384f1015118fbd4ab4d4",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
