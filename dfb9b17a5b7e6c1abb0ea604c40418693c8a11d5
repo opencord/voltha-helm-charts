@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4c5cbfb_86be32b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 35
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-01-02T22:42:19Z",
+      "side": 1,
+      "message": "Linting failure reported for duplicate artifact version:\n  https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/223/ : FAILURE\n  https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/223/console\n\nChange version string from v3.3.1 to v3.3.0:\n    https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/225/ : FAILURE\n    https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/225/console\n    01:43:18 Invalid 3.3.1 version. Expected parent version 3.3.0 does not exist.\n",
+      "revId": "dfb9b17a5b7e6c1abb0ea604c40418693c8a11d5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "906a0959_5ab6e1b3",
+        "filename": "VERSION",
+        "patchSetId": 35
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-01-02T22:42:19Z",
+      "side": 1,
+      "message": "Change version string to v3.3.0.  *-dev suffix preceds creation of the initial non-dev version.\n\n https://gerrit.opencord.org/plugins/gitiles//voltha-helm-charts//+/refs/heads/master/VERSION",
+      "revId": "dfb9b17a5b7e6c1abb0ea604c40418693c8a11d5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
