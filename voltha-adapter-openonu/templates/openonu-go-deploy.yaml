@@ -33,6 +33,8 @@ metadata:
   {{- end }}
 spec:
   replicas: {{ .Values.replicas.adapter_open_onu }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: adapter-open-onu
