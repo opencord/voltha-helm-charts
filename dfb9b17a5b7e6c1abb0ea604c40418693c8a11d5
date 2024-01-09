@@ -33,6 +33,24 @@
       "message": "Change version string to v3.3.0.  *-dev suffix preceds creation of the initial non-dev version.\n\n https://gerrit.opencord.org/plugins/gitiles//voltha-helm-charts//+/refs/heads/master/VERSION",
       "revId": "dfb9b17a5b7e6c1abb0ea604c40418693c8a11d5",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5be2caa4_79de9ba7",
+        "filename": "VERSION",
+        "patchSetId": 35
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000963
+      },
+      "writtenOn": "2024-01-09T17:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "906a0959_5ab6e1b3",
+      "revId": "dfb9b17a5b7e6c1abb0ea604c40418693c8a11d5",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
