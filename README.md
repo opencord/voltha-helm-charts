@@ -608,3 +608,17 @@ The two scripts that should be run to test are:
 
 - `helmlint.sh`             (make lint-helm)
 - `chart_version_check.sh`  (make lint-chart)
+
+## Howto edit Chart.yaml
+
+Two version strings will need to be incremented:
+
+- Version of a released repository / component / package.
+- Chart.yaml version for the [R|C|P] when Chart.yaml is modified.
+
+    - Repo: bbsim-sadis-server
+    - voltha-2.12 VERSION: **0.3.6**
+    - Assign `appVersion <https://gerrit.opencord.org/plugins/gitiles/voltha-helm-charts/+/refs/heads/voltha-2.12/bbsim-sadis-server/Chart.yaml#34> the VERSION file string **0.3.6**.
+    - Increment Chart.yaml key `version <https://gerrit.opencord.org/plugins/gitiles/voltha-helm-charts/+/refs/heads/voltha-2.12/bbsim-sadis-server/Chart.yaml#17>` to indicate a chart file change.
+    - Dependency: voltha-infra/Chart.yaml: repository: file://../bbsim-sadis-server
+

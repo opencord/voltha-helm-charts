@@ -32,4 +32,6 @@ helm-repo-tools/
 #Idea
 .idea/
 
+.bin/
+
 # [EOF]

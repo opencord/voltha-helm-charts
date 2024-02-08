@@ -1,4 +1,4 @@
-# Copyright 2020-2023 Open Networking Foundation (ONF) and the ONF Contributors
+# Copyright 2020-2024 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,10 @@
 ---
 apiVersion: "v1"
 name: "bbsim-sadis-server"
-version: "0.3.3"
+
+## Chart version for package:
+##   Increment when Chart.yaml changes
+version: "0.3.4"
 description: "A Helm chart for Voltha BBSIM sadis server"
 keywords:
   - "onf"
@@ -31,4 +34,4 @@ maintainers:
     url: "https://www.opennetworking.org"
 
 # appVersion refers to the release version of bbsim-sadis-server
-appVersion: "0.3.5"
+appVersion: "0.3.6"
