@@ -32,9 +32,9 @@ name       : voltha-stack
 # but represents the voltha release version itself
 appVersion : "2.12"
 
-## Chart version for package:
+## Chart version for package voltha-stack
 ##   Increment when Chart.yaml changes
-version    : "2.12.6"
+version    : "2.12.7"
 
 # -----------------------------------------------------------------------
 # NOTE: Dependencies are chart versions not component/repository version
@@ -43,11 +43,11 @@ version    : "2.12.6"
 dependencies:
   - name       : voltha
     repository : file://../voltha
-    version    : "2.12.13"
+    version    : "2.12.14"
     condition: voltha.enabled
-  - name: voltha-adapter-openonu
-    repository: file://../voltha-adapter-openonu
-    version: 2.12.1
+  - name       : voltha-adapter-openonu
+    repository : file://../voltha-adapter-openonu
+    version    : "2.12.2"
     condition: voltha-adapter-openonu.enabled
   - name       : voltha-adapter-openolt
     repository : file://../voltha-adapter-openolt
