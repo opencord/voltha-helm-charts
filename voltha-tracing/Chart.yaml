@@ -17,7 +17,7 @@ name: "voltha-tracing"
 
 ## Chart version for package:
 ##   Increment when Chart.yaml changes
-version: "2.12.1"
+version: "2.12.2"
 
 description: "A Helm chart for deploying Jaeger all-in-one container for Trace data collection and analysis"
 keywords:
