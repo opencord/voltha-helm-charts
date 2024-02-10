@@ -43,7 +43,7 @@ version    : "2.12.7"
 dependencies:
   - name       : voltha
     repository : file://../voltha
-    version    : "2.12.14"
+    version    : "2.12.15"
     condition: voltha.enabled
   - name       : voltha-adapter-openonu
     repository : file://../voltha-adapter-openonu
