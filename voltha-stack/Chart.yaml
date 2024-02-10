@@ -1,4 +1,4 @@
-# Copyright 2020-2023 Open Networking Foundation (ONF) and the ONF Contributors
+# Copyright 2020-2024 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,27 +21,41 @@ keywords:
   - "openonu-adapters"
 home: "https://www.opennetworking.org/voltha"
 icon: "https://guide.opencord.org/logos/voltha.svg"
-maintainers:
-  - name: "Open Networking Foundation"
-    email: "info@opennetworking.org"
-    url: "https://www.opennetworking.org"
-name: voltha-stack
-appVersion: "2.12"
-version: 2.12.5
+maintainers :
+  - name  : "Open Networking Foundation"
+    email : "info@opennetworking.org"
+    url   : "https://www.opennetworking.org"
+
+name       : voltha-stack
+
+# app version is NOT used in this chart for application versions or image tags
+# but represents the voltha release version itself
+appVersion : "2.12"
+
+## Chart version for package:
+##   Increment when Chart.yaml changes
+version    : "2.12.6"
+
+# -----------------------------------------------------------------------
+# NOTE: Dependencies are chart versions not component/repository version
+#       Match up with Chart.yaml files: find . -name 'Chart.yaml' -print
+# -----------------------------------------------------------------------
 dependencies:
-  - name: voltha
-    repository: file://../voltha
-    version: 2.12.11
+  - name       : voltha
+    repository : file://../voltha
+    version    : "2.12.13"
     condition: voltha.enabled
   - name: voltha-adapter-openonu
     repository: file://../voltha-adapter-openonu
     version: 2.12.1
     condition: voltha-adapter-openonu.enabled
-  - name: voltha-adapter-openolt
-    repository: file://../voltha-adapter-openolt
-    version: 2.12.5
-    condition: voltha-adapter-openolt.enabled
+  - name       : voltha-adapter-openolt
+    repository : file://../voltha-adapter-openolt
+    version    : "2.12.6"
+    condition  : voltha-adapter-openolt.enabled
   - name: voltha-go-controller
     repository: file://../voltha-go-controller
     version: 0.1.3
     condition: voltha-go-controller.enabled
+
+# [EOF]
