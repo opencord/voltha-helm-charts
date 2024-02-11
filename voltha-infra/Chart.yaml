@@ -23,62 +23,63 @@ keywords:
 home: "https://www.opennetworking.org/voltha"
 icon: "https://guide.opencord.org/logos/voltha.svg"
 maintainers:
-  - name: "Open Networking Foundation"
-    email: "info@opennetworking.org"
-    url: "https://www.opennetworking.org"
-name: voltha-infra
+  - name  : "Open Networking Foundation"
+    email : "info@opennetworking.org"
+    url   : "https://www.opennetworking.org"
+
+name       : "voltha-infra"
 
 # app version is NOT used in this chart for application versions or image tags
 # but represents the voltha release version itself
-appVersion: "2.12"
+appVersion : "2.12"
 
 ## Chart version for package: voltha-infra
-##   Increment when Chart.yaml changes
-version: "2.12.3"
+##   aIncrement when Chart.yaml changes
+version    : "2.12.6"
 
 dependencies:
   - name       : "onos-classic"
     repository : "https://charts.onosproject.org"
     version    : "0.1.31"
     condition  : "onos-classic.enabled"
-  - name: redis
-    repository: https://charts.bitnami.com/bitnami
-    version: 17.0.10
-    condition: redis.enabled
+  - name       : "redis"
+    repository : "https://charts.bitnami.com/bitnami"
+    version    : "17.0.10"
+    condition  : "redis.enabled"
   - name       : "bbsim-sadis-server"
     repository : "file://../bbsim-sadis-server"
     version    : "0.3.4"
     condition  : "bbsim-sadis-server.enabled"
-  - name: etcd
-    repository: https://charts.bitnami.com/bitnami
-    version: 8.5.11
-    condition: etcd.enabled
-  - name: kafka
-    repository: https://charts.bitnami.com/bitnami
-    version: 20.0.2
-    condition: kafka.enabled
-  - name: freeradius
-    repository: https://charts.opencord.org
-    version: 1.0.2
-    condition: radius.enabled
-  - name       : voltha-tracing
-    repository : file://../voltha-tracing
+  - name       : "etcd"
+    repository : "https://charts.bitnami.com/bitnami"
+    version    : "8.5.11"
+    condition  : "etcd.enabled"
+  - name       : "kafka"
+    repository : "https://charts.bitnami.com/bitnami"
+    version    : "20.0.2"
+    condition  : "kafka.enabled"
+  - name       : "freeradius"
+    repository : "https://charts.opencord.org"
+    version    : "1.0.2"
+    condition  : "radius.enabled"
+  - name       : "voltha-tracing"
+    repository : "file://../voltha-tracing"
     version    : "2.12.2"
-    condition: voltha-tracing.enabled
-  - name: elasticsearch
-    repository: https://helm.elastic.co
-    version: 7.10.1
-    condition: efk.enabled
-  - name: kibana
-    repository: https://helm.elastic.co
-    version: 7.10.1
-    condition: efk.enabled
-  - name: fluentd-elasticsearch
-    repository: https://kiwigrid.github.io
-    version: 9.6.2
+    condition  : "voltha-tracing.enabled"
+  - name       : "elasticsearch"
+    repository : "https://helm.elastic.co"
+    version    : "7.10.1"
+    condition  : "efk.enabled"
+  - name       : "kibana"
+    repository : "https://helm.elastic.co"
+    version    : "7.10.1"
+    condition  : "efk.enabled"
+  - name       : "fluentd-elasticsearch"
+    repository : "https://kiwigrid.github.io"
+    version    : "9.6.2"
     # TODO kiwigrid is deprecated, use: https://github.com/kokuwaio/helm-charts/tree/main/charts/fluentd-elasticsearch
     # repository: https://kokuwaio.github.io/helm-charts
     # version: 11.7.1
-    condition: efk.enabled
+    condition  : "efk.enabled"
 
 # [EOF]
