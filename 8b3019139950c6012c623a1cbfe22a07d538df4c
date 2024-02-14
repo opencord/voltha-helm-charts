@@ -39,6 +39,30 @@
       },
       "revId": "8b3019139950c6012c623a1cbfe22a07d538df4c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a3a3706_75f928b4",
+        "filename": "voltha-infra/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-02-14T18:09:05Z",
+      "side": 1,
+      "message": "(\"pseudo\" reference from TST mtg) Charts: voltha, voltha-stack and voltha-infra are all dependent, updated whenever individual components (ONOS, VOLTHA) are updated.\n\nNice answer when updating charts is to modify all files and versions within a single patch.  Not creating a single patch wades into a version/dependency rabbit hole.\n\nAdd to this updating copyright notices, this will increase the patch file count to 92 files -- which is a bit much to request in a code review.\n\nInstead the mega patch was broken apart and submitted for each individual repository.  As chart patches are merged in each of the yet-to-be-upgraded chart patches pull in the last-merged-version of {voltha,stack,infra}.  Then increment the chart version again for the next chart/repository submitted.\n\nWhile this patch was waiting/dependent, two other chart patches were merged in.  To submit the patch needed to first merge with HEAD to be current (pull in 2 chart bumps) then increment voltha-infra version a 3rd time for the current patch.\n\n\nLike I mentioned earlier, would have been far easier to submit a single helm chart patch if deployVolthaStack and onos had not failed on timeout.",
+      "parentUuid": "e6cb4b83_b70d7065",
+      "range": {
+        "startLine": 38,
+        "startChar": 19,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "8b3019139950c6012c623a1cbfe22a07d538df4c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
