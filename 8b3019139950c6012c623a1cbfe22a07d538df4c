@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5f0ed3a_1cdff494",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000218
+      },
+      "writtenOn": "2024-02-14T17:44:53Z",
+      "side": 1,
+      "message": "Seems like VERSION file needs to be updated.",
+      "revId": "8b3019139950c6012c623a1cbfe22a07d538df4c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
