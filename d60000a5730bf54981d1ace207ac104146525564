@@ -50,6 +50,23 @@
       "message": "Verification fails because of a certification failure\n \"Error: looks like \"https://charts.opencord.org\" is not a valid chart repository or cannot be reached: Get \"https://charts.opencord.org/index.yaml\": x509: certificate has expired or is not yet valid: current time 2024-03-21T14:50:03Z is after 2024-03-20T23:59:59Z\"",
       "revId": "d60000a5730bf54981d1ace207ac104146525564",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b20aff94_a39214db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-03-21T20:28:22Z",
+      "side": 1,
+      "message": "recheck\n\nCertificate renewed, let(s) try the build again.",
+      "revId": "d60000a5730bf54981d1ace207ac104146525564",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
