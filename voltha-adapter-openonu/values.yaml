@@ -58,6 +58,10 @@ global:
   alarm_audit:
   # configure "0s" to disable omci alarm audit
     interval: 300s
+  # Configure reconciling by skipping onu configuration by default
+  skip_onu_config:
+    enabled: false
+
 
 # Probe values
 probe:
