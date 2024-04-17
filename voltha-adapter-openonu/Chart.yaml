@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-openonu"
-version: "2.12.3"
+version: "2.12.4"
 description: "A Helm chart for Voltha OpenONU Adapter"
 keywords:
   - "onf"
