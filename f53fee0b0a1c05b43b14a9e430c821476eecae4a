@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d52c56d_e20740cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-04-17T14:42:29Z",
+      "side": 1,
+      "message": "Hi,\n\nCan you run the helm lint targets on this patch, a few problems were detected that jenkins will complain about when a job is run:\n\n% make help | grep lint\n\n  NOTE: Help documents target \u0027lint-helm\u0027, the target to run is \u0027lint-helmrepo\u0027\n  TODO: Correct the discrepancy in help text or the target.\n\n\n% make lint-chart  # (linting OK here)\n\n% make lint-helmrepo\nError: can\u0027t get a valid version for repositories voltha, voltha-adapter-openonu. Try changing the version constraint in Chart.yaml\n\n[WARNING] /sandbox/voltha-helm-charts-all/I440d5a3bc6f39f88e0d700a71f7e2dbd86af1c09/voltha-stack: chart directory is missing these dependencies: voltha,voltha-adapter-openonu,voltha-adapter-openolt,voltha-go-controller\n\nError: 1 chart(s) linted, 1 chart(s) failed\n\n\n\n",
+      "revId": "f53fee0b0a1c05b43b14a9e430c821476eecae4a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
