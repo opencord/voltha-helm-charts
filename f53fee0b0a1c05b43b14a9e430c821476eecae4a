@@ -33,6 +33,23 @@
       "message": "Oh yea...\n\n% git clone ssh://gerrit.opencord.org:29418/voltha-helm-charts.git\n% cd voltha-helm-charts\n% git review -d I440d5a3bc6f39f88e0d700a71f7e2dbd86af1c09\n% make helm\n% make lint-chart\n% make lint-helmrepo",
       "revId": "f53fee0b0a1c05b43b14a9e430c821476eecae4a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90f5225e_38923fb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-04-19T14:58:41Z",
+      "side": 1,
+      "message": "recheck\n\nJenkins job queue is in a better state now, re-triggering jobs for current results.",
+      "revId": "f53fee0b0a1c05b43b14a9e430c821476eecae4a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
