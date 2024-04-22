@@ -84,6 +84,23 @@
       "message": "job failures:\n\n[tag] - Repository VERSION file will need to be incremented\n        https://docs.voltha.org/master/overview/contributing.html?highlight\u003dversion%20file#versioning\n\n",
       "revId": "f53fee0b0a1c05b43b14a9e430c821476eecae4a",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0987bce9_6cd19530",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-04-22T16:16:07Z",
+      "side": 1,
+      "message": "recheck\n\nhmmmm, error (script: \"\"\" -- due to missing colon) was fixed earlier.\nRecheck again as this resembles a caching problem, the job was run prior to the jenkins source change being available.\n\nOh also the \u0027getIam()\u0027 method not defined at the end is a red herring.\nThis message will appear due to problem manifestations earlier in the job.\n",
+      "revId": "f53fee0b0a1c05b43b14a9e430c821476eecae4a",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
