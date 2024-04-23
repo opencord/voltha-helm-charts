@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ca092b5_fa2b26f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000948
+      },
+      "writtenOn": "2024-04-23T14:26:26Z",
+      "side": 1,
+      "message": "Looks like the volthaStackDeploy timeout has resurfaced:\n\n01:17:49  volthaStackDeploy.groovy: Waiting for status\u003dRunning\n01:17:49  voltha-voltha-adapter-openonu-7544f6d6b5-qnjlh   0/1   CrashLoopBackOff   6     9m12s\n01:17:51  Cancelling nested steps due to timeout\n01:17:51  Sending interrupt signal to process\n01:17:51  /w/workspace/verify_voltha-helm-charts_sanity-test@tmp/durable-56897b14/script.sh: line 83: 35592 Terminated              sleep 5\n01:17:52  script returned exit code 143\n01:17:52  [Pipeline] echo\n01:17:52  ** volthaStackDeploy.groovy: EXCEPTION org.jenkinsci.plugins.workflow.steps.FlowInterruptedException",
+      "revId": "8142df2857cdb80cd6e1616ec485ba0a8eafd0fe",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
