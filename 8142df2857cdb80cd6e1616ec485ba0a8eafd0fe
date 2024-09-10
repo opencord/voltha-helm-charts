@@ -67,6 +67,23 @@
       "message": "I\u0027m not sure what exactly is causing the failures here, because the way the pipeline is failing is a little weird. However, it\u0027s definitely a code issue. Master is passing, as is this change: https://gerrit.opencord.org/c/voltha-helm-charts/+/35116",
       "revId": "8142df2857cdb80cd6e1616ec485ba0a8eafd0fe",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "668ada92_f1171c18",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000218
+      },
+      "writtenOn": "2024-09-10T00:03:02Z",
+      "side": 1,
+      "message": "@Praneeth could you please check the failure.",
+      "revId": "8142df2857cdb80cd6e1616ec485ba0a8eafd0fe",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
