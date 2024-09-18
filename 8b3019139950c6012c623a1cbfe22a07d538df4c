@@ -81,6 +81,30 @@
       },
       "revId": "8b3019139950c6012c623a1cbfe22a07d538df4c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14cf5b94_f284fe1a",
+        "filename": "voltha-infra/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2024-09-18T20:20:27Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7a3a3706_75f928b4",
+      "range": {
+        "startLine": 38,
+        "startChar": 19,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "8b3019139950c6012c623a1cbfe22a07d538df4c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
