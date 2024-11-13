@@ -35,7 +35,7 @@ appVersion : "2.12"
 
 ## Chart version for package: voltha-infra
 ##   aIncrement when Chart.yaml changes
-version    : "2.12.6"
+version    : "2.12.7"
 
 dependencies:
   - name       : "onos-classic"
