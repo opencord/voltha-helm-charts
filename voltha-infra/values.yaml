@@ -51,6 +51,8 @@ onos-classic:
     -Dds.lock.timeout.milliseconds=10000
     -Dlog4j2.formatMsgNoLookups=true
   atomix:
+    podDisruptionBudget:
+      enabled: false
     replicas: 0
     persistence:
       enabled: false
