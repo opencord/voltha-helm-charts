@@ -86,8 +86,8 @@ spec:
               value: {{ tpl .Values.rw_core.kv_store_data_prefix . }}
           args:
             - "/app/rw_core"
-            - "--kv_store_type=etcd"
-            - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
+            - "--kv_store_type={{ tpl .Values.services.kvstore.type . }}"
+            - "--kv_store_address={{ tpl .Values.services.kvstore.address . }}"
             - "--grpc_nbi_address=0.0.0.0:50057"
             - "--grpc_sbi_address=0.0.0.0:50058"
             - "--banner"

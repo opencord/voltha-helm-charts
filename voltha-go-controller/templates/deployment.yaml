@@ -43,11 +43,11 @@ spec:
         - name: VOLTHA_PORT
           value: "55555"
         - name: KV_STORE_TYPE
-          value: "redis"
+          value: "{{ .Values.services.kvstore.type }}"
         - name: KV_STORE_HOST
-          value: "voltha-infra-redis-headless.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
+          value: "{{ .Values.services.kvstore.address }}"
         - name: KV_STORE_PORT
-          value: "6379"
+          value: "{{ .Values.services.kvstore.port }}"
         - name: KAFKA_ADAPTER_HOST
           value: "{{ tpl .Values.services.kafka.cluster.address . }}"
         - name: KAFKA_ADAPTER_PORT
