@@ -32,6 +32,6 @@ maintainers:
     url: "https://www.opennetworking.org"
 
 # appVersion refers to release version of voltha-openonu-adapter-go
-appVersion: "2.12.3"
+appVersion: "2.12.7"
 
 # [EOF]
