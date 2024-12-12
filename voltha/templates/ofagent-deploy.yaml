@@ -99,8 +99,8 @@ spec:
         - "--controller={{ tpl .address $ }}"
         {{- end }}
         - "--voltha={{ template "fullname" . }}-api.{{ .Release.Namespace }}.svc:55555"
-        - "--kv_store_address={{ tpl .Values.services.etcd.address . }}"
-        - "--kv_store_type=etcd"
+        - "--kv_store_type={{ tpl .Values.services.kvstore.type . }}"
+        - "--kv_store_address={{ tpl .Values.services.kvstore.address . }}"
         - "--kv_store_request_timeout=60s"
         - "--log_level={{ $log_level }}"
         - "--device-refresh-interval={{ .Values.ofagent.device_refresh_interval }}"
