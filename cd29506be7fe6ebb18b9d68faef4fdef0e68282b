@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46ea9a38_283fe093",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000971
+      },
+      "writtenOn": "2024-12-12T11:31:52Z",
+      "side": 1,
+      "message": "\u003e Patch Set 5: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/277/ : FAILURE\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/277/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1292/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/1172/ : SUCCESS\n\nrecheck",
+      "revId": "cd29506be7fe6ebb18b9d68faef4fdef0e68282b",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
