@@ -86,7 +86,9 @@ services:
       address: kafka:9092
 
   # Define connectivity to etcd
-  etcd:
+  kvstore:
+    # type: etcd, redis or redis-sentinel
+    type: etcd
     address: etcd:2379
 
   # Define Tracing Agent connection details
