@@ -190,10 +190,6 @@ helm upgrade --install --create-namespace \
   --set global.log_correlation.enabled=true
 ```
 
-### Use the OpenONU golang adapter
-
-https://docs.voltha.org/master/voltha-openonu-adapter-go/README.html
-
 ### Deploy BBSim
 
 BBSim is a broadband simulator tool that is used as an OpenOLT compatible device
@@ -207,6 +203,18 @@ helm upgrade --install -n voltha bbsim0 onf/bbsim --set olt_id=10
 ```
 
 > _While it's not mandatory to install BBSim in the same namespace as the VOLTHA stack it's advised to do so to make explicit which stack is controlling it._
+
+> **Note**: If your plan is to test with a physical OLT, this step is not needed.
+
+### Configure SADIS for Physical OLT Integration [Optional]
+
+If a physical OLT is to be connected to the VOLTHA, then a proper SADIS configuration must be inserted to the ONOS.
+
+-	Check the configuration examples under https://github.com/opencord/voltha-system-tests, but the obvious one is this: https://github.com/opencord/voltha-system-tests/blob/master/tests/data/berlin-community-pod-1-sadis.json. Download and edit this file according to your device's OLT ID and MAC address. The entry with the `EC1729003539` is for an EdgeCore OLT device and `EC1729003539` is the serial number of the device. The entry starting with the `ALPH` are ONU devices.
+-	Configure the port forwarding: `kubectl port-forward -n infra svc/voltha-infra-onos-classic-hs 8181`
+-	Push file to the ONOS: `curl -XPOST -sSL http://karaf:karaf@localhost:8181/onos/v1/network/configuration -H Content-type:application/json --data-binary @berlin-community-pod-1-sadis.json`
+-	To make sure the config is applied, connect to the ONOS CLI and run `netcfg` command. You should be able to see your configuration. After the OLT is provisioned and connected, your OLT should appear `volt-olts` output. If not,
+please check the configuration and the ONOS logs. 
 
 ### Installing and Configuring `voltctl`
 
@@ -591,10 +599,7 @@ helm upgrade --install --create-namespace \
 
 ## Known issues
 
-Known VOLTHA issues are tracked in [JIRA](https://jira.opencord.org). Issues
-that may specifically be observed, or at the very least were discovered, in
-this environment can be found in JIRA via a [JIRA Issue
-Search](https://jira.opencord.org/issues/?jql=status%20not%20in%20%28closed%2C%20Done%2CResolved%29%20and%20labels%20in%20%28helm%29%20and%20affectedVersion%20in%20%28%22VOLTHA%20v2.0%22%29).
+Known VOLTHA issues are tracked in [JIRA](https://lf-broadband.atlassian.net/).
 
 ## Pre-patchset submission Checks
 
