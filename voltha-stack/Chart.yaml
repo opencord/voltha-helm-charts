@@ -55,7 +55,7 @@ dependencies:
     condition  : voltha-adapter-openolt.enabled
   - name       : voltha-go-controller
     repository : file://../voltha-go-controller
-    version    : "0.1.5"
+    version    : "0.1.6"
     condition  : voltha-go-controller.enabled
 
 # [EOF]
