@@ -28,6 +28,12 @@ spec:
       labels:
         app: "{{ .Chart.Name }}"
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+      {{- end }}
       containers:
       - args:
           - "/app/voltha-go-controller"
@@ -69,10 +75,10 @@ spec:
         name: voltha-go-controller
         image: '{{ tpl .Values.images.voltha_go_controller.registry . }}{{ tpl .Values.images.voltha_go_controller.repository . }}:{{ tpl ( tpl .Values.images.voltha_go_controller.tag . ) . }}'
         imagePullPolicy: {{ tpl .Values.images.voltha_go_controller.pullPolicy . }}
+        {{- if .Values.securityContext.enabled }}
         securityContext:
-          runAsUser: {{ .Values.securityContext.runAsUser }}
-          runAsGroup: {{ .Values.securityContext.runAsGroup }}
-          fsGroup: {{ .Values.securityContext.fsGroup }}
+          allowPrivilegeEscalation: false
+        {{- end }}
         ports:
         - containerPort: {{ .Values.voltha_go_controller.sshPort }}
           name: ssh-port
