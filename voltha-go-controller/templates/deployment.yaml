@@ -29,7 +29,9 @@ spec:
         app: "{{ .Chart.Name }}"
     spec:
       containers:
-      - env:
+      - args:
+          - "/app/voltha-go-controller"
+        env:
         - name: POD_IP
           valueFrom:
             fieldRef:
@@ -54,13 +56,54 @@ spec:
           value: "9092"
         - name: LOG_LEVEL
           value: .Values.global.log_level
+        - name: KV_STORE_TIMEOUT
+          value: "3000000000"
+        - name: DEVICE_SYNC_DURATION
+          value: "10"
+        - name: MAX_FLOW_RETRY_DURATION
+          value: "60"
+        - name: LIVE_PROBE_INTERVAL
+          value: "60"
+        - name: NOT_LIVE_PROBE_INTERVAL
+          value: "5"
+        name: voltha-go-controller
         image: '{{ tpl .Values.images.voltha_go_controller.registry . }}{{ tpl .Values.images.voltha_go_controller.repository . }}:{{ tpl ( tpl .Values.images.voltha_go_controller.tag . ) . }}'
         imagePullPolicy: {{ tpl .Values.images.voltha_go_controller.pullPolicy . }}
-        name: voltha-go-controller
+        securityContext:
+          runAsUser: {{ .Values.securityContext.runAsUser }}
+          runAsGroup: {{ .Values.securityContext.runAsGroup }}
+          fsGroup: {{ .Values.securityContext.fsGroup }}
         ports:
         - containerPort: {{ .Values.voltha_go_controller.sshPort }}
           name: ssh-port
         - containerPort: {{ .Values.voltha_go_controller.uiPort }}
           name: ui-port
           protocol: "{{ .Values.voltha_go_controller.uiProtocol }}"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8090
+          initialDelaySeconds: {{ .Values.probe.liveness.initial_delay_seconds }}
+          periodSeconds: {{ .Values.probe.liveness.period_seconds }}
+        readinessProbe:
+          httpGet:
+            path: /readz
+            port: 8090
+          initialDelaySeconds: {{ .Values.probe.readiness.initial_delay_seconds }}
+          periodSeconds: {{ .Values.probe.readiness.period_seconds }}
+        resources:
+          requests:
+            {{- if .Values.resources.requests.memory }}
+            memory: {{ .Values.resources.requests.memory }}
+            {{- end }}
+            {{- if .Values.resources.requests.cpu }}
+            cpu: {{ .Values.resources.requests.cpu }}
+            {{- end }}
+          limits:
+            {{- if .Values.resources.limits.memory }}
+            memory: {{ .Values.resources.limits.memory }}
+            {{- end }}
+            {{- if .Values.resources.limits.cpu }}
+            cpu: {{ .Values.resources.limits.cpu }}
+            {{- end }}
       restartPolicy: "Always"
