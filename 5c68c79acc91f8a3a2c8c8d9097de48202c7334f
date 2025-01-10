@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57de9046_e17ee6c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000971
+      },
+      "writtenOn": "2025-01-10T16:46:19Z",
+      "side": 1,
+      "message": "\u003e Patch Set 4: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_sanity-test/1182/ : ABORTED\n\u003e \n\u003e https://jenkins.opencord.org/job/helm-lint_voltha-helm-charts/286/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/tag-check_voltha-helm-charts/286/ : SUCCESS\n\u003e \n\u003e https://jenkins.opencord.org/job/verify_voltha-helm-charts_licensed/1300/ : SUCCESS\n\nrecheck",
+      "revId": "5c68c79acc91f8a3a2c8c8d9097de48202c7334f",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
