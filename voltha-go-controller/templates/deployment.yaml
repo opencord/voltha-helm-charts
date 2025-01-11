@@ -16,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "{{ .Chart.Name }}"
+  namespace: "{{ .Release.Namespace }}"
   labels:
     release: {{ .Release.Name }}
 spec:
@@ -43,11 +44,9 @@ spec:
             fieldRef:
               fieldPath: status.podIP
         - name: NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
+          value: {{ .Release.Namespace }}
         - name: VOLTHA_HOST
-          value: "$(NAMESPACE)-voltha-api.$(NAMESPACE).svc.cluster.local"
+          value: "{{ .Release.Namespace }}-voltha-api.{{ .Release.Namespace }}.svc.cluster.local"
         - name: VOLTHA_PORT
           value: "55555"
         - name: KV_STORE_TYPE
@@ -61,7 +60,7 @@ spec:
         - name: KAFKA_ADAPTER_PORT
           value: "9092"
         - name: LOG_LEVEL
-          value: .Values.global.log_level
+          value: "{{ .Values.global.log_level . }}"
         - name: KV_STORE_TIMEOUT
           value: "3000000000"
         - name: DEVICE_SYNC_DURATION

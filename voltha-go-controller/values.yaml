@@ -118,6 +118,6 @@ services:
       address: kafka:9092
   kvstore:
     # type: etcd, redis or redis-sentinel
-    type: "redis"
-    address: "voltha-infra-redis-headless.{{ .Values.global.voltha_infra_namespace }}.svc.cluster.local"
-    port: "6379"
+    type: "etcd"
+    address: "voltha-infra-etcd-headless.infra.svc.cluster.local"
+    port: "2379"
