@@ -50,11 +50,11 @@ spec:
         - name: VOLTHA_PORT
           value: "55555"
         - name: KV_STORE_TYPE
-          value: "{{ .Values.services.kvstore.type }}"
+          value: "{{ tpl .Values.services.kvstore.type . }}"
         - name: KV_STORE_HOST
-          value: "{{ .Values.services.kvstore.address }}"
+          value: "{{ tpl .Values.services.kvstore.address . }}"
         - name: KV_STORE_PORT
-          value: "{{ .Values.services.kvstore.port }}"
+          value: "{{ tpl .Values.services.kvstore.port . }}"
         - name: KAFKA_ADAPTER_HOST
           value: "{{ tpl .Values.services.kafka.cluster.address . }}"
         - name: KAFKA_ADAPTER_PORT
