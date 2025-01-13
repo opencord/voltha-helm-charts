@@ -16,6 +16,24 @@
       "message": "we can use the namespace as variable",
       "revId": "bacd1b8c4270fb72689881d81730520eedd1884c",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "974da0c7_1a422164",
+        "filename": "voltha-stack/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000537
+      },
+      "writtenOn": "2025-01-13T12:49:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29901964_52be72c5",
+      "revId": "bacd1b8c4270fb72689881d81730520eedd1884c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
