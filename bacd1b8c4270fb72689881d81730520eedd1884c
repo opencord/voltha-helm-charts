@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29901964_52be72c5",
+        "filename": "voltha-stack/values.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000537
+      },
+      "writtenOn": "2025-01-13T12:37:31Z",
+      "side": 1,
+      "message": "we can use the namespace as variable",
+      "revId": "bacd1b8c4270fb72689881d81730520eedd1884c",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
