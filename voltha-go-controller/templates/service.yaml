@@ -15,10 +15,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    name: "{{ .Chart.Name }}"
-    release: {{ .Release.Name }}
-  name: "{{ .Chart.Name }}"
+  name: "{{ tpl .Values.voltha_go_controller.endpoints.address . }}"
+  namespace: {{ .Release.Namespace }}
 spec:
   ports:
   - name: of

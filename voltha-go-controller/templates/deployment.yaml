@@ -15,19 +15,48 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ .Chart.Name }}"
+  name: "{{ template "fullname" . }}"
   namespace: "{{ .Release.Namespace }}"
+  {{- if or (hasKey .Values "extra_deployment_labels") (hasKey .Values "vgc_deployment_labels") }}
   labels:
-    release: {{ .Release.Name }}
+    {{- if hasKey .Values "extra_deployment_labels" }}
+    {{- range $key, $val := .Values.extra_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+    {{- if hasKey .Values "vgc_deployment_labels" }}
+    {{- range $key, $val := .Values.vgc_deployment_labels }}
+    {{ $key }}: {{ $val | quote }}
+    {{- end }}
+    {{- end }}
+  {{- end }}
 spec:
-  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: "{{ .Chart.Name }}"
+      app: voltha-go-controller
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: "{{ .Chart.Name }}"
+        app: voltha-go-controller
+        release: {{ .Release.Name }}
+        app.kubernetes.io/name: "voltha-go-controller"
+        app.kubernetes.io/version: {{ quote .Chart.AppVersion }}
+        app.kubernetes.io/component: "controller"
+        app.kubernetes.io/part-of: "voltha"
+        app.kubernetes.io/stack: "{{ .Values.global.stack_name }}"
+        app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        {{- if hasKey .Values "extra_pod_labels" }}
+        {{- range $key, $val := .Values.extra_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
+        {{- if hasKey .Values "vgc_pod_labels" }}
+        {{- range $key, $val := .Values.vgc_pod_labels }}
+        {{ $key }}: {{ $val | quote }}
+        {{- end }}
+        {{- end }}
     spec:
       {{- if .Values.securityContext.enabled }}
       securityContext:
@@ -50,11 +79,11 @@ spec:
         - name: VOLTHA_PORT
           value: "55555"
         - name: KV_STORE_TYPE
-          value: "{{ .Values.services.kvstore.type }}"
+          value: "{{ tpl .Values.services.kvstore.type . }}"
         - name: KV_STORE_HOST
-          value: "{{ .Values.services.kvstore.address }}"
+          value: "{{ tpl .Values.services.kvstore.address . }}"
         - name: KV_STORE_PORT
-          value: "{{ .Values.services.kvstore.port }}"
+          value: "{{ tpl .Values.services.kvstore.port . }}"
         - name: KAFKA_ADAPTER_HOST
           value: "{{ tpl .Values.services.kafka.cluster.address . }}"
         - name: KAFKA_ADAPTER_PORT
