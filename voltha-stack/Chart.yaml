@@ -34,7 +34,7 @@ appVersion : "2.12"
 
 ## Chart version for package voltha-stack
 ##   Increment when Chart.yaml changes
-version    : "2.12.14"
+version    : "2.12.15"
 
 # -----------------------------------------------------------------------
 # NOTE: Dependencies are chart versions not component/repository version
