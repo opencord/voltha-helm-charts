@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e102db8c_9879db46",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000218
+      },
+      "writtenOn": "2025-01-21T22:13:17Z",
+      "side": 1,
+      "message": "Why not incrementing onu-adapter?",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "a3df3ecfce8b3a753824ce31f25e8d2f0973236e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
