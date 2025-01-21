@@ -22,6 +22,30 @@
       },
       "revId": "a3df3ecfce8b3a753824ce31f25e8d2f0973236e",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6435c17b_82adfdd1",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2025-01-21T23:35:36Z",
+      "side": 1,
+      "message": "Ah, I had followed the old link that was in the Chart for onu-adapter, which said the component was deprecated. Now I see that I needed to check openonu-adapter-go for the up-to-date tag.",
+      "parentUuid": "e102db8c_9879db46",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "a3df3ecfce8b3a753824ce31f25e8d2f0973236e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
