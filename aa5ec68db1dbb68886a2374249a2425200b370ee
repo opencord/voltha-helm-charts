@@ -18,6 +18,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bae271f5_0beff785",
+        "filename": "voltha-adapter-openonu/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2025-01-22T21:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42dbf780_519a079e",
+      "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b555b89e_e0b07bed",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-01-22T19:18:46Z",
       "side": 1,
       "message": "We can bump up to 2.13.0, as you did for others.",
+      "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3518b50a_221f9143",
+        "filename": "voltha-stack/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2025-01-22T21:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b555b89e_e0b07bed",
       "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -52,6 +88,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73297656_7a31f041",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2025-01-22T21:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b2350b9_81bb9e19",
+      "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "907b3554_83a6a7af",
@@ -65,6 +119,24 @@
       "writtenOn": "2025-01-22T19:18:46Z",
       "side": 1,
       "message": "It should be 3.6.6 from the VERSION file. https://gerrit.opencord.org/c/voltha-go/+/35608/1/VERSION",
+      "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "726dfa21_4303d74a",
+        "filename": "voltha/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2025-01-22T21:11:31Z",
+      "side": 1,
+      "message": "Ok. That comment is very confusing, so I\u0027m going to fix the version and clarify the comment.",
+      "parentUuid": "907b3554_83a6a7af",
       "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
