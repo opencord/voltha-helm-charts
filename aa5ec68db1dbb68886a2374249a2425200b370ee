@@ -106,6 +106,24 @@
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2aa7a09b_41a32a83",
+        "filename": "voltha-tracing/Chart.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2025-01-22T21:35:37Z",
+      "side": 1,
+      "message": "Looks like our Jenkins job checking versions insists this is changed if there are any changes to the file, even if they\u0027re non-functional, so I restored the version bump.",
+      "parentUuid": "73297656_7a31f041",
+      "revId": "aa5ec68db1dbb68886a2374249a2425200b370ee",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "907b3554_83a6a7af",
