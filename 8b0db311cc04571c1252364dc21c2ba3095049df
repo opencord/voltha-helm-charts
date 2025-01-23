@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "907f2f54_7b607399",
+        "filename": "voltha-go-controller/Chart.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000218
+      },
+      "writtenOn": "2025-01-23T20:54:33Z",
+      "side": 1,
+      "message": "this seems like 0.1.5 at the latest patch https://gerrit.opencord.org/c/voltha-go-controller/+/35609/2/VERSION",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 19
+      },
+      "revId": "8b0db311cc04571c1252364dc21c2ba3095049df",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
