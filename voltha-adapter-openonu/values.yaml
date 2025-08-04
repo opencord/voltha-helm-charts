@@ -61,6 +61,9 @@ global:
   # Configure reconciling by skipping onu configuration by default
   skip_onu_config:
     enabled: false
+  # Check for device tech profile on ONU reboot and configure the device
+  check_device_tech_prof_on_reboot:
+    enabled: false
 
 
 # Probe values

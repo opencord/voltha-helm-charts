@@ -139,6 +139,7 @@ spec:
             - "--check_onu_exist_on_discovery={{ tpl .Values.adapter_open_olt.check_onu_exist_on_discovery . }}"
             - "--max_grpc_client_retry={{ tpl .Values.adapter_open_olt.rpc_retry . }}"
             - "--per_rpc_retry_timeout={{ tpl .Values.adapter_open_olt.per_rpc_retry_timeout . }}"
+            - "--force_onu_disc_processing={{ tpl .Values.adapter_open_olt.force_onu_disc_processing . }}"
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
