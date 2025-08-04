@@ -105,7 +105,8 @@ spec:
             - "--mib_audit_interval={{ .Values.global.mib_audit.interval }}"
             - "--alarm_audit_interval={{ .Values.global.alarm_audit.interval }}"
             - "--uni_port_mask={{ .Values.adapter_open_onu.uni_port_mask }}"
-            - "--skip_onu_config_enabled={{ .Values.global.skip_onu_config.enabled }}"              
+            - "--skip_onu_config_enabled={{ .Values.global.skip_onu_config.enabled }}"
+            - "--check_device_tech_prof_on_reboot_enabled={{ .Values.global.check_device_tech_prof_on_reboot.enabled }}"              
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
