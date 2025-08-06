@@ -1,0 +1,8 @@
+Verified+1: Jenkins Technical User <do-not-reply@opennetworking.org>
+Code-Review+1: Mahir Gunyel <mahir.gunyel@netsia.com>
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Wed, 06 Aug 2025 20:53:11 +0000
+Reviewed-on: https://gerrit.opencord.org/c/voltha-helm-charts/+/35831
+Project: voltha-helm-charts
+Branch: refs/heads/voltha-2.14
