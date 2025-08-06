@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-openonu"
-version: "2.12.6"
+version: "2.14.0"
 description: "A Helm chart for Voltha OpenONU Adapter"
 keywords:
   - "onf"
@@ -25,7 +25,7 @@ keywords:
 home: "https://www.opennetworking.org/voltha"
 icon: "https://guide.opencord.org/logos/voltha.svg"
 sources:
-  - "https://github.com/opencord/voltha-openonu-adapter"
+  - "https://github.com/opencord/voltha-openonu-adapter-go"
 maintainers:
   - name: "Open Networking Foundation"
     email: "info@opennetworking.org"
