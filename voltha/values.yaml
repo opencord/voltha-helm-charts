@@ -24,12 +24,16 @@ global:
   log_level: "WARN"
   image_registry: ''
   image_org: "voltha/"
-  image_tag: ~
   image_pullPolicy: "Always"
   rw_core:
+    image_tag: "3.6.20"
     rpc_timeout: "30s"
     flow_timeout: "30s"
     internal_timeout: "30s"
+    producer_retry_max: "10"
+    metadata_retry_max: "15"
+  of_agent:
+    image_tag: "2.3.2"
   # Configure Log Correlation
   log_correlation:
     enabled: true
@@ -95,6 +99,8 @@ rw_core:
   internal_timeout: '{{ .Values.global.rw_core.internal_timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   stack_id: "{{ .Values.global.stack_name }}"
+  producer_retry_max : '{{ .Values.global.rw_core.producer_retry_max }}'
+  metadata_retry_max : '{{ .Values.global.rw_core.metadata_retry_max }}'
   topics:
     event_topic: "voltha.events"
   backoff_initial_interval: 500ms
@@ -113,13 +119,13 @@ images:
   ofagent:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-ofagent-go'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}2.1.6{{- end }}{{- else }}2.1.6{{- end }}'
+    tag: '{{- if hasKey .Values.global.of_agent "image_tag" }}{{- if .Values.global.of_agent.image_tag }}{{ .Values.global.of_agent.image_tag }}{{- else }}2.1.6{{- end }}{{- else }}2.1.6{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
   rw_core:
     registry: '{{ .Values.global.image_registry }}'
     repository: '{{ .Values.global.image_org }}voltha-rw-core'
-    tag: '{{- if hasKey .Values.global "image_tag" }}{{- if .Values.global.image_tag }}{{ .Values.global.image_tag }}{{- else }}3.4.8{{- end }}{{- else }}3.4.8{{- end }}'
+    tag: '{{- if hasKey .Values.global.rw_core "image_tag" }}{{- if .Values.global.rw_core.image_tag }}{{ .Values.global.rw_core.image_tag }}{{- else }}3.4.8{{- end }}{{- else }}3.4.8{{- end }}'
     pullPolicy: '{{ .Values.global.image_pullPolicy }}'
 
 ingress:

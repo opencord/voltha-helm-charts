@@ -21,7 +21,7 @@ global:
   stack_name: voltha
   log_level: "WARN"
   image_registry: ""
-  image_tag: ~
+  image_tag: "4.5.19"
   image_org: "voltha/"
   image_pullPolicy: "Always"
   core_endpoint: "{{ .Values.global.voltha_release_name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
@@ -34,6 +34,8 @@ global:
     check_onu_exist_on_discovery: false
     per_rpc_retry_timeout : "5s"
     rpc_retry: "4"
+    producer_retry_max: "10"
+    metadata_retry_max: "15"
     force_onu_disc_processing: false
   # enable OMCC encryption
   omcc_encryption: false
@@ -108,6 +110,8 @@ adapter_open_olt:
   rpc_retry: '{{ .Values.global.adapter_open_olt.rpc_retry }}'
   per_rpc_retry_timeout : '{{ .Values.global.adapter_open_olt.per_rpc_retry_timeout }}'
   force_onu_disc_processing: '{{ .Values.global.adapter_open_olt.force_onu_disc_processing }}'
+  producer_retry_max : '{{ .Values.global.adapter_open_olt.producer_retry_max }}'
+  metadata_retry_max : '{{ .Values.global.adapter_open_olt.metadata_retry_max }}'
   endpoints:
     # core_endpoint: '{{ .Values.global.adapter_open_olt.core_endpoint }}'
     # adapter_endpoint: '{{ template "fullname" . }}-api:55560'

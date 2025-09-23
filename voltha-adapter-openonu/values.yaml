@@ -22,7 +22,7 @@ global:
   stack_name: voltha
   log_level: "WARN"
   image_registry: ""
-  image_tag: ~
+  image_tag: "2.12.31"
   image_org: "voltha/"
   image_pullPolicy: "Always"
   core_endpoint: "{{ .Values.global.voltha_release_name }}-{{ .Values.global.stack_name }}-core.{{ .Release.Namespace }}.svc:55558"
@@ -36,6 +36,10 @@ global:
   omci_timeout: "3s"
   # timeout for RPC request
   rpc_timeout: "10s"
+  # kafka producer max retry 
+  producer_retry_max: "10"
+  # kafka metadata max retries
+  metadata_retry_max: "15"
   # kv store timeout
   adapter_open_onu:
     timeout: "5s"
@@ -138,6 +142,8 @@ adapter_open_onu:
   kv_store_timeout: '{{ .Values.global.adapter_open_onu.timeout }}'
   kv_store_data_prefix: 'service/{{ .Values.global.stack_name }}_voltha'
   alarm_audit_interval: '{{ .Values.global.alarm_audit.interval }}'
+  producer_retry_max : '{{ .Values.global.producer_retry_max }}'
+  metadata_retry_max : '{{ .Values.global.metadata_retry_max }}'
   uni_port_mask: "0x0001"
   endpoints:
     address: '{{ template "fullname" . }}-api'
