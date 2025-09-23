@@ -17,7 +17,7 @@ name: "voltha"
 
 ## Chart version for package: 'voltha'
 ##   Increment when Chart.yaml changes
-version: "2.12.21"
+version: "2.12.22"
 
 description: "A Helm chart for Voltha based on K8S resources in Voltha project"
 keywords:
@@ -37,6 +37,6 @@ maintainers:
 
 # app version is NOT used in this chart for application versions or image tags
 # but represents the voltha release version itself
-appVersion: "3.6.1"
+appVersion: "3.6.18"
 
 # [EOF]
