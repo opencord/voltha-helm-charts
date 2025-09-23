@@ -105,6 +105,8 @@ spec:
             - "--backoff_retry_initial_interval={{ .Values.rw_core.backoff_initial_interval }}"
             - "--backoff_retry_max_interval={{ .Values.rw_core.backoff_max_interval }}"
             - "--backoff_retry_max_elapsed_time={{ .Values.rw_core.backoff_max_elapsed_time }}"
+            - "--producer_retry_max={{ tpl .Values.rw_core.producer_retry_max . }}"
+            - "--metadata_retry_max={{ tpl .Values.rw_core.metadata_retry_max . }}"
           ports:
             - containerPort: 50057
               name: nbi-grpc
