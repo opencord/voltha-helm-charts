@@ -106,7 +106,9 @@ spec:
             - "--alarm_audit_interval={{ .Values.global.alarm_audit.interval }}"
             - "--uni_port_mask={{ .Values.adapter_open_onu.uni_port_mask }}"
             - "--skip_onu_config_enabled={{ .Values.global.skip_onu_config.enabled }}"
-            - "--check_device_tech_prof_on_reboot_enabled={{ .Values.global.check_device_tech_prof_on_reboot.enabled }}"              
+            - "--check_device_tech_prof_on_reboot_enabled={{ .Values.global.check_device_tech_prof_on_reboot.enabled }}"
+            - "--producer_retry_max={{ tpl .Values.adapter_open_onu.producer_retry_max . }}"
+            - "--metadata_retry_max={{ tpl .Values.adapter_open_onu.metadata_retry_max . }}"              
           {{- if .Values.securityContext.enabled }}
           securityContext:
             allowPrivilegeEscalation: false
