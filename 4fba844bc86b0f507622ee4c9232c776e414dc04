@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37343107_efaff4e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-10-14T16:57:04Z",
+      "side": 1,
+      "message": "\u003e Patch Set 5:\n\u003e \n\u003e Build Successful \n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_sanity-test/1213/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_licensed/1336/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/tag-check_voltha-helm-charts/325/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/helm-lint_voltha-helm-charts/327/ : SUCCESS\n\nrecheck",
+      "revId": "4fba844bc86b0f507622ee4c9232c776e414dc04",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
