@@ -147,6 +147,8 @@ radius:
 
 etcd:
   enabled: true
+  image:
+    repository: bitnamilegacy/etcd
 
   # ETCD defrag creates a CronJob that runs "etcdctl defrag --cluster"
   # on a defined schedule
@@ -190,10 +192,14 @@ etcd:
 
 kafka:
   enabled: true
+  image:
+    repository: bitnamilegacy/kafka
   replicaCount: 1
   persistence:
     enabled: false
   zookeeper:
+    image:
+      repository: bitnamilegacy/zookeeper
     replicaCount: 1
     persistence:
       enabled: false
@@ -248,16 +254,22 @@ fluentd-elasticsearch:
 
 redis:
   enabled: false
+  image:
+      repository: bitnamilegacy/redis
   auth:
     enabled: false
   volumePermissions:
     enabled: true
+    image:
+      repository: bitnamilegacy/bitnami-shell-archived
   networkPolicy:
     enabled: false
   replica:
     replicaCount: 1
   sentinel:
     enabled: true
+    image:
+      repository: bitnamilegacy/redis-sentinel
     masterSet: sebaRedis
   commonConfiguration: |-
     # The filename where to dump the DB
