@@ -147,6 +147,8 @@ radius:
 
 etcd:
   enabled: true
+  image:
+    repository: bitnamilegacy/etcd
 
   # ETCD defrag creates a CronJob that runs "etcdctl defrag --cluster"
   # on a defined schedule
@@ -190,10 +192,14 @@ etcd:
 
 kafka:
   enabled: true
+  image:
+    repository: bitnamilegacy/kafka
   replicaCount: 1
   persistence:
     enabled: false
   zookeeper:
+    image:
+      repository: bitnamilegacy/zookeeper
     replicaCount: 1
     persistence:
       enabled: false
