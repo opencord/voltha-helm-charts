@@ -35,7 +35,7 @@ appVersion : "2.12"
 
 ## Chart version for package: voltha-infra
 ##   Increment when Chart.yaml changes
-version: "2.12.8"
+version: "2.12.9"
 
 dependencies:
   - name       : "onos-classic"
@@ -75,8 +75,8 @@ dependencies:
     version    : "7.10.1"
     condition  : "efk.enabled"
   - name       : "fluentd-elasticsearch"
-    repository : "https://kiwigrid.github.io"
-    version    : "9.6.2"
+    repository : "https://kokuwaio.github.io/helm-charts"
+    version    : "11.7.1"
     # TODO kiwigrid is deprecated, use: https://github.com/kokuwaio/helm-charts/tree/main/charts/fluentd-elasticsearch
     # repository: https://kokuwaio.github.io/helm-charts
     # version: 11.7.1
