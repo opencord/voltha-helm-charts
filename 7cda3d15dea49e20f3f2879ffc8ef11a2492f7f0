@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b8423ef_68616fb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-10-29T07:04:37Z",
+      "side": 1,
+      "message": "\u003e Patch Set 11: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_sanity-test/1222/ : FAILURE\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_licensed/1345/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/tag-check_voltha-helm-charts/334/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/helm-lint_voltha-helm-charts/336/ : SUCCESS\n\nrecheck",
+      "revId": "7cda3d15dea49e20f3f2879ffc8ef11a2492f7f0",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
