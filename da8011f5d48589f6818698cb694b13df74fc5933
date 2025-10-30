@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "77aa075e_be24b90b",
+        "filename": "voltha-adapter-openolt/values.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-10-30T10:17:57Z",
+      "side": 1,
+      "message": "removed the image tag here , not needed",
+      "parentUuid": "7eec3aa3_2713c348",
+      "revId": "da8011f5d48589f6818698cb694b13df74fc5933",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d4a9242_fe628228",
         "filename": "voltha-adapter-openonu/values.yaml",
         "patchSetId": 12
@@ -31,6 +49,24 @@
       "writtenOn": "2025-10-29T16:32:01Z",
       "side": 1,
       "message": "Why do we need the fixed image tag here?",
+      "revId": "da8011f5d48589f6818698cb694b13df74fc5933",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "630c0c59_c9038795",
+        "filename": "voltha-adapter-openonu/values.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-10-30T10:17:57Z",
+      "side": 1,
+      "message": "removed the image tag here , not needed",
+      "parentUuid": "1d4a9242_fe628228",
       "revId": "da8011f5d48589f6818698cb694b13df74fc5933",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "039abe20_f9ceb486",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-10-30T10:17:57Z",
+      "side": 1,
+      "message": "in the bottom of the values.yaml file , the default version is set to 3.4.8.\n\ni have changed there , so that it would fetch it from appversion in charts.yaml file",
+      "parentUuid": "8b2f4c60_c0eb35f2",
+      "revId": "da8011f5d48589f6818698cb694b13df74fc5933",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37934a30_bf75381a",
         "filename": "voltha/values.yaml",
         "patchSetId": 12
@@ -65,6 +119,24 @@
       "writtenOn": "2025-10-29T16:32:01Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "da8011f5d48589f6818698cb694b13df74fc5933",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cade2168_0f14a2ff",
+        "filename": "voltha/values.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-10-30T10:17:57Z",
+      "side": 1,
+      "message": "removed the image tag here , not needed",
+      "parentUuid": "37934a30_bf75381a",
       "revId": "da8011f5d48589f6818698cb694b13df74fc5933",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
