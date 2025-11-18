@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b767c045_71ddd659",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001025
+      },
+      "writtenOn": "2025-11-18T08:19:24Z",
+      "side": 1,
+      "message": "\u003e Patch Set 2:\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.lfbroadband.org/job/publish-helm-repo_voltha-helm-charts/75/ : FAILURE\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/version-tag_voltha-helm-charts/68/ : SUCCESS\n\nremerge",
+      "revId": "c6426e2afbd9e2256f80ae065887462800e903fb",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
