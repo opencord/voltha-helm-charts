@@ -17,7 +17,7 @@ name: "voltha-adapter-openolt"
 
 ## Chart version for package 'voltha-adapter-openolt'
 ##   Increment when Chart.yaml changes
-version: "2.15.1"
+version: "2.15.2"
 description: "A Helm chart for Voltha OpenOLT Adapter"
 keywords:
   - "onf"
@@ -35,6 +35,6 @@ maintainers:
     url: "https://www.opennetworking.org"
 
 # appVersion refers to release version of voltha-openolt-adapter
-appVersion: "4.5.19"
+appVersion: "4.6.2"
 
 # [EOF]
