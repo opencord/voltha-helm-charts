@@ -1,4 +1,4 @@
-# Copyright 2022-2024 Open Networking Foundation (ONF) and the ONF Contributors
+# Copyright 2022-2023 Open Networking Foundation (ONF) and the ONF Contributors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,35 +11,32 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-apiVersion: v1
-kind: Service
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
 metadata:
   annotations:
     meta.helm.sh/release-name: "{{ .Values.fullNameOverride }}-{{ .Chart.Name }}"
     meta.helm.sh/release-namespace: "{{ .Release.Namespace }}"
   labels:
     app.kubernetes.io/managed-by: {{ quote .Release.Service }}
-    app.kubernetes.io/name: "{{ .Chart.Name }}"
+    app.kubernetes.io/name: "read-write-core"
     app.kubernetes.io/part-of: "voltha"
     app.kubernetes.io/stack: "{{ .Values.global.stack_name }}"
-    app: "{{ .Chart.Name }}"
+    app: "rw-core"
     release: "{{ .Release.Name }}"
-  name: "{{ tpl .Values.voltha_go_controller.endpoints.address . }}"
-  namespace: {{ .Release.Namespace }}
+  name: "{{ .Release.Name }}"
+  namespace: "{{ .Release.Namespace }}"
 spec:
-  ports:
-  - name: of
-    port: {{ .Values.voltha_go_controller.ofPort }}
-    protocol: TCP
-    targetPort: {{ .Values.voltha_go_controller.ofPort }}
-  - name: ui
-    port: {{ .Values.voltha_go_controller.uiPort }}
-    protocol: TCP
-    targetPort: {{ .Values.voltha_go_controller.uiPort }}
-  - name: promserver
-    port: 8081
-    protocol: TCP
-    targetPort: 8081
+  endpoints:
+  - interval: 15s
+    path: /metrics
+    port: promserver
+  namespaceSelector:
+    matchNames:
+    - "voltha"
   selector:
-    app: "{{ .Chart.Name }}"
+    matchLabels:
+      app: "rw-core"
+      release: "{{ .Release.Name }}"
+

@@ -15,6 +15,16 @@
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    meta.helm.sh/release-name: "{{ .Values.fullNameOverride }}-{{ .Chart.Name }}"
+    meta.helm.sh/release-namespace: "{{ .Release.Namespace }}"
+  labels:
+    app.kubernetes.io/managed-by: {{ quote .Release.Service }}
+    app.kubernetes.io/name: "read-write-core"
+    app.kubernetes.io/part-of: "voltha"
+    app.kubernetes.io/stack: "{{ .Values.global.stack_name }}"
+    app: "rw-core"
+    release: "{{ .Release.Name }}"
   name: "{{ template "fullname" . }}-core"
   namespace: "{{ .Release.Namespace }}"
 spec:
@@ -22,6 +32,9 @@ spec:
     - name: core-grpc
       port: 55558
       targetPort: 50058
+    - name: promserver
+      port: 8081
+      targetPort: 8081
   selector:
     app: rw-core
     release: "{{ .Release.Name }}"
