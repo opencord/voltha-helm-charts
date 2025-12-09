@@ -16,6 +16,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+nameOverride: ~
+fullNameOverride: ~
+
 global:
   stack_name: voltha
   log_level: "WARN"
@@ -47,8 +50,6 @@ images:
     pullPolicy: '{{ .Values.global.image_pullPolicy | default "Always" }}'
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created

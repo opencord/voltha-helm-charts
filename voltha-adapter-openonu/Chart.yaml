@@ -14,7 +14,7 @@
 ---
 apiVersion: "v1"
 name: "voltha-adapter-openonu"
-version: "2.15.1"
+version: "2.15.2"
 description: "A Helm chart for Voltha OpenONU Adapter"
 keywords:
   - "onf"
@@ -32,6 +32,6 @@ maintainers:
     url: "https://www.opennetworking.org"
 
 # appVersion refers to release version of voltha-openonu-adapter-go
-appVersion: "2.12.31"
+appVersion: "2.13.2"
 
 # [EOF]
