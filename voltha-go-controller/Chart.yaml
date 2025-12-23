@@ -27,6 +27,6 @@ name: voltha-go-controller
 
 ## Chart version for package voltha-go-controller
 ##   Increment when Chart.yaml changes
-version: "2.15.1"
+version: "2.15.2"
 
 # [EOF]

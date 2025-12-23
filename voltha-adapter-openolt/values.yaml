@@ -90,6 +90,9 @@ services:
   tracing_agent:
     address: jaeger-agent:6831
 
+serviceMonitor:
+    enable: false
+
 # Expose the golang pprof webserver, if enabled
 profiler:
   enabled: false
