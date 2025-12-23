@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
+{{- if .Values.serviceMonitor.enable }}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -39,4 +40,5 @@ spec:
     matchLabels:
       app: "rw-core"
       release: "{{ .Release.Name }}"
+{{- end }}
 

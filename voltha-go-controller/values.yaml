@@ -122,3 +122,6 @@ services:
     type: "etcd"
     address: "voltha-infra-etcd-headless.infra.svc.cluster.local"
     port: "2379"
+
+serviceMonitor:
+    enable: false

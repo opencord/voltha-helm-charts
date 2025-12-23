@@ -102,6 +102,9 @@ services:
   tracing_agent:
     address: jaeger-agent:6831
 
+serviceMonitor:
+    enable: false
+
 allowed_onu_vendors:
   - OPEN
   - ALCL
