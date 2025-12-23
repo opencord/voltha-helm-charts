@@ -16,6 +16,23 @@
       "message": "\u003e Patch Set 2: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_sanity-test/1234/ : FAILURE\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/helm-lint_voltha-helm-charts/349/ : FAILURE\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/tag-check_voltha-helm-charts/347/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_licensed/1356/ : SUCCESS\n\nrecheck",
       "revId": "2955cea7f982c66be981dd406255aa8daaafa004",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bc9193e_b76b68a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001041
+      },
+      "writtenOn": "2025-12-23T11:22:42Z",
+      "side": 1,
+      "message": "\u003e Patch Set 2:\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_sanity-test/1235/ : FAILURE\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/helm-lint_voltha-helm-charts/350/ : FAILURE\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/tag-check_voltha-helm-charts/348/ : SUCCESS\n\u003e \n\u003e https://jenkins.lfbroadband.org/job/verify_voltha-helm-charts_licensed/1357/ : SUCCESS\n\nrecheck",
+      "revId": "2955cea7f982c66be981dd406255aa8daaafa004",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
