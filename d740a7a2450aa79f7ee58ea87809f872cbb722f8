@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9af3cdde_f86af27d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000404
+      },
+      "writtenOn": "2026-02-18T21:35:18Z",
+      "side": 1,
+      "message": "I believe, voltha-stack/chart.yaml should be updated accordingly.",
+      "revId": "d740a7a2450aa79f7ee58ea87809f872cbb722f8",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    }
+  ]
+}
