@@ -16,6 +16,24 @@
       "message": "I believe, voltha-stack/chart.yaml should be updated accordingly.",
       "revId": "d740a7a2450aa79f7ee58ea87809f872cbb722f8",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cefa546_62e9d633",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001013
+      },
+      "writtenOn": "2026-02-19T03:17:11Z",
+      "side": 1,
+      "message": "Whoops, I missed that and voltha-go-controller. I made notes during the last release so that I wouldn\u0027t go through every directory (since some don\u0027t need any updating), but didn\u0027t have those two listed. I\u0027ve added them to my release guide now.",
+      "parentUuid": "9af3cdde_f86af27d",
+      "revId": "d740a7a2450aa79f7ee58ea87809f872cbb722f8",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388"
     }
   ]
 }
