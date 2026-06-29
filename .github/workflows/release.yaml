@@ -1,0 +1,103 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 The Linux Foundation
+
+name: voltha-helm-charts release
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - voltha-*
+
+permissions:
+  contents: write
+
+env:
+  PUBLISH_URL: "charts.lfbroadband.org"
+  OLD_REPO_DIR: "cord-charts-repo"
+  NEW_REPO_DIR: "chart_repo"
+  SYNC_TARGET_USER: "jenkins"
+  SYNC_TARGET_SERVER: "static.lfbroadband.org"
+
+jobs:
+  publish-helm-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout charts source
+        # yamllint disable-line rule:line-length
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Checkout published chart repository
+        # yamllint disable-line rule:line-length
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          repository: opencord/cord-charts-repo
+          token: ${{ secrets.CORD_CHARTS_REPO_TOKEN }}
+          path: ${{ env.OLD_REPO_DIR }}
+          fetch-depth: 0
+
+      - name: Checkout helm-repo-tools
+        # yamllint disable-line rule:line-length
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          repository: opencord/helm-repo-tools
+          path: helm-repo-tools
+
+      - name: Set up Helm
+        uses: azure/setup-helm@9bc31f4ebc9c6b171d7bfbaa5d006ae7abdb4310 # v5.0.1
+
+      - name: Add external Helm repositories
+        run: |
+          set -eu -o pipefail
+          helm repo add stable https://charts.helm.sh/stable
+          helm repo add rook-release https://charts.rook.io/release
+          helm repo add cord https://charts.lfbroadband.org
+          helm repo add elastic https://helm.elastic.co
+          helm repo add kiwigrid https://kokuwaio.github.io/helm-charts
+
+      - name: Build/update chart repository index
+        run: ./helm-repo-tools/helmrepo.sh
+
+      - name: Compute release version
+        id: version
+        run: echo "version=$(date -u +%Y%m%dT%H%M%SZ)" >> "$GITHUB_OUTPUT"
+
+      - name: Commit, tag and push updated chart repository
+        id: publish
+        # Only commits when helmrepo.sh actually added/updated packages, and
+        # pushes both the commit and the date-based tag.
+        # yamllint disable-line rule:line-length
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
+        with:
+          repository: ${{ env.OLD_REPO_DIR }}
+          commit_message: >-
+            Update helm chart repository
+          commit_options: "--signoff"
+          commit_user_name: "VOLTHA Bot"
+          commit_user_email: "do-not-reply@opennetworking.org"
+          tagging_message: ${{ steps.version.outputs.version }}
+
+      - name: Configure SSH access to static server
+        if: steps.publish.outputs.changes_detected == 'true'
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.STATIC_LFBB_JENKINS_SSH_KEY }}
+        run: |
+          set -eu
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$SYNC_TARGET_SERVER" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Sync chart repository to static server
+        if: steps.publish.outputs.changes_detected == 'true'
+        run: |
+          set -eu -o pipefail
+          rsync -rvzh --delete-after --exclude=.git \
+            "${OLD_REPO_DIR}/" \
+            "${SYNC_TARGET_USER}@${SYNC_TARGET_SERVER}:/srv/sites/${PUBLISH_URL}/"
