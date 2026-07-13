@@ -5,7 +5,7 @@ name: Call Verify Workflow(s)
 
 # yamllint disable-line rule:truthy
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       # Gerrit-to-Github defaults
       GERRIT_BRANCH:
