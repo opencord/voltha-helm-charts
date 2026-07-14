@@ -88,6 +88,7 @@ jobs:
           gerrit-project: ${{ inputs.GERRIT_PROJECT }}
           gerrit-url: ${{ vars.GERRIT_URL }}
           delay: "0s"
+          fetch-depth: 0
       - name: Check Tags
         uses: opencord/shared-workflows/.github/actions/tag-check-action@main
       - name: Lint Helm Charts
