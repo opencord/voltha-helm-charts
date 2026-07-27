@@ -43,6 +43,8 @@ global:
   enable_onu_stats: false
   # enable GEM stats
   enable_gem_stats: false
+  #enable PON Rx Power stats
+  enable_pon_rx_power_stats: false
 
   # Configure Log Correlation
   log_correlation:
