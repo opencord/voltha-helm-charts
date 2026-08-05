@@ -1,0 +1,28 @@
+---
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 The Linux Foundation
+name: Call Verify Workflow(s)
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+
+permissions: read-all
+
+jobs:
+  lint-and-verify-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Check Tags
+        uses: opencord/shared-workflows/.github/actions/tag-check-action@main
+      - name: Lint Helm Charts
+        uses: opencord/shared-workflows/.github/actions/helm-lint-action@main
+        with:
+          target-branch: ${{ github.base_ref }}
