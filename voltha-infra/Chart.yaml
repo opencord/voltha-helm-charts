@@ -31,11 +31,11 @@ name       : "voltha-infra"
 
 # app version is NOT used in this chart for application versions or image tags
 # but represents the voltha release version itself
-appVersion : "2.15"
+appVersion : "2.16"
 
 ## Chart version for package: voltha-infra
 ##   Increment when Chart.yaml changes
-version: "2.15.1"
+version: "2.16.0"
 
 dependencies:
   - name       : "onos-classic"
