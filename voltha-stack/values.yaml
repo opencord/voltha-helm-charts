@@ -90,4 +90,4 @@ voltha-go-controller:
       port: "2379"
     kafka:
       cluster:
-        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc:9092"
+        address: "{{ .Values.global.voltha_infra_name }}-kafka.{{ .Values.global.voltha_infra_namespace }}.svc"
