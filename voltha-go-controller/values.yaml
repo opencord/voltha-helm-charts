@@ -125,3 +125,7 @@ services:
 
 serviceMonitor:
     enable: false
+
+eventTopic:
+  partitions: 6
+  replicas: 1

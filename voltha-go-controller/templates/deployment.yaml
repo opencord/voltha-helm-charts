@@ -100,6 +100,10 @@ spec:
           value: "60"
         - name: NOT_LIVE_PROBE_INTERVAL
           value: "5"
+        - name: EVENT_TOPIC_PARTITIONS
+          value: {{ .Values.eventTopic.partitions | quote }}
+        - name: EVENT_TOPIC_REPLICAS
+          value: {{ .Values.eventTopic.replicas | quote }}
         name: voltha-go-controller
         image: '{{ tpl .Values.images.voltha_go_controller.registry . }}{{ tpl .Values.images.voltha_go_controller.repository . }}:{{ tpl ( tpl .Values.images.voltha_go_controller.tag . ) . }}'
         imagePullPolicy: {{ tpl .Values.images.voltha_go_controller.pullPolicy . }}
